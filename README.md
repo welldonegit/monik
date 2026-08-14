@@ -1,20 +1,30 @@
 # Monik — деплой на Vercel
 
-Статичный сайт из одного файла. Всё встроено: шрифты подключаются с Google Fonts, изображения, логотипы и рантайм — внутри `index.html`. Никакой сборки не требуется.
+Статичный сайт, сборка не нужна.
 
 ```
 deploy/
-├── index.html    ← вся страница
-└── vercel.json   ← настройки хостинга
+├── index.html        ← оглавление со ссылками на 4 страницы
+├── concept-1.html    ← концепт 1, всё внутри файла
+├── concept-2.html    ← концепт 2, всё внутри файла
+├── concept-3.html    ← концепт 3, всё внутри файла
+├── categories.html   ← страница «Усі категорії»
+├── support.js        ← рантайм для categories.html
+├── assets/           ← изображения для categories.html
+└── vercel.json       ← настройки хостинга
 ```
 
-## Вариант 1 — через веб-интерфейс
+Три концепта — самодостаточные файлы: изображения и рантайм встроены внутрь. Страница категорий грузит `support.js` и `assets/` рядом с собой, поэтому эти папку и файл нужно выгружать вместе с ней.
+
+Адреса после деплоя: `/`, `/concept-1`, `/concept-2`, `/concept-3`, `/categories`.
+
+## Вариант 1 — веб-интерфейс
 
 1. Заархивируйте папку `deploy` в zip.
-2. Откройте vercel.com → **Add New… → Project → Deploy without Git**.
-3. Перетащите архив, нажмите **Deploy**.
+2. vercel.com → **Add New… → Project → Deploy without Git**.
+3. Перетащите архив → **Deploy**.
 
-## Вариант 2 — через CLI
+## Вариант 2 — CLI
 
 ```bash
 npm i -g vercel
@@ -23,16 +33,16 @@ vercel          # превью
 vercel --prod   # продакшн
 ```
 
-На вопрос про framework выберите **Other**, build command оставьте пустым, output directory — текущая папка.
+Framework Preset — **Other**, Build Command — пусто, Output Directory — текущая папка.
 
-## Вариант 3 — через Git
+## Вариант 3 — Git
 
-Положите содержимое `deploy` в корень репозитория и импортируйте его в Vercel. Framework Preset — **Other**, Build Command — пусто, Output Directory — `.`.
+Положите содержимое `deploy` в корень репозитория и импортируйте в Vercel (Framework — **Other**, Build Command — пусто, Output Directory — `.`).
 
-## Замена контента
+## Обновление контента
 
-`index.html` — скомпилированный файл, править его вручную не нужно. Исходник — `Monik Hero.dc.html` в корне проекта; после изменений соберите заново.
+Скомпилированные файлы вручную не правятся. Исходники в корне проекта: `Monik Hero.dc.html`, `Monik Hero v2.dc.html`, `Monik Hero v3.dc.html`, `Monik Категорії.dc.html` — после изменений соберите выгрузку заново.
 
 ## Домен
 
-После деплоя: **Project → Settings → Domains** → добавьте свой домен и пропишите указанные DNS-записи у регистратора.
+**Project → Settings → Domains** → добавьте домен и пропишите DNS-записи у регистратора.

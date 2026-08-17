@@ -1,48 +1,40 @@
-# Monik — деплой на Vercel
+# Monik — вигрузка для Vercel
 
-Статичный сайт, сборка не нужна.
+Статичний сайт. Нічого збирати не потрібно.
 
-```
-deploy/
-├── index.html        ← оглавление со ссылками на 4 страницы
-├── concept-1.html    ← концепт 1, всё внутри файла
-├── concept-2.html    ← концепт 2, всё внутри файла
-├── concept-3.html    ← концепт 3, всё внутри файла
-├── categories.html   ← страница «Усі категорії»
-├── support.js        ← рантайм для categories.html
-├── assets/           ← изображения для categories.html
-└── vercel.json       ← настройки хостинга
-```
+## Деплой
 
-Три концепта — самодостаточные файлы: изображения и рантайм встроены внутрь. Страница категорий грузит `support.js` и `assets/` рядом с собой, поэтому эти папку и файл нужно выгружать вместе с ней.
+1. Vercel → Add New → Project → Import (або `vercel` CLI з цієї теки).
+2. Framework Preset: **Other**. Build Command: порожньо. Output Directory: `.` (корінь цієї теки).
+3. Deploy.
 
-Адреса после деплоя: `/`, `/concept-1`, `/concept-2`, `/concept-3`, `/categories`.
+`vercel.json` вмикає `cleanUrls`, тому сторінки доступні без `.html`.
 
-## Вариант 1 — веб-интерфейс
+## Сторінки
 
-1. Заархивируйте папку `deploy` в zip.
-2. vercel.com → **Add New… → Project → Deploy without Git**.
-3. Перетащите архив → **Deploy**.
+Навігація: `/` (index.html).
 
-## Вариант 2 — CLI
+**Концепт 04 (актуальний)**
+- `/c04-home` — головна: хедер, слайдер, категорії, рецепти
+- `/c04-categories` — каталог, слайдер із 12 категорій
+- `/c04-orange` — сторінка товару «Апельсиновий концентрат»
 
-```bash
-npm i -g vercel
-cd deploy
-vercel          # превью
-vercel --prod   # продакшн
-```
+**Концепт 03**
+- `/c03-hero` — головна
 
-Framework Preset — **Other**, Build Command — пусто, Output Directory — текущая папка.
+**Концепт 02**
+- `/c02-hero` — головна
+- `/c02-categories` — каталог
+- `/c02-categories-slider` — каталог, слайдер
 
-## Вариант 3 — Git
+**Концепт 01**
+- `/c01-hero` — головна
+- `/c01-categories` — усі категорії
+- `/c01-lemonades` — категорія «Концентрати для лимонаду»
+- `/c01-orange` — сторінка товару
 
-Положите содержимое `deploy` в корень репозитория и импортируйте в Vercel (Framework — **Other**, Build Command — пусто, Output Directory — `.`).
+## Структура
 
-## Обновление контента
-
-Скомпилированные файлы вручную не правятся. Исходники в корне проекта: `Monik Hero.dc.html`, `Monik Hero v2.dc.html`, `Monik Hero v3.dc.html`, `Monik Категорії.dc.html` — после изменений соберите выгрузку заново.
-
-## Домен
-
-**Project → Settings → Domains** → добавьте домен и пропишите DNS-записи у регистратора.
+- `support.js` — рантайм, потрібен усім сторінкам (лежить у корені)
+- `assets/` — зображення та логотипи
+- шрифти: Unbounded з Google Fonts, Fixel з jsDelivr (потрібен інтернет)

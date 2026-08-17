@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#E08052"></rect><text x="100" y="132" text-anchor="middle" font-family="Georgia, serif" font-size="96" font-weight="700" fill="#FFF3E3">A</text></svg></template>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #FFF0C7;
+    --cream-hi: #FFF6DD;
+    --page: #FFF3E3;
+    --ink: #261612;
+    --berry: #A82F5B;
+    --mandarin: #D8733F;
+    --orange: #E08052;
+    --card-cherry: #D04D66;
+    --card-lilac: #9A7AC7;
+    --card-pistachio: #8BA64F;
+    --card-cornflower: #638BB8;
+    --card-apricot: #E08052;
+  }
+  html, body { margin: 0; padding: 0; background: #E08052; overflow-x: clip; }
+  body { font-family: Manrope, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #FFF3E3; text-decoration: none; }
+  a:hover { color: #261612; }
+  a:focus-visible { outline: 3px solid #261612; outline-offset: 4px; border-radius: 10px; }
+  a:focus:not(:focus-visible) { outline: none; }
+  button { font-family: inherit; }
+  button:focus:not(:focus-visible) { outline: none; }
+  * { -webkit-tap-highlight-color: transparent; }
+  @keyframes waveShift { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+  @media (prefers-reduced-motion: reduce) { [data-wave] { animation: none !important; } }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--orange);color:var(--page);padding:0 clamp(20px,3.4vw,48px) 0;box-sizing:border-box;overflow-x:clip;">
+
+  <div style="background:var(--orange);margin:0 calc(-1 * clamp(20px,3.4vw,48px));padding:0 clamp(20px,3.4vw,48px);box-sizing:border-box;">
+  <header style="max-width:1344px;margin:0 auto;min-height:88px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 20px;padding:12px 0;box-sizing:border-box;">
+    <a href="#" style="display:block;line-height:0;flex:0 0 auto;order:{{ logoOrder }};margin:{{ logoMargin }}" aria-label="Monik">
+      <img src="assets/monik-logo.svg" alt="Monik" style="width:clamp(122px,13vw,158px);height:auto;aspect-ratio:727.9 / 209.1;display:block;filter:brightness(0) invert(1);" />
+    </a>
+
+    <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
+    <nav style="flex:1 1 320px;order:2;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px clamp(20px,3.6vw,52px);">
+      <a href="#" style="display:inline-flex;align-items:flex-start;height:44px;box-sizing:border-box;padding-top:13px;border-bottom:2px solid transparent;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.06em;color:var(--page);white-space:nowrap;transition:color 200ms ease,border-color 200ms ease;" style-hover="color:#FFFFFF;border-bottom-color:var(--page);" style-focus="outline:2px solid var(--page);outline-offset:4px;">ГОЛОВНА</a>
+      <a href="#" style="display:inline-flex;align-items:flex-start;height:44px;box-sizing:border-box;padding-top:13px;border-bottom:2px solid transparent;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.06em;color:var(--page);white-space:nowrap;transition:color 200ms ease,border-color 200ms ease;" style-hover="color:#FFFFFF;border-bottom-color:var(--page);" style-focus="outline:2px solid var(--page);outline-offset:4px;">ПРОДУКЦІЯ</a>
+      <a href="#" style="display:inline-flex;align-items:flex-start;height:44px;box-sizing:border-box;padding-top:13px;border-bottom:2px solid transparent;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.06em;color:var(--page);white-space:nowrap;transition:color 200ms ease,border-color 200ms ease;" style-hover="color:#FFFFFF;border-bottom-color:var(--page);" style-focus="outline:2px solid var(--page);outline-offset:4px;">НАТХНЕННЯ</a>
+      <a href="#" style="display:inline-flex;align-items:flex-start;height:44px;box-sizing:border-box;padding-top:13px;border-bottom:2px solid transparent;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.06em;color:var(--page);white-space:nowrap;transition:color 200ms ease,border-color 200ms ease;" style-hover="color:#FFFFFF;border-bottom-color:var(--page);" style-focus="outline:2px solid var(--page);outline-offset:4px;">КОНТАКТИ</a>
+    </nav>
+    </sc-if>
+
+    <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
+      <a href="tel:0800215345" style="order:3;flex:0 0 auto;display:inline-flex;align-items:center;height:44px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.02em;color:var(--page);white-space:nowrap;transition:color 200ms ease;" style-hover="color:#FFFFFF;" style-focus="outline:2px solid var(--page);outline-offset:3px;border-radius:4px;">0-800-215-345</a>
+    </sc-if>
+
+    <div style="flex:0 0 auto;position:relative;display:flex;align-items:center;gap:10px;order:{{ langOrder }}">
+      <span aria-hidden="true" style="position:absolute;left:0;top:0;width:42px;height:42px;border-radius:13px;background:var(--page);transition:transform 200ms ease;transform:translateX({{ langX }})"></span>
+      <button type="button" aria-label="Українська" onClick="{{ pickUA }}" onMouseEnter="{{ hoverUA }}" onMouseLeave="{{ hoverOff }}" style="position:relative;z-index:1;width:42px;height:42px;padding:0;border:none;border-radius:13px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-family:Manrope,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;transition:color 200ms ease,background 200ms ease;background:{{ uaBg }};color:{{ uaColor }}" style-focus="outline:2px solid var(--page);outline-offset:3px;">UA</button>
+      <button type="button" aria-label="English" onClick="{{ pickEN }}" onMouseEnter="{{ hoverEN }}" onMouseLeave="{{ hoverOff }}" style="position:relative;z-index:1;width:42px;height:42px;padding:0;border:none;border-radius:13px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-family:Manrope,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;transition:color 200ms ease,background 200ms ease;background:{{ enBg }};color:{{ enColor }}" style-focus="outline:2px solid var(--page);outline-offset:3px;">EN</button>
+    </div>
+
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button type="button" aria-label="Меню" onClick="{{ toggleMenu }}" style="order:1;flex:0 0 auto;width:44px;height:44px;padding:0;border:none;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;" style-focus="outline:2px solid var(--page);outline-offset:3px;border-radius:6px;">
+        <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--page);"></span>
+        <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--page);"></span>
+        <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--page);"></span>
+      </button>
+    </sc-if>
+
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <nav style="order:5;flex:1 1 100%;min-width:0;display:flex;flex-direction:column;padding-bottom:8px;">
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(255,243,227,0.24);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--page);" style-hover="color:#FFFFFF;">ГОЛОВНА</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(255,243,227,0.24);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--page);" style-hover="color:#FFFFFF;">ПРОДУКЦІЯ</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(255,243,227,0.24);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--page);" style-hover="color:#FFFFFF;">НАТХНЕННЯ</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(255,243,227,0.24);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--page);" style-hover="color:#FFFFFF;">КОНТАКТИ</a>
+      </nav>
+    </sc-if>
+  </header>
+  </div>
+
+  <nav aria-label="Хлібні крихти" style="max-width:1344px;margin:0 auto;padding:clamp(16px,1.8vw,24px) 0 0;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font-family:Manrope,sans-serif;font-weight:600;font-size:13px;line-height:1.3;">
+    <a href="#" style="color:rgba(255,243,227,0.72);transition:color 200ms ease;" style-hover="color:#FFF3E3;">Monik</a>
+    <span aria-hidden="true" style="color:rgba(255,243,227,0.44);">—</span>
+    <a href="#" style="color:rgba(255,243,227,0.72);transition:color 200ms ease;" style-hover="color:#FFF3E3;">Каталог</a>
+    <span aria-hidden="true" style="color:rgba(255,243,227,0.44);">—</span>
+    <a href="#" style="color:rgba(255,243,227,0.72);transition:color 200ms ease;" style-hover="color:#FFF3E3;">Концентрати для приготування лимонаду</a>
+    <span aria-hidden="true" style="color:rgba(255,243,227,0.44);">—</span>
+    <span aria-current="page" style="color:#FFF3E3;">Апельсиновий концентрат</span>
+  </nav>
+
+  <section data-screen-label="Товар" style="max-width:1344px;margin:0 auto;padding:clamp(24px,3vw,48px) 0 clamp(56px,7vw,104px);box-sizing:border-box;display:grid;grid-template-columns:{{ gridCols }};align-items:start;gap:{{ gridGap }};">
+
+    <div style="{{ leftStyle }}">
+      <div style="position:relative;margin-top:clamp(16px,2vw,28px);min-height:{{ heroMinH }};display:flex;align-items:center;justify-content:center;">
+        <img src="assets/lemonade-orange.png" alt="Концентрат напою «Домашній лимонад: Апельсин» Monik, 200 мл" style="position:relative;z-index:1;width:100%;max-height:{{ imgMaxH }};height:auto;object-fit:contain;display:block;filter:drop-shadow(0 30px 50px rgba(38,22,18,0.26));" />
+      </div>
+    </div>
+
+    <div style="min-width:0;background:var(--page);color:var(--ink);border-radius:{{ panelRadius }};padding:{{ panelPad }};box-sizing:border-box;">
+      <h2 style="margin:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:{{ h2Size }};line-height:1.0;letter-spacing:-0.03em;color:var(--ink);text-wrap:balance;">Апельсиновий концентрат</h2>
+
+      <div style="margin-top:clamp(20px,2.2vw,28px);display:flex;flex-wrap:wrap;gap:10px;">
+        <span style="display:inline-flex;align-items:center;min-height:42px;padding:0 18px;border-radius:12px;box-sizing:border-box;background:rgba(216,115,63,0.14);font-family:Manrope,sans-serif;font-weight:700;font-size:14px;color:var(--ink);">200 мл</span>
+        <span style="display:inline-flex;align-items:center;min-height:42px;padding:0 18px;border-radius:12px;box-sizing:border-box;background:rgba(216,115,63,0.14);font-family:Manrope,sans-serif;font-weight:700;font-size:14px;color:var(--ink);">До 3 л готового напою</span>
+      </div>
+
+      <div style="margin-top:clamp(28px,3.4vw,48px);padding-top:clamp(22px,2.6vw,32px);border-top:1px solid rgba(38,22,18,0.16);">
+        <h3 style="margin:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:{{ h3Size }};line-height:1.04;letter-spacing:-0.02em;color:var(--ink);">Про продукт</h3>
+        <p style="margin:12px 0 0;font-family:Manrope,sans-serif;font-weight:500;font-size:{{ bodySize }};line-height:1.55;color:rgba(38,22,18,0.78);max-width:62ch;text-wrap:pretty;">Концентрат напою «Домашній лимонад: Апельсин» ароматизований з цукром та підсолоджувачами, 200 мл.</p>
+      </div>
+
+      <div style="margin-top:clamp(24px,2.8vw,36px);padding-top:clamp(22px,2.6vw,32px);border-top:1px solid rgba(38,22,18,0.16);">
+        <h3 style="margin:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:{{ h3Size }};line-height:1.04;letter-spacing:-0.02em;color:var(--ink);">Спосіб приготування</h3>
+        <p style="margin:12px 0 0;font-family:Manrope,sans-serif;font-weight:500;font-size:{{ bodySize }};line-height:1.55;color:rgba(38,22,18,0.78);max-width:62ch;text-wrap:pretty;">Вміст пляшки 200 мл розбавити в 3 л води кімнатної температури та ретельно перемішати. Охолоджувати за бажанням. Можна розбавити газованою водою.</p>
+      </div>
+
+      <div style="margin-top:clamp(24px,2.8vw,36px);padding-top:clamp(22px,2.6vw,32px);border-top:1px solid rgba(38,22,18,0.16);">
+        <h3 style="margin:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:{{ h3Size }};line-height:1.04;letter-spacing:-0.02em;color:var(--ink);">Склад</h3>
+        <p style="margin:12px 0 0;font-family:Manrope,sans-serif;font-weight:500;font-size:{{ bodySize }};line-height:1.55;color:rgba(38,22,18,0.78);max-width:62ch;text-wrap:pretty;">Цукор білий кристалічний, вода питна, сироп глюкозно-фруктозний, регулятор кислотності кислота лимонна, смако-ароматична емульсія «Апельсин», ароматизатор харчовий «Апельсин», стабілізатор (пектин, альгінат натрію), підсолоджувачі (екстракт стевії, сукралоза), консервант сорбат калію. Склад містить барвники харчові «Тартразин» і «Сонячний захід», які можуть мати шкідливий вплив на активність та уважність у дітей.</p>
+      </div>
+
+      <div style="margin-top:clamp(24px,2.8vw,36px);padding-top:clamp(22px,2.6vw,32px);border-top:1px solid rgba(38,22,18,0.16);">
+        <h3 style="margin:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:{{ h3Size }};line-height:1.04;letter-spacing:-0.02em;color:var(--ink);">Поживна цінність</h3>
+        <p style="margin:8px 0 clamp(14px,1.6vw,20px);font-family:Manrope,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--mandarin);">На 100 г продукту</p>
+        <div style="display:flex;flex-direction:column;">
+          <sc-for list="{{ rows }}" as="row" hint-placeholder-count="7">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:{{ rowGap }};padding:14px 0;border-top:1px solid rgba(38,22,18,0.16);">
+              <span style="{{ row.nameStyle }}">{{ row.name }}</span>
+              <span style="{{ row.valueStyle }}">{{ row.value }}</span>
+            </div>
+          </sc-for>
+          <div style="border-top:1px solid rgba(38,22,18,0.16);"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section data-screen-label="Інші товари" style="max-width:1344px;margin:0 auto;padding:0 0 clamp(24px,3vw,40px);box-sizing:border-box;">
+    <h2 style="margin:0 0 clamp(20px,2.4vw,32px);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:{{ h2Size }};line-height:1.0;letter-spacing:-0.03em;color:var(--page);">Інші товари</h2>
+    <div style="display:grid;grid-template-columns:{{ otherCols }};gap:{{ gridGap }};">
+      <sc-for list="{{ otherCards }}" as="card" hint-placeholder-count="2">
+        <a href="#" onMouseEnter="{{ card.on }}" onMouseLeave="{{ card.off }}" onFocus="{{ card.on }}" onBlur="{{ card.off }}" style="{{ card.cardStyle }}">
+          <span aria-hidden="true" style="{{ card.blobStyle }}"></span>
+          <span style="{{ card.textStyle }}">
+            <span style="{{ card.titleStyle }}">{{ card.title }}</span>
+            <span style="{{ card.descStyle }}">{{ card.desc }}</span>
+          </span>
+          <span style="{{ card.imgWrapStyle }}"><img src="{{ card.img }}" alt="{{ card.alt }}" style="{{ card.imgStyle }}" /></span>
+          <span style="{{ card.btnStyle }}"><span style="position:relative;z-index:1;">Переглянути</span><span aria-hidden="true" style="{{ card.dotStyle }}"></span><span aria-hidden="true" style="{{ card.fillStyle }}"></span></span>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+<section data-screen-label="Рецепти" style="background:var(--cream);margin:clamp(24px,3vw,40px) calc(-1 * clamp(20px,3.4vw,48px)) 0;padding:clamp(56px,6vw,88px) clamp(20px,3.4vw,48px) 0;box-sizing:border-box;overflow:hidden;">
+  <div aria-hidden="true" style="position:relative;height:clamp(56px,7vw,124px);margin:calc(-1 * clamp(56px,6vw,88px)) calc(-1 * clamp(20px,3.4vw,48px)) clamp(12px,1.6vw,24px);overflow:hidden;">
+    <svg data-wave="1" viewBox="0 0 1440 200" preserveAspectRatio="none" style="position:absolute;left:0;top:0;width:200%;height:100%;display:block;animation:waveShift 26s linear infinite;will-change:transform;"><path d="M0,44 C90,44 90,164 180,164 C270,164 270,44 360,44 C450,44 450,164 540,164 C630,164 630,44 720,44 C810,44 810,164 900,164 C990,164 990,44 1080,44 C1170,44 1170,164 1260,164 C1350,164 1350,44 1440,44 L1440,0 L0,0 Z" fill="#E08052"></path></svg>
+  </div>
+
+  <div style="max-width:1344px;margin:0 auto;">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px 40px;flex-wrap:wrap;">
+      <div style="min-width:0;flex:1 1 320px;">
+        <h2 style="margin:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:clamp(42px,5vw,64px);line-height:1.04;letter-spacing:-0.03em;color:var(--ink);">Рецепти</h2>
+        <p style="margin:16px 0 0;font-family:Manrope,sans-serif;font-weight:500;font-size:20px;line-height:1.45;color:rgba(38,22,18,0.68);max-width:520px;text-wrap:pretty;">Смачні ідеї з продуктами Monik</p>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;width:{{ recHeadW }}">
+        <div style="height:52px;padding:0 4px;border-radius:16px;background:var(--cream);box-shadow:inset 0 0 0 1px rgba(38,22,18,0.16);display:flex;align-items:center;gap:2px;">
+        <button type="button" aria-label="Попередній рецепт" onClick="{{ recPrev }}" disabled="{{ recAtStart }}" style="width:44px;height:44px;padding:0;border:none;background:transparent;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:background 200ms ease,color 200ms ease,opacity 200ms ease;opacity:{{ recAtStartOpacity }}" style-hover="background:var(--berry);color:var(--cream);" style-focus="outline:2px solid var(--berry);outline-offset:2px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M21 12H3M8.5 6.8 3 12l5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <button type="button" aria-label="Наступний рецепт" onClick="{{ recNext }}" disabled="{{ recAtEnd }}" style="width:44px;height:44px;padding:0;border:none;background:transparent;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:background 200ms ease,color 200ms ease,opacity 200ms ease;opacity:{{ recAtEndOpacity }}" style-hover="background:var(--berry);color:var(--cream);" style-focus="outline:2px solid var(--berry);outline-offset:2px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M3 12h18M15.5 6.8 21 12l-5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        </div>
+        <a href="#" onMouseEnter="{{ ctaOn4 }}" onMouseLeave="{{ ctaOff }}" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:52px;padding:14px clamp(20px,1.8vw,24px);border-radius:10px;box-sizing:border-box;width:{{ recCtaW }};background:var(--cream);box-shadow:inset 0 0 0 1px rgba(38,22,18,0.16);font-family:Manrope,sans-serif;font-weight:700;font-size:16px;transition:color 280ms ease;color:{{ ctaColor4 }}">
+          <span style="position:relative;z-index:1;">Усі рецепти</span>
+          <span aria-hidden="true" style="position:relative;z-index:1;flex:0 0 auto;display:grid;grid-template-columns:9px 9px;grid-template-rows:9px 9px;gap:4px;">
+            <span style="background:currentColor;clip-path:polygon(0 0,100% 0,100% 60%,60% 100%,0 100%);transition:transform 320ms cubic-bezier(0.22,1,0.36,1);transform:{{ ctaGrid4 }}"></span>
+            <span style="background:currentColor;clip-path:polygon(0 0,100% 0,100% 60%,60% 100%,0 100%);transition:transform 320ms cubic-bezier(0.22,1,0.36,1) 50ms;transform:{{ ctaGrid4 }}"></span>
+            <span style="background:currentColor;clip-path:polygon(0 0,100% 0,100% 60%,60% 100%,0 100%);transition:transform 320ms cubic-bezier(0.22,1,0.36,1) 100ms;transform:{{ ctaGrid4 }}"></span>
+            <span style="background:currentColor;clip-path:polygon(0 0,100% 0,100% 60%,60% 100%,0 100%);transition:transform 320ms cubic-bezier(0.22,1,0.36,1) 150ms;transform:{{ ctaGrid4 }}"></span>
+          </span>
+          <span aria-hidden="true" style="position:absolute;right:24px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--berry);transition:transform 420ms cubic-bezier(0.22,1,0.36,1);transform:{{ ctaFill4 }}"></span>
+        </a>
+      </div>
+    </div>
+
+    <div ref="{{ recTrackRef }}" onScroll="{{ recScroll }}" style="margin-top:clamp(32px,4vw,56px);display:flex;align-items:stretch;gap:24px;overflow-x:hidden;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px;touch-action:pan-y;">
+      <sc-for list="{{ recipes }}" as="card" hint-placeholder-count="5">
+        <a href="#" onMouseEnter="{{ card.on }}" onMouseLeave="{{ card.off }}" style="{{ card.cardStyle }}" style-focus="outline:3px solid var(--ink);outline-offset:3px;">
+          <div style="aspect-ratio:1 / 1;width:100%;border-radius:16px;overflow:hidden;background:rgba(255,240,199,0.35);">
+            <img src="{{ card.img }}" alt="{{ card.title }}" style="{{ card.imgStyle }}" />
+          </div>
+          <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(38,22,18,0.62);">{{ card.tag }}</span>
+          <h3 style="margin:0;font-family:Manrope,sans-serif;font-weight:700;font-size:21px;line-height:1.28;letter-spacing:-0.01em;min-height:81px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">{{ card.title }}</h3>
+          <span style="{{ card.btnStyle }}">
+            <span style="position:relative;z-index:1;">Дивитися рецепт</span>
+            <span aria-hidden="true" style="{{ card.nudgeStyle }}"></span><span aria-hidden="true" style="{{ card.fillStyle }}"></span>
+          </span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+  <div style="height:clamp(80px,7vw,100px);"></div>
+</section>
+
+<footer data-screen-label="Footer" style="position:relative;z-index:1;background:var(--ink);border-radius:36px 36px 0 0;padding:clamp(20px,6vw,64px);box-sizing:border-box;color:var(--cream);margin:0 calc(-1 * clamp(20px,3.4vw,48px));">
+  <div style="max-width:1344px;margin:0 auto;display:flex;flex-direction:column;gap:48px;">
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:32px;">
+        <img src="assets/monik-logo.svg" alt="Monik" style="width:150px;height:43.1px;display:block;filter:brightness(0) invert(1);opacity:0.94;" />
+      </div>
+      <div style="display:flex;align-items:center;gap:24px;">
+        <a href="#" aria-label="Facebook" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M14.6 8.4h2.3V5.2h-2.8c-2.6 0-4.3 1.7-4.3 4.3v1.8H7.1v3.2h2.7V21h3.4v-6.5h2.6l.4-3.2h-3V9.6c0-.8.2-1.2 1.4-1.2z"></path></svg>
+        </a>
+        <a href="#" aria-label="YouTube" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M21.4 8.1c-.2-1.5-.8-2.2-2.3-2.4C17.4 5.4 12 5.4 12 5.4s-5.4 0-7.1.3c-1.5.2-2.1.9-2.3 2.4C2.4 9.6 2.4 12 2.4 12s0 2.4.2 3.9c.2 1.5.8 2.2 2.3 2.4 1.7.3 7.1.3 7.1.3s5.4 0 7.1-.3c1.5-.2 2.1-.9 2.3-2.4.2-1.5.2-3.9.2-3.9s0-2.4-.2-3.9zM10.2 15.1V8.9l5.3 3.1-5.3 3.1z"></path></svg>
+        </a>
+        <a href="#" aria-label="Instagram" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" style="display:block;"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"></rect><circle cx="12" cy="12" r="4.1"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        <a href="#" aria-label="Telegram" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M21.7 4.3 2.9 11.5c-.9.3-.9 1.5.1 1.8l4.6 1.4 1.8 5.4c.2.7 1.1.9 1.6.3l2.5-2.6 4.6 3.4c.6.4 1.4.1 1.6-.6l3-14.6c.2-.8-.6-1.5-1.4-1.2zM8.9 14.1l9-5.6-7.5 6.9-.3 3-1.2-4.3z"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav style="display:flex;flex-direction:column;">
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(255,240,199,0.16);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(255,240,199,0.34);">Продукція</a>
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(255,240,199,0.16);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(255,240,199,0.34);">Натхнення</a>
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(255,240,199,0.16);border-bottom:1px solid rgba(255,240,199,0.16);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(255,240,199,0.34);">Контакти</a>
+    </nav>
+
+    <div aria-hidden="true" style="display:flex;justify-content:space-between;align-items:flex-end;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:min(200px,20vw);line-height:0.8;letter-spacing:-0.02em;color:var(--cream);user-select:none;">
+      <span>M</span><span>O</span><span>N</span><span>I</span><span>K</span>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;font-family:Manrope,sans-serif;font-weight:500;font-size:14px;color:rgba(255,240,199,0.6);">
+      <span>© 2026 Monik</span>
+      <a href="#" style="color:rgba(255,240,199,0.6);transition:color 200ms ease;" style-hover="color:var(--cream);">Політика конфіденційності</a>
+      <a href="#" style="display:flex;align-items:center;gap:12px;color:rgba(255,240,199,0.6);transition:color 200ms ease;" style-hover="color:var(--cream);">
+        <span style="font-family:Manrope,sans-serif;font-weight:500;font-size:14px;">Дизайн від</span>
+        <img src="assets/welldone-logo.svg" alt="WellDone" style="display:block;height:18px;width:auto;filter:brightness(0) invert(1);" />
+      </a>
+    </div>
+
+  </div>
+</footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { mobile: false, tablet: false, lang: 'UA', langHover: null, menuOpen: false, other: null, recipe: null, recCta: false, recStart: true, recEnd: false };
+
+  otherItems = [
+    { title: 'Кавун–м’ята', desc: 'Соковитий кавун із прохолодною м’ятною свіжістю.', img: 'assets/lemonade-watermelon.png', color: '#D04D66', deep: '#A2354A' },
+    { title: 'Мохіто', desc: 'Освіжаюче поєднання соковитого лайма та м’яти.', img: 'assets/lemonade-mojito.png', color: '#8BA64F', deep: '#637A31' }
+  ];
+
+  recipeItems = [
+    { tag: 'Сиропи', title: 'Кавово-молочний напій «Вишня в шоколаді»', img: 'assets/v2-recipe-drink.jpg', color: 'var(--card-cherry)' },
+    { tag: 'Джеми', title: 'Мафіни з малиновим джемом', img: 'assets/v2-recipe-muffin.jpg', color: 'var(--card-lilac)' },
+    { tag: 'Кулінарні добавки', title: 'Лляні кульки з медом і родзинками', img: 'assets/v2-recipe-balls.jpg', color: 'var(--card-pistachio)' },
+    { tag: 'Кулінарні добавки', title: 'Маковий рулет', img: 'assets/v2-recipe-roll.jpg', color: 'var(--card-cornflower)' },
+    { tag: 'Джеми', title: 'Пісочне печиво з полуничним джемом', img: 'assets/v2-recipe-cookies.jpg', color: 'var(--card-apricot)' }
+  ];
+
+  recTrackRef = React.createRef();
+
+  recStep() {
+    const el = this.recTrackRef.current;
+    if (!el || !el.firstElementChild) return 300;
+    return el.firstElementChild.getBoundingClientRect().width + 24;
+  }
+
+  recScrollBy = (dir) => {
+    const el = this.recTrackRef.current;
+    if (el) el.scrollBy({ left: dir * this.recStep(), behavior: 'smooth' });
+  };
+
+  recOnScroll = () => {
+    const el = this.recTrackRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    const start = el.scrollLeft <= 2;
+    const end = el.scrollLeft >= max - 2;
+    if (start !== this.state.recStart || end !== this.state.recEnd) this.setState({ recStart: start, recEnd: end });
+  };
+
+  recipeVals() {
+    const mob = this.state.mobile;
+    const hotCta = this.state.recCta;
+    const recipes = this.recipeItems.map((r, i) => {
+      const hot = this.state.recipe === i;
+      return {
+        tag: r.tag,
+        title: r.title,
+        img: r.img,
+        on: ((k) => () => this.setState({ recipe: k }))(i),
+        off: () => this.setState({ recipe: null }),
+        cardStyle: 'flex:0 0 ' + (mob ? 'calc(100% - 8px)' : 'clamp(300px,27vw,384px)') + ';display:flex;flex-direction:column;gap:16px;min-width:0;box-sizing:border-box;padding:14px;border-radius:20px;color:var(--ink);text-decoration:none;background:' + r.color,
+        imgStyle: 'width:100%;height:100%;object-fit:cover;display:block;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:scale(' + (hot ? 1.03 : 1) + ')',
+        btnStyle: 'margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:0 20px;border-radius:10px;box-sizing:border-box;position:relative;overflow:hidden;background:var(--cream);transition:color 300ms ease;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:' + (hot ? 'var(--cream)' : 'var(--ink)'),
+        nudgeStyle: 'position:relative;z-index:1;width:13px;height:13px;flex:0 0 auto;background:currentColor;clip-path:polygon(0 0,100% 0,100% 60%,60% 100%,0 100%);transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:translateX(' + (hot ? '3px' : '0px') + ')',
+        fillStyle: 'position:absolute;right:20px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--ink);transition:transform 280ms cubic-bezier(0.4,0,0.2,1);transform:scale(' + (hot ? 150 : 0) + ')'
+      };
+    });
+
+    return {
+      recipes,
+      recTrackRef: this.recTrackRef,
+      recScroll: this.recOnScroll,
+      recPrev: () => this.recScrollBy(-1),
+      recNext: () => this.recScrollBy(1),
+      recAtStart: !!this.state.recStart,
+      recAtEnd: !!this.state.recEnd,
+      recAtStartOpacity: this.state.recStart ? 0.35 : 1,
+      recAtEndOpacity: this.state.recEnd ? 0.35 : 1,
+      recHeadW: mob ? '100%' : 'auto',
+      recCtaW: mob ? '100%' : 'auto',
+      ctaOn4: () => this.setState({ recCta: true }),
+      ctaOff: () => this.setState({ recCta: false }),
+      ctaColor4: hotCta ? 'var(--cream)' : 'var(--ink)',
+      ctaGrid4: hotCta ? 'translateY(-2px)' : 'translateY(0)',
+      ctaFill4: hotCta ? 'scale(200)' : 'scale(0)'
+    };
+  }
+
+  otherVals() {
+    const mob = this.state.mobile;
+    const radius = mob ? '24px' : '36px';
+    const pad = mob ? '24px' : 'clamp(36px,3vw,40px)';
+
+    const otherCards = this.otherItems.map((c, i) => {
+      const hot = this.state.other === i;
+      return {
+        title: c.title,
+        desc: c.desc,
+        img: c.img,
+        alt: 'Концентрат напою «' + c.title + '» Monik',
+        on: () => this.setState({ other: i }),
+        off: () => this.setState({ other: null }),
+        cardStyle: 'position:relative;overflow:hidden;min-width:0;display:flex;flex-direction:column;text-decoration:none;color:#FFFFFF;box-sizing:border-box;padding:' + pad + ';border-radius:' + radius + ';' + (mob ? 'min-height:min(162vw,600px);' : 'aspect-ratio:4 / 6;') + 'background:' + c.color,
+        blobStyle: 'position:absolute;left:50%;top:34%;width:min(560px,96%);aspect-ratio:1 / 1;transform:translateX(-50%);border-radius:50%;background:rgba(255,255,255,0.10);pointer-events:none;z-index:0;',
+        textStyle: 'position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;',
+        titleStyle: "font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:" + (mob ? '34px' : 'clamp(30px,2.8vw,42px)') + ';line-height:1.02;letter-spacing:-0.02em;color:#FFFFFF;',
+        descStyle: 'font-family:Manrope,sans-serif;font-weight:500;font-size:' + (mob ? '14px' : 'clamp(14px,1.1vw,16px)') + ';line-height:1.4;' + (mob ? '' : 'max-width:30ch;') + 'text-wrap:pretty;color:rgba(255,255,255,0.9);',
+        imgWrapStyle: 'position:relative;z-index:1;flex:1 1 auto;min-height:0;align-self:center;width:100%;margin:' + (mob ? '10px 0 0' : '16px 0 0') + ';display:flex;align-items:flex-end;justify-content:center;',
+        imgStyle: 'width:100%;height:100%;object-fit:contain;object-position:50% 100%;transform-origin:50% 100%;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:scale(' + (hot ? 1.03 : 1) + ')',
+        btnStyle: 'position:relative;z-index:2;overflow:hidden;align-self:center;max-width:100%;margin-top:' + (mob ? '14px' : '18px') + ';display:inline-flex;align-items:center;gap:16px;min-height:' + (mob ? '46px' : '50px') + ';padding:0 22px;border-radius:16px;box-sizing:border-box;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;white-space:nowrap;background:#FFF0C7;transition:color 280ms ease;color:' + (hot ? '#FFF0C7' : c.color),
+        dotStyle: 'position:relative;z-index:1;display:block;flex:0 0 auto;width:10px;height:10px;border-radius:50%;transition:background-color 280ms ease;background:' + (hot ? '#FFF0C7' : c.color),
+        fillStyle: 'position:absolute;right:22px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;transition:transform 280ms cubic-bezier(0.4,0,0.2,1);transform:scale(' + (hot ? 150 : 0) + ');background:' + c.deep
+      };
+    });
+
+    return { otherCards, otherCols: mob ? '1fr' : 'repeat(3,minmax(0,1fr))' };
+  }
+
+  nutrition = [
+    { name: 'Енергетична цінність', value: '1071,0 кДж / 252,0 ккал' },
+    { name: 'Жири', value: '0,0 г' },
+    { name: 'з них насичені', value: '0,0 г', sub: true },
+    { name: 'Вуглеводи', value: '63,0 г' },
+    { name: 'з них цукри', value: '63,0 г', sub: true },
+    { name: 'Білки', value: '0,0 г' },
+    { name: 'Сіль', value: '0,0 г' }
+  ];
+
+  componentDidMount() {
+    this.mqM = window.matchMedia('(max-width: 767px)');
+    this.mqT = window.matchMedia('(min-width: 768px) and (max-width: 1023px)');
+    this.onMqM = (e) => this.setState({ mobile: e.matches, menuOpen: e.matches ? this.state.menuOpen : false });
+    this.onMqT = (e) => this.setState({ tablet: e.matches });
+    this.mqM.addEventListener('change', this.onMqM);
+    this.mqT.addEventListener('change', this.onMqT);
+    this.setState({ mobile: this.mqM.matches, tablet: this.mqT.matches });
+  }
+
+  componentWillUnmount() {
+    if (this.mqM) this.mqM.removeEventListener('change', this.onMqM);
+    if (this.mqT) this.mqT.removeEventListener('change', this.onMqT);
+  }
+
+  langStyle(code) {
+    const active = this.state.lang === code;
+    const hot = this.state.langHover === code;
+    return {
+      bg: active ? 'transparent' : hot ? 'rgba(255,243,227,0.16)' : 'transparent',
+      color: active ? 'var(--orange)' : hot ? '#FFFFFF' : 'rgba(255,243,227,0.72)'
+    };
+  }
+
+  navVals() {
+    return {
+      logoOrder: this.state.mobile ? 2 : 1,
+      logoMargin: this.state.mobile ? '0 auto' : '0',
+      langOrder: 4,
+      langX: this.state.lang === 'EN' ? '52px' : '0px',
+      isMobile: this.state.mobile,
+      deskNav: !this.state.mobile,
+      menuOpen: this.state.mobile && this.state.menuOpen,
+      toggleMenu: () => this.setState((st) => ({ menuOpen: !st.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      uaBg: this.langStyle('UA').bg,
+      uaColor: this.langStyle('UA').color,
+      enBg: this.langStyle('EN').bg,
+      enColor: this.langStyle('EN').color,
+      pickUA: () => this.setState({ lang: 'UA' }),
+      pickEN: () => this.setState({ lang: 'EN' }),
+      hoverUA: () => this.setState({ langHover: 'UA' }),
+      hoverEN: () => this.setState({ langHover: 'EN' }),
+      hoverOff: () => this.setState({ langHover: null })
+    };
+  }
+
+  renderVals() {
+    const mob = this.state.mobile;
+    const tab = this.state.tablet;
+    const bodySize = mob ? '15px' : 'clamp(15px,1.15vw,17px)';
+    const rowGap = mob ? '12px' : '20px';
+
+    const rows = this.nutrition.map((r) => ({
+      name: r.name,
+      value: r.value,
+      nameStyle: 'min-width:0;font-family:Manrope,sans-serif;font-weight:' + (r.sub ? 500 : 600) + ';font-size:' + bodySize + ';line-height:1.4;color:' + (r.sub ? 'rgba(38,22,18,0.62)' : 'rgba(38,22,18,0.86)') + ';' + (r.sub ? 'padding-left:16px;' : ''),
+      valueStyle: 'min-width:0;font-family:Manrope,sans-serif;font-weight:700;font-size:' + bodySize + ';line-height:1.4;text-align:right;color:#261612;' + (mob ? 'text-wrap:pretty;' : 'white-space:nowrap;')
+    }));
+
+    return Object.assign(this.navVals(), this.otherVals(), this.recipeVals(), {
+      rows,
+      bodySize,
+      rowGap,
+      gridCols: mob ? '1fr' : 'minmax(0,44fr) minmax(0,56fr)',
+      gridGap: mob ? '16px' : '24px',
+      leftStyle: mob ? 'min-width:0;' : 'min-width:0;position:sticky;top:108px;',
+      h1Size: mob ? '38px' : tab ? 'clamp(34px,4.6vw,44px)' : 'clamp(40px,3.6vw,58px)',
+      h2Size: mob ? '46px' : tab ? 'clamp(44px,5.4vw,56px)' : 'clamp(52px,4.6vw,72px)',
+      h3Size: mob ? '26px' : 'clamp(26px,2.1vw,32px)',
+      panelRadius: mob ? '24px' : '36px',
+      panelPad: mob ? '20px' : tab ? 'clamp(24px,3vw,32px)' : 'clamp(32px,3.2vw,48px)',
+      heroMinH: mob ? '400px' : tab ? '440px' : '520px',
+      imgMaxH: mob ? '500px' : tab ? '530px' : 'min(76vh,720px)',
+      ghostSize: mob ? '96px' : tab ? '120px' : 'clamp(120px,13vw,200px)'
+    });
+  }
+}
+
+</script>
+</body>
+</html>

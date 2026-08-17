@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#A82F5B"></rect><text x="100" y="132" text-anchor="middle" font-family="Georgia, serif" font-size="96" font-weight="700" fill="#FFF0C7">К</text></svg></template>
+<meta name="ext-resource-dependency" content="assets/tea.png" />
+<meta name="ext-resource-dependency" content="assets/slide-2.jpg" />
+<meta name="ext-resource-dependency" content="assets/syrup.png" />
+<meta name="ext-resource-dependency" content="assets/jam.png" />
+<meta name="ext-resource-dependency" content="assets/spices.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #FFF0C7;
+    --cream-hi: #FFF6DD;
+    --ink: #261612;
+    --berry: #A82F5B;
+  }
+  html, body { margin: 0; padding: 0; background: #FFF0C7; overflow-x: clip; }
+  body { font-family: Manrope, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #A82F5B; text-decoration: none; }
+  a:hover { color: #261612; }
+  a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; border-radius: 12px; }
+  a:focus:not(:focus-visible) { outline: none; }
+  button { font-family: inherit; }
+  button:focus:not(:focus-visible) { outline: none; }
+  * { -webkit-tap-highlight-color: transparent; }
+  @media (prefers-reduced-motion: reduce) { * { transition-duration: 1ms !important; animation: none !important; } }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--cream);color:var(--ink);padding:0 clamp(20px,3.4vw,48px) 0;box-sizing:border-box;overflow-x:clip;">
+
+  <div style="background:var(--berry);margin:0 calc(-1 * clamp(20px,3.4vw,48px));padding:0 clamp(20px,3.4vw,48px);box-sizing:border-box;">
+  <header style="max-width:1344px;margin:0 auto;min-height:88px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 20px;padding:12px 0;box-sizing:border-box;">
+    <a href="#" style="display:block;line-height:0;flex:0 0 auto;order:{{ logoOrder }};margin:{{ logoMargin }}" aria-label="Monik">
+      <img src="assets/monik-logo.svg" alt="Monik" style="width:clamp(122px,13vw,158px);height:auto;aspect-ratio:727.9 / 209.1;display:block;filter:brightness(0) invert(1);" />
+    </a>
+
+    <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
+    <nav style="flex:1 1 320px;order:2;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px clamp(20px,3.6vw,52px);">
+      <a href="#" style="display:inline-flex;align-items:flex-start;height:44px;box-sizing:border-box;padding-top:13px;border-bottom:2px solid transparent;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.06em;color:var(--cream);white-space:nowrap;transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--cream-hi);border-bottom-color:var(--cream);" style-focus="outline:2px solid var(--cream);outline-offset:4px;">ГОЛОВНА</a>
+      <a href="#" style="display:inline-flex;align-items:flex-start;height:44px;box-sizing:border-box;padding-top:13px;border-bottom:2px solid transparent;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.06em;color:var(--cream);white-space:nowrap;transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--cream-hi);border-bottom-color:var(--cream);" style-focus="outline:2px solid var(--cream);outline-offset:4px;">ПРОДУКЦІЯ</a>
+      <a href="#" style="display:inline-flex;align-items:flex-start;height:44px;box-sizing:border-box;padding-top:13px;border-bottom:2px solid transparent;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.06em;color:var(--cream);white-space:nowrap;transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--cream-hi);border-bottom-color:var(--cream);" style-focus="outline:2px solid var(--cream);outline-offset:4px;">НАТХНЕННЯ</a>
+      <a href="#" style="display:inline-flex;align-items:flex-start;height:44px;box-sizing:border-box;padding-top:13px;border-bottom:2px solid transparent;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.06em;color:var(--cream);white-space:nowrap;transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--cream-hi);border-bottom-color:var(--cream);" style-focus="outline:2px solid var(--cream);outline-offset:4px;">КОНТАКТИ</a>
+    </nav>
+    </sc-if>
+
+    <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
+      <a href="tel:0800215345" style="order:3;flex:0 0 auto;display:inline-flex;align-items:center;height:44px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.02em;color:var(--cream);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--cream-hi);" style-focus="outline:2px solid var(--cream);outline-offset:3px;border-radius:4px;">0-800-215-345</a>
+    </sc-if>
+
+    <div style="flex:0 0 auto;position:relative;display:flex;align-items:center;gap:10px;order:4">
+      <span aria-hidden="true" style="position:absolute;left:0;top:0;width:42px;height:42px;border-radius:13px;background:var(--cream);transition:transform 200ms ease;transform:translateX({{ langX }})"></span>
+      <button type="button" aria-label="Українська" onClick="{{ pickUA }}" onMouseEnter="{{ hoverUA }}" onMouseLeave="{{ hoverOff }}" style="position:relative;z-index:1;width:42px;height:42px;padding:0;border:none;border-radius:13px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-family:Manrope,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;transition:color 200ms ease,background 200ms ease;background:{{ uaBg }};color:{{ uaColor }}" style-focus="outline:2px solid var(--cream);outline-offset:3px;">UA</button>
+      <button type="button" aria-label="English" onClick="{{ pickEN }}" onMouseEnter="{{ hoverEN }}" onMouseLeave="{{ hoverOff }}" style="position:relative;z-index:1;width:42px;height:42px;padding:0;border:none;border-radius:13px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-family:Manrope,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;transition:color 200ms ease,background 200ms ease;background:{{ enBg }};color:{{ enColor }}" style-focus="outline:2px solid var(--cream);outline-offset:3px;">EN</button>
+    </div>
+
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button type="button" aria-label="Меню" onClick="{{ toggleMenu }}" style="order:1;flex:0 0 auto;width:44px;height:44px;padding:0;border:none;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;" style-focus="outline:2px solid var(--cream);outline-offset:3px;border-radius:6px;">
+        <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--cream);"></span>
+        <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--cream);"></span>
+        <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--cream);"></span>
+      </button>
+    </sc-if>
+
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <nav style="order:5;flex:1 1 100%;min-width:0;display:flex;flex-direction:column;padding-bottom:8px;">
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(255,240,199,0.22);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--cream-hi);">ГОЛОВНА</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(255,240,199,0.22);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--cream-hi);">ПРОДУКЦІЯ</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(255,240,199,0.22);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--cream-hi);">НАТХНЕННЯ</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(255,240,199,0.22);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--cream-hi);">КОНТАКТИ</a>
+      </nav>
+    </sc-if>
+  </header>
+  </div>
+
+  <section data-screen-label="Hero" style="position:relative;overflow:hidden;background:var(--berry);color:var(--cream);margin:0 calc(-1 * clamp(20px,3.4vw,48px));padding:{{ heroPad }};box-sizing:border-box;min-height:{{ heroMinH }};display:flex;align-items:center;">
+    <div style="position:relative;z-index:1;width:100%;max-width:1344px;margin:0 auto;display:grid;grid-template-columns:{{ heroCols }};align-items:center;gap:{{ heroGap }};">
+      <div style="min-width:0;">
+        <h1 style="margin:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:{{ h1Size }};line-height:0.96;letter-spacing:-0.03em;color:var(--cream);">ПРОДУКЦІЯ MONIK</h1>
+        <p style="margin:clamp(16px,1.8vw,24px) 0 0;font-family:Manrope,sans-serif;font-weight:500;font-size:{{ heroBody }};line-height:1.55;color:rgba(255,240,199,0.88);max-width:44ch;text-wrap:pretty;">Від ягідних чаїв і джемів до сиропів, лимонадів та домашніх десертів — обирайте смак для кожного моменту.</p>
+      </div>
+      <div style="min-width:0;display:flex;align-items:center;justify-content:center;">
+        <img src="assets/slide-2.jpg" alt="Продукція Monik — подача з концентратами та джемами" style="{{ heroImgStyle }}" />
+      </div>
+    </div>
+  </section>
+
+  <main style="max-width:1344px;margin:0 auto;padding:{{ listGap }} 0 0;box-sizing:border-box;">
+    <div style="display:flex;flex-direction:column;gap:{{ listGap }};">
+      <sc-for list="{{ cards }}" as="card" hint-placeholder-count="12">
+        <article style="{{ card.blockStyle }}">
+          <div style="{{ card.textStyle }}">
+            <h2 style="{{ card.titleStyle }}">{{ card.title }}</h2>
+            <p style="{{ card.descStyle }}">{{ card.desc }}</p>
+            <a href="#" onMouseEnter="{{ card.on }}" onMouseLeave="{{ card.off }}" onFocus="{{ card.on }}" onBlur="{{ card.off }}" style="{{ card.linkStyle }}"><span style="position:relative;z-index:1;">Переглянути товари</span><span aria-hidden="true" style="{{ card.arrowStyle }}"></span><span aria-hidden="true" style="{{ card.fillStyle }}"></span></a>
+          </div>
+          <div style="{{ card.stageStyle }}">
+            <img src="{{ card.img }}" alt="{{ card.alt }}" loading="lazy" style="{{ card.imgStyle }}" />
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </main>
+
+<footer data-screen-label="Footer" style="position:relative;z-index:1;background:var(--ink);border-radius:36px 36px 0 0;padding:clamp(20px,6vw,64px);box-sizing:border-box;color:var(--cream);margin:clamp(56px,7vw,110px) calc(-1 * clamp(20px,3.4vw,48px)) 0;">
+  <div style="max-width:1344px;margin:0 auto;display:flex;flex-direction:column;gap:48px;">
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:32px;">
+        <img src="assets/monik-logo.svg" alt="Monik" style="width:150px;height:43.1px;display:block;filter:brightness(0) invert(1);opacity:0.94;" />
+      </div>
+      <div style="display:flex;align-items:center;gap:24px;">
+        <a href="#" aria-label="Facebook" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M14.6 8.4h2.3V5.2h-2.8c-2.6 0-4.3 1.7-4.3 4.3v1.8H7.1v3.2h2.7V21h3.4v-6.5h2.6l.4-3.2h-3V9.6c0-.8.2-1.2 1.4-1.2z"></path></svg>
+        </a>
+        <a href="#" aria-label="YouTube" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M21.4 8.1c-.2-1.5-.8-2.2-2.3-2.4C17.4 5.4 12 5.4 12 5.4s-5.4 0-7.1.3c-1.5.2-2.1.9-2.3 2.4C2.4 9.6 2.4 12 2.4 12s0 2.4.2 3.9c.2 1.5.8 2.2 2.3 2.4 1.7.3 7.1.3 7.1.3s5.4 0 7.1-.3c1.5-.2 2.1-.9 2.3-2.4.2-1.5.2-3.9.2-3.9s0-2.4-.2-3.9zM10.2 15.1V8.9l5.3 3.1-5.3 3.1z"></path></svg>
+        </a>
+        <a href="#" aria-label="Instagram" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" style="display:block;"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"></rect><circle cx="12" cy="12" r="4.1"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        <a href="#" aria-label="Telegram" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M21.7 4.3 2.9 11.5c-.9.3-.9 1.5.1 1.8l4.6 1.4 1.8 5.4c.2.7 1.1.9 1.6.3l2.5-2.6 4.6 3.4c.6.4 1.4.1 1.6-.6l3-14.6c.2-.8-.6-1.5-1.4-1.2zM8.9 14.1l9-5.6-7.5 6.9-.3 3-1.2-4.3z"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav style="display:flex;flex-direction:column;">
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(255,240,199,0.16);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(255,240,199,0.34);">Продукція</a>
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(255,240,199,0.16);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(255,240,199,0.34);">Натхнення</a>
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(255,240,199,0.16);border-bottom:1px solid rgba(255,240,199,0.16);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(255,240,199,0.34);">Контакти</a>
+    </nav>
+
+    <div aria-hidden="true" style="display:flex;justify-content:space-between;align-items:flex-end;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:min(200px,20vw);line-height:0.8;letter-spacing:-0.02em;color:var(--cream);user-select:none;">
+      <span>M</span><span>O</span><span>N</span><span>I</span><span>K</span>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;font-family:Manrope,sans-serif;font-weight:500;font-size:14px;color:rgba(255,240,199,0.6);">
+      <span>© 2026 Monik</span>
+      <a href="#" style="color:rgba(255,240,199,0.6);transition:color 200ms ease;" style-hover="color:var(--cream);">Політика конфіденційності</a>
+      <a href="#" style="display:flex;align-items:center;gap:12px;color:rgba(255,240,199,0.6);transition:color 200ms ease;" style-hover="color:var(--cream);">
+        <span style="font-family:Manrope,sans-serif;font-weight:500;font-size:14px;">Дизайн від</span>
+        <img src="assets/welldone-logo.svg" alt="WellDone" style="display:block;height:18px;width:auto;filter:brightness(0) invert(1);" />
+      </a>
+    </div>
+
+  </div>
+</footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { mobile: false, tablet: false, hot: null, lang: 'UA', langHover: null, menuOpen: false };
+
+  cats = [
+    { title: 'Ягідні чаї', desc: 'Насичені ягідні суміші для ароматних гарячих і холодних напоїв.', img: 'assets/tea.png', color: '#A82F5B', fg: '#FFF0C7' },
+    { title: 'Сиропи до кави', desc: 'Смаки, що легко перетворюють звичну каву на особливу.', img: 'assets/syrup.png', color: '#673323', fg: '#FFF0C7' },
+    { title: 'Джеми', desc: 'Густі фруктово-ягідні джеми для сніданків, випічки та десертів.', img: 'assets/jam.png', color: '#7F60B5', fg: '#FFF0C7' },
+    { title: 'Кулінарні добавки', desc: 'Яскраві смакові акценти для домашніх страв, напоїв і випічки.', img: 'assets/spices.png', color: '#D8733F', fg: '#261612' },
+    { title: 'Топінги', desc: 'Фінальний штрих для морозива, млинців, вафель і улюблених десертів.', img: 'assets/jam.png', color: '#F97C85', fg: '#261612' },
+    { title: 'Сиропи для приготування коктейлів', desc: 'Основа для виразних домашніх коктейлів — алкогольних і безалкогольних.', img: 'assets/syrup.png', color: '#617CB8', fg: '#261612' },
+    { title: 'Концентрати для приготування лимонаду', desc: 'Домашній лимонад із насиченим смаком — просто додайте воду.', img: 'assets/lemonade-orange.png', color: '#E09B32', fg: '#261612' },
+    { title: 'Напої сухі розчинні Lito', desc: 'Зручні сухі суміші для швидкого приготування улюблених напоїв.', img: 'assets/tea.png', color: '#8BA64F', fg: '#261612' },
+    { title: 'Сухі суміші для приготування желе', desc: 'Яскраве желе з насиченим смаком для простих домашніх десертів.', img: 'assets/lemonade-watermelon.png', color: '#B83F57', fg: '#FFF0C7' },
+    { title: 'Сухі суміші для приготування киселю', desc: 'Густий ягідний напій, який легко приготувати за кілька хвилин.', img: 'assets/jam.png', color: '#8B3F72', fg: '#FFF0C7' },
+    { title: 'Сухі суміші для приготування морозива', desc: 'Суміші для ніжного домашнього морозива без зайвих складнощів.', img: 'assets/lemonade-mojito.png', color: '#9A7AC7', fg: '#261612' },
+    { title: 'Горіхи та сухофрукти', desc: 'Добірні горіхи та сухофрукти для перекусу, випічки й щоденних страв.', img: 'assets/spices.png', color: '#A65332', fg: '#FFF0C7' }
+  ];
+
+  componentDidMount() {
+    this.mqM = window.matchMedia('(max-width: 767px)');
+    this.mqT = window.matchMedia('(min-width: 768px) and (max-width: 1023px)');
+    this.onMqM = (e) => this.setState({ mobile: e.matches, menuOpen: e.matches ? this.state.menuOpen : false });
+    this.onMqT = (e) => this.setState({ tablet: e.matches });
+    this.mqM.addEventListener('change', this.onMqM);
+    this.mqT.addEventListener('change', this.onMqT);
+    this.setState({ mobile: this.mqM.matches, tablet: this.mqT.matches });
+  }
+
+  componentWillUnmount() {
+    if (this.mqM) this.mqM.removeEventListener('change', this.onMqM);
+    if (this.mqT) this.mqT.removeEventListener('change', this.onMqT);
+  }
+
+  langStyle(code) {
+    const active = this.state.lang === code;
+    const hot = this.state.langHover === code;
+    return {
+      bg: active ? 'transparent' : hot ? 'rgba(255,240,199,0.14)' : 'transparent',
+      color: active ? 'var(--berry)' : hot ? 'var(--cream-hi)' : 'rgba(255,240,199,0.72)'
+    };
+  }
+
+  renderVals() {
+    const mob = this.state.mobile;
+    const tab = this.state.tablet;
+    const radius = mob ? '24px' : '36px';
+    const pad = mob ? '20px' : tab ? 'clamp(36px,4.4vw,40px)' : 'clamp(40px,3.6vw,56px)';
+
+    const cards = this.cats.map((c, i) => {
+      const hot = this.state.hot === i;
+      return {
+        title: c.title,
+        desc: c.desc,
+        img: c.img,
+        alt: c.title + ' Monik — продуктова композиція',
+        on: ((k) => () => this.setState({ hot: k }))(i),
+        off: () => this.setState({ hot: null }),
+        blockStyle: 'display:grid;grid-template-columns:' + (mob ? '1fr' : tab ? 'minmax(0,44fr) minmax(0,56fr)' : 'minmax(0,46fr) minmax(0,54fr)') + ';align-items:stretch;overflow:hidden;border-radius:' + radius + ';background:var(--cream);' + (mob ? '' : 'min-height:' + (tab ? 'clamp(420px,52vw,480px)' : 'clamp(500px,38vw,560px)') + ';'),
+        textStyle: 'min-width:0;box-sizing:border-box;padding:' + pad + ';display:flex;flex-direction:column;justify-content:center;gap:' + (mob ? '14px' : 'clamp(16px,1.6vw,22px)') + ';',
+        titleStyle: "margin:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:" + (mob ? 'clamp(34px,9vw,40px)' : tab ? 'clamp(38px,4.6vw,52px)' : 'clamp(44px,4.4vw,68px)') + ';line-height:0.98;letter-spacing:-0.03em;text-wrap:pretty;color:' + c.color,
+        descStyle: 'margin:0;font-family:Manrope,sans-serif;font-weight:500;font-size:' + (mob ? '16px' : 'clamp(17px,1.3vw,19px)') + ';line-height:1.55;max-width:440px;text-wrap:pretty;color:var(--ink);',
+        linkStyle: 'position:relative;overflow:hidden;align-self:flex-start;display:inline-flex;align-items:center;gap:16px;min-height:' + (mob ? '48px' : '52px') + ';padding:0 22px;border-radius:17px;box-sizing:border-box;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;white-space:nowrap;transition:color 280ms ease;box-shadow:inset 0 0 0 1px ' + c.color + ';color:' + (hot ? c.fg : c.color),
+        arrowStyle: 'position:relative;z-index:1;display:block;flex:0 0 auto;width:10px;height:10px;border-radius:50%;transition:background-color 280ms ease;background:' + (hot ? c.fg : c.color),
+        fillStyle: 'position:absolute;right:22px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;transition:transform 280ms cubic-bezier(0.4,0,0.2,1);transform:scale(' + (hot ? 150 : 0) + ');background:' + c.color,
+        stageStyle: 'min-width:0;box-sizing:border-box;padding:' + (mob ? '20px' : 'clamp(24px,2.4vw,36px)') + ';display:flex;align-items:center;justify-content:center;' + (mob ? 'aspect-ratio:4 / 3;' : '') + 'background:' + c.color,
+        imgStyle: 'display:block;width:100%;max-width:100%;height:' + (mob ? '84%' : '82%') + ';object-fit:contain;object-position:50% 55%;filter:drop-shadow(0 26px 34px rgba(38,22,18,0.28));transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:scale(' + (hot ? 1.02 : 1) + ')'
+      };
+    });
+
+    return {
+      cards,
+      radius,
+      listGap: mob ? '16px' : '24px',
+      heroCols: mob ? '1fr' : tab ? 'minmax(0,44fr) minmax(0,56fr)' : 'minmax(0,44fr) minmax(0,56fr)',
+      heroGap: mob ? '24px' : 'clamp(24px,3vw,48px)',
+      heroPad: mob ? '20px' : tab ? 'clamp(36px,4.4vw,44px)' : 'clamp(56px,4.4vw,64px)',
+      heroMinH: mob ? 'calc(100svh - 92px)' : tab ? 'calc(100vh - 92px)' : 'calc(100vh - 92px)',
+      h1Size: mob ? 'clamp(46px,13vw,60px)' : tab ? 'clamp(58px,7vw,76px)' : 'clamp(72px,6.6vw,104px)',
+      heroBody: mob ? '16px' : 'clamp(17px,1.3vw,19px)',
+      heroImgCols: mob ? 'repeat(2,minmax(0,1fr))' : 'repeat(3,minmax(0,1fr))',
+      heroImgStyle: 'display:block;width:100%;max-width:100%;' + (mob ? 'height:auto;aspect-ratio:4 / 3;' : 'height:clamp(320px,32vw,440px);') + 'object-fit:cover;object-position:50% 50%;border-radius:24px;',
+      ghostStyle: "position:absolute;left:" + (mob ? '20px' : 'clamp(40px,4vw,56px)') + ";bottom:" + (mob ? '-10px' : '-4%') + ";margin:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:" + (mob ? '96px' : 'clamp(140px,15vw,240px)') + ";line-height:0.8;letter-spacing:-0.04em;white-space:nowrap;color:rgba(255,240,199,0.06);pointer-events:none;z-index:0;",
+      logoOrder: mob ? 2 : 1,
+      logoMargin: mob ? '0 auto' : '0',
+      langX: this.state.lang === 'EN' ? '52px' : '0px',
+      isMobile: mob,
+      deskNav: !mob,
+      menuOpen: mob && this.state.menuOpen,
+      toggleMenu: () => this.setState((st) => ({ menuOpen: !st.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      uaBg: this.langStyle('UA').bg,
+      uaColor: this.langStyle('UA').color,
+      enBg: this.langStyle('EN').bg,
+      enColor: this.langStyle('EN').color,
+      pickUA: () => this.setState({ lang: 'UA' }),
+      pickEN: () => this.setState({ lang: 'EN' }),
+      hoverUA: () => this.setState({ langHover: 'UA' }),
+      hoverEN: () => this.setState({ langHover: 'EN' }),
+      hoverOff: () => this.setState({ langHover: null })
+    };
+  }
+}
+
+</script>
+</body>
+</html>

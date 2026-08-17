@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="ext-resource-dependency" content="assets/tea.png" />
+<meta name="ext-resource-dependency" content="assets/syrup.png" />
+<meta name="ext-resource-dependency" content="assets/jam.png" />
+<meta name="ext-resource-dependency" content="assets/spices.png" />
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#D8733F"></rect><text x="100" y="132" text-anchor="middle" font-family="Georgia, serif" font-size="96" font-weight="700" fill="#FFF0C7">M</text></svg></template>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #FFF0C7;
+    --page: #FFF3E3;
+    --cream-hi: #FFF6DD;
+    --sand: #F7E3BE;
+    --ink: #261612;
+    --berry: #A82F5B;
+    --cocoa: #673323;
+    --grape: #7F60B5;
+    --mandarin: #D8733F;
+    --blue: #617CB8;
+  }
+  html, body { margin: 0; padding: 0; background: #FFF3E3; overflow-x: clip; }
+  body { font-family: Manrope, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #A82F5B; text-decoration: none; }
+  a:hover { color: #261612; }
+  a:focus-visible { outline: 2px solid #261612; outline-offset: 2px; border-radius: 12px; }
+  a:focus:not(:focus-visible) { outline: none; }
+  * { -webkit-tap-highlight-color: transparent; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--page);color:var(--ink);padding:0 clamp(20px,3.4vw,48px) 0;box-sizing:border-box;overflow-x:clip;">
+
+  <div style="background:var(--page);margin:0 calc(-1 * clamp(20px,3.4vw,48px));padding:0 clamp(20px,3.4vw,48px);box-sizing:border-box;">
+  <header style="max-width:1344px;margin:0 auto;min-height:88px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 20px;padding:12px 0;box-sizing:border-box;">
+    <a href="#" style="display:block;line-height:0;flex:0 0 auto;order:{{ logoOrder }};margin:{{ logoMargin }}" aria-label="Monik">
+      <img src="assets/monik-logo.svg" alt="Monik" style="width:clamp(122px,13vw,158px);height:auto;aspect-ratio:727.9 / 209.1;display:block;" />
+    </a>
+
+    <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
+    <nav style="flex:1 1 320px;order:2;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px clamp(20px,3.6vw,52px);">
+      <a href="#" style="display:inline-flex;align-items:flex-start;height:44px;box-sizing:border-box;padding-top:13px;border-bottom:2px solid transparent;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.06em;color:var(--ink);white-space:nowrap;transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-bottom-color:var(--ink);" style-focus="outline:2px solid var(--ink);outline-offset:4px;">ГОЛОВНА</a>
+      <a href="#" style="display:inline-flex;align-items:flex-start;height:44px;box-sizing:border-box;padding-top:13px;border-bottom:2px solid transparent;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.06em;color:var(--ink);white-space:nowrap;transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-bottom-color:var(--ink);" style-focus="outline:2px solid var(--ink);outline-offset:4px;">ПРОДУКЦІЯ</a>
+      <a href="#" style="display:inline-flex;align-items:flex-start;height:44px;box-sizing:border-box;padding-top:13px;border-bottom:2px solid transparent;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.06em;color:var(--ink);white-space:nowrap;transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-bottom-color:var(--ink);" style-focus="outline:2px solid var(--ink);outline-offset:4px;">НАТХНЕННЯ</a>
+      <a href="#" style="display:inline-flex;align-items:flex-start;height:44px;box-sizing:border-box;padding-top:13px;border-bottom:2px solid transparent;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.06em;color:var(--ink);white-space:nowrap;transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-bottom-color:var(--ink);" style-focus="outline:2px solid var(--ink);outline-offset:4px;">КОНТАКТИ</a>
+    </nav>
+    </sc-if>
+
+    <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
+      <a href="tel:0800215345" style="order:3;flex:0 0 auto;display:inline-flex;align-items:center;height:44px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.02em;color:var(--ink);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);" style-focus="outline:2px solid var(--ink);outline-offset:3px;border-radius:4px;">0-800-215-345</a>
+    </sc-if>
+
+    <div style="flex:0 0 auto;position:relative;display:flex;align-items:center;gap:10px;order:{{ langOrder }}">
+      <span aria-hidden="true" style="position:absolute;left:0;top:0;width:42px;height:42px;border-radius:13px;background:var(--ink);transition:transform 200ms ease;transform:translateX({{ langX }})"></span>
+      <button type="button" aria-label="Українська" onClick="{{ pickUA }}" onMouseEnter="{{ hoverUA }}" onMouseLeave="{{ hoverOff }}" style="position:relative;z-index:1;width:42px;height:42px;padding:0;border:none;border-radius:13px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-family:Manrope,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;transition:color 200ms ease,background 200ms ease;background:{{ uaBg }};color:{{ uaColor }}" style-focus="outline:2px solid var(--ink);outline-offset:3px;">UA</button>
+      <button type="button" aria-label="English" onClick="{{ pickEN }}" onMouseEnter="{{ hoverEN }}" onMouseLeave="{{ hoverOff }}" style="position:relative;z-index:1;width:42px;height:42px;padding:0;border:none;border-radius:13px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-family:Manrope,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;transition:color 200ms ease,background 200ms ease;background:{{ enBg }};color:{{ enColor }}" style-focus="outline:2px solid var(--ink);outline-offset:3px;">EN</button>
+    </div>
+
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button type="button" aria-label="Меню" onClick="{{ toggleMenu }}" style="order:1;flex:0 0 auto;width:44px;height:44px;padding:0;border:none;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;" style-focus="outline:2px solid var(--ink);outline-offset:3px;border-radius:6px;">
+        <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--ink);"></span>
+        <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--ink);"></span>
+        <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--ink);"></span>
+      </button>
+    </sc-if>
+
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <nav style="order:5;flex:1 1 100%;min-width:0;display:flex;flex-direction:column;padding-bottom:8px;">
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(38,22,18,0.16);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--ink);" style-hover="color:var(--berry);">ГОЛОВНА</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(38,22,18,0.16);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--ink);" style-hover="color:var(--berry);">ПРОДУКЦІЯ</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(38,22,18,0.16);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--ink);" style-hover="color:var(--berry);">НАТХНЕННЯ</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(38,22,18,0.16);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--ink);" style-hover="color:var(--berry);">КОНТАКТИ</a>
+      </nav>
+    </sc-if>
+  </header>
+  </div>
+
+  <nav aria-label="Хлібні крихти" style="max-width:1344px;margin:0 auto;padding:clamp(16px,1.8vw,24px) 0 0;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font-family:Manrope,sans-serif;font-weight:600;font-size:13px;line-height:1.3;">
+    <a href="#" style="color:rgba(38,22,18,0.6);transition:color 200ms ease;" style-hover="color:var(--ink);">Monik</a>
+    <span aria-hidden="true" style="color:rgba(38,22,18,0.36);">—</span>
+    <span aria-current="page" style="color:var(--ink);">Каталог</span>
+  </nav>
+
+  <section data-screen-label="Постерна витрина" style="max-width:1344px;margin:0 auto;padding:clamp(28px,3.4vw,56px) 0 clamp(56px,7vw,104px);box-sizing:border-box;">
+    <h1 style="margin:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:min(96px,max(clamp(52px,12vw,68px),6.4vw));line-height:1.02;letter-spacing:-0.03em;color:var(--ink);">Усі категорії</h1>
+    <p style="margin:clamp(14px,1.6vw,22px) 0 clamp(28px,3.4vw,48px);font-family:Manrope,sans-serif;font-weight:500;font-size:clamp(17px,1.5vw,21px);line-height:1.45;color:rgba(38,22,18,0.68);max-width:540px;text-wrap:pretty;">Знайди свій смак серед продукції Monik.</p>
+
+    <div style="display:grid;grid-template-columns:{{ posterCols }};grid-auto-rows:{{ posterRows }};gap:{{ posterGap }};">
+      <sc-for list="{{ posters }}" as="card" hint-placeholder-count="4">
+        <a href="#" onMouseEnter="{{ card.on }}" onMouseLeave="{{ card.off }}" onFocus="{{ card.on }}" onBlur="{{ card.off }}" style="{{ card.cardStyle }}">
+          <span aria-hidden="true" style="{{ card.imgWrapStyle }}"><img src="{{ card.img }}" alt="" style="{{ card.imgStyle }}" /></span>
+          <span style="{{ card.textStyle }}">
+            <span style="{{ card.titleStyle }}">{{ card.title }}</span>
+            <span style="{{ card.noteStyle }}">{{ card.note }}</span>
+          </span>
+          <span style="{{ card.btnStyle }}"><span style="position:relative;z-index:1;">Переглянути товари</span><span aria-hidden="true" style="{{ card.btnDotStyle }}"></span><span aria-hidden="true" style="{{ card.btnFillStyle }}"></span></span>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <section data-screen-label="Hero" style="max-width:1344px;margin:0 auto;padding:clamp(44px,5.4vw,84px) 0 clamp(26px,3vw,44px);box-sizing:border-box;border-top:1px solid rgba(38,22,18,0.14);">
+    <h1 style="margin:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:min(96px,max(clamp(52px,12vw,68px),6.4vw));line-height:1.02;letter-spacing:-0.03em;color:var(--ink);">Усі категорії</h1>
+    <p style="margin:clamp(14px,1.6vw,22px) 0 0;font-family:Manrope,sans-serif;font-weight:500;font-size:clamp(17px,1.5vw,21px);line-height:1.45;color:rgba(38,22,18,0.68);max-width:520px;text-wrap:pretty;">Обирай те, що смакує саме тобі.</p>
+  </section>
+
+  <section data-screen-label="Каталог" style="max-width:1344px;margin:0 auto;display:grid;grid-template-columns:{{ gridCols }};align-items:start;gap:{{ gridGap }};">
+
+    <div onKeyDown="{{ onKeys }}" onMouseLeave="{{ onListLeave }}" style="min-width:0;">
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;">
+        <sc-for list="{{ rows }}" as="row" hint-placeholder-count="4">
+          <li style="min-width:0;border-top:1px solid rgba(38,22,18,0.14);">
+            <a href="#" ref="{{ row.ref }}" onMouseEnter="{{ row.activate }}" onFocus="{{ row.activate }}" onClick="{{ row.activate }}" style="{{ row.linkStyle }}">
+              <span aria-hidden="true" style="{{ row.numStyle }}">{{ row.num }}</span>
+              <span style="min-width:0;flex:1 1 auto;display:flex;flex-direction:column;gap:6px;">
+                <span style="{{ row.titleStyle }}">{{ row.title }}</span>
+                <span style="{{ row.descStyle }}">{{ row.desc }}</span>
+              </span>
+              <span aria-hidden="true" style="{{ row.thumbWrapStyle }}"><img src="{{ row.img }}" alt="" style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block;" /></span>
+              <span style="{{ row.btnStyle }}"><span style="position:relative;z-index:1;">Переглянути товари</span><span aria-hidden="true" style="{{ row.btnDotStyle }}"></span><span aria-hidden="true" style="{{ row.btnFillStyle }}"></span></span>
+            </a>
+          </li>
+        </sc-for>
+      </ul>
+      <div style="border-top:1px solid rgba(38,22,18,0.14);"></div>
+    </div>
+
+      <div aria-hidden="true" style="{{ stageWrapStyle }}">
+        <div style="position:relative;width:100%;height:{{ stageH }};border-radius:36px;overflow:hidden;transition:background-color 400ms ease;background:{{ stageColor }}">
+          <div style="position:absolute;left:10%;top:-8%;width:min(560px,88%);aspect-ratio:27 / 18;border-radius:50%;transition:background-color 400ms ease;background:{{ stageBlob }}"></div>
+          <span style="position:absolute;left:clamp(24px,2.6vw,40px);top:clamp(10px,1.4vw,20px);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:clamp(110px,15vw,220px);line-height:0.82;letter-spacing:-0.04em;pointer-events:none;transition:color 400ms ease;color:{{ stageGhost }}">{{ stageNum }}</span>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:clamp(24px,2.6vw,44px);box-sizing:border-box;">
+            <sc-for list="{{ rows }}" as="row" hint-placeholder-count="4">
+              <img src="{{ row.img }}" alt="" style="{{ row.stageImgStyle }}" />
+            </sc-for>
+          </div>
+          <div style="position:absolute;left:clamp(24px,2.6vw,40px);right:clamp(24px,2.6vw,40px);bottom:clamp(24px,2.6vw,38px);display:flex;flex-direction:column;gap:10px;">
+            <span style="font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:clamp(34px,3.8vw,56px);line-height:1.02;letter-spacing:-0.03em;text-wrap:pretty;transition:color 400ms ease;color:{{ stageFg }}">{{ stageTitle }}</span>
+            <span style="font-family:Manrope,sans-serif;font-weight:500;font-size:clamp(15px,1.2vw,18px);line-height:1.45;max-width:44ch;text-wrap:pretty;transition:color 400ms ease;color:{{ stageFgSoft }}">{{ stageDesc }}</span>
+          </div>
+        </div>
+      </div>
+
+  </section>
+
+<footer data-screen-label="Footer" style="position:relative;z-index:1;background:var(--ink);border-radius:36px 36px 0 0;padding:clamp(20px,6vw,64px);box-sizing:border-box;color:var(--cream);margin:clamp(56px,7vw,110px) calc(-1 * clamp(20px,3.4vw,48px)) 0;">
+  <div style="max-width:1344px;margin:0 auto;display:flex;flex-direction:column;gap:48px;">
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:32px;">
+        <img src="assets/monik-logo.svg" alt="Monik" style="width:150px;height:43.1px;display:block;filter:brightness(0) invert(1);opacity:0.94;" />
+      </div>
+      <div style="display:flex;align-items:center;gap:24px;">
+        <a href="#" aria-label="Facebook" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M14.6 8.4h2.3V5.2h-2.8c-2.6 0-4.3 1.7-4.3 4.3v1.8H7.1v3.2h2.7V21h3.4v-6.5h2.6l.4-3.2h-3V9.6c0-.8.2-1.2 1.4-1.2z"></path></svg>
+        </a>
+        <a href="#" aria-label="YouTube" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M21.4 8.1c-.2-1.5-.8-2.2-2.3-2.4C17.4 5.4 12 5.4 12 5.4s-5.4 0-7.1.3c-1.5.2-2.1.9-2.3 2.4C2.4 9.6 2.4 12 2.4 12s0 2.4.2 3.9c.2 1.5.8 2.2 2.3 2.4 1.7.3 7.1.3 7.1.3s5.4 0 7.1-.3c1.5-.2 2.1-.9 2.3-2.4.2-1.5.2-3.9.2-3.9s0-2.4-.2-3.9zM10.2 15.1V8.9l5.3 3.1-5.3 3.1z"></path></svg>
+        </a>
+        <a href="#" aria-label="Instagram" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" style="display:block;"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"></rect><circle cx="12" cy="12" r="4.1"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        <a href="#" aria-label="Telegram" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M21.7 4.3 2.9 11.5c-.9.3-.9 1.5.1 1.8l4.6 1.4 1.8 5.4c.2.7 1.1.9 1.6.3l2.5-2.6 4.6 3.4c.6.4 1.4.1 1.6-.6l3-14.6c.2-.8-.6-1.5-1.4-1.2zM8.9 14.1l9-5.6-7.5 6.9-.3 3-1.2-4.3z"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav style="display:flex;flex-direction:column;">
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(255,240,199,0.16);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(255,240,199,0.34);">Продукція</a>
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(255,240,199,0.16);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(255,240,199,0.34);">Натхнення</a>
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(255,240,199,0.16);border-bottom:1px solid rgba(255,240,199,0.16);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(255,240,199,0.34);">Контакти</a>
+    </nav>
+
+    <div aria-hidden="true" style="display:flex;justify-content:space-between;align-items:flex-end;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:min(200px,20vw);line-height:0.8;letter-spacing:-0.02em;color:var(--cream);user-select:none;">
+      <span>M</span><span>O</span><span>N</span><span>I</span><span>K</span>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;font-family:Manrope,sans-serif;font-weight:500;font-size:14px;color:rgba(255,240,199,0.6);">
+      <span>© 2026 Monik</span>
+      <a href="#" style="color:rgba(255,240,199,0.6);transition:color 200ms ease;" style-hover="color:var(--cream);">Політика конфіденційності</a>
+      <a href="#" style="display:flex;align-items:center;gap:12px;color:rgba(255,240,199,0.6);transition:color 200ms ease;" style-hover="color:var(--cream);">
+        <span style="font-family:Manrope,sans-serif;font-weight:500;font-size:14px;">Дизайн від</span>
+        <img src="assets/welldone-logo.svg" alt="WellDone" style="display:block;height:18px;width:auto;filter:brightness(0) invert(1);" />
+      </a>
+    </div>
+
+  </div>
+</footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showNumbers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Список&quot;},&quot;posterCount&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:12,&quot;min&quot;:1,&quot;max&quot;:12,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Постерна витрина&quot;}}">
+class Component extends DCLogic {
+  state = { active: 0, mobile: false, tablet: false, poster: null, lang: 'UA', langHover: null, menuOpen: false };
+
+  langStyle(code) {
+    const active = this.state.lang === code;
+    const hot = this.state.langHover === code;
+    return {
+      bg: active ? 'transparent' : hot ? 'rgba(38,22,18,0.08)' : 'transparent',
+      color: active ? 'var(--cream)' : hot ? 'var(--ink)' : 'rgba(38,22,18,0.6)'
+    };
+  }
+
+  navVals() {
+    return {
+      logoOrder: this.state.mobile ? 2 : 1,
+      logoMargin: this.state.mobile ? '0 auto' : '0',
+      langOrder: 4,
+      langX: this.state.lang === 'EN' ? '52px' : '0px',
+      isMobile: this.state.mobile,
+      deskNav: !this.state.mobile,
+      menuOpen: this.state.mobile && this.state.menuOpen,
+      toggleMenu: () => this.setState((st) => ({ menuOpen: !st.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      uaBg: this.langStyle('UA').bg,
+      uaColor: this.langStyle('UA').color,
+      enBg: this.langStyle('EN').bg,
+      enColor: this.langStyle('EN').color,
+      pickUA: () => this.setState({ lang: 'UA' }),
+      pickEN: () => this.setState({ lang: 'EN' }),
+      hoverUA: () => this.setState({ langHover: 'UA' }),
+      hoverEN: () => this.setState({ langHover: 'EN' }),
+      hoverOff: () => this.setState({ langHover: null })
+    };
+  }
+
+  posterVals() {
+    const mob = this.state.mobile;
+    const tab = this.state.tablet;
+    const count = Math.max(1, Math.min(this.props.posterCount ?? 12, this.cats.length));
+    const radius = mob ? '24px' : 'clamp(32px,2.6vw,36px)';
+
+    const posters = this.cats.slice(0, count).map((c, i) => {
+      const pos = i % 4;
+      const block = Math.floor(i / 4);
+      const hot = this.state.poster === i;
+      let area = 'auto';
+      let minH = 'auto';
+      if (mob) {
+        minH = i % 2 === 0 ? '220px' : '330px';
+      } else if (tab) {
+        const r = block * 2 + 1 + (pos > 1 ? 1 : 0);
+        const col = pos % 2 === 0 ? 1 : 2;
+        area = r + ' / ' + col + ' / ' + (r + 1) + ' / ' + (col + 1);
+      } else {
+        const r = block * 2 + 1;
+        area = pos === 0 ? r + ' / 1 / ' + (r + 2) + ' / 2' : pos === 1 ? r + ' / 2 / ' + (r + 1) + ' / 3' : pos === 2 ? r + ' / 3 / ' + (r + 1) + ' / 4' : (r + 1) + ' / 2 / ' + (r + 2) + ' / 4';
+      }
+
+      let imgBox;
+      if (mob) imgBox = 'right:-2%;top:6%;width:40%;height:60%;';
+      else if (tab) imgBox = 'right:-3%;top:5%;width:48%;height:54%;';
+      else if (pos === 0) imgBox = 'left:0;right:0;top:5%;height:65%;';
+      else if (pos === 3) imgBox = 'right:-2%;top:0;bottom:0;width:43%;';
+      else imgBox = 'right:0;top:0;bottom:0;width:50%;';
+
+      return {
+        title: c.title,
+        note: c.note || c.desc,
+        img: c.img,
+        on: () => this.setState({ poster: i }),
+        off: () => this.setState({ poster: null }),
+        cardStyle: 'position:relative;overflow:hidden;min-width:0;color:' + c.fg + ';grid-area:' + area + ';min-height:' + minH + ';border-radius:' + radius + ';padding:' + (mob ? '20px' : 'clamp(22px,2.2vw,32px)') + ';box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-end;text-decoration:none;background:' + c.color,
+        imgWrapStyle: 'position:absolute;' + imgBox + 'display:flex;align-items:center;justify-content:center;z-index:1;pointer-events:none;',
+        imgStyle: 'max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 24px 40px rgba(38,22,18,0.32));transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:scale(' + (hot ? 1.03 : 1) + ')',
+        textStyle: 'position:relative;z-index:2;display:flex;flex-direction:column;gap:8px;max-width:' + (mob ? '62%' : tab ? '56%' : pos === 0 ? '100%' : pos === 3 ? '54%' : '48%') + ';transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:translateY(' + (hot ? '-6px' : '0px') + ')',
+        titleStyle: "font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:" + (mob ? '26px' : 'clamp(24px,2.2vw,32px)') + ';line-height:1.02;letter-spacing:-0.02em;text-wrap:pretty;color:#FFFFFF',
+        noteStyle: 'font-family:Manrope,sans-serif;font-weight:500;font-size:14px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:rgba(255,255,255,0.86)',
+        btnStyle: 'position:relative;z-index:2;overflow:hidden;align-self:flex-start;max-width:100%;margin-top:14px;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border-radius:14px;box-sizing:border-box;background:var(--cream);font-family:Manrope,sans-serif;font-weight:700;font-size:13px;white-space:nowrap;transition:color 280ms ease;color:' + (hot ? 'var(--cream)' : 'var(--ink)'),
+        btnDotStyle: 'position:relative;z-index:1;flex:0 0 auto;width:8px;height:8px;border-radius:50%;transition:background-color 280ms ease;background:' + (hot ? 'var(--cream)' : c.color),
+        btnFillStyle: 'position:absolute;right:16px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;transition:transform 280ms cubic-bezier(0.4,0,0.2,1);transform:scale(' + (hot ? 150 : 0) + ');background:var(--ink)'
+      };
+    });
+
+    return {
+      posters,
+      posterCols: mob ? '1fr' : tab ? 'repeat(2,minmax(0,1fr))' : 'repeat(3,minmax(0,1fr))',
+      posterRows: mob ? 'auto' : tab ? 'minmax(clamp(230px,26vw,300px),auto)' : 'minmax(clamp(210px,17vw,270px),auto)',
+      posterGap: mob ? '16px' : 'clamp(20px,1.8vw,24px)'
+    };
+  }
+
+  cats = [
+    { title: 'Ягідні чаї', desc: 'Зігрівальні чаї з натуральними ягодами та фруктами.', note: 'Ягоди, фрукти та трави', img: 'assets/tea.png', color: '#A82F5B', fg: '#FFF0C7' },
+    { title: 'Сиропи до кави', desc: 'Кілька крапель — і кава здобуває новий аромат.', note: 'Новий аромат для кави', img: 'assets/syrup.png', color: '#673323', fg: '#FFF0C7' },
+    { title: 'Джеми', desc: 'Пастеризовані джеми за традиційною рецептурою.', note: 'Традиційна рецептура', img: 'assets/jam.png', color: '#7F60B5', fg: '#FFF0C7' },
+    { title: 'Кулінарні добавки', desc: 'Основа для стабільних і смачних результатів на кухні.', note: 'Основа для кухні', img: 'assets/spices.png', color: '#D8733F', fg: '#261612' },
+    { title: 'Топінги', desc: 'Яскравий акцент для десертів, кави та святкових подач.', note: 'Акцент для десертів', img: 'assets/jam.png', color: '#F97C85', fg: '#261612' },
+    { title: 'Сиропи для приготування коктейлів', desc: 'Насичена основа для класичних і власних коктейлів.', note: 'Основа коктейлів', img: 'assets/syrup.png', color: '#617CB8', fg: '#261612' },
+    { title: 'Концентрати для приготування лимонаду', desc: 'Один рух — і графин домашнього лимонаду готовий.', note: 'Домашній лимонад', img: 'assets/tea.png', color: '#E09B32', fg: '#261612' },
+    { title: 'Напої сухі розчинні Lito', desc: 'Швидкі гарячі напої для дому та офісу.', note: 'Гарячі напої', img: 'assets/spices.png', color: '#8BA64F', fg: '#261612' },
+    { title: 'Сухі суміші для приготування желе', desc: 'Десерт без зайвих кроків: розмішати й охолодити.', note: 'Десерт без клопоту', img: 'assets/jam.png', color: '#B83F57', fg: '#FFF0C7' },
+    { title: 'Сухі суміші для приготування киселю', desc: 'Густий кисіль зі знайомим домашнім смаком.', note: 'Домашній смак', img: 'assets/tea.png', color: '#8B3F72', fg: '#FFF0C7' },
+    { title: 'Сухі суміші для приготування морозива', desc: 'Домашнє морозиво з мінімумом клопоту.', note: 'Морозиво вдома', img: 'assets/syrup.png', color: '#9A7AC7', fg: '#261612' },
+    { title: 'Горіхи та сухофрукти', desc: 'Відібрані горіхи й сухофрукти для випічки та перекусів.', note: 'Горіхи й сухофрукти', img: 'assets/spices.png', color: '#A65332', fg: '#FFF0C7' }
+  ];
+
+  rowEls = [];
+  visible = new Set();
+  lockUntil = 0;
+
+  componentDidMount() {
+    this.mqM = window.matchMedia('(max-width: 767px)');
+    this.mqT = window.matchMedia('(min-width: 768px) and (max-width: 1023px)');
+    this.onMqM = (e) => this.setState({ mobile: e.matches });
+    this.onMqT = (e) => this.setState({ tablet: e.matches });
+    this.mqM.addEventListener('change', this.onMqM);
+    this.mqT.addEventListener('change', this.onMqT);
+    this.setState({ mobile: this.mqM.matches, tablet: this.mqT.matches });
+
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        const i = Number(en.target.dataset.idx);
+        if (en.isIntersecting) this.visible.add(i); else this.visible.delete(i);
+      });
+      if (Date.now() < this.lockUntil || this.state.mobile || !this.visible.size) return;
+      const next = Math.min.apply(null, Array.from(this.visible));
+      if (next !== this.state.active) this.setState({ active: next });
+    }, { rootMargin: '-46% 0px -46% 0px', threshold: 0 });
+
+    this.rowEls.forEach((el) => this.observe(el));
+  }
+
+  observe(el) {
+    if (!el || !this.io || el.__obs) return;
+    el.__obs = true;
+    this.io.observe(el);
+  }
+
+  componentWillUnmount() {
+    if (this.mqM) this.mqM.removeEventListener('change', this.onMqM);
+    if (this.mqT) this.mqT.removeEventListener('change', this.onMqT);
+    if (this.io) this.io.disconnect();
+  }
+
+  onKeys = (e) => {
+    const n = this.cats.length;
+    let next = null;
+    if (e.key === 'ArrowDown') next = Math.min(n - 1, this.state.active + 1);
+    if (e.key === 'ArrowUp') next = Math.max(0, this.state.active - 1);
+    if (e.key === 'Home') next = 0;
+    if (e.key === 'End') next = n - 1;
+    if (next === null) return;
+    e.preventDefault();
+    this.setState({ active: next });
+    const el = this.rowEls[next];
+    if (el) el.focus({ preventScroll: true });
+  };
+
+  renderVals() {
+    const mob = this.state.mobile;
+    const tab = this.state.tablet;
+    const active = Math.min(this.state.active, this.cats.length - 1);
+    const numbers = this.props.showNumbers ?? false;
+
+    const rows = this.cats.map((c, i) => {
+      const on = i === active;
+      return {
+        num: String(i + 1).padStart(2, '0'),
+        title: c.title,
+        desc: c.desc,
+        img: c.img,
+        ref: (el) => {
+          this.rowEls[i] = el;
+          if (el) { el.dataset.idx = String(i); this.observe(el); }
+        },
+        activate: () => { this.lockUntil = Date.now() + 700; this.setState({ active: i }); },
+        linkStyle: 'display:flex;flex-wrap:' + (mob ? 'wrap' : 'nowrap') + ';align-items:center;gap:' + (mob ? '16px' : '22px') + ';min-height:' + (mob ? '96px' : '118px') + ';padding:' + (mob ? '14px 4px' : '18px 8px') + ';box-sizing:border-box;color:inherit;text-decoration:none;',
+        numStyle: 'flex:0 0 auto;display:' + (mob || !numbers ? 'none' : 'block') + ';width:34px;font-family:Manrope,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.08em;transition:color 400ms ease;color:' + (on ? c.color : 'rgba(38,22,18,0.36)'),
+        titleStyle: "font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;letter-spacing:-0.02em;line-height:1.04;text-wrap:pretty;font-size:" + (mob ? '26px' : 'clamp(24px,2vw,30px)') + ';color:#261612',
+        descStyle: 'font-family:Manrope,sans-serif;font-weight:500;font-size:' + (mob ? '14px' : '15px') + ';line-height:1.45;max-width:46ch;text-wrap:pretty;transition:color 400ms ease;color:' + (on ? 'rgba(38,22,18,0.72)' : 'rgba(38,22,18,0.5)'),
+        thumbWrapStyle: 'flex:0 0 auto;display:' + (mob ? 'flex' : 'none') + ';align-items:center;justify-content:center;width:88px;height:88px;border-radius:24px;overflow:hidden;padding:8px;box-sizing:border-box;transition:background-color 400ms ease;background:' + c.color,
+        btnStyle: 'position:relative;overflow:hidden;flex:0 0 auto;display:inline-flex;align-items:center;gap:14px;min-height:' + (mob ? '48px' : '52px') + ';padding:0 20px;border-radius:16px;box-sizing:border-box;background:var(--sand);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;white-space:nowrap;transition:color 280ms ease;color:' + (on ? 'var(--cream)' : 'var(--ink)'),
+        btnDotStyle: 'position:relative;z-index:1;flex:0 0 auto;width:10px;height:10px;border-radius:50%;transition:background-color 280ms ease;background:' + (on ? 'var(--cream)' : c.color),
+        btnFillStyle: 'position:absolute;right:20px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;transition:transform 280ms cubic-bezier(0.4,0,0.2,1);transform:scale(' + (on ? 150 : 0) + ');background:' + c.color,
+        stageImgStyle: 'position:absolute;max-width:76%;max-height:74%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 50px rgba(38,22,18,0.32));transition:opacity 400ms ease,transform 400ms cubic-bezier(0.22,1,0.36,1);opacity:' + (on ? 1 : 0) + ';transform:scale(' + (on ? 1 : 0.94) + ')'
+      };
+    });
+
+    return Object.assign(this.posterVals(), this.navVals(), {
+      rows,
+      stageWrapStyle: mob ? 'display:none;' : 'min-width:0;position:sticky;top:108px;',
+      gridCols: mob ? '1fr' : tab ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,5fr) minmax(0,7fr)',
+      gridGap: mob ? '0px' : 'clamp(24px,3vw,56px)',
+      stageH: tab ? 'min(520px, calc(100vh - 140px))' : 'min(680px, calc(100vh - 140px))',
+      stageColor: this.cats[active].color,
+      stageFg: '#FFFFFF',
+      stageFgSoft: 'rgba(255,255,255,0.86)',
+      stageGhost: this.cats[active].fg === '#FFF0C7' ? 'rgba(255,240,199,0.16)' : 'rgba(38,22,18,0.14)',
+      stageBlob: this.cats[active].fg === '#FFF0C7' ? 'rgba(255,240,199,0.07)' : 'rgba(38,22,18,0.06)',
+      stageNum: String(active + 1).padStart(2, '0'),
+      stageTitle: this.cats[active].title,
+      stageDesc: this.cats[active].desc,
+      onKeys: this.onKeys,
+      onListLeave: () => { this.lockUntil = 0; }
+    });
+  }
+}
+
+</script>
+</body>
+</html>

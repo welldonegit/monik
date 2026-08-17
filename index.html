@@ -6,36 +6,102 @@
 <title>Monik — концепти сайту</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@800;900&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
 <style>
-  html, body { margin: 0; padding: 0; background: #FFF3E3; }
-  body { font-family: Manrope, sans-serif; -webkit-font-smoothing: antialiased; color: #261612; }
-  a { text-decoration: none; }
+  @font-face { font-family: 'Fixel Display'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelDisplay-ExtraBold.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Fixel Text'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelText-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Fixel Text'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelText-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Fixel Text'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelText-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+  html, body { margin: 0; padding: 0; background: #211A17; }
+  body { font-family: 'Fixel Text', sans-serif; -webkit-font-smoothing: antialiased; color: #F6F4EF; }
+  a { text-decoration: none; color: #F6F4EF; }
+  a:hover { color: #FFC42D; }
+  .card { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 44px; min-height: 176px; padding: 24px; border-radius: 24px; box-sizing: border-box; transition: transform 400ms cubic-bezier(0.22,1,0.36,1), box-shadow 400ms ease; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -18px rgba(0,0,0,0.5); color: inherit; }
+  .kicker { font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.72; }
+  .name { font-family: 'Fixel Display', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.06; letter-spacing: -0.02em; }
+  .group { margin: 0 0 14px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .group h2 { margin: 0; font-family: 'Unbounded', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.02em; }
+  .group span { font-size: 13px; color: rgba(246,244,239,0.5); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%,230px), 1fr)); gap: 16px; }
+  section { padding-top: 40px; }
 </style>
 </head>
 <body>
-<main style="max-width:1100px;margin:0 auto;padding:clamp(44px,7vw,96px) clamp(20px,4vw,48px) clamp(56px,8vw,110px);box-sizing:border-box;">
-  <h1 style="margin:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:clamp(46px,8vw,84px);line-height:1.02;letter-spacing:-0.03em;">Monik</h1>
-  <p style="margin:16px 0 clamp(32px,4vw,56px);font-size:clamp(16px,1.4vw,20px);line-height:1.45;color:rgba(38,22,18,0.68);max-width:520px;">Три концепти головної сторінки та сторінка каталогу.</p>
+<main style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,80px) clamp(20px,4vw,48px) clamp(56px,8vw,104px);box-sizing:border-box;">
 
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(16px,1.8vw,24px);">
-    <a href="/concept-1" style="display:flex;flex-direction:column;justify-content:space-between;gap:56px;min-height:210px;padding:26px;border-radius:28px;box-sizing:border-box;background:#A82F5B;color:#FFF0C7;">
-      <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;opacity:0.72;">Концепт 1</span>
-      <span style="font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:34px;line-height:1.04;letter-spacing:-0.02em;">Головна</span>
-    </a>
-    <a href="/concept-2" style="display:flex;flex-direction:column;justify-content:space-between;gap:56px;min-height:210px;padding:26px;border-radius:28px;box-sizing:border-box;background:#673323;color:#FFF0C7;">
-      <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;opacity:0.72;">Концепт 2</span>
-      <span style="font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:34px;line-height:1.04;letter-spacing:-0.02em;">Головна</span>
-    </a>
-    <a href="/concept-3" style="display:flex;flex-direction:column;justify-content:space-between;gap:56px;min-height:210px;padding:26px;border-radius:28px;box-sizing:border-box;background:#7F60B5;color:#FFF0C7;">
-      <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;opacity:0.72;">Концепт 3</span>
-      <span style="font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:34px;line-height:1.04;letter-spacing:-0.02em;">Головна</span>
-    </a>
-    <a href="/categories" style="display:flex;flex-direction:column;justify-content:space-between;gap:56px;min-height:210px;padding:26px;border-radius:28px;box-sizing:border-box;background:#D8733F;color:#261612;">
-      <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;opacity:0.66;">Каталог</span>
-      <span style="font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:34px;line-height:1.04;letter-spacing:-0.02em;">Усі категорії</span>
-    </a>
-  </div>
+  <h1 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(40px,6.4vw,72px);line-height:1.0;letter-spacing:-0.035em;">Monik</h1>
+  <p style="margin:14px 0 0;font-size:clamp(15px,1.3vw,18px);line-height:1.5;color:rgba(246,244,239,0.66);max-width:56ch;text-wrap:pretty;">Усі сторінки, зроблені в проєкті, згруповані за концептами. Концепт 04 — актуальний напрям.</p>
+
+  <section>
+    <div class="group"><h2>Концепт 04</h2><span>актуальний</span></div>
+    <div class="grid">
+      <a class="card" href="/c04-home" style="background:#E52868;color:#F6F4EF;">
+        <span class="kicker">Головна</span>
+        <span class="name">Хедер, слайдер, категорії</span>
+      </a>
+      <a class="card" href="/c04-categories" style="background:#653CCB;color:#F6F4EF;">
+        <span class="kicker">Каталог</span>
+        <span class="name">Категорії — слайдер</span>
+      </a>
+      <a class="card" href="/c04-orange" style="background:#F14B2F;color:#F6F4EF;">
+        <span class="kicker">Товар</span>
+        <span class="name">Апельсиновий концентрат</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="group"><h2>Концепт 03</h2></div>
+    <div class="grid">
+      <a class="card" href="/c03-hero" style="background:#176142;color:#F6F4EF;">
+        <span class="kicker">Головна</span>
+        <span class="name">Хедер і слайдер</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="group"><h2>Концепт 02</h2></div>
+    <div class="grid">
+      <a class="card" href="/c02-hero" style="background:#B4471F;color:#F6F4EF;">
+        <span class="kicker">Головна</span>
+        <span class="name">Хедер і слайдер</span>
+      </a>
+      <a class="card" href="/c02-categories" style="background:#FFC42D;color:#211A17;">
+        <span class="kicker">Каталог</span>
+        <span class="name">Категорії</span>
+      </a>
+      <a class="card" href="/c02-categories-slider" style="background:#4358D5;color:#F6F4EF;">
+        <span class="kicker">Каталог</span>
+        <span class="name">Категорії — слайдер</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="group"><h2>Концепт 01</h2><span>перша ітерація</span></div>
+    <div class="grid">
+      <a class="card" href="/c01-hero" style="background:#A82F5B;color:#FFF0C7;">
+        <span class="kicker">Головна</span>
+        <span class="name">Хедер і слайдер</span>
+      </a>
+      <a class="card" href="/c01-categories" style="background:#D8733F;color:#261612;">
+        <span class="kicker">Каталог</span>
+        <span class="name">Усі категорії</span>
+      </a>
+      <a class="card" href="/c01-lemonades" style="background:#8BA64F;color:#261612;">
+        <span class="kicker">Категорія</span>
+        <span class="name">Концентрати для лимонаду</span>
+      </a>
+      <a class="card" href="/c01-orange" style="background:#E08052;color:#261612;">
+        <span class="kicker">Товар</span>
+        <span class="name">Апельсиновий концентрат</span>
+      </a>
+    </div>
+  </section>
+
 </main>
 </body>
 </html>

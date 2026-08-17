@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#A82F5B"></rect><circle cx="100" cy="100" r="46" fill="#E09B32"></circle><circle cx="100" cy="100" r="18" fill="#FFF0C7"></circle></svg></template>
+<meta name="ext-resource-dependency" content="assets/tea.png" />
+<meta name="ext-resource-dependency" content="assets/syrup.png" />
+<meta name="ext-resource-dependency" content="assets/jam.png" />
+<meta name="ext-resource-dependency" content="assets/spices.png" />
+<meta name="ext-resource-dependency" content="assets/lemonade-orange.png" />
+<meta name="ext-resource-dependency" content="assets/lemonade-watermelon.png" />
+<meta name="ext-resource-dependency" content="assets/lemonade-mojito.png" />
+<meta name="ext-resource-dependency" content="assets/monik-logo.svg" />
+<meta name="ext-resource-dependency" content="assets/welldone-logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@800;900&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #FFF0C7;
+    --cream-hi: #FFF6DD;
+    --ink: #261612;
+    --berry: #A82F5B;
+  }
+  html, body { margin: 0; padding: 0; background: #FFF0C7; overflow-x: clip; }
+  body { font-family: Manrope, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #A82F5B; text-decoration: none; }
+  a:hover { color: #261612; }
+  a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; border-radius: 12px; }
+  a:focus:not(:focus-visible) { outline: none; }
+  button { font-family: inherit; }
+  button:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+  button:focus:not(:focus-visible) { outline: none; }
+  * { -webkit-tap-highlight-color: transparent; }
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--cream);color:var(--ink);padding:0 clamp(20px,3.4vw,48px) 0;box-sizing:border-box;overflow-x:clip;">
+
+  <div style="{{ headerWrapStyle }}">
+  <header style="max-width:1344px;margin:0 auto;min-height:{{ barH }};background:var(--ink);border-radius:{{ barRadius }};display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:8px clamp(14px,1.8vw,28px);box-sizing:border-box;">
+
+    <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
+    <nav style="order:1;flex:1 1 0;min-width:0;display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:4px clamp(16px,2.4vw,34px);">
+      <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.04em;color:var(--cream);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">ГОЛОВНА</a>
+      <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.04em;color:var(--cream);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">ПРОДУКЦІЯ</a>
+      <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.04em;color:var(--cream);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">НАТХНЕННЯ</a>
+      <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.04em;color:var(--cream);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">КОНТАКТИ</a>
+    </nav>
+    </sc-if>
+
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <div style="order:1;flex:1 1 0;display:flex;justify-content:flex-start;">
+        <button type="button" aria-label="Меню" onClick="{{ toggleMenu }}" style="width:44px;height:44px;padding:0;border:none;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;">
+          <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--cream);"></span>
+          <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--cream);"></span>
+          <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--cream);"></span>
+        </button>
+      </div>
+    </sc-if>
+
+    <a href="#" style="order:2;display:block;line-height:0;flex:0 0 auto;" aria-label="Monik">
+      <img src="assets/monik-logo.svg" alt="Monik" style="width:clamp(112px,11vw,146px);height:auto;aspect-ratio:727.9 / 209.1;display:block;filter:brightness(0) invert(1);" />
+    </a>
+
+    <div style="order:3;flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.6vw,24px);">
+      <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
+        <a href="tel:0800215345" style="flex:0 0 auto;display:inline-flex;align-items:center;height:44px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.02em;color:var(--cream);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">0-800-215-345</a>
+      </sc-if>
+      <div style="flex:0 0 auto;position:relative;display:flex;align-items:center;gap:8px">
+        <span aria-hidden="true" style="position:absolute;left:0;top:0;width:40px;height:40px;border-radius:999px;background:var(--cream);transition:transform 200ms ease;transform:translateX({{ langX }})"></span>
+        <button type="button" aria-label="Українська" onClick="{{ pickUA }}" onMouseEnter="{{ hoverUA }}" onMouseLeave="{{ hoverOff }}" style="position:relative;z-index:1;width:40px;height:40px;padding:0;border:none;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-family:Manrope,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;transition:color 200ms ease,background 200ms ease;background:{{ uaBg }};color:{{ uaColor }}">UA</button>
+        <button type="button" aria-label="English" onClick="{{ pickEN }}" onMouseEnter="{{ hoverEN }}" onMouseLeave="{{ hoverOff }}" style="position:relative;z-index:1;width:40px;height:40px;padding:0;border:none;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-family:Manrope,sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;transition:color 200ms ease,background 200ms ease;background:{{ enBg }};color:{{ enColor }}">EN</button>
+      </div>
+    </div>
+
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <nav style="order:4;flex:1 1 100%;min-width:0;display:flex;flex-direction:column;padding:4px 0 8px;">
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(255,240,199,0.18);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--berry);">ГОЛОВНА</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(255,240,199,0.18);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--berry);">ПРОДУКЦІЯ</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(255,240,199,0.18);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--berry);">НАТХНЕННЯ</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(255,240,199,0.18);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--berry);">КОНТАКТИ</a>
+        <a href="tel:0800215345" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(255,240,199,0.18);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--berry);">0-800-215-345</a>
+      </nav>
+    </sc-if>
+  </header>
+  </div>
+
+  <section data-screen-label="Slider" style="{{ sectionStyle }}">
+    <div role="region" aria-roledescription="карусель" aria-label="Категорії Monik" ref="{{ stageRef }}" onMouseEnter="{{ stageIn }}" onMouseLeave="{{ stageOut }}" onFocusCapture="{{ stageIn }}" onBlurCapture="{{ stageOut }}" onTouchStart="{{ touchStart }}" onTouchEnd="{{ touchEnd }}" style="{{ stageStyle }}">
+
+      <div aria-hidden="true" style="{{ baseStyle }}"></div>
+      <div aria-hidden="true" style="{{ revealStyle }}"></div>
+
+      <div aria-live="polite" style="{{ innerStyle }}">
+
+        <div style="{{ headStyle }}">
+          <h1 style="{{ titleStyle }}">{{ title }}</h1>
+        </div>
+
+        <div style="position:relative;min-height:0;display:flex;align-items:flex-end;justify-content:center;">
+          <button type="button" aria-label="Попередня категорія" onClick="{{ goPrev }}" style="{{ peekPrevStyle }}">
+            <img src="{{ prevImg }}" alt="{{ prevAlt }}" loading="lazy" style="{{ peekImgStyle }}" />
+          </button>
+          <img src="{{ img }}" alt="{{ alt }}" style="{{ prodStyle }}" />
+          <div aria-hidden="true" style="{{ badgeStyle }}">
+            <svg viewBox="0 0 120 120" style="display:block;width:100%;height:100%;">
+              <circle cx="60" cy="60" r="60" fill="{{ badgeFill }}"></circle>
+              <circle cx="60" cy="60" r="51" fill="none" stroke="{{ badgeInk }}" stroke-width="1.4" opacity="0.55"></circle>
+              <path id="mk-badge-top" d="M60 60 m-34 0 a34 34 0 1 1 68 0" fill="none"></path>
+              <path id="mk-badge-bot" d="M60 60 m-44 0 a44 44 0 0 0 88 0" fill="none"></path>
+              <text fill="{{ badgeInk }}" font-family="Manrope, sans-serif" font-size="11.4" font-weight="800" letter-spacing="0.6">
+                <textPath href="#mk-badge-top" startOffset="50%" text-anchor="middle">ЗРОБЛЕНО В УКРАЇНІ</textPath>
+              </text>
+              <text fill="{{ badgeInk }}" font-family="Manrope, sans-serif" font-size="9.6" font-weight="700" letter-spacing="1.2">
+                <textPath href="#mk-badge-bot" startOffset="50%" text-anchor="middle">НАТУРАЛЬНИЙ СМАК</textPath>
+              </text>
+              <g fill="{{ badgeInk }}">
+                <circle cx="53.6" cy="64.5" r="8.2"></circle>
+                <circle cx="66.4" cy="64.5" r="8.2"></circle>
+                <circle cx="60" cy="54.4" r="7.4"></circle>
+                <path d="M60 47.6c1.6-5.4 6-8.4 11.4-8.6-.4 5.6-4 9.2-9.2 10.2z"></path>
+              </g>
+            </svg>
+          </div>
+          <button type="button" aria-label="Наступна категорія" onClick="{{ goNext }}" style="{{ peekNextStyle }}">
+            <img src="{{ nextImg }}" alt="{{ nextAlt }}" loading="lazy" style="{{ peekImgStyle }}" />
+          </button>
+        </div>
+
+        <div style="{{ footRowStyle }}">
+          <div style="{{ textColStyle }}">
+            <a href="#" onMouseEnter="{{ linkOn }}" onMouseLeave="{{ linkOff }}" onFocus="{{ linkOn }}" onBlur="{{ linkOff }}" style="{{ linkStyle }}">
+              <span>Переглянути товари</span>
+              <svg width="30" height="10" viewBox="0 0 30 10" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" style="{{ arrowStyle }}"><path d="M0 5h28"></path><path d="M23.6 1 28 5l-4.4 4"></path></svg>
+            </a>
+          </div>
+
+          <div style="{{ ctrlColStyle }}">
+            <div style="display:flex;align-items:center;gap:12px;flex:0 0 auto;">
+              <button type="button" aria-label="Попередня категорія" onClick="{{ goPrev }}" onMouseEnter="{{ prevOn }}" onMouseLeave="{{ navOff }}" style="{{ prevStyle }}">
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M17 7H1"></path><path d="M6 1 1 7l5 6"></path></svg>
+              </button>
+              <button type="button" aria-label="Наступна категорія" onClick="{{ goNext }}" onMouseEnter="{{ nextOn }}" onMouseLeave="{{ navOff }}" style="{{ nextStyle }}">
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M1 7h16"></path><path d="M12 1l5 6-5 6"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Quick pick" style="max-width:1344px;margin:0 auto;padding:{{ quickPad }};box-sizing:border-box;">
+    <div style="padding-bottom:{{ quickHeadGap }};">
+      <h2 style="{{ quickTitleStyle }}">Швидкий вибір</h2>
+    </div>
+    <nav style="display:flex;flex-direction:column;">
+      <sc-for list="{{ rows }}" as="r" hint-placeholder-count="12">
+        <button type="button" onClick="{{ r.go }}" onMouseEnter="{{ r.on }}" onMouseLeave="{{ r.off }}" onFocus="{{ r.on }}" onBlur="{{ r.off }}" style="{{ r.style }}">
+          <span style="{{ r.indexStyle }}">{{ r.index }}</span>
+          <span style="{{ r.nameStyle }}">{{ r.title }}</span>
+          <span aria-hidden="true" style="{{ r.arrowWrapStyle }}">
+            <svg width="22" height="9" viewBox="0 0 30 10" fill="none" stroke="currentColor" stroke-width="1.4" style="{{ r.arrowStyle }}"><path d="M0 5h28"></path><path d="M23.6 1 28 5l-4.4 4"></path></svg>
+          </span>
+        </button>
+      </sc-for>
+    </nav>
+  </section>
+
+<footer data-screen-label="Footer" style="position:relative;z-index:1;background:var(--ink);border-radius:36px 36px 0 0;padding:clamp(20px,6vw,64px);box-sizing:border-box;color:var(--cream);margin:clamp(56px,7vw,110px) calc(-1 * clamp(20px,3.4vw,48px)) 0;">
+  <div style="max-width:1344px;margin:0 auto;display:flex;flex-direction:column;gap:48px;">
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:32px;">
+        <img src="assets/monik-logo.svg" alt="Monik" style="width:150px;height:43.1px;display:block;filter:brightness(0) invert(1);opacity:0.94;" />
+      </div>
+      <div style="display:flex;align-items:center;gap:24px;">
+        <a href="#" aria-label="Facebook" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M14.6 8.4h2.3V5.2h-2.8c-2.6 0-4.3 1.7-4.3 4.3v1.8H7.1v3.2h2.7V21h3.4v-6.5h2.6l.4-3.2h-3V9.6c0-.8.2-1.2 1.4-1.2z"></path></svg>
+        </a>
+        <a href="#" aria-label="YouTube" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M21.4 8.1c-.2-1.5-.8-2.2-2.3-2.4C17.4 5.4 12 5.4 12 5.4s-5.4 0-7.1.3c-1.5.2-2.1.9-2.3 2.4C2.4 9.6 2.4 12 2.4 12s0 2.4.2 3.9c.2 1.5.8 2.2 2.3 2.4 1.7.3 7.1.3 7.1.3s5.4 0 7.1-.3c1.5-.2 2.1-.9 2.3-2.4.2-1.5.2-3.9.2-3.9s0-2.4-.2-3.9zM10.2 15.1V8.9l5.3 3.1-5.3 3.1z"></path></svg>
+        </a>
+        <a href="#" aria-label="Instagram" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" style="display:block;"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"></rect><circle cx="12" cy="12" r="4.1"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        <a href="#" aria-label="Telegram" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M21.7 4.3 2.9 11.5c-.9.3-.9 1.5.1 1.8l4.6 1.4 1.8 5.4c.2.7 1.1.9 1.6.3l2.5-2.6 4.6 3.4c.6.4 1.4.1 1.6-.6l3-14.6c.2-.8-.6-1.5-1.4-1.2zM8.9 14.1l9-5.6-7.5 6.9-.3 3-1.2-4.3z"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav style="display:flex;flex-direction:column;">
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(255,240,199,0.16);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(255,240,199,0.34);">Продукція</a>
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(255,240,199,0.16);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(255,240,199,0.34);">Натхнення</a>
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(255,240,199,0.16);border-bottom:1px solid rgba(255,240,199,0.16);font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(255,240,199,0.34);">Контакти</a>
+    </nav>
+
+    <div aria-hidden="true" style="display:flex;justify-content:space-between;align-items:flex-end;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:700;font-size:min(200px,20vw);line-height:0.8;letter-spacing:-0.02em;color:var(--cream);user-select:none;">
+      <span>M</span><span>O</span><span>N</span><span>I</span><span>K</span>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;font-family:Manrope,sans-serif;font-weight:500;font-size:14px;color:rgba(255,240,199,0.6);">
+      <span>© 2026 Monik</span>
+      <a href="#" style="color:rgba(255,240,199,0.6);transition:color 200ms ease;" style-hover="color:var(--cream);">Політика конфіденційності</a>
+      <a href="#" style="display:flex;align-items:center;gap:12px;color:rgba(255,240,199,0.6);transition:color 200ms ease;" style-hover="color:var(--cream);">
+        <span style="font-family:Manrope,sans-serif;font-weight:500;font-size:14px;">Дизайн від</span>
+        <img src="assets/welldone-logo.svg" alt="WellDone" style="display:block;height:18px;width:auto;filter:brightness(0) invert(1);" />
+      </a>
+    </div>
+
+  </div>
+</footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;autoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Слайдер&quot;},&quot;autoplayMs&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:6000,&quot;min&quot;:3000,&quot;max&quot;:12000,&quot;step&quot;:500,&quot;unit&quot;:&quot;ms&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Слайдер&quot;}}">
+class Component extends DCLogic {
+  state = {
+    mobile: false, tablet: false,
+    disp: 0, baseIdx: 0, phase: 'in',
+    revealColor: null, revealOpen: false, revealAnim: true,
+    hoverRow: null, nav: null, dot: null, linkHot: false,
+    lang: 'UA', langHover: null, menuOpen: false
+  };
+
+  cats = [
+    { title: 'Ягідні чаї', img: 'assets/tea.png', color: '#A82F5B', fg: '#FFF0C7', accent: '#FFA51F' },
+    { title: 'Сиропи до кави', img: 'assets/syrup.png', color: '#673323', fg: '#FFF0C7', accent: '#FF8A4C' },
+    { title: 'Джеми', img: 'assets/jam.png', color: '#7F60B5', fg: '#FFF0C7', accent: '#FFD84D' },
+    { title: 'Кулінарні добавки', img: 'assets/spices.png', color: '#D8733F', fg: '#261612', accent: '#6B2340' },
+    { title: 'Топінги', img: 'assets/jam.png', color: '#F97C85', fg: '#261612', accent: '#7B2450' },
+    { title: 'Сиропи для приготування коктейлів', img: 'assets/syrup.png', color: '#617CB8', fg: '#261612', accent: '#FFE066' },
+    { title: 'Концентрати для приготування лимонаду', img: 'assets/lemonade-orange.png', color: '#E09B32', fg: '#261612', accent: '#7A2748' },
+    { title: 'Напої сухі розчинні Lito', img: 'assets/tea.png', color: '#8BA64F', fg: '#261612', accent: '#34215C' },
+    { title: 'Сухі суміші для приготування желе', img: 'assets/lemonade-watermelon.png', color: '#B83F57', fg: '#FFF0C7', accent: '#FFC93C' },
+    { title: 'Сухі суміші для приготування киселю', img: 'assets/jam.png', color: '#8B3F72', fg: '#FFF0C7', accent: '#FFD24D' },
+    { title: 'Сухі суміші для приготування морозива', img: 'assets/lemonade-mojito.png', color: '#9A7AC7', fg: '#261612', accent: '#34205E' },
+    { title: 'Горіхи та сухофрукти', img: 'assets/spices.png', color: '#A65332', fg: '#FFF0C7', accent: '#FFB93A' }
+  ];
+
+  timers = [];
+  busy = false;
+  paused = false;
+  stage = null;
+
+  componentDidMount() {
+    this.mqM = window.matchMedia('(max-width: 767px)');
+    this.mqT = window.matchMedia('(min-width: 768px) and (max-width: 1023px)');
+    this.mqR = window.matchMedia('(prefers-reduced-motion: reduce)');
+    this.onMqM = (e) => this.setState({ mobile: e.matches, menuOpen: e.matches ? this.state.menuOpen : false });
+    this.onMqT = (e) => this.setState({ tablet: e.matches });
+    this.mqM.addEventListener('change', this.onMqM);
+    this.mqT.addEventListener('change', this.onMqT);
+    this.setState({ mobile: this.mqM.matches, tablet: this.mqT.matches });
+
+    this.onKey = (e) => {
+      const t = e.target;
+      if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+      if (e.key === 'ArrowRight') { e.preventDefault(); this.go(this.state.disp + 1, true); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); this.go(this.state.disp - 1, true); }
+    };
+    document.addEventListener('keydown', this.onKey);
+    this.onVis = () => { if (!document.hidden) this.arm(6000); };
+    document.addEventListener('visibilitychange', this.onVis);
+
+    this.preload(0);
+    this.arm(6000);
+  }
+
+  componentWillUnmount() {
+    if (this.mqM) this.mqM.removeEventListener('change', this.onMqM);
+    if (this.mqT) this.mqT.removeEventListener('change', this.onMqT);
+    document.removeEventListener('keydown', this.onKey);
+    document.removeEventListener('visibilitychange', this.onVis);
+    this.clear();
+    if (this.auto) clearTimeout(this.auto);
+  }
+
+  preload(i) {
+    const n = this.cats.length;
+    [(i + 1) % n, (i - 1 + n) % n].forEach((k) => { const im = new Image(); im.src = this.cats[k].img; });
+  }
+
+  t(ms, fn) { this.timers.push(setTimeout(fn, ms)); }
+  clear() { this.timers.forEach(clearTimeout); this.timers = []; }
+
+  arm(delay) {
+    if (this.auto) clearTimeout(this.auto);
+    if (this.props.autoplay === false) return;
+    const step = this.props.autoplayMs || 6000;
+    this.auto = setTimeout(() => {
+      if (this.props.autoplay === false) return;
+      if (this.paused || document.hidden || this.busy) { this.arm(1200); return; }
+      this.go(this.state.disp + 1, false);
+    }, delay === 6000 ? step : delay);
+  }
+
+  go(n, manual) {
+    const total = this.cats.length;
+    n = ((n % total) + total) % total;
+    if (this.busy || n === this.state.disp) return;
+    this.busy = true;
+    this.clear();
+    if (this.auto) clearTimeout(this.auto);
+    this.preload(n);
+    const after = manual ? 8000 : 6000;
+
+    if (this.mqR && this.mqR.matches) {
+      this.setState({ phase: 'out' });
+      this.t(180, () => this.setState({ disp: n, baseIdx: n, phase: 'pre' }));
+      this.t(210, () => this.setState({ phase: 'in' }));
+      this.t(420, () => { this.busy = false; this.arm(after); });
+      return;
+    }
+
+    this.setState({ phase: 'out', revealColor: this.cats[n].color, revealAnim: true, revealOpen: false });
+    requestAnimationFrame(() => requestAnimationFrame(() => this.setState({ revealOpen: true })));
+    this.t(180, () => this.setState({ disp: n, phase: 'pre' }));
+    this.t(210, () => this.setState({ phase: 'in' }));
+    this.t(590, () => this.setState({ baseIdx: n, revealAnim: false, revealOpen: false }));
+    this.t(650, () => { this.setState({ revealAnim: true }); this.busy = false; this.arm(after); });
+  }
+
+  jump(n) {
+    this.go(n, true);
+    const el = this.stage;
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.pageYOffset - 16;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }
+  }
+
+  langStyle(code) {
+    const active = this.state.lang === code;
+    const hot = this.state.langHover === code;
+    return {
+      bg: active ? 'transparent' : hot ? 'rgba(255,240,199,0.14)' : 'transparent',
+      color: active ? 'var(--ink)' : hot ? 'var(--cream-hi)' : 'rgba(255,240,199,0.72)'
+    };
+  }
+
+  titleSize(len, mob, tab) {
+    const b = len > 33 ? 3 : len > 22 ? 2 : len > 12 ? 1 : 0;
+    if (mob) return ['clamp(46px,15vw,66px)', 'clamp(42px,12.8vw,58px)', 'clamp(37px,10.2vw,50px)', 'clamp(34px,8.8vw,44px)'][b];
+    if (tab) return ['clamp(58px,9vw,112px)', 'clamp(52px,7.6vw,96px)', 'clamp(44px,6vw,78px)', 'clamp(38px,5vw,64px)'][b];
+    return ['clamp(72px,10vw,170px)', 'clamp(64px,8.4vw,146px)', 'clamp(52px,6.4vw,112px)', 'clamp(44px,5.2vw,92px)'][b];
+  }
+
+  renderVals() {
+    const mob = this.state.mobile, tab = this.state.tablet;
+    const st = this.state;
+    const total = this.cats.length;
+    const cur = this.cats[st.disp];
+    const prev = this.cats[(st.disp - 1 + total) % total];
+    const next = this.cats[(st.disp + 1) % total];
+    const base = this.cats[st.baseIdx];
+    const fg = cur.fg;
+    const soft = fg === '#FFF0C7' ? 'rgba(255,240,199,' : 'rgba(38,22,18,';
+    const ph = st.phase;
+
+    const move = (yIn, extra) =>
+      ph === 'out' ? 'opacity:0;transform:translateY(-12px)' + (extra ? ' scale(1)' : '') + ';transition:opacity 180ms ease,transform 180ms ease;'
+      : ph === 'pre' ? 'opacity:0;transform:translateY(' + yIn + 'px)' + (extra ? ' scale(.97)' : '') + ';transition:none;'
+      : 'opacity:1;transform:translateY(0)' + (extra ? ' scale(1)' : '') + ';transition:opacity ' + (extra ? 420 : 380) + 'ms cubic-bezier(0.22,0.61,0.36,1) ' + (extra ? 0 : 45) + 'ms,transform ' + (extra ? 420 : 380) + 'ms cubic-bezier(0.22,0.61,0.36,1) ' + (extra ? 0 : 45) + 'ms;';
+
+    const textAnim = move(14, false);
+    const prodAnim = move(22, true);
+
+    const dots = this.cats.map((c, i) => ({
+      label: 'Перейти до категорії ' + c.title,
+      go: () => this.go(i, true),
+      on: () => this.setState({ dot: i }),
+      off: () => this.setState({ dot: null }),
+      style: 'flex:0 0 auto;width:' + (i === st.disp ? '32px' : '16px') + ';height:22px;padding:9px 0;box-sizing:border-box;border:none;cursor:pointer;background-clip:content-box;transition:width 320ms cubic-bezier(0.76,0,0.24,1),background-color 240ms ease;background-color:' + soft + (i === st.disp ? '1' : st.dot === i ? '0.72' : '0.32') + ');'
+    }));
+
+    const rows = this.cats.map((c, i) => {
+      const hot = st.hoverRow === i;
+      const on = hot ? c.fg : 'var(--ink)';
+      return {
+        title: c.title,
+        index: String(i + 1).padStart(2, '0'),
+        go: () => this.jump(i),
+        on: ((k) => () => this.setState({ hoverRow: k }))(i),
+        off: () => this.setState({ hoverRow: null }),
+        style: 'display:flex;align-items:center;gap:' + (mob ? '14px' : 'clamp(18px,2vw,32px)') + ';width:100%;min-height:' + (mob ? '58px' : 'clamp(64px,5vw,76px)') + ';padding:' + (mob ? '10px 14px' : '10px clamp(16px,1.8vw,26px)') + ';box-sizing:border-box;text-align:left;cursor:pointer;border:none;border-top:1px solid ' + (hot ? 'transparent' : 'rgba(38,22,18,0.14)') + ';border-radius:' + (mob ? '14px' : '18px') + ';transition:background-color 240ms ease,color 240ms ease,border-color 240ms ease;color:' + on + ';background:' + (hot ? c.color : 'transparent') + ';' + (i === this.cats.length - 1 ? 'border-bottom:1px solid ' + (hot ? 'transparent' : 'rgba(38,22,18,0.14)') + ';' : ''),
+        indexStyle: 'flex:0 0 auto;font-family:Manrope,sans-serif;font-weight:700;font-size:' + (mob ? '12px' : '13px') + ';letter-spacing:0.06em;color:' + (hot ? c.fg : 'rgba(38,22,18,0.42)') + ';transition:color 240ms ease;',
+        nameStyle: "flex:1 1 auto;min-width:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:800;font-size:" + (mob ? '22px' : 'clamp(26px,2.6vw,40px)') + ';line-height:1.04;letter-spacing:-0.02em;text-wrap:pretty;',
+        arrowWrapStyle: 'flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:' + (mob ? '40px' : '46px') + ';height:' + (mob ? '40px' : '46px') + ';box-sizing:border-box;border:1.4px solid currentColor;border-radius:' + (hot ? '50% 10px 50% 50%' : '50% 50% 10px 50%') + ';transition:border-radius 320ms cubic-bezier(0.76,0,0.24,1),opacity 240ms ease,transform 320ms cubic-bezier(0.22,0.61,0.36,1);opacity:' + (hot ? 1 : 0.42) + ';transform:translateY(' + (hot ? -2 : 0) + 'px);',
+        arrowStyle: 'display:block;transition:transform 240ms ease;transform:translateX(' + (hot ? 3 : 0) + 'px);'
+      };
+    });
+
+    const pad = mob ? '22px 20px 20px' : tab ? 'clamp(28px,3.4vw,36px)' : 'clamp(36px,3.2vw,52px)';
+
+    return {
+      title: cur.title,
+      img: cur.img,
+      alt: cur.title + ' Monik — продуктова композиція',
+      prevImg: prev.img,
+      prevAlt: prev.title + ' Monik — попередня категорія',
+      nextImg: next.img,
+      nextAlt: next.title + ' Monik — наступна категорія',
+      num: String(st.disp + 1).padStart(2, '0') + ' / ' + String(this.cats.length).padStart(2, '0'),
+      dots, rows,
+
+      stageRef: (el) => { this.stage = el; },
+      stageIn: () => { this.paused = true; },
+      stageOut: () => { this.paused = false; this.arm(6000); },
+      touchStart: (e) => { this.tx = e.touches[0].clientX; this.ty = e.touches[0].clientY; },
+      touchEnd: (e) => {
+        if (this.tx == null) return;
+        const dx = e.changedTouches[0].clientX - this.tx;
+        const dy = e.changedTouches[0].clientY - this.ty;
+        this.tx = null;
+        if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy)) this.go(this.state.disp + (dx < 0 ? 1 : -1), true);
+      },
+      goPrev: () => this.go(st.disp - 1, true),
+      goNext: () => this.go(st.disp + 1, true),
+      prevOn: () => this.setState({ nav: 'p' }),
+      nextOn: () => this.setState({ nav: 'n' }),
+      navOff: () => this.setState({ nav: null }),
+      linkOn: () => this.setState({ linkHot: true }),
+      linkOff: () => this.setState({ linkHot: false }),
+
+      headerWrapStyle: 'position:relative;z-index:3;background:' + base.color + ';transition:background-color 190ms linear;margin:0 calc(-1 * clamp(20px,3.4vw,48px));padding:' + (mob ? '10px' : 'clamp(12px,1.4vw,20px)') + ' clamp(20px,3.4vw,48px);box-sizing:border-box;',
+      sectionStyle: 'position:relative;margin:0 calc(-1 * clamp(20px,3.4vw,48px));box-sizing:border-box;',
+      stageStyle: 'position:relative;isolation:isolate;overflow:hidden;transform:translateZ(0);width:100%;box-sizing:border-box;height:100svh;min-height:' + (mob ? '620px' : '650px') + ';',
+      peekPrevStyle: 'position:absolute;left:0;bottom:0;z-index:0;height:' + (mob ? '32%' : '50%') + ';width:' + (mob ? '38%' : '26%') + ';padding:0;border:none;background:transparent;cursor:pointer;opacity:0.92;transform:translateX(' + (mob ? '-48%' : '-42%') + ');',
+      peekNextStyle: 'position:absolute;right:0;bottom:0;z-index:0;height:' + (mob ? '32%' : '50%') + ';width:' + (mob ? '38%' : '26%') + ';padding:0;border:none;background:transparent;cursor:pointer;opacity:0.92;transform:translateX(' + (mob ? '48%' : '42%') + ');',
+      peekImgStyle: 'display:block;width:100%;height:100%;object-fit:contain;object-position:50% 100%;filter:drop-shadow(0 20px 30px rgba(38,22,18,0.3)) brightness(0.92);',
+      badgeStyle: 'position:absolute;z-index:2;pointer-events:none;' + (mob ? 'top:6%;right:2%;width:128px;height:128px;' : 'left:' + (tab ? '16%' : '20%') + ';bottom:26%;width:clamp(108px,11vw,168px);height:clamp(108px,11vw,168px);') + textAnim,
+      badgeFill: cur.accent,
+      badgeInk: cur.color,
+      baseStyle: 'position:absolute;inset:0;z-index:0;transition:background-color 190ms linear;background:' + base.color + ';',
+      revealStyle: 'position:absolute;inset:0;z-index:1;will-change:clip-path;pointer-events:none;' + (st.revealAnim ? 'transition:clip-path 560ms cubic-bezier(0.76,0,0.24,1);' : 'transition:none;') + 'clip-path:circle(' + (st.revealOpen ? '150%' : '0%') + ' at 50% 50%);background:' + (st.revealColor || base.color) + ';',
+      innerStyle: 'position:absolute;inset:0;z-index:2;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:' + (mob ? '12px' : 'clamp(12px,1.4vw,20px)') + ';padding:' + pad + ';box-sizing:border-box;',
+
+      headStyle: 'min-width:0;display:flex;justify-content:center;' + textAnim,
+      titleStyle: "margin:0;max-width:" + (mob ? '100%' : '94%') + ";text-align:center;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;text-transform:uppercase;font-size:" + this.titleSize(cur.title.length, mob, tab) + ';line-height:' + (mob ? '0.92' : '0.86') + ';letter-spacing:-0.02em;text-wrap:balance;color:' + cur.accent + ';',
+      numStyle: 'margin:0;flex:0 0 auto;font-family:Manrope,sans-serif;font-weight:700;font-size:' + (mob ? '12px' : '14px') + ';letter-spacing:0.1em;color:' + soft + '0.7);',
+
+      prodStyle: 'position:relative;z-index:1;display:block;width:100%;max-width:100%;height:' + (mob ? '112%' : '120%') + ';align-self:' + (mob ? 'center' : 'flex-end') + ';margin-top:' + (mob ? '-14%' : '-6%') + ';object-fit:contain;object-position:50% ' + (mob ? '50%' : '100%') + ';filter:drop-shadow(0 34px 46px rgba(38,22,18,0.34));' + prodAnim,
+
+      footRowStyle: 'display:flex;align-items:center;justify-content:space-between;gap:' + (mob ? '14px' : '28px') + ';flex-wrap:' + (mob ? 'wrap' : 'nowrap') + ';min-width:0;',
+      textColStyle: 'min-width:0;display:flex;align-items:center;gap:' + (mob ? '16px' : '24px') + ';flex:1 1 auto;' + textAnim,
+      linkStyle: 'align-self:flex-start;display:inline-flex;align-items:center;gap:14px;min-height:' + (mob ? '50px' : '58px') + ';padding:0 ' + (mob ? '22px' : '28px') + ';box-sizing:border-box;font-family:Manrope,sans-serif;font-weight:800;font-size:' + (mob ? '14px' : '16px') + ';letter-spacing:0.01em;white-space:nowrap;border-radius:' + (st.linkHot ? '999px 999px 999px 10px' : '10px 999px 999px 999px') + ';transition:border-radius 320ms cubic-bezier(0.76,0,0.24,1),transform 320ms cubic-bezier(0.22,0.61,0.36,1),background-color 240ms ease,color 240ms ease;transform:translateY(' + (st.linkHot ? -3 : 0) + 'px);background:' + cur.accent + ';color:' + cur.color + ';',
+      arrowStyle: 'display:block;flex:0 0 auto;transition:transform 240ms cubic-bezier(0.22,0.61,0.36,1);transform:translateX(' + (st.linkHot ? 8 : 0) + 'px);',
+
+      ctrlColStyle: 'display:flex;align-items:center;gap:12px;flex:0 0 auto;min-width:0;justify-content:flex-end;',
+      dotsStyle: 'display:flex;align-items:center;gap:6px;min-width:0;' + (mob ? 'overflow-x:auto;padding-bottom:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none;' : ''),
+      prevStyle: 'width:' + (mob ? '48px' : '56px') + ';height:' + (mob ? '48px' : '56px') + ';padding:0;border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;border-radius:' + (st.nav === 'p' ? '10px 50% 50% 50%' : '50% 50% 50% 10px') + ';transition:border-radius 320ms cubic-bezier(0.76,0,0.24,1),transform 320ms cubic-bezier(0.22,0.61,0.36,1),background-color 240ms ease,color 240ms ease;transform:translateY(' + (st.nav === 'p' ? -3 : 0) + 'px);color:' + (st.nav === 'p' ? cur.color : fg) + ';background:' + (st.nav === 'p' ? cur.accent : soft + '0.16)') + ';',
+      nextStyle: 'width:' + (mob ? '48px' : '56px') + ';height:' + (mob ? '48px' : '56px') + ';padding:0;border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;border-radius:' + (st.nav === 'n' ? '50% 10px 50% 50%' : '50% 50% 10px 50%') + ';transition:border-radius 320ms cubic-bezier(0.76,0,0.24,1),transform 320ms cubic-bezier(0.22,0.61,0.36,1),background-color 240ms ease,color 240ms ease;transform:translateY(' + (st.nav === 'n' ? -3 : 0) + 'px);color:' + (st.nav === 'n' ? cur.color : fg) + ';background:' + (st.nav === 'n' ? cur.accent : soft + '0.16)') + ';',
+
+      quickPad: mob ? '40px 0 0' : 'clamp(56px,6vw,88px) 0 0',
+      quickHeadGap: mob ? '16px' : '24px',
+      quickTitleStyle: "margin:0;font-family:'Sofia Sans Extra Condensed',sans-serif;font-weight:900;font-size:" + (mob ? 'clamp(32px,9vw,40px)' : 'clamp(40px,4.4vw,68px)') + ';line-height:0.96;letter-spacing:-0.03em;color:var(--ink);',
+
+      barH: mob ? '64px' : '76px',
+      barRadius: mob ? '24px' : '999px',
+      langX: st.lang === 'EN' ? '48px' : '0px',
+      isMobile: mob,
+      deskNav: !mob,
+      menuOpen: mob && st.menuOpen,
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      uaBg: this.langStyle('UA').bg,
+      uaColor: this.langStyle('UA').color,
+      enBg: this.langStyle('EN').bg,
+      enColor: this.langStyle('EN').color,
+      pickUA: () => this.setState({ lang: 'UA' }),
+      pickEN: () => this.setState({ lang: 'EN' }),
+      hoverUA: () => this.setState({ langHover: 'UA' }),
+      hoverEN: () => this.setState({ langHover: 'EN' }),
+      hoverOff: () => this.setState({ langHover: null })
+    };
+  }
+}
+</script>
+</body>
+</html>

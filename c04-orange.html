@@ -192,7 +192,7 @@
 
   <section data-screen-label="Інші товари — варіант B" style="{{ altSecStyle }}">
     <div style="max-width:1344px;margin:0 auto;">
-      <h2 style="margin:0 0 clamp(28px,3.4vw,52px);font-family:Unbounded,'Fixel Display',sans-serif;font-weight:700;font-size:clamp(28px,3.4vw,48px);line-height:1.06;letter-spacing:-0.03em;color:#211A17;">Інші товари</h2>
+      <h2 style="margin:0 0 clamp(28px,3.4vw,52px);font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,48px);line-height:1.06;letter-spacing:-0.03em;color:#211A17;">Інші товари</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(56px,4vw,64px);">
         <a href="#" onMouseEnter="{{ altW.on }}" onMouseLeave="{{ altW.off }}" onFocus="{{ altW.on }}" onBlur="{{ altW.off }}" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;min-width:0;text-decoration:none;">
           <span style="position:relative;display:block;width:100%;aspect-ratio:1 / 0.9;">
@@ -248,39 +248,87 @@
     </div>
   </section>
 
-  <section data-screen-label="Рецепти" style="{{ recSecStyle }}">
+  <section data-screen-label="Рецепти" style="background:#F6F4EF;padding:clamp(56px,6vw,88px) clamp(20px,3.4vw,48px) clamp(80px,7vw,100px);box-sizing:border-box;overflow:hidden;">
     <div style="max-width:1344px;margin:0 auto;">
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px 40px;flex-wrap:wrap;">
-        <div style="min-width:0;flex:1 1 320px;">
-          <h2 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(34px,3.6vw,56px);line-height:0.94;letter-spacing:-0.04em;color:#211A17;">Рецепти</h2>
-          <p style="margin:16px 0 0;font-family:'Fixel Text',sans-serif;font-weight:400;font-size:clamp(17px,1.35vw,20px);line-height:1.5;letter-spacing:-0.01em;color:rgba(33,26,23,0.7);max-width:520px;text-wrap:pretty;">Смачні ідеї з продуктами Monik</p>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px 40px;flex-wrap:wrap;">
+        <div style="min-width:0;flex:1 1 420px;">
+          <span style="display:block;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:clamp(18px,1.5vw,22px);line-height:1.2;color:#048144;">Рецепти</span>
+          <h2 style="margin:14px 0 0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(30px,4.2vw,56px);line-height:1.02;letter-spacing:-0.03em;text-transform:uppercase;color:#048144;max-width:960px;text-wrap:balance;">Смачні ідеї з продуктами Monik</h2>
         </div>
-        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;width:{{ recHeadW }}">
-          <div style="display:flex;align-items:center;gap:8px;">
-            <button type="button" aria-label="Попередній рецепт" onClick="{{ recPrev }}" disabled="{{ recAtStart }}" style="width:48px;height:48px;padding:0;border:1px solid rgba(33,26,23,0.2);background:transparent;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#211A17;transition:background 300ms ease,color 300ms ease,opacity 300ms ease;opacity:{{ recAtStartOpacity }}" style-hover="background:#211A17;color:#F6F4EF;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M21 12H3M8.5 6.8 3 12l5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
-            <button type="button" aria-label="Наступний рецепт" onClick="{{ recNext }}" disabled="{{ recAtEnd }}" style="width:48px;height:48px;padding:0;border:1px solid rgba(33,26,23,0.2);background:transparent;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#211A17;transition:background 300ms ease,color 300ms ease,opacity 300ms ease;opacity:{{ recAtEndOpacity }}" style-hover="background:#211A17;color:#F6F4EF;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M3 12h18M15.5 6.8 21 12l-5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
-          </div>
-          <a href="#" onMouseEnter="{{ recAllOn }}" onMouseLeave="{{ recAllOff }}" onFocus="{{ recAllOn }}" onBlur="{{ recAllOff }}" style="display:inline-flex;align-items:center;gap:12px;min-height:48px;font-family:'Fixel Text',sans-serif;font-weight:600;font-size:16px;color:#211A17;text-decoration:none;">
-            <span>Усі рецепти</span>
-            <span aria-hidden="true" style="{{ recAllDot }}"></span>
-          </a>
-        </div>
+        <a href="#" style="flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 clamp(26px,2.4vw,38px);border-radius:999px;box-sizing:border-box;background:transparent;box-shadow:inset 0 0 0 2px #048144;font-family:'Fixel Text',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#048144;transition:background-color 400ms ease,color 400ms ease;" style-hover="background:#048144;color:#F6F4EF;" style-focus="outline:2px solid #048144;outline-offset:4px;">Усі рецепти</a>
       </div>
 
-      <div ref="{{ recTrackRef }}" onScroll="{{ recScroll }}" style="margin-top:{{ recRailGap }};display:flex;align-items:stretch;gap:24px;overflow-x:hidden;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px;touch-action:pan-y;">
-        <sc-for list="{{ recSideCards }}" as="card" hint-placeholder-count="5">
-          <a href="#" onMouseEnter="{{ card.on }}" onMouseLeave="{{ card.off }}" onFocus="{{ card.on }}" onBlur="{{ card.off }}" style="{{ card.cardStyle }}">
-            <span style="display:block;aspect-ratio:1 / 1;width:100%;border-radius:12px;overflow:hidden;">
-              <img src="{{ card.img }}" alt="{{ card.title }}" loading="lazy" style="{{ card.imgStyle }}" />
-            </span>
-            <span style="{{ card.tagStyle }}">{{ card.tag }}</span>
-            <h3 style="{{ card.titleStyle }}">{{ card.title }}</h3>
-            <span style="{{ card.linkStyle }}">
-              <span>Дивитися рецепт</span>
-              <span aria-hidden="true" style="{{ card.dotStyle }}"></span>
-            </span>
-          </a>
-        </sc-for>
+      <div ref="{{ recTrackRef }}" onScroll="{{ recScroll }}" onPointerDown="{{ recDragStart }}" onPointerMove="{{ recDragMove }}" onPointerUp="{{ recDragEnd }}" onPointerLeave="{{ recDragEnd }}" style="margin-top:clamp(28px,3.4vw,44px);margin-right:{{ recBleed }};display:flex;align-items:stretch;gap:clamp(16px,1.8vw,24px);overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px;touch-action:pan-y;cursor:grab;">
+        <a href="#" onMouseEnter="{{ recipeOn0 }}" onMouseLeave="{{ recipeOff }}" style="flex:0 0 {{ recCardW }};display:flex;flex-direction:column;gap:18px;min-width:0;color:#048144;" style-focus="outline:3px solid #211A17;outline-offset:4px;">
+          <div style="height:{{ recImgH0 }};width:100%;border-radius:20px;overflow:hidden;background:rgba(33,26,23,0.06);transition:height 400ms cubic-bezier(0.22,1,0.36,1);">
+            <img src="assets/v2-recipe-drink.jpg" alt="Кавово-молочний напій «Вишня в шоколаді»" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ recipeScale0 }}" />
+          </div>
+          <h3 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(17px,1.4vw,20px);line-height:1.16;letter-spacing:-0.01em;text-transform:uppercase;min-height:2.4em;">Кавово-молочний напій «Вишня в шоколаді»</h3>
+          <div style="margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:6px 24px;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:14px;line-height:1.3;color:#048144;">
+            <span>Порцій: 2</span>
+            <span>Час приготування: 10 хв</span>
+          </div>
+          <span aria-hidden="true" style="display:flex;align-items:center;overflow:hidden;height:{{ recMoreH0 }};opacity:{{ recMoreOp0 }};transition:height 400ms cubic-bezier(0.22,1,0.36,1),opacity 300ms ease;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;border-radius:999px;background:#048144;color:#F6F4EF;font-family:'Fixel Text',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;">Дивитися рецепт</span>
+          </span>
+        </a>
+        <a href="#" onMouseEnter="{{ recipeOn1 }}" onMouseLeave="{{ recipeOff }}" style="flex:0 0 {{ recCardW }};display:flex;flex-direction:column;gap:18px;min-width:0;color:#048144;" style-focus="outline:3px solid #211A17;outline-offset:4px;">
+          <div style="height:{{ recImgH1 }};width:100%;border-radius:20px;overflow:hidden;background:rgba(33,26,23,0.06);transition:height 400ms cubic-bezier(0.22,1,0.36,1);">
+            <img src="assets/v2-recipe-muffin.jpg" alt="Мафіни з малиновим джемом" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ recipeScale1 }}" />
+          </div>
+          <h3 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(17px,1.4vw,20px);line-height:1.16;letter-spacing:-0.01em;text-transform:uppercase;min-height:2.4em;">Мафіни з малиновим джемом</h3>
+          <div style="margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:6px 24px;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:14px;line-height:1.3;color:#048144;">
+            <span>Порцій: 6</span>
+            <span>Час приготування: 35 хв</span>
+          </div>
+          <span aria-hidden="true" style="display:flex;align-items:center;overflow:hidden;height:{{ recMoreH1 }};opacity:{{ recMoreOp1 }};transition:height 400ms cubic-bezier(0.22,1,0.36,1),opacity 300ms ease;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;border-radius:999px;background:#048144;color:#F6F4EF;font-family:'Fixel Text',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;">Дивитися рецепт</span>
+          </span>
+        </a>
+        <a href="#" onMouseEnter="{{ recipeOn2 }}" onMouseLeave="{{ recipeOff }}" style="flex:0 0 {{ recCardW }};display:flex;flex-direction:column;gap:18px;min-width:0;color:#048144;" style-focus="outline:3px solid #211A17;outline-offset:4px;">
+          <div style="height:{{ recImgH2 }};width:100%;border-radius:20px;overflow:hidden;background:rgba(33,26,23,0.06);transition:height 400ms cubic-bezier(0.22,1,0.36,1);">
+            <img src="assets/v2-recipe-balls.jpg" alt="Лляні кульки з медом і родзинками" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ recipeScale2 }}" />
+          </div>
+          <h3 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(17px,1.4vw,20px);line-height:1.16;letter-spacing:-0.01em;text-transform:uppercase;min-height:2.4em;">Лляні кульки з медом і родзинками</h3>
+          <div style="margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:6px 24px;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:14px;line-height:1.3;color:#048144;">
+            <span>Порцій: 4</span>
+            <span>Час приготування: 20 хв</span>
+          </div>
+          <span aria-hidden="true" style="display:flex;align-items:center;overflow:hidden;height:{{ recMoreH2 }};opacity:{{ recMoreOp2 }};transition:height 400ms cubic-bezier(0.22,1,0.36,1),opacity 300ms ease;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;border-radius:999px;background:#048144;color:#F6F4EF;font-family:'Fixel Text',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;">Дивитися рецепт</span>
+          </span>
+        </a>
+        <a href="#" onMouseEnter="{{ recipeOn3 }}" onMouseLeave="{{ recipeOff }}" style="flex:0 0 {{ recCardW }};display:flex;flex-direction:column;gap:18px;min-width:0;color:#048144;" style-focus="outline:3px solid #211A17;outline-offset:4px;">
+          <div style="height:{{ recImgH3 }};width:100%;border-radius:20px;overflow:hidden;background:rgba(33,26,23,0.06);transition:height 400ms cubic-bezier(0.22,1,0.36,1);">
+            <img src="assets/v2-recipe-roll.jpg" alt="Маковий рулет" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ recipeScale3 }}" />
+          </div>
+          <h3 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(17px,1.4vw,20px);line-height:1.16;letter-spacing:-0.01em;text-transform:uppercase;min-height:2.4em;">Маковий рулет</h3>
+          <div style="margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:6px 24px;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:14px;line-height:1.3;color:#048144;">
+            <span>Порцій: 8</span>
+            <span>Час приготування: 90 хв</span>
+          </div>
+          <span aria-hidden="true" style="display:flex;align-items:center;overflow:hidden;height:{{ recMoreH3 }};opacity:{{ recMoreOp3 }};transition:height 400ms cubic-bezier(0.22,1,0.36,1),opacity 300ms ease;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;border-radius:999px;background:#048144;color:#F6F4EF;font-family:'Fixel Text',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;">Дивитися рецепт</span>
+          </span>
+        </a>
+        <a href="#" onMouseEnter="{{ recipeOn4 }}" onMouseLeave="{{ recipeOff }}" style="flex:0 0 {{ recCardW }};display:flex;flex-direction:column;gap:18px;min-width:0;color:#048144;" style-focus="outline:3px solid #211A17;outline-offset:4px;">
+          <div style="height:{{ recImgH4 }};width:100%;border-radius:20px;overflow:hidden;background:rgba(33,26,23,0.06);transition:height 400ms cubic-bezier(0.22,1,0.36,1);">
+            <img src="assets/v2-recipe-cookies.jpg" alt="Пісочне печиво з полуничним джемом" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ recipeScale4 }}" />
+          </div>
+          <h3 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(17px,1.4vw,20px);line-height:1.16;letter-spacing:-0.01em;text-transform:uppercase;min-height:2.4em;">Пісочне печиво з полуничним джемом</h3>
+          <div style="margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:6px 24px;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:14px;line-height:1.3;color:#048144;">
+            <span>Порцій: 6</span>
+            <span>Час приготування: 40 хв</span>
+          </div>
+          <span aria-hidden="true" style="display:flex;align-items:center;overflow:hidden;height:{{ recMoreH4 }};opacity:{{ recMoreOp4 }};transition:height 400ms cubic-bezier(0.22,1,0.36,1),opacity 300ms ease;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;border-radius:999px;background:#048144;color:#F6F4EF;font-family:'Fixel Text',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;">Дивитися рецепт</span>
+          </span>
+        </a>
+      </div>
+
+      <div style="margin-top:clamp(26px,3vw,40px);display:flex;align-items:center;gap:14px;">
+        <button type="button" aria-label="Попередній рецепт" onClick="{{ recPrev }}" style="width:56px;height:56px;padding:0;border:none;border-radius:50%;cursor:pointer;background:transparent;box-shadow:inset 0 0 0 2px #048144;color:#048144;display:flex;align-items:center;justify-content:center;transition:background-color 400ms ease,color 400ms ease;opacity:{{ recAtStartOpacity }}" style-hover="background:#048144;color:#F6F4EF;" style-focus="outline:2px solid #048144;outline-offset:4px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M21 12H3M8.5 6.8 3 12l5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <button type="button" aria-label="Наступний рецепт" onClick="{{ recNext }}" style="width:56px;height:56px;padding:0;border:none;border-radius:50%;cursor:pointer;background:transparent;box-shadow:inset 0 0 0 2px #048144;color:#048144;display:flex;align-items:center;justify-content:center;transition:background-color 400ms ease,color 400ms ease;opacity:{{ recAtEndOpacity }}" style-hover="background:#048144;color:#F6F4EF;" style-focus="outline:2px solid #048144;outline-offset:4px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M3 12h18M15.5 6.8 21 12l-5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
       </div>
     </div>
   </section>
@@ -333,7 +381,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#E94A2C&quot;,&quot;options&quot;:[&quot;#E94A2C&quot;,&quot;#EA4335&quot;,&quot;#C92C63&quot;,&quot;#FFB629&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Концепт 04&quot;},&quot;showGhost&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Концепт 04&quot;},&quot;productHeight&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:82,&quot;min&quot;:70,&quot;max&quot;:92,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Концепт 04&quot;}}">
 class Component extends DCLogic {
-  state = { mobile: false, tablet: false, lang: 'UA', menuOpen: false, back: false, other: null, alt: null, recAlt: null, recAll: false, recStart: true, recEnd: false };
+  state = { mobile: false, tablet: false, lang: 'UA', menuOpen: false, back: false, other: null, alt: null, recAlt: null, recAll: false, recStart: true, recEnd: false, recipe: null };
 
   altCell(key, w, rot, cta) {
     const hot = this.state.alt === key;
@@ -342,7 +390,7 @@ class Component extends DCLogic {
     return {
       on: () => this.setState({ alt: key }),
       off: () => this.setState({ alt: null }),
-      splashStyle: 'position:absolute;left:50%;top:52%;width:' + (w * 100) + '%;display:block;pointer-events:none;z-index:0;transition:transform ' + ease + ';transform:translate(-50%,-50%) rotate(' + (hot ? rot : 0) + 'deg) scale(' + (hot ? 1.12 : 0.9) + ');',
+      splashStyle: 'position:absolute;left:50%;top:52%;width:' + (w * 100) + '%;display:block;pointer-events:none;z-index:0;transition:transform ' + ease + ';transform:translate(-50%,-50%) rotate(' + (hot ? rot : 0) + 'deg) scale(' + (hot ? 1.008 : 0.9) + ');',
       baseStyle: 'position:relative;display:block;transition:opacity ' + ease + ';opacity:' + (hot ? 0 : 1) + ';',
       tintStyle: 'position:absolute;inset:0;display:block;transition:opacity ' + ease + ';opacity:' + (hot ? 1 : 0) + ';',
       imgStyle: 'position:absolute;left:50%;top:50%;z-index:1;display:block;width:auto;max-width:96%;height:78%;object-fit:contain;filter:drop-shadow(0 24px 32px rgb(33 26 23 / 14%));transition:transform ' + ease + ';transform:translate(-50%,-50%) translateY(' + (hot ? -8 : 0) + 'px) scale(' + (hot ? 1.15 : 1) + ');',
@@ -398,6 +446,24 @@ class Component extends DCLogic {
     const atEnd = el.scrollLeft >= max - 2;
     if (atStart !== this.state.recStart || atEnd !== this.state.recEnd) this.setState({ recStart: atStart, recEnd: atEnd });
   };
+  recDragStart = (e) => {
+    const el = this.recTrackRef.current;
+    if (!el) return;
+    this.drag = { x: e.clientX, left: el.scrollLeft };
+    el.style.cursor = 'grabbing';
+  };
+  recDragMove = (e) => {
+    const el = this.recTrackRef.current;
+    if (!el || !this.drag) return;
+    const dx = e.clientX - this.drag.x;
+    if (Math.abs(dx) > 3) e.preventDefault();
+    el.scrollLeft = this.drag.left - dx;
+  };
+  recDragEnd = () => {
+    const el = this.recTrackRef.current;
+    if (el) el.style.cursor = 'grab';
+    this.drag = null;
+  };
 
   otherItems = [
     { title: 'Кавун–м’ята', desc: 'Соковитий кавун із прохолодною м’ятною свіжістю.', img: 'assets/lemonade-watermelon.png', color: '#D92767', oval: '#EB5A88', ink: '#FFF7F1', sub: '#FFF7F1', ctaBg: '#FFF7F1', ctaInk: '#A3134A', deep: '#8E0F3F' },
@@ -450,7 +516,25 @@ class Component extends DCLogic {
       valueStyle: "min-width:0;text-align:right;font-family:'Fixel Display',sans-serif;font-weight:" + (r.sub ? 700 : 800) + ';font-size:' + (mob ? (r.sub ? '17px' : '19px') : (r.sub ? '19px' : '23px')) + ';line-height:1.15;letter-spacing:-0.03em;color:' + (r.sub ? 'rgba(33,26,23,0.68)' : '#211A17') + ';' + (mob ? 'text-wrap:pretty;' : 'white-space:nowrap;')
     }));
 
+    const recCards = {};
+    const cw = mob ? 'calc(78vw - 20px)' : 'clamp(248px,22vw,320px)';
+    for (let n = 0; n < 5; n++) {
+      const hot = this.state.recipe === n;
+      recCards['recipeOn' + n] = ((k) => () => this.setState({ recipe: k }))(n);
+      recCards['recipeScale' + n] = hot ? 'scale(1.03)' : 'scale(1)';
+      recCards['recImgH' + n] = hot ? 'calc(' + cw + ' - 76px)' : cw;
+      recCards['recMoreH' + n] = hot ? '48px' : '0px';
+      recCards['recMoreOp' + n] = hot ? 1 : 0;
+    }
+
     return {
+      ...recCards,
+      recipeOff: () => this.setState({ recipe: null }),
+      recCardW: cw,
+      recBleed: mob ? '-20px' : 'calc(-1 * max(clamp(20px,3.4vw,48px), (100vw - 1344px) / 2))',
+      recDragStart: this.recDragStart,
+      recDragMove: this.recDragMove,
+      recDragEnd: this.recDragEnd,
       rows,
       accent,
       showGhost,
@@ -534,9 +618,9 @@ class Component extends DCLogic {
       altW: this.altCell('w', 0.78, 9, { bg: '#A6124D', ink: '#FFF7F1' }),
       altM: this.altCell('m', 0.75, -9, { bg: '#176142', ink: '#FFF7F1' }),
 
-      otherSecStyle: 'position:relative;z-index:1;background:var(--mineral);box-sizing:border-box;border-radius:0;padding:' + (mob ? '48px 20px 48px' : tab ? '64px 24px 64px' : '88px 32px 88px') + ';',
+      otherSecStyle: 'display:none;position:relative;z-index:1;background:var(--mineral);box-sizing:border-box;border-radius:0;padding:' + (mob ? '48px 20px 48px' : tab ? '64px 24px 64px' : '88px 32px 88px') + ';',
       otherInnerStyle: 'max-width:1344px;margin:0 auto;',
-      otherH2Style: "margin:0 0 " + (mob ? '24px' : 'clamp(28px,2.8vw,40px)') + ";font-family:Unbounded,'Fixel Display',sans-serif;font-weight:700;font-size:" + (mob ? '28px' : 'clamp(32px,3.4vw,48px)') + ';line-height:1.06;letter-spacing:-0.03em;color:var(--dark);',
+      otherH2Style: "margin:0 0 " + (mob ? '24px' : 'clamp(28px,2.8vw,40px)') + ";font-family:'Fixel Display',sans-serif;font-weight:800;font-size:" + (mob ? '28px' : 'clamp(32px,3.4vw,48px)') + ';line-height:1.06;letter-spacing:-0.03em;color:var(--dark);',
       otherGridStyle: 'display:grid;grid-template-columns:' + (mob ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))') + ';gap:24px;',
       otherCards: this.otherItems.map((c, i) => {
         const hot = this.state.other === i;

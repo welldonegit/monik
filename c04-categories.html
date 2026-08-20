@@ -119,30 +119,20 @@
         </div>
 
         <div style="position:relative;min-height:0;display:flex;align-items:flex-end;justify-content:center;">
-          <button type="button" aria-label="Попередня категорія" onClick="{{ goPrev }}" style="{{ peekPrevStyle }}">
-            <img src="{{ prevImg }}" alt="{{ prevAlt }}" loading="lazy" style="{{ peekImgStyle }}" />
+          <button type="button" aria-label="Попередня категорія" onClick="{{ goPrev }}" onMouseEnter="{{ peekPrevOn }}" onMouseLeave="{{ peekOff }}" onFocus="{{ peekPrevOn }}" onBlur="{{ peekOff }}" style="{{ peekPrevStyle }}">
+            <img src="{{ prevImg }}" alt="{{ prevAlt }}" loading="lazy" style="{{ peekImgPrevStyle }}" />
+            <span aria-hidden="true" style="{{ peekHintPrevStyle }}">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:block;flex:0 0 auto;"><path d="M20 12H4M9 6.5 4 12l5 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;">{{ prevTitle }}</span>
+            </span>
           </button>
           <img src="{{ img }}" alt="{{ alt }}" style="{{ prodStyle }}" />
-          <div aria-hidden="true" style="{{ badgeStyle }}">
-            <svg viewBox="0 0 120 120" style="display:block;width:100%;height:100%;">
-              <circle cx="60" cy="60" r="60" fill="{{ badgeFill }}"></circle>
-              <circle cx="60" cy="60" r="51" fill="none" stroke="{{ badgeInk }}" stroke-width="1.4" opacity="0.55"></circle>
-              <path id="mk-badge-top" d="M60 60 m-37 0 a37 37 0 1 1 74 0" fill="none"></path>
-              <path id="mk-badge-bot" d="M60 60 m-44 0 a44 44 0 0 0 88 0" fill="none"></path>
-              <text fill="{{ badgeInk }}" font-family="Fixel Text, sans-serif" font-size="9.8" font-weight="800" letter-spacing="0.35">
-                <textPath href="#mk-badge-top" startOffset="50%" text-anchor="middle">ЗРОБЛЕНО В УКРАЇНІ</textPath>
-              </text>
-              <text fill="{{ badgeInk }}" font-family="Fixel Text, sans-serif" font-size="9.6" font-weight="700" letter-spacing="1.2">
-                <textPath href="#mk-badge-bot" startOffset="50%" text-anchor="middle">НАТУРАЛЬНИЙ СМАК</textPath>
-              </text>
-              <g fill="{{ badgeInk }}">
-                <rect x="43.4" y="55.6" width="9.6" height="18.8" rx="3.2"></rect>
-                <path d="M56.4 74.4V56.2c0-.9.4-1.8 1.1-2.4 2.1-1.7 3.4-3.6 3.9-5.8l1.1-4.7c.4-1.7 2-2.9 3.8-2.7 2.6.3 4.3 2.4 4.3 5.2 0 1.9-.4 4-1.3 6.4h7.4c3 0 5.3 2.5 4.9 5.4l-1.7 12.3c-.3 2.5-2.5 4.4-5.1 4.4z"></path>
-              </g>
-            </svg>
-          </div>
-          <button type="button" aria-label="Наступна категорія" onClick="{{ goNext }}" style="{{ peekNextStyle }}">
-            <img src="{{ nextImg }}" alt="{{ nextAlt }}" loading="lazy" style="{{ peekImgStyle }}" />
+          <button type="button" aria-label="Наступна категорія" onClick="{{ goNext }}" onMouseEnter="{{ peekNextOn }}" onMouseLeave="{{ peekOff }}" onFocus="{{ peekNextOn }}" onBlur="{{ peekOff }}" style="{{ peekNextStyle }}">
+            <img src="{{ nextImg }}" alt="{{ nextAlt }}" loading="lazy" style="{{ peekImgNextStyle }}" />
+            <span aria-hidden="true" style="{{ peekHintNextStyle }}">
+              <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;">{{ nextTitle }}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:block;flex:0 0 auto;"><path d="M4 12h16M15 6.5 20 12l-5 5.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
           </button>
         </div>
 
@@ -150,17 +140,16 @@
           <div style="{{ textColStyle }}">
             <a href="#" onMouseEnter="{{ linkOn }}" onMouseLeave="{{ linkOff }}" onFocus="{{ linkOn }}" onBlur="{{ linkOff }}" style="{{ linkStyle }}">
               <span>Переглянути товари</span>
-              <svg width="30" height="10" viewBox="0 0 30 10" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" style="{{ arrowStyle }}"><path d="M0 5h28"></path><path d="M23.6 1 28 5l-4.4 4"></path></svg>
             </a>
           </div>
 
           <div style="{{ ctrlColStyle }}">
             <div style="display:flex;align-items:center;gap:12px;flex:0 0 auto;">
               <button type="button" aria-label="Попередня категорія" onClick="{{ goPrev }}" onMouseEnter="{{ prevOn }}" onMouseLeave="{{ navOff }}" style="{{ prevStyle }}">
-                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M17 7H1"></path><path d="M6 1 1 7l5 6"></path></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:block;"><path d="M21 12H3M8.5 6.8 3 12l5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
               </button>
               <button type="button" aria-label="Наступна категорія" onClick="{{ goNext }}" onMouseEnter="{{ nextOn }}" onMouseLeave="{{ navOff }}" style="{{ nextStyle }}">
-                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M1 7h16"></path><path d="M12 1l5 6-5 6"></path></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:block;"><path d="M3 12h18M15.5 6.8 21 12l-5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
               </button>
             </div>
           </div>
@@ -177,7 +166,6 @@
     <nav style="display:flex;flex-direction:column;">
       <sc-for list="{{ rows }}" as="r" hint-placeholder-count="12">
         <button type="button" onClick="{{ r.go }}" onMouseEnter="{{ r.on }}" onMouseLeave="{{ r.off }}" onFocus="{{ r.on }}" onBlur="{{ r.off }}" style="{{ r.style }}">
-          <span style="{{ r.indexStyle }}">{{ r.index }}</span>
           <span style="{{ r.nameStyle }}">{{ r.title }}</span>
           <span aria-hidden="true" style="{{ r.arrowWrapStyle }}">
             <svg width="22" height="9" viewBox="0 0 30 10" fill="none" stroke="currentColor" stroke-width="1.4" style="{{ r.arrowStyle }}"><path d="M0 5h28"></path><path d="M23.6 1 28 5l-4.4 4"></path></svg>
@@ -211,12 +199,12 @@
     </div>
 
     <nav style="display:flex;flex-direction:column;">
-      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(246,244,239,0.16);font-family:Unbounded,'Fixel Display',sans-serif;font-weight:600;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(246,244,239,0.34);">Продукція</a>
-      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(246,244,239,0.16);font-family:Unbounded,'Fixel Display',sans-serif;font-weight:600;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(246,244,239,0.34);">Натхнення</a>
-      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(246,244,239,0.16);border-bottom:1px solid rgba(246,244,239,0.16);font-family:Unbounded,'Fixel Display',sans-serif;font-weight:600;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(246,244,239,0.34);">Контакти</a>
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(246,244,239,0.16);font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(246,244,239,0.34);">Продукція</a>
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(246,244,239,0.16);font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(246,244,239,0.34);">Натхнення</a>
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(246,244,239,0.16);border-bottom:1px solid rgba(246,244,239,0.16);font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(246,244,239,0.34);">Контакти</a>
     </nav>
 
-    <div aria-hidden="true" style="display:block;font-family:Unbounded,'Fixel Display',sans-serif;font-weight:600;font-size:min(96px,5.7vw);line-height:0.92;letter-spacing:-0.02em;color:var(--cream);user-select:none;white-space:nowrap;">#СолодкіРадостіЖиття</div>
+    <div aria-hidden="true" style="display:block;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:min(96px,5.7vw);line-height:0.92;letter-spacing:-0.02em;color:var(--cream);user-select:none;white-space:nowrap;">#СолодкіРадостіЖиття</div>
 
     <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:14px;color:rgba(246,244,239,0.6);">
       <span>© 2026 Monik</span>
@@ -238,7 +226,7 @@ class Component extends DCLogic {
     mobile: false, tablet: false,
     disp: 0, baseIdx: 0, phase: 'in',
     revealColor: null, revealOpen: false, revealAnim: true,
-    hoverRow: null, nav: null, dot: null, linkHot: false,
+    hoverRow: null, nav: null, dot: null, linkHot: false, peek: null,
     lang: 'UA', langHover: null, menuOpen: false
   };
 
@@ -279,11 +267,11 @@ class Component extends DCLogic {
       else if (e.key === 'ArrowLeft') { e.preventDefault(); this.go(this.state.disp - 1, true); }
     };
     document.addEventListener('keydown', this.onKey);
-    this.onVis = () => { if (!document.hidden) this.arm(6000); };
+    this.onVis = () => { if (!document.hidden) this.arm(4000); };
     document.addEventListener('visibilitychange', this.onVis);
 
     this.preload(0);
-    this.arm(6000);
+    this.arm(4000);
   }
 
   componentWillUnmount() {
@@ -306,12 +294,12 @@ class Component extends DCLogic {
   arm(delay) {
     if (this.auto) clearTimeout(this.auto);
     if (this.props.autoplay === false) return;
-    const step = this.props.autoplayMs || 6000;
+    const step = this.props.autoplayMs || 4000;
     this.auto = setTimeout(() => {
       if (this.props.autoplay === false) return;
       if (this.paused || document.hidden || this.busy) { this.arm(1200); return; }
       this.go(this.state.disp + 1, false);
-    }, delay === 6000 ? step : delay);
+    }, delay === 4000 ? step : delay);
   }
 
   go(n, manual) {
@@ -322,7 +310,7 @@ class Component extends DCLogic {
     this.clear();
     if (this.auto) clearTimeout(this.auto);
     this.preload(n);
-    const after = manual ? 8000 : 6000;
+    const after = manual ? 5000 : 4000;
 
     if (this.mqR && this.mqR.matches) {
       this.setState({ phase: 'out' });
@@ -359,10 +347,9 @@ class Component extends DCLogic {
   }
 
   titleSize(len, mob, tab) {
-    const b = len > 33 ? 3 : len > 22 ? 2 : len > 12 ? 1 : 0;
-    if (mob) return ['clamp(46px,15vw,66px)', 'clamp(42px,12.8vw,58px)', 'clamp(37px,10.2vw,50px)', 'clamp(34px,8.8vw,44px)'][b];
-    if (tab) return ['clamp(58px,9vw,112px)', 'clamp(52px,7.6vw,96px)', 'clamp(44px,6vw,78px)', 'clamp(38px,5vw,64px)'][b];
-    return ['clamp(72px,10vw,170px)', 'clamp(64px,8.4vw,146px)', 'clamp(52px,6.4vw,112px)', 'clamp(44px,5.2vw,92px)'][b];
+    if (mob) return '40px';
+    if (tab) return '56px';
+    return '72px';
   }
 
   renderVals() {
@@ -405,7 +392,7 @@ class Component extends DCLogic {
         style: 'display:flex;align-items:center;gap:' + (mob ? '14px' : 'clamp(18px,2vw,32px)') + ';width:100%;min-height:' + (mob ? '58px' : 'clamp(64px,5vw,76px)') + ';padding:' + (mob ? '10px 14px' : '10px clamp(16px,1.8vw,26px)') + ';box-sizing:border-box;text-align:left;cursor:pointer;border:none;border-top:1px solid ' + (hot ? 'transparent' : 'rgba(33,26,23,0.14)') + ';border-radius:' + (mob ? '14px' : '18px') + ';transition:background-color 240ms ease,color 240ms ease,border-color 240ms ease;color:' + on + ';background:' + (hot ? c.color : 'transparent') + ';' + (i === this.cats.length - 1 ? 'border-bottom:1px solid ' + (hot ? 'transparent' : 'rgba(33,26,23,0.14)') + ';' : ''),
         indexStyle: 'flex:0 0 auto;font-family:"Fixel Text",sans-serif;font-weight:700;font-size:' + (mob ? '12px' : '13px') + ';letter-spacing:0.06em;color:' + (hot ? c.fg : 'rgba(33,26,23,0.42)') + ';transition:color 240ms ease;',
         nameStyle: "flex:1 1 auto;min-width:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:" + (mob ? '22px' : 'clamp(26px,2.6vw,40px)') + ';line-height:1.04;letter-spacing:-0.02em;text-wrap:pretty;',
-        arrowWrapStyle: 'flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:' + (mob ? '40px' : '46px') + ';height:' + (mob ? '40px' : '46px') + ';box-sizing:border-box;border:1.4px solid currentColor;border-radius:' + (hot ? '50% 10px 50% 50%' : '50% 50% 10px 50%') + ';transition:border-radius 320ms cubic-bezier(0.76,0,0.24,1),opacity 240ms ease,transform 320ms cubic-bezier(0.22,0.61,0.36,1);opacity:' + (hot ? 1 : 0.42) + ';transform:translateY(' + (hot ? -2 : 0) + 'px);',
+        arrowWrapStyle: 'flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:' + (mob ? '40px' : '46px') + ';height:' + (mob ? '40px' : '46px') + ';box-sizing:border-box;border:1.4px solid currentColor;border-radius:50%;transition:opacity 240ms ease,transform 320ms cubic-bezier(0.22,0.61,0.36,1);opacity:' + (hot ? 1 : 0.42) + ';transform:translateY(' + (hot ? -2 : 0) + 'px);',
         arrowStyle: 'display:block;transition:transform 240ms ease;transform:translateX(' + (hot ? 3 : 0) + 'px);'
       };
     });
@@ -424,8 +411,8 @@ class Component extends DCLogic {
       dots, rows,
 
       stageRef: (el) => { this.stage = el; },
-      stageIn: () => { this.paused = true; },
-      stageOut: () => { this.paused = false; this.arm(6000); },
+      stageIn: () => {},
+      stageOut: () => { this.paused = false; this.arm(4000); },
       touchStart: (e) => { this.tx = e.touches[0].clientX; this.ty = e.touches[0].clientY; },
       touchEnd: (e) => {
         if (this.tx == null) return;
@@ -436,6 +423,11 @@ class Component extends DCLogic {
       },
       goPrev: () => this.go(st.disp - 1, true),
       goNext: () => this.go(st.disp + 1, true),
+      peekPrevOn: () => this.setState({ peek: 'p' }),
+      peekNextOn: () => this.setState({ peek: 'n' }),
+      peekOff: () => this.setState({ peek: null }),
+      prevTitle: prev.title,
+      nextTitle: next.title,
       prevOn: () => this.setState({ nav: 'p' }),
       nextOn: () => this.setState({ nav: 'n' }),
       navOff: () => this.setState({ nav: null }),
@@ -445,9 +437,13 @@ class Component extends DCLogic {
       headerWrapStyle: 'position:relative;z-index:3;background:' + base.color + ';transition:background-color 190ms linear;margin:0 calc(-1 * clamp(20px,3.4vw,48px));padding:' + (mob ? '10px' : 'clamp(12px,1.4vw,20px)') + ' clamp(20px,3.4vw,48px);box-sizing:border-box;',
       sectionStyle: 'position:relative;margin:0 calc(-1 * clamp(20px,3.4vw,48px));box-sizing:border-box;',
       stageStyle: 'position:relative;isolation:isolate;overflow:hidden;transform:translateZ(0);width:100%;box-sizing:border-box;height:100svh;min-height:' + (mob ? '620px' : '650px') + ';',
-      peekPrevStyle: 'position:absolute;left:0;bottom:0;z-index:0;height:' + (mob ? '32%' : '50%') + ';width:' + (mob ? '38%' : '26%') + ';padding:0;border:none;background:transparent;cursor:pointer;opacity:0.92;transform:translateX(' + (mob ? '-48%' : '-42%') + ');',
-      peekNextStyle: 'position:absolute;right:0;bottom:0;z-index:0;height:' + (mob ? '32%' : '50%') + ';width:' + (mob ? '38%' : '26%') + ';padding:0;border:none;background:transparent;cursor:pointer;opacity:0.92;transform:translateX(' + (mob ? '48%' : '42%') + ');',
-      peekImgStyle: 'display:block;width:100%;height:100%;object-fit:contain;object-position:50% 100%;filter:drop-shadow(0 20px 30px rgba(33,26,23,0.3)) brightness(0.92);',
+      peekPrevStyle: 'position:absolute;left:' + (mob ? '16px' : '40px') + ';bottom:' + (mob ? '32px' : '56px') + ';z-index:2;height:' + (mob ? 'min(32%,190px)' : 'min(50%,300px)') + ';max-height:100%;width:' + (mob ? '38%' : '26%') + ';padding:0;border:none;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;transition:transform 320ms cubic-bezier(0.22,0.61,0.36,1);transform:translateX(' + (mob ? '-48%' : st.peek === 'p' ? '-32%' : '-42%') + ');',
+      peekNextStyle: 'position:absolute;right:' + (mob ? '16px' : '40px') + ';bottom:' + (mob ? '32px' : '56px') + ';z-index:2;height:' + (mob ? 'min(32%,190px)' : 'min(50%,300px)') + ';max-height:100%;width:' + (mob ? '38%' : '26%') + ';padding:0;border:none;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;transition:transform 320ms cubic-bezier(0.22,0.61,0.36,1);transform:translateX(' + (mob ? '48%' : st.peek === 'n' ? '32%' : '42%') + ');',
+      peekImgStyle: 'display:block;width:100%;height:100%;object-fit:contain;object-position:50% 100%;transition:filter 260ms ease;filter:drop-shadow(0 20px 30px rgba(33,26,23,0.3)) brightness(0.86) saturate(0.85);',
+      peekImgPrevStyle: 'display:block;width:100%;flex:1 1 auto;min-height:0;object-fit:contain;object-position:50% 100%;transition:filter 260ms ease;filter:drop-shadow(0 20px 30px rgba(33,26,23,0.3)) ' + (st.peek === 'p' ? 'brightness(1) saturate(1)' : 'brightness(0.82) saturate(0.8) opacity(0.85)') + ';',
+      peekImgNextStyle: 'display:block;width:100%;flex:1 1 auto;min-height:0;object-fit:contain;object-position:50% 100%;transition:filter 260ms ease;filter:drop-shadow(0 20px 30px rgba(33,26,23,0.3)) ' + (st.peek === 'n' ? 'brightness(1) saturate(1)' : 'brightness(0.82) saturate(0.8) opacity(0.85)') + ';',
+      peekHintPrevStyle: 'flex:0 0 auto;margin-top:10px;max-width:' + (mob ? '150px' : '190px') + ';overflow:hidden;z-index:3;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px 0 10px;box-sizing:border-box;border-radius:999px;white-space:nowrap;pointer-events:none;font-family:"Fixel Text",sans-serif;font-weight:800;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;box-shadow:inset 0 0 0 2px ' + fg + ';background:' + (st.peek === 'p' ? fg : 'transparent') + ';color:' + (st.peek === 'p' ? cur.color : fg) + ';transition:background-color 400ms ease,color 400ms ease,transform 260ms cubic-bezier(0.22,0.61,0.36,1);transform:translateY(' + (st.peek === 'p' ? -2 : 0) + 'px);',
+      peekHintNextStyle: 'flex:0 0 auto;margin-top:10px;max-width:' + (mob ? '150px' : '190px') + ';overflow:hidden;z-index:3;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 10px 0 14px;box-sizing:border-box;border-radius:999px;white-space:nowrap;pointer-events:none;font-family:"Fixel Text",sans-serif;font-weight:800;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;box-shadow:inset 0 0 0 2px ' + fg + ';background:' + (st.peek === 'n' ? fg : 'transparent') + ';color:' + (st.peek === 'n' ? cur.color : fg) + ';transition:background-color 400ms ease,color 400ms ease,transform 260ms cubic-bezier(0.22,0.61,0.36,1);transform:translateY(' + (st.peek === 'n' ? -2 : 0) + 'px);',
       badgeStyle: 'position:absolute;z-index:2;pointer-events:none;' + (mob ? 'top:6%;right:2%;width:128px;height:128px;' : 'left:' + (tab ? '16%' : '20%') + ';bottom:26%;width:clamp(108px,11vw,168px);height:clamp(108px,11vw,168px);') + textAnim,
       badgeFill: cur.accent,
       badgeInk: cur.color,
@@ -455,21 +451,21 @@ class Component extends DCLogic {
       revealStyle: 'position:absolute;inset:0;z-index:1;will-change:clip-path;pointer-events:none;' + (st.revealAnim ? 'transition:clip-path 560ms cubic-bezier(0.76,0,0.24,1);' : 'transition:none;') + 'clip-path:circle(' + (st.revealOpen ? '150%' : '0%') + ' at 50% 50%);background:' + (st.revealColor || base.color) + ';',
       innerStyle: 'position:absolute;inset:0;z-index:2;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:' + (mob ? '12px' : 'clamp(12px,1.4vw,20px)') + ';padding:' + pad + ';box-sizing:border-box;',
 
-      headStyle: 'min-width:0;display:flex;justify-content:center;' + textAnim,
+      headStyle: 'min-width:0;display:flex;justify-content:center;padding-top:24px;margin-top:-16px;' + textAnim,
       titleStyle: "margin:0;max-width:" + (mob ? '100%' : '94%') + ";text-align:center;font-family:'Fixel Display',sans-serif;font-weight:800;text-transform:uppercase;font-size:" + this.titleSize(cur.title.length, mob, tab) + ';line-height:' + (mob ? '0.92' : '0.86') + ';letter-spacing:-0.02em;text-wrap:balance;color:' + cur.accent + ';',
       numStyle: 'margin:0;flex:0 0 auto;font-family:"Fixel Text",sans-serif;font-weight:700;font-size:' + (mob ? '12px' : '14px') + ';letter-spacing:0.1em;color:' + soft + '0.7);',
 
-      prodStyle: 'position:relative;z-index:1;display:block;width:100%;max-width:100%;height:' + (mob ? '112%' : '120%') + ';align-self:' + (mob ? 'center' : 'flex-end') + ';margin-top:' + (mob ? '-14%' : '-6%') + ';object-fit:contain;object-position:50% ' + (mob ? '50%' : '100%') + ';filter:drop-shadow(0 34px 46px rgba(33,26,23,0.34));' + prodAnim,
+      prodStyle: 'position:relative;z-index:1;display:block;width:100%;max-width:100%;height:' + (mob ? 'min(360px,100%)' : tab ? 'min(480px,100%)' : 'min(620px,100%)') + ';max-height:100%;align-self:' + (mob ? 'center' : 'flex-end') + ';margin-top:0;object-fit:contain;object-position:50% ' + (mob ? '50%' : '100%') + ';filter:drop-shadow(0 34px 46px rgba(33,26,23,0.34));' + prodAnim,
 
-      footRowStyle: 'display:flex;align-items:center;justify-content:space-between;gap:' + (mob ? '14px' : '28px') + ';flex-wrap:' + (mob ? 'wrap' : 'nowrap') + ';min-width:0;',
+      footRowStyle: 'display:none;align-items:center;justify-content:space-between;gap:' + (mob ? '14px' : '28px') + ';flex-wrap:' + (mob ? 'wrap' : 'nowrap') + ';min-width:0;',
       textColStyle: 'min-width:0;display:flex;align-items:center;gap:' + (mob ? '16px' : '24px') + ';flex:1 1 auto;' + textAnim,
-      linkStyle: 'align-self:flex-start;display:inline-flex;align-items:center;gap:14px;min-height:' + (mob ? '50px' : '58px') + ';padding:0 ' + (mob ? '22px' : '28px') + ';box-sizing:border-box;font-family:"Fixel Text",sans-serif;font-weight:800;font-size:' + (mob ? '14px' : '16px') + ';letter-spacing:0.01em;white-space:nowrap;border-radius:' + (st.linkHot ? '999px 999px 999px 10px' : '10px 999px 999px 999px') + ';transition:border-radius 320ms cubic-bezier(0.76,0,0.24,1),transform 320ms cubic-bezier(0.22,0.61,0.36,1),background-color 240ms ease,color 240ms ease;transform:translateY(' + (st.linkHot ? -3 : 0) + 'px);background:' + cur.accent + ';color:' + cur.color + ';',
+      linkStyle: 'align-self:flex-start;display:inline-flex;align-items:center;gap:14px;min-height:' + (mob ? '50px' : '58px') + ';padding:0 ' + (mob ? '22px' : '30px') + ';box-sizing:border-box;font-family:"Fixel Text",sans-serif;font-weight:800;font-size:' + (mob ? '14px' : '16px') + ';letter-spacing:0.01em;white-space:nowrap;border-radius:999px;box-shadow:inset 0 0 0 2px ' + fg + ';transition:transform 320ms cubic-bezier(0.22,0.61,0.36,1),background-color 400ms ease,color 400ms ease;transform:translateY(' + (st.linkHot ? -3 : 0) + 'px);background:' + (st.linkHot ? fg : 'transparent') + ';color:' + (st.linkHot ? cur.color : fg) + ';',
       arrowStyle: 'display:block;flex:0 0 auto;transition:transform 240ms cubic-bezier(0.22,0.61,0.36,1);transform:translateX(' + (st.linkHot ? 8 : 0) + 'px);',
 
       ctrlColStyle: 'display:flex;align-items:center;gap:12px;flex:0 0 auto;min-width:0;justify-content:flex-end;',
       dotsStyle: 'display:flex;align-items:center;gap:6px;min-width:0;' + (mob ? 'overflow-x:auto;padding-bottom:2px;-webkit-overflow-scrolling:touch;scrollbar-width:none;' : ''),
-      prevStyle: 'width:' + (mob ? '48px' : '56px') + ';height:' + (mob ? '48px' : '56px') + ';padding:0;border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;border-radius:' + (st.nav === 'p' ? '10px 50% 50% 50%' : '50% 50% 50% 10px') + ';transition:border-radius 320ms cubic-bezier(0.76,0,0.24,1),transform 320ms cubic-bezier(0.22,0.61,0.36,1),background-color 240ms ease,color 240ms ease;transform:translateY(' + (st.nav === 'p' ? -3 : 0) + 'px);color:' + (st.nav === 'p' ? cur.color : fg) + ';background:' + (st.nav === 'p' ? cur.accent : soft + '0.16)') + ';',
-      nextStyle: 'width:' + (mob ? '48px' : '56px') + ';height:' + (mob ? '48px' : '56px') + ';padding:0;border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;border-radius:' + (st.nav === 'n' ? '50% 10px 50% 50%' : '50% 50% 10px 50%') + ';transition:border-radius 320ms cubic-bezier(0.76,0,0.24,1),transform 320ms cubic-bezier(0.22,0.61,0.36,1),background-color 240ms ease,color 240ms ease;transform:translateY(' + (st.nav === 'n' ? -3 : 0) + 'px);color:' + (st.nav === 'n' ? cur.color : fg) + ';background:' + (st.nav === 'n' ? cur.accent : soft + '0.16)') + ';',
+      prevStyle: 'width:' + (mob ? '48px' : '56px') + ';height:' + (mob ? '48px' : '56px') + ';padding:0;border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;box-shadow:inset 0 0 0 2px ' + fg + ';transition:background-color 400ms ease,color 400ms ease;color:' + (st.nav === 'p' ? cur.color : fg) + ';background:' + (st.nav === 'p' ? fg : 'transparent') + ';',
+      nextStyle: 'width:' + (mob ? '48px' : '56px') + ';height:' + (mob ? '48px' : '56px') + ';padding:0;border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;box-shadow:inset 0 0 0 2px ' + fg + ';transition:background-color 400ms ease,color 400ms ease;color:' + (st.nav === 'n' ? cur.color : fg) + ';background:' + (st.nav === 'n' ? fg : 'transparent') + ';',
 
       quickPad: mob ? '40px 0 0' : 'clamp(56px,6vw,88px) 0 0',
       quickHeadGap: mob ? '16px' : '24px',

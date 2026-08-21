@@ -58,37 +58,37 @@
 <div style="min-height:100vh;background:var(--cream);color:var(--ink);padding:0 clamp(20px,3.4vw,48px) 0;box-sizing:border-box;overflow-x:clip;">
 
   <div style="{{ headerWrapStyle }}">
-  <header style="max-width:1344px;margin:0 auto;min-height:{{ barH }};background:var(--ink);border-radius:{{ barRadius }};display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:8px clamp(14px,1.8vw,28px);box-sizing:border-box;">
+  <header style="max-width:1344px;margin:0 auto;min-height:{{ barH }};background:var(--cream);border-radius:{{ barRadius }};display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:8px clamp(14px,1.8vw,28px);box-sizing:border-box;">
 
     <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
     <nav style="order:1;flex:1 1 0;min-width:0;display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;gap:4px clamp(16px,2.4vw,34px);">
-      <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.04em;color:var(--cream);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">ГОЛОВНА</a>
-      <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.04em;color:var(--cream);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">ПРОДУКЦІЯ</a>
-      <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.04em;color:var(--cream);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">НАТХНЕННЯ</a>
-      <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.04em;color:var(--cream);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">КОНТАКТИ</a>
+      <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.04em;color:var(--ink);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">ГОЛОВНА</a>
+      <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.04em;color:var(--ink);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">ПРОДУКЦІЯ</a>
+      <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.04em;color:var(--ink);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">НАТХНЕННЯ</a>
+      <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;line-height:20px;letter-spacing:0.04em;color:var(--ink);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">КОНТАКТИ</a>
     </nav>
     </sc-if>
 
     <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
       <div style="order:1;flex:1 1 0;display:flex;justify-content:flex-start;">
         <button type="button" aria-label="Меню" onClick="{{ toggleMenu }}" style="width:44px;height:44px;padding:0;border:none;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;">
-          <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--cream);"></span>
-          <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--cream);"></span>
-          <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--cream);"></span>
+          <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--ink);"></span>
+          <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--ink);"></span>
+          <span style="display:block;width:22px;height:2px;border-radius:1px;background:var(--ink);"></span>
         </button>
       </div>
     </sc-if>
 
     <a href="#" style="order:2;display:block;line-height:0;flex:0 0 auto;" aria-label="Monik">
-      <img src="assets/monik-logo.svg" alt="Monik" style="width:clamp(112px,11vw,146px);height:auto;aspect-ratio:727.9 / 209.1;display:block;filter:brightness(0) invert(1);" />
+      <img src="assets/monik-logo.svg" alt="Monik" style="width:clamp(112px,11vw,146px);height:auto;aspect-ratio:727.9 / 209.1;display:block;filter:brightness(0);" />
     </a>
 
     <div style="order:3;flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.6vw,24px);">
       <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
-        <a href="tel:0800215345" style="flex:0 0 auto;display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.02em;color:var(--cream);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">0-800-215-345</a>
+        <a href="tel:0800215345" style="flex:0 0 auto;display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.02em;color:var(--ink);white-space:nowrap;transition:color 200ms ease;" style-hover="color:var(--berry);">0-800-215-345</a>
       </sc-if>
       <div style="flex:0 0 auto;position:relative;display:flex;align-items:center;gap:8px">
-        <span aria-hidden="true" style="position:absolute;left:0;top:0;width:40px;height:40px;border-radius:999px;background:var(--cream);transition:transform 200ms ease;transform:translateX({{ langX }})"></span>
+        <span aria-hidden="true" style="position:absolute;left:0;top:0;width:40px;height:40px;border-radius:999px;background:var(--ink);transition:transform 200ms ease;transform:translateX({{ langX }})"></span>
         <button type="button" aria-label="Українська" onClick="{{ pickUA }}" onMouseEnter="{{ hoverUA }}" onMouseLeave="{{ hoverOff }}" style="position:relative;z-index:1;width:40px;height:40px;padding:0;border:none;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;transition:color 200ms ease,background 200ms ease;background:{{ uaBg }};color:{{ uaColor }}">UA</button>
         <button type="button" aria-label="English" onClick="{{ pickEN }}" onMouseEnter="{{ hoverEN }}" onMouseLeave="{{ hoverOff }}" style="position:relative;z-index:1;width:40px;height:40px;padding:0;border:none;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;transition:color 200ms ease,background 200ms ease;background:{{ enBg }};color:{{ enColor }}">EN</button>
       </div>
@@ -96,11 +96,11 @@
 
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
       <nav style="order:4;flex:1 1 100%;min-width:0;display:flex;flex-direction:column;padding:4px 0 8px;">
-        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.18);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--berry);">ГОЛОВНА</a>
-        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.18);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--berry);">ПРОДУКЦІЯ</a>
-        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.18);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--berry);">НАТХНЕННЯ</a>
-        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.18);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--berry);">КОНТАКТИ</a>
-        <a href="tel:0800215345" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.18);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--cream);" style-hover="color:var(--berry);">0-800-215-345</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(33,26,23,0.16);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--ink);" style-hover="color:var(--berry);">ГОЛОВНА</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(33,26,23,0.16);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--ink);" style-hover="color:var(--berry);">ПРОДУКЦІЯ</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(33,26,23,0.16);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--ink);" style-hover="color:var(--berry);">НАТХНЕННЯ</a>
+        <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(33,26,23,0.16);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--ink);" style-hover="color:var(--berry);">КОНТАКТИ</a>
+        <a href="tel:0800215345" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(33,26,23,0.16);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;color:var(--ink);" style-hover="color:var(--berry);">0-800-215-345</a>
       </nav>
     </sc-if>
   </header>
@@ -341,8 +341,8 @@ class Component extends DCLogic {
     const active = this.state.lang === code;
     const hot = this.state.langHover === code;
     return {
-      bg: active ? 'transparent' : hot ? 'rgba(246,244,239,0.14)' : 'transparent',
-      color: active ? 'var(--ink)' : hot ? 'var(--cream-hi)' : 'rgba(246,244,239,0.72)'
+      bg: active ? 'transparent' : hot ? 'rgba(33,26,23,0.08)' : 'transparent',
+      color: active ? 'var(--cream)' : hot ? 'var(--ink)' : 'rgba(33,26,23,0.5)'
     };
   }
 

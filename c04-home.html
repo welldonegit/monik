@@ -65,25 +65,25 @@
 </style>
 </helmet>
 <header data-screen-label="Header" style="background:var(--berry);width:100%;box-sizing:border-box;padding:{{ edge }} {{ edge }} 0;">
-  <div style="max-width:1480px;margin:0 auto;background:var(--ink);border-radius:{{ pillR }};padding:0 clamp(20px,2.4vw,40px);box-sizing:border-box;">
+  <div style="max-width:1480px;margin:0 auto;background:var(--cream);border-radius:{{ pillR }};padding:0 clamp(20px,2.4vw,40px);box-sizing:border-box;">
     <div style="display:flex;flex-wrap:wrap;align-items:center;min-height:{{ headerH }};gap:8px 20px;">
 
       <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
         <nav style="order:1;flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:flex-start;gap:clamp(18px,2.4vw,40px);">
-          <a href="#" aria-current="page" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);transition:color 200ms ease;white-space:nowrap;" style-hover="color:#FFC42D;">Головна</a>
-          <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);transition:color 200ms ease;white-space:nowrap;" style-hover="color:#FFC42D;">Продукція</a>
-          <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);transition:color 200ms ease;white-space:nowrap;" style-hover="color:#FFC42D;">Натхнення</a>
-          <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);transition:color 200ms ease;white-space:nowrap;" style-hover="color:#FFC42D;">Контакти</a>
+          <a href="#" aria-current="page" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);transition:color 200ms ease;white-space:nowrap;" style-hover="color:var(--berry);">Головна</a>
+          <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);transition:color 200ms ease;white-space:nowrap;" style-hover="color:var(--berry);">Продукція</a>
+          <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);transition:color 200ms ease;white-space:nowrap;" style-hover="color:var(--berry);">Натхнення</a>
+          <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);transition:color 200ms ease;white-space:nowrap;" style-hover="color:var(--berry);">Контакти</a>
         </nav>
       </sc-if>
 
       <a href="#" style="order:2;display:block;line-height:0;flex:0 0 auto;" aria-label="Monik">
-        <img src="assets/monik-logo.svg" alt="Monik" style="width:clamp(108px,9vw,132px);height:auto;aspect-ratio:727.9 / 209.1;display:block;filter:brightness(0) invert(1);" />
+        <img src="assets/monik-logo.svg" alt="Monik" style="width:clamp(108px,9vw,132px);height:auto;aspect-ratio:727.9 / 209.1;display:block;filter:brightness(0);" />
       </a>
 
       <div style="order:3;flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.4vw,20px);">
         <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
-          <a href="tel:0800215345" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.05em;color:var(--cream);transition:color 200ms ease;white-space:nowrap;" style-hover="color:#FFC42D;">0-800-215-345</a>
+          <a href="tel:0800215345" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.05em;color:var(--ink);transition:color 200ms ease;white-space:nowrap;" style-hover="color:var(--berry);">0-800-215-345</a>
         </sc-if>
         <div style="display:flex;align-items:center;gap:6px;">
           <button type="button" aria-label="Українська" onClick="{{ pickUA }}" style="{{ uaStyle }}">UA</button>
@@ -91,20 +91,20 @@
         </div>
         <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
           <button type="button" aria-label="Меню" onClick="{{ toggleMenu }}" style="width:44px;height:44px;padding:0;border:none;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:5px;">
-            <span style="display:block;width:22px;height:2px;background:var(--cream);"></span>
-            <span style="display:block;width:22px;height:2px;background:var(--cream);"></span>
-            <span style="display:block;width:22px;height:2px;background:var(--cream);"></span>
+            <span style="display:block;width:22px;height:2px;background:var(--ink);"></span>
+            <span style="display:block;width:22px;height:2px;background:var(--ink);"></span>
+            <span style="display:block;width:22px;height:2px;background:var(--ink);"></span>
           </button>
         </sc-if>
       </div>
 
       <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
         <nav style="order:4;flex:1 1 100%;display:flex;flex-direction:column;padding-bottom:10px;">
-          <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.16);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);">Головна</a>
-          <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.16);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);">Продукція</a>
-          <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.16);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);">Натхнення</a>
-          <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.16);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);">Контакти</a>
-          <a href="tel:0800215345" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.16);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.05em;color:var(--cream);">0-800-215-345</a>
+          <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(33,26,23,0.14);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);">Головна</a>
+          <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(33,26,23,0.14);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);">Продукція</a>
+          <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(33,26,23,0.14);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);">Натхнення</a>
+          <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(33,26,23,0.14);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);">Контакти</a>
+          <a href="tel:0800215345" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(33,26,23,0.14);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.05em;color:var(--ink);">0-800-215-345</a>
         </nav>
       </sc-if>
     </div>
@@ -184,7 +184,7 @@
       <p style="margin:0;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:clamp(18px,1.4vw,20px);line-height:1.45;color:rgba(246,244,239,0.88);max-width:460px;text-wrap:pretty;">Клац - і світ стає солодшим.<br />Зручний дой-пак і насичений смак - джем, який завжди під рукою і завжди в нагоді.</p>
       <a href="#" onMouseEnter="{{ ctaOn2 }}" onMouseLeave="{{ ctaOff }}" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:18px;min-height:56px;padding:16px clamp(20px,1.8vw,24px);border-radius:18px;max-width:100%;box-sizing:border-box;background:transparent;box-shadow:inset 0 0 0 2px var(--cream);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:16px;transition:color 400ms ease;color:{{ ctaColor2 }}"><span style="position:relative;z-index:1;">Переглянути джеми</span><span aria-hidden="true" style="position:absolute;right:24px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--cream);transition:transform 400ms cubic-bezier(0.4,0,0.2,1);transform:{{ ctaFill2 }}"></span></a>
     </div>
-    <div style="position:relative;z-index:1;flex:1 1 300px;min-width:0;min-height:{{ catImgH }};display:flex;align-items:flex-end;justify-content:{{ catImgJust }};margin:0 -32px -0px 0;">
+    <div style="position:relative;z-index:1;flex:1 1 300px;min-width:0;min-height:{{ catImgH }};display:flex;align-items:flex-end;justify-content:flex-start;order:{{ swapImgOrder }};margin:{{ jamImgMargin }};">
       <img src="assets/jam.png" alt="Джем чорниця Monik" style="max-height:82%;max-width:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 26px 44px rgba(33,26,23,0.28));" />
     </div>
   </section>
@@ -192,7 +192,7 @@
   <section data-screen-label="Сиропи до кави" style="position:relative;width:100%;min-height:{{ catH700 }};max-width:100%;min-width:0;overflow:hidden;border-radius:{{ catRadius }};background:var(--cocoa);display:flex;flex-wrap:wrap;align-items:stretch;gap:clamp(32px,3vw,40px);padding:{{ catPadA }};box-sizing:border-box;">
     <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;max-width:100%;height:{{ waveH }};z-index:3;display:block;"><path d="M0,0 H1440 V30 C1260,58 1120,26 960,34 C780,43 640,64 440,56 C280,49 160,22 0,40 Z" fill="#653CCB"></path></svg>
     <div ref="{{ blob1 }}" style="position:absolute;left:0;top:0;will-change:transform;pointer-events:none;width:min(540px,80%);aspect-ratio:27 / 18;border-radius:50%;background:rgba(246,244,239,0.06);z-index:0;"></div>
-    <div style="position:relative;z-index:1;flex:1 1 300px;min-width:0;min-height:{{ catImgH }};display:flex;align-items:flex-end;justify-content:flex-start;order:{{ syrupImgOrder }}">
+    <div style="position:relative;z-index:1;flex:1 1 300px;min-width:0;min-height:{{ catImgH }};display:flex;align-items:flex-end;justify-content:{{ catImgJust }};order:{{ syrupImgOrder }}">
       <img src="assets/syrup.png" alt="Сироп до кави Monik" style="max-height:86%;max-width:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 26px 44px rgba(33,26,23,0.30));" />
     </div>
     <div style="position:relative;z-index:1;flex:0 1 500px;min-width:min(100%,300px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;">
@@ -203,14 +203,14 @@
   </section>
 
   <section data-screen-label="Концентрати для лимонадів" style="position:relative;width:100%;min-height:{{ catH700 }};max-width:100%;min-width:0;overflow:hidden;border-radius:{{ catRadius }};background:#20AFE0;display:flex;flex-wrap:wrap;align-items:stretch;gap:clamp(32px,3vw,40px);padding:{{ catPadB }};box-sizing:border-box;">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;max-width:100%;height:{{ waveH }};z-index:3;display:block;"><path d="M0,0 H1440 V30 C1260,58 1120,26 960,34 C780,43 640,64 440,56 C280,49 160,22 0,40 Z" fill="#B4471F"</path></svg>
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;max-width:100%;height:{{ waveH }};z-index:3;display:block;"><path d="M0,0 H1440 V30 C1260,58 1120,26 960,34 C780,43 640,64 440,56 C280,49 160,22 0,40 Z" fill="#B4471F"></path></svg>
     <div ref="{{ blob4 }}" style="position:absolute;left:0;top:0;will-change:transform;pointer-events:none;width:min(520px,78%);aspect-ratio:26 / 19;border-radius:50%;background:rgba(246,244,239,0.08);z-index:0;"></div>
     <div style="position:relative;z-index:1;flex:0 1 520px;min-width:min(100%,300px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;">
       <h2 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:min(76px,max(clamp(38px,10.4vw,48px),6vw));line-height:1.02;letter-spacing:-0.03em;color:var(--cream);max-width:540px;">Концентрати для лимонадів</h2>
       <p style="margin:0;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:clamp(18px,1.4vw,20px);line-height:1.45;color:rgba(246,244,239,0.9);max-width:460px;text-wrap:pretty;">Налив - і літо вже у склянці.<br />Яскравий смак і просте приготування - концентрат, з яким улюблений лимонад завжди поруч.</p>
       <a href="#" onMouseEnter="{{ ctaOn5 }}" onMouseLeave="{{ ctaOff }}" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:18px;min-height:56px;padding:16px clamp(20px,1.8vw,24px);border-radius:18px;max-width:100%;box-sizing:border-box;background:transparent;box-shadow:inset 0 0 0 2px var(--cream);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:16px;transition:color 400ms ease;color:{{ ctaColor5 }}"><span style="position:relative;z-index:1;">Переглянути концентрати</span><span aria-hidden="true" style="position:absolute;right:24px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--cream);transition:transform 400ms cubic-bezier(0.4,0,0.2,1);transform:{{ ctaFill5 }}"></span></a>
     </div>
-    <div style="position:relative;z-index:1;flex:1 1 300px;min-width:0;min-height:{{ catImgH }};display:flex;align-items:flex-end;justify-content:{{ catImgJust }};">
+    <div style="position:relative;z-index:1;flex:1 1 300px;min-width:0;min-height:{{ catImgH }};display:flex;align-items:flex-end;justify-content:flex-start;order:{{ swapImgOrder }};">
       <img src="assets/cat-lemonade.png" alt="Концентрат напою «Мохіто» Monik" style="max-height:92%;max-width:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 26px 44px rgba(33,26,23,0.26));" />
     </div>
   </section>
@@ -604,7 +604,7 @@ class Component extends DCLogic {
 
   langPill(active) {
     return "width:36px;height:36px;padding:0;border:none;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;transition:background 200ms ease,color 200ms ease;background:"
-      + (active ? '#F6F4EF' : 'transparent') + ';color:' + (active ? '#211A17' : 'rgba(246,244,239,0.72)');
+      + (active ? '#211A17' : 'transparent') + ';color:' + (active ? '#F6F4EF' : 'rgba(33,26,23,0.5)');
   }
 
   langStyle(code) {
@@ -755,7 +755,9 @@ class Component extends DCLogic {
       catRadius: '0px',
       catImgH: this.state.mobile ? '384px' : '0px',
       catImgJust: this.state.mobile ? 'flex-start' : 'flex-end',
-      syrupImgOrder: this.state.mobile ? 2 : 0,
+      syrupImgOrder: 2,
+      swapImgOrder: this.state.mobile ? 2 : -1,
+      jamImgMargin: this.state.mobile ? '0' : '0 0 0 -32px',
       waveH: this.state.mobile ? '28px' : '80px',
       edge: this.state.mobile ? '20px' : this.state.tab ? '24px' : '32px',
       headerH: this.state.mobile ? '64px' : '84px',

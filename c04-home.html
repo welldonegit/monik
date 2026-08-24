@@ -53,7 +53,7 @@
     --green: #176142;
     --soft-white: #F6F4EF;
   }
-  html, body { margin: 0; padding: 0; background: var(--berry); }
+  html, body { margin: 0; padding: 0; background: var(--berry); overflow-x: clip; }
   body { font-family: 'Fixel Text', sans-serif; -webkit-font-smoothing: antialiased; }
   a { color: var(--berry); text-decoration: none; }
   a:hover { color: var(--ink); }
@@ -111,7 +111,7 @@
   </div>
 </header>
 
-<div style="min-height:100vh;background:var(--berry);padding:0 clamp(20px,3.4vw,48px) 2px;box-sizing:border-box;">
+<div style="min-height:100vh;background:var(--berry);padding:0 clamp(20px,3.4vw,48px) 2px;box-sizing:border-box;min-height:{{ heroWrapMinH }};padding:{{ heroWrapPad }};">
 
 
   <section style="width:100%;max-width:1344px;margin:32px auto 0;position:relative;aspect-ratio:16 / 8;min-height:max(472px,min(602px,calc(100vh - 176px)));border-radius:clamp(24px,2.8vw,32px);overflow:hidden;background:var(--ink);isolation:isolate;">
@@ -124,15 +124,11 @@
       </div>
 
 
-      
-      </div>
-
-
 
     </div>
 
 
-    <h1 style="position:absolute;left:clamp(20px,5.2vw,76px);right:clamp(20px,5.2vw,76px);top:50%;transform:translateY(-50%);margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:min(90px,max(clamp(52px,11.6vw,64px),6.7vw));line-height:1.04;letter-spacing:-0.03em;color:var(--cream-hi);text-wrap:pretty;max-width:min(780px,100%);text-shadow:0 2px 26px rgba(33,26,23,0.45);">Натуральні сиропи<br />та концентрати <span style="white-space:nowrap;">напоїв <span style="background:var(--cream);color:var(--berry);display:inline-block;line-height:0.985;padding:{{ badgePad }};border-radius:12px;white-space:nowrap;text-shadow:none;-webkit-box-decoration-break:clone;box-decoration-break:clone;">Monik</span></span></h1>
+    <h1 style="position:absolute;left:clamp(20px,5.2vw,76px);right:clamp(20px,5.2vw,76px);top:50%;transform:translateY(-50%);margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:min(84px,max(clamp(46px,11.6vw,58px),6.7vw));line-height:1.04;letter-spacing:-0.03em;color:var(--cream-hi);text-wrap:pretty;max-width:min(780px,100%);text-shadow:0 2px 26px rgba(33,26,23,0.45);">Натуральні сиропи<br />та концентрати <span style="white-space:nowrap;">напоїв <span style="background:var(--cream);color:var(--berry);display:inline-block;line-height:0.985;padding:{{ badgePad }};border-radius:12px;white-space:nowrap;text-shadow:none;-webkit-box-decoration-break:clone;box-decoration-break:clone;">Monik</span></span></h1>
 
     
 
@@ -730,10 +726,12 @@ class Component extends DCLogic {
       arrowSize: this.state.mobile ? '44px' : '54px',
       prevLeft: this.state.mobile ? 'auto' : 'clamp(16px,2.4vw,32px)',
       prevRight: this.state.mobile ? '76px' : 'auto',
+      heroWrapMinH: this.state.mobile ? 'auto' : '100vh',
+      heroWrapPad: this.state.mobile ? '0 20px 18px' : '0 clamp(20px,3.4vw,48px) 2px',
       catH660: this.state.mobile ? 'auto' : '660px',
       catH700: this.state.mobile ? 'auto' : '700px',
       catH720: this.state.mobile ? 'auto' : '720px',
-      catPadA: this.state.mobile ? '68px 20px 32px' : '0 max(clamp(20px,3.4vw,72px),calc((100% - 1344px)/2 + 72px)) 0',
+      catPadA: this.state.mobile ? '38px 20px 32px' : '0 max(clamp(20px,3.4vw,72px),calc((100% - 1344px)/2 + 72px)) 0',
       catPadB: this.state.mobile ? '68px 20px 32px' : 'clamp(56px,7vw,80px) max(clamp(20px,3.4vw,72px),calc((100% - 1344px)/2 + 72px)) 0',
       catPadC: this.state.mobile ? '68px 20px 92px' : 'clamp(56px,7vw,80px) max(clamp(20px,3.4vw,72px),calc((100% - 1344px)/2 + 72px)) 60px',
       catWrapPad: '0px',

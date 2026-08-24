@@ -116,17 +116,15 @@
 
   <section style="width:100%;max-width:1344px;margin:32px auto 0;position:relative;aspect-ratio:16 / 8;min-height:max(472px,min(602px,calc(100vh - 176px)));border-radius:clamp(24px,2.8vw,32px);overflow:hidden;background:var(--ink);isolation:isolate;">
 
-    <div style="position:absolute;inset:0;display:flex;width:100%;height:100%;transition:transform 640ms cubic-bezier(0.65,0.05,0.36,1);transform:{{ shift }}">
+    <div style="position:absolute;inset:0;width:100%;height:100%;">
 
       <div style="flex:0 0 100%;position:relative;height:100%;overflow:hidden;background:var(--ink);">
-        <img src="assets/slide-1.png" alt="Чай з концентратом Monik біля каміна" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ heroPos1 }}" />
+        <img src="assets/hero-products.jpg" alt="Сиропи, концентрати, джеми та какао Monik" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;" />
         <div style="position:absolute;inset:0;background:radial-gradient(49% 42% at 31% 50%,rgba(33,26,23,0.52) 0%,rgba(33,26,23,0.29) 55%,rgba(33,26,23,0) 100%),linear-gradient(96deg,rgba(33,26,23,0.78) 0%,rgba(33,26,23,0.58) 17%,rgba(33,26,23,0.24) 34%,rgba(33,26,23,0) 48%);"></div>
       </div>
 
 
-      <div style="flex:0 0 100%;position:relative;height:100%;overflow:hidden;background:var(--ink);">
-        <img src="assets/slide-2.jpg" alt="Напій з концентрату Monik на сімейній кухні" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ heroPos3 }};" />
-        <div style="position:absolute;inset:0;background:radial-gradient(52% 45% at 32% 50%,rgba(33,26,23,0.52) 0%,rgba(33,26,23,0.29) 55%,rgba(33,26,23,0) 100%),linear-gradient(96deg,rgba(33,26,23,0.88) 0%,rgba(33,26,23,0.72) 18%,rgba(33,26,23,0.40) 36%,rgba(33,26,23,0) 51%);"></div>
+      
       </div>
 
 
@@ -137,22 +135,10 @@
 
     <h1 style="position:absolute;left:clamp(20px,5.2vw,76px);right:clamp(20px,5.2vw,76px);top:50%;transform:translateY(-50%);margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:min(90px,max(clamp(52px,11.6vw,64px),6.7vw));line-height:1.04;letter-spacing:-0.03em;color:var(--cream-hi);text-wrap:pretty;max-width:min(780px,100%);text-shadow:0 2px 26px rgba(33,26,23,0.45);">Натуральні сиропи<br />та концентрати <span style="white-space:nowrap;">напоїв <span style="background:var(--cream);color:var(--berry);display:inline-block;line-height:0.985;padding:{{ badgePad }};border-radius:12px;white-space:nowrap;text-shadow:none;-webkit-box-decoration-break:clone;box-decoration-break:clone;">Monik</span></span></h1>
 
-    <sc-if value="{{ showArrows }}" hint-placeholder-val="{{ true }}">
-      <div style="position:absolute;right:20px;bottom:20px;height:52px;padding:0 4px;border-radius:16px;background:var(--cream);display:flex;align-items:center;gap:2px;max-width:calc(100% - 40px);">
-      <button type="button" aria-label="Попередній слайд" onClick="{{ prev }}" style="width:44px;height:44px;padding:0;border:none;background:transparent;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:background 200ms ease,color 200ms ease;" style-hover="background:var(--berry);color:var(--cream);" style-focus="outline:2px solid var(--berry);outline-offset:2px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M21 12H3M8.5 6.8 3 12l5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
-      <span style="font-family:'Fixel Text',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.08em;color:var(--ink);padding:0 6px;white-space:nowrap;">{{ current }} / {{ total }}</span>
-      <button type="button" aria-label="Наступний слайд" onClick="{{ next }}" style="width:44px;height:44px;padding:0;border:none;background:transparent;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:background 200ms ease,color 200ms ease;" style-hover="background:var(--berry);color:var(--cream);" style-focus="outline:2px solid var(--berry);outline-offset:2px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M3 12h18M15.5 6.8 21 12l-5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
-      </div>
-    </sc-if>
+    
 
 
-    <sc-if value="{{ isDots }}" hint-placeholder-val="{{ false }}">
-      <div style="position:absolute;left:50%;transform:translateX(-50%);bottom:clamp(30px,3.4vw,46px);display:flex;align-items:center;gap:10px;">
-        <sc-for list="{{ dots }}" as="dot" hint-placeholder-count="4">
-          <button type="button" onClick="{{ dot.go }}" aria-label="Слайд" style="height:8px;border-radius:4px;border:none;padding:0;cursor:pointer;background:var(--cream);transition:width 400ms ease,opacity 400ms ease;width:{{ dot.w }};opacity:{{ dot.o }}"></button>
-        </sc-for>
-      </div>
-    </sc-if>
+    
 
   </section>
 
@@ -193,7 +179,7 @@
     <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;max-width:100%;height:{{ waveH }};z-index:3;display:block;"><path d="M0,0 H1440 V30 C1260,58 1120,26 960,34 C780,43 640,64 440,56 C280,49 160,22 0,40 Z" fill="#653CCB"></path></svg>
     <div ref="{{ blob1 }}" style="position:absolute;left:0;top:0;will-change:transform;pointer-events:none;width:min(540px,80%);aspect-ratio:27 / 18;border-radius:50%;background:rgba(246,244,239,0.06);z-index:0;"></div>
     <div style="position:relative;z-index:1;flex:1 1 300px;min-width:0;min-height:{{ catImgH }};display:flex;align-items:flex-end;justify-content:{{ catImgJust }};order:{{ syrupImgOrder }}">
-      <img src="assets/syrup.png" alt="Сироп до кави Monik" style="max-height:86%;max-width:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 26px 44px rgba(33,26,23,0.30));" />
+      <img src="assets/cat-syrup-cherry.png" alt="Сироп до кави «Вишня в шоколаді» Monik" style="max-height:86%;max-width:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 26px 44px rgba(33,26,23,0.30));" />
     </div>
     <div style="position:relative;z-index:1;flex:0 1 500px;min-width:min(100%,300px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;">
       <h2 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:min(76px,max(clamp(42px,11vw,52px),6.1vw));line-height:1.02;letter-spacing:-0.03em;color:var(--cream);max-width:480px;">Сиропи до кави</h2>
@@ -211,7 +197,7 @@
       <a href="#" onMouseEnter="{{ ctaOn5 }}" onMouseLeave="{{ ctaOff }}" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:18px;min-height:56px;padding:16px clamp(20px,1.8vw,24px);border-radius:18px;max-width:100%;box-sizing:border-box;background:transparent;box-shadow:inset 0 0 0 2px var(--cream);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:16px;transition:color 400ms ease;color:{{ ctaColor5 }}"><span style="position:relative;z-index:1;">Переглянути концентрати</span><span aria-hidden="true" style="position:absolute;right:24px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--cream);transition:transform 400ms cubic-bezier(0.4,0,0.2,1);transform:{{ ctaFill5 }}"></span></a>
     </div>
     <div style="position:relative;z-index:1;flex:1 1 300px;min-width:0;min-height:{{ catImgH }};display:flex;align-items:flex-end;justify-content:flex-start;order:{{ swapImgOrder }};">
-      <img src="assets/cat-lemonade.png" alt="Концентрат напою «Мохіто» Monik" style="max-height:92%;max-width:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 26px 44px rgba(33,26,23,0.26));" />
+      <img src="assets/cat-lemonade-mohito.png" alt="Концентрат напою «Мохіто» Monik" style="max-height:92%;max-width:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 26px 44px rgba(33,26,23,0.26));" />
     </div>
   </section>
 

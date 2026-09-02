@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#B4471F"></rect><text x="100" y="132" text-anchor="middle" font-family="Georgia, serif" font-size="96" font-weight="700" fill="#FFC42D">M</text></svg></template>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  @font-face { font-family: 'Fixel Display'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelDisplay-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Fixel Display'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelDisplay-ExtraBold.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Fixel Display'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelDisplay-Black.woff2') format('woff2'); font-weight: 900; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Fixel Text'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelText-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Fixel Text'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelText-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Fixel Text'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelText-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Fixel Text'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelText-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+  :root {
+    --cream: #F6F4EF;
+    --cream-hi: #FFFDFA;
+    --sand: #E8E5DC;
+    --ink: #211A17;
+    --berry: #E52868;
+    --berry-deep: #B31A4E;
+    --cocoa: #B4471F;
+    --cocoa-deep: #8A3212;
+    --grape: #653CCB;
+    --grape-deep: #4A2A9E;
+    --grape-mid: #5733AF;
+    --mandarin: #F14B2F;
+    --mandarin-deep: #BC3319;
+    --mandarin-mid: #D33D22;
+    --blue: #4358D5;
+    --blue-deep: #2E3FAF;
+    --card-cherry: #E52868;
+    --card-lilac: #653CCB;
+    --card-pistachio: #176142;
+    --card-cornflower: #4358D5;
+    --card-apricot: #F14B2F;
+    --pill-amber: #FFC42D;
+    --pill-rose: #FFC42D;
+    --pill-peach: #FFC42D;
+    --yellow: #FFC42D;
+    --yellow-deep: #A66A00;
+    --yellow-mid: #C08000;
+    --orange: #F14B2F;
+    --green: #176142;
+    --soft-white: #F6F4EF;
+  }
+  html, body { margin: 0; padding: 0; background: var(--berry); overflow-x: clip; }
+  body { font-family: 'Fixel Text', sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: var(--berry); text-decoration: none; }
+  a:hover { color: var(--ink); }
+  button { font-family: inherit; }
+  a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
+  @keyframes marqL { from { transform: translate3d(0,0,0); } to { transform: translate3d(-33.3333%,0,0); } }
+  @keyframes marqR { from { transform: translate3d(-33.3333%,0,0); } to { transform: translate3d(0,0,0); } }
+  @media (prefers-reduced-motion: reduce) { [data-marquee] { animation: none !important; } }
+</style>
+</helmet>
+<header data-screen-label="Header" style="background:#FFFFFF;width:100%;box-sizing:border-box;padding:{{ edge }} {{ edge }} 0;">
+  <div style="max-width:1480px;margin:0 auto;background:var(--ink);border-radius:{{ pillR }};padding:0 clamp(20px,2.4vw,40px);box-sizing:border-box;">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;min-height:{{ headerH }};gap:8px 20px;">
+
+      <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
+        <nav style="order:1;flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:flex-start;gap:clamp(18px,2.4vw,40px);">
+          <a href="#" aria-current="page" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);transition:color 200ms ease;white-space:nowrap;" style-hover="color:var(--yellow);">Головна</a>
+          <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);transition:color 200ms ease;white-space:nowrap;" style-hover="color:var(--yellow);">Продукція</a>
+          <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);transition:color 200ms ease;white-space:nowrap;" style-hover="color:var(--yellow);">Натхнення</a>
+          <a href="#" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);transition:color 200ms ease;white-space:nowrap;" style-hover="color:var(--yellow);">Контакти</a>
+        </nav>
+      </sc-if>
+
+      <a href="#" style="order:2;display:block;line-height:0;flex:0 0 auto;" aria-label="Monik">
+        <img src="assets/monik-logo.svg" alt="Monik" style="width:clamp(108px,9vw,132px);height:auto;aspect-ratio:727.9 / 209.1;display:block;filter:brightness(0) invert(1);" />
+      </a>
+
+      <div style="order:3;flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:flex-end;gap:clamp(12px,1.4vw,20px);">
+        <sc-if value="{{ deskNav }}" hint-placeholder-val="{{ true }}">
+          <a href="tel:0800215345" style="display:inline-flex;align-items:center;height:44px;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.05em;color:var(--cream);transition:color 200ms ease;white-space:nowrap;" style-hover="color:var(--yellow);">0-800-215-345</a>
+        </sc-if>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <button type="button" aria-label="Українська" onClick="{{ pickUA }}" style="{{ uaStyle }}">UA</button>
+          <button type="button" aria-label="English" onClick="{{ pickEN }}" style="{{ enStyle }}">EN</button>
+        </div>
+        <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+          <button type="button" aria-label="Меню" onClick="{{ toggleMenu }}" style="width:44px;height:44px;padding:0;border:none;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:5px;">
+            <span style="display:block;width:22px;height:2px;background:var(--cream);"></span>
+            <span style="display:block;width:22px;height:2px;background:var(--cream);"></span>
+            <span style="display:block;width:22px;height:2px;background:var(--cream);"></span>
+          </button>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+        <nav style="order:4;flex:1 1 100%;display:flex;flex-direction:column;padding-bottom:10px;">
+          <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.18);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);">Головна</a>
+          <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.18);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);">Продукція</a>
+          <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.18);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);">Натхнення</a>
+          <a href="#" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.18);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em;text-transform:uppercase;color:var(--cream);">Контакти</a>
+          <a href="tel:0800215345" onClick="{{ closeMenu }}" style="display:flex;align-items:center;min-height:52px;border-top:1px solid rgba(246,244,239,0.18);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.05em;color:var(--cream);">0-800-215-345</a>
+        </nav>
+      </sc-if>
+    </div>
+  </div>
+</header>
+
+<div style="background:#FFFFFF;box-sizing:border-box;min-height:{{ heroWrapMinH }};padding:{{ heroWrapPad }};display:flex;flex-direction:column;justify-content:center;">
+
+
+  <section data-screen-label="Hero" style="width:100%;max-width:1344px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(24px,3.6vw,60px);padding:calc(clamp(20px,3vw,44px) + 32px) 0 clamp(8px,1.4vw,20px);box-sizing:border-box;">
+
+    <div style="flex:1 1 460px;min-width:min(100%,280px);display:flex;flex-direction:column;align-items:flex-start;gap:clamp(18px,2vw,28px);">
+      <h1 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(38px,4.9vw,66px);line-height:1.04;letter-spacing:-0.03em;color:var(--ink);text-wrap:pretty;">Натуральні сиропи<br />та концентрати <span style="white-space:nowrap;">напоїв <span style="background:var(--berry);color:var(--cream-hi);display:inline-block;line-height:0.985;padding:{{ badgePad }};border-radius:12px;white-space:nowrap;-webkit-box-decoration-break:clone;box-decoration-break:clone;">Monik</span></span></h1>
+      <p style="margin:0;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:clamp(16px,1.25vw,19px);line-height:1.5;color:rgba(33,26,23,0.72);max-width:540px;text-wrap:pretty;">Створюємо яскраві смаки для напоїв, десертів і ваших кулінарних ідей. З Monik легко приготувати освіжаючий лимонад, доповнити улюблену каву чи додати ягідний акцент до сніданку.</p>
+    </div>
+
+    <div style="flex:1 1 420px;min-width:min(100%,260px);display:flex;justify-content:center;align-items:center;">
+      <img src="assets/white-hero.jpg" alt="Сиропи, концентрати, джеми та какао Monik" style="width:100%;max-width:min(660px,100%);height:auto;aspect-ratio:1 / 1;object-fit:contain;display:block;" />
+    </div>
+
+  </section>
+
+  <div style="display:flex;justify-content:center;padding:clamp(20px,2.2vw,30px) 0 clamp(14px,1.6vw,22px);">
+    <button type="button" aria-label="Далі" onClick="{{ scrollDown }}" style="width:56px;height:56px;padding:0;border-radius:50%;border:none;cursor:pointer;background:transparent;box-shadow:inset 0 0 0 1.5px rgba(33,26,23,0.28);color:var(--ink);display:flex;align-items:center;justify-content:center;transition:background 400ms ease,color 400ms ease,box-shadow 400ms ease;" style-hover="background:var(--ink);color:var(--cream);box-shadow:inset 0 0 0 1.5px var(--ink);" style-focus="outline:2px solid var(--ink);outline-offset:4px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="display:block;"><path d="M12 4v15M5.6 12.8 12 19.4l6.4-6.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+  </div>
+</div>
+
+<div aria-hidden="true" style="width:100%;background:#FFFFFF;line-height:0;font-size:0;margin-bottom:-1px;">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="display:block;width:100%;height:clamp(30px,5.4vw,86px);"><path d="M0,38 C160,92 340,98 520,62 C700,26 880,18 1060,44 C1200,64 1330,78 1440,58 L1440,101 L0,101 Z" fill="#E52868"></path></svg>
+</div>
+
+<section data-screen-label="Ягідні чаї" style="position:relative;width:100%;min-height:{{ catH660 }};max-width:100%;min-width:0;overflow:hidden;border-radius:{{ catRadius }};background:var(--berry);display:flex;flex-wrap:wrap;align-items:stretch;gap:clamp(32px,3vw,40px);padding:{{ catPadA }};box-sizing:border-box;">
+      <div ref="{{ blob0 }}" style="position:absolute;left:0;top:0;will-change:transform;pointer-events:none;width:min(460px,72%);aspect-ratio:23 / 21;border-radius:50%;background:rgba(246,244,239,0.07);z-index:0;"></div>
+    <div style="position:relative;z-index:1;flex:0 1 500px;min-width:min(100%,300px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;">
+      <h2 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:min(76px,max(clamp(42px,11vw,52px),6.1vw));line-height:1.02;letter-spacing:-0.03em;color:var(--cream);">Ягідні чаї</h2>
+      <p style="margin:0;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:clamp(18px,1.4vw,20px);line-height:1.45;color:rgba(246,244,239,0.88);max-width:460px;text-wrap:pretty;">Максимум смаку з мінімумом зусиль!<br />У кожному сашеті - якісне ягідне пюре, яке легко розчиняється як у гарячій, так і в холодній воді.</p>
+      <a href="#" onMouseEnter="{{ ctaOn0 }}" onMouseLeave="{{ ctaOff }}" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:18px;min-height:56px;padding:16px clamp(20px,1.8vw,24px);border-radius:18px;max-width:100%;box-sizing:border-box;background:transparent;box-shadow:inset 0 0 0 2px var(--cream);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:16px;transition:color 400ms ease;color:{{ ctaColor0 }}"><span style="position:relative;z-index:1;">Переглянути ягідні чаї</span><span aria-hidden="true" style="position:absolute;right:24px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--cream);transition:transform 400ms cubic-bezier(0.4,0,0.2,1);transform:{{ ctaFill0 }}"></span></a>
+    </div>
+    <div style="position:relative;z-index:1;flex:1 1 300px;min-width:0;min-height:{{ catImgH }};display:flex;align-items:flex-end;justify-content:{{ catImgJust }};">
+      <img src="assets/tea.png" alt="Ягідний чай Monik" style="max-height:86%;max-width:100%;width:auto;height:auto;object-fit:contain;margin-bottom:44px;filter:drop-shadow(0 26px 44px rgba(33,26,23,0.28));" />
+    </div>
+  </section>
+
+
+  <section data-screen-label="Джеми" style="position:relative;width:100%;min-height:{{ catH720 }};max-width:100%;min-width:0;overflow:hidden;border-radius:{{ catRadius }};background:var(--grape);display:flex;flex-wrap:wrap;align-items:stretch;gap:clamp(32px,3vw,40px);padding:{{ catPadB }};box-sizing:border-box;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;max-width:100%;height:{{ waveH }};z-index:3;display:block;"><path d="M0,0 H1440 V30 C1260,58 1120,26 960,34 C780,43 640,64 440,56 C280,49 160,22 0,40 Z" fill="#E52868"></path></svg>
+    <div ref="{{ blob2 }}" style="position:absolute;left:0;top:0;will-change:transform;pointer-events:none;width:min(460px,74%);aspect-ratio:23 / 21;border-radius:62% 38% 46% 54% / 54% 48% 52% 46%;background:rgba(246,244,239,0.07);z-index:0;"></div>
+    <div style="position:relative;z-index:1;flex:0 1 520px;min-width:min(100%,300px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;">
+      <h2 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:min(76px,max(clamp(34px,10vw,44px),6vw));line-height:1.02;letter-spacing:-0.03em;color:var(--cream);">Джеми</h2>
+      <p style="margin:0;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:clamp(18px,1.4vw,20px);line-height:1.45;color:rgba(246,244,239,0.88);max-width:460px;text-wrap:pretty;">Клац - і світ стає солодшим.<br />Зручний дой-пак і насичений смак - джем, який завжди під рукою і завжди в нагоді.</p>
+      <a href="#" onMouseEnter="{{ ctaOn2 }}" onMouseLeave="{{ ctaOff }}" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:18px;min-height:56px;padding:16px clamp(20px,1.8vw,24px);border-radius:18px;max-width:100%;box-sizing:border-box;background:transparent;box-shadow:inset 0 0 0 2px var(--cream);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:16px;transition:color 400ms ease;color:{{ ctaColor2 }}"><span style="position:relative;z-index:1;">Переглянути джеми</span><span aria-hidden="true" style="position:absolute;right:24px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--cream);transition:transform 400ms cubic-bezier(0.4,0,0.2,1);transform:{{ ctaFill2 }}"></span></a>
+    </div>
+    <div style="position:relative;z-index:1;flex:1 1 300px;min-width:0;min-height:{{ catImgH }};display:flex;align-items:flex-end;justify-content:flex-start;order:{{ swapImgOrder }};margin:{{ jamImgMargin }};">
+      <img src="assets/jam.png" alt="Джем чорниця Monik" style="max-height:82%;max-width:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 26px 44px rgba(33,26,23,0.28));" />
+    </div>
+  </section>
+
+  <section data-screen-label="Сиропи до кави" style="position:relative;width:100%;min-height:{{ catH700 }};max-width:100%;min-width:0;overflow:hidden;border-radius:{{ catRadius }};background:var(--cocoa);display:flex;flex-wrap:wrap;align-items:stretch;gap:clamp(32px,3vw,40px);padding:{{ catPadA }};box-sizing:border-box;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;max-width:100%;height:{{ waveH }};z-index:3;display:block;"><path d="M0,0 H1440 V30 C1260,58 1120,26 960,34 C780,43 640,64 440,56 C280,49 160,22 0,40 Z" fill="#653CCB"></path></svg>
+    <div ref="{{ blob1 }}" style="position:absolute;left:0;top:0;will-change:transform;pointer-events:none;width:min(540px,80%);aspect-ratio:27 / 18;border-radius:50%;background:rgba(246,244,239,0.06);z-index:0;"></div>
+    <div style="position:relative;z-index:1;flex:1 1 300px;min-width:0;min-height:{{ catImgH }};display:flex;align-items:flex-end;justify-content:{{ catImgJust }};order:{{ syrupImgOrder }}">
+      <img src="assets/cat-syrup-cherry.png" alt="Сироп до кави «Вишня в шоколаді» Monik" style="max-height:86%;max-width:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 26px 44px rgba(33,26,23,0.30));" />
+    </div>
+    <div style="position:relative;z-index:1;flex:0 1 500px;min-width:min(100%,300px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;">
+      <h2 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:min(76px,max(clamp(42px,11vw,52px),6.1vw));line-height:1.02;letter-spacing:-0.03em;color:var(--cream);max-width:480px;">Сиропи до кави</h2>
+      <p style="margin:0;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:clamp(18px,1.4vw,20px);line-height:1.45;color:rgba(246,244,239,0.88);max-width:460px;text-wrap:pretty;">Ваша кава заслуговує на більше!<br />Кілька крапель - і Ваша кава здобуває новий аромат та характер.</p>
+      <a href="#" onMouseEnter="{{ ctaOn1 }}" onMouseLeave="{{ ctaOff }}" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:18px;min-height:56px;padding:16px clamp(20px,1.8vw,24px);border-radius:18px;max-width:100%;box-sizing:border-box;background:transparent;box-shadow:inset 0 0 0 2px var(--cream);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:16px;transition:color 400ms ease;color:{{ ctaColor1 }}"><span style="position:relative;z-index:1;">Переглянути сиропи</span><span aria-hidden="true" style="position:absolute;right:24px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--cream);transition:transform 400ms cubic-bezier(0.4,0,0.2,1);transform:{{ ctaFill1 }}"></span></a>
+    </div>
+  </section>
+
+  <section data-screen-label="Концентрати для лимонадів" style="position:relative;width:100%;min-height:{{ catH700 }};max-width:100%;min-width:0;overflow:hidden;border-radius:{{ catRadius }};background:#20AFE0;display:flex;flex-wrap:wrap;align-items:stretch;gap:clamp(32px,3vw,40px);padding:{{ catPadB }};box-sizing:border-box;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;max-width:100%;height:{{ waveH }};z-index:3;display:block;"><path d="M0,0 H1440 V30 C1260,58 1120,26 960,34 C780,43 640,64 440,56 C280,49 160,22 0,40 Z" fill="#B4471F"></path></svg>
+    <div ref="{{ blob4 }}" style="position:absolute;left:0;top:0;will-change:transform;pointer-events:none;width:min(520px,78%);aspect-ratio:26 / 19;border-radius:50%;background:rgba(246,244,239,0.08);z-index:0;"></div>
+    <div style="position:relative;z-index:1;flex:0 1 520px;min-width:min(100%,300px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;">
+      <h2 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:min(76px,max(clamp(38px,10.4vw,48px),6vw));line-height:1.02;letter-spacing:-0.03em;color:var(--cream);max-width:540px;">Концентрати для лимонадів</h2>
+      <p style="margin:0;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:clamp(18px,1.4vw,20px);line-height:1.45;color:rgba(246,244,239,0.9);max-width:460px;text-wrap:pretty;">Налив - і літо вже у склянці.<br />Яскравий смак і просте приготування - концентрат, з яким улюблений лимонад завжди поруч.</p>
+      <a href="#" onMouseEnter="{{ ctaOn5 }}" onMouseLeave="{{ ctaOff }}" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:18px;min-height:56px;padding:16px clamp(20px,1.8vw,24px);border-radius:18px;max-width:100%;box-sizing:border-box;background:transparent;box-shadow:inset 0 0 0 2px var(--cream);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:16px;transition:color 400ms ease;color:{{ ctaColor5 }}"><span style="position:relative;z-index:1;">Переглянути концентрати</span><span aria-hidden="true" style="position:absolute;right:24px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--cream);transition:transform 400ms cubic-bezier(0.4,0,0.2,1);transform:{{ ctaFill5 }}"></span></a>
+    </div>
+    <div style="position:relative;z-index:1;flex:1 1 300px;min-width:0;min-height:{{ catImgH }};display:flex;align-items:flex-end;justify-content:flex-start;order:{{ swapImgOrder }};">
+      <img src="assets/cat-lemonade-mohito.png" alt="Концентрат напою «Мохіто» Monik" style="max-height:92%;max-width:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 26px 44px rgba(33,26,23,0.26));" />
+    </div>
+  </section>
+
+  <section data-screen-label="Кулінарні добавки" style="position:relative;width:100%;min-height:{{ catH660 }};max-width:100%;min-width:0;overflow:hidden;border-radius:{{ catRadius }};background:var(--yellow);display:flex;flex-wrap:wrap;align-items:stretch;gap:clamp(32px,3vw,40px);padding:{{ catPadC }};box-sizing:border-box;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;max-width:100%;height:{{ waveH }};z-index:3;display:block;"><path d="M0,0 H1440 V30 C1260,58 1120,26 960,34 C780,43 640,64 440,56 C280,49 160,22 0,40 Z" fill="#20AFE0"></path></svg>
+    <div ref="{{ blob3 }}" style="position:absolute;left:0;top:0;will-change:transform;pointer-events:none;width:min(620px,84%);aspect-ratio:31 / 17;border-radius:50%;background:rgba(246,244,239,0.06);z-index:0;"></div>
+    <div style="position:relative;z-index:1;flex:0 1 560px;min-width:min(100%,300px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;">
+      <h2 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:min(76px,max(clamp(42px,11vw,52px),6.1vw));line-height:1.02;letter-spacing:-0.03em;color:var(--cream);max-width:520px;">Кулінарні добавки</h2>
+      <p style="margin:0;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:clamp(18px,1.4vw,20px);line-height:1.45;color:rgba(246,244,239,0.88);max-width:440px;text-wrap:pretty;">Широкий вибір для будь-яких кулінарних завдань.<br />Основа для створення стабільних, передбачуваних і смачних результатів на кухні.</p>
+      <a href="#" onMouseEnter="{{ ctaOn3 }}" onMouseLeave="{{ ctaOff }}" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:18px;min-height:56px;padding:16px clamp(20px,1.8vw,24px);border-radius:18px;max-width:100%;box-sizing:border-box;background:transparent;box-shadow:inset 0 0 0 2px var(--cream);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:16px;transition:color 400ms ease;color:{{ ctaColor3 }}"><span style="position:relative;z-index:1;">Переглянути добавки</span><span aria-hidden="true" style="position:absolute;right:24px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--cream);transition:transform 400ms cubic-bezier(0.4,0,0.2,1);transform:{{ ctaFill3 }}"></span></a>
+    </div>
+    <div style="position:relative;z-index:1;flex:1 1 300px;min-width:0;min-height:{{ catImgH }};display:flex;align-items:flex-end;justify-content:{{ catImgJust }};">
+      <img src="assets/spices.png" alt="Какао-порошок Monik" style="max-height:94%;max-width:100%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 26px 44px rgba(33,26,23,0.26));" />
+    </div>
+</section>
+</div>
+
+<section data-screen-label="Каталог" style="position:relative;width:100%;max-width:100%;overflow:hidden;background:var(--blue);box-sizing:border-box;border-radius:0;padding:{{ ctaSecPad }};">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;left:0;top:0;width:100%;max-width:100%;height:{{ waveH }};z-index:3;display:block;"><path d="M0,0 H1440 V30 C1260,58 1120,26 960,34 C780,43 640,64 440,56 C280,49 160,22 0,40 Z" fill="#FFC42D"></path></svg>
+  <a href="#" aria-label="Переглянути всі категорії" onMouseEnter="{{ allOn }}" onMouseLeave="{{ allOff }}" style="position:relative;overflow:hidden;max-width:1075px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:clamp(24px,3vw,56px);box-sizing:border-box;width:100%;min-height:{{ ctaOvalH }};padding:24px clamp(24px,4vw,72px);border-radius:18px;cursor:pointer;background:transparent;box-shadow:inset 0 0 0 2px var(--cream);transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ ctaOvalScale }}" style-focus="outline:3px solid var(--cream);outline-offset:6px;">
+    <span aria-hidden="true" style="position:absolute;right:clamp(48px,6vw,120px);top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:var(--cream);transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ ctaFill }}"></span>
+    <span style="position:relative;z-index:1;text-align:center;text-wrap:balance;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(24px,4vw,66px);line-height:1.06;letter-spacing:-0.03em;transition:color 400ms cubic-bezier(0.22,1,0.36,1);color:{{ ctaOvalColor }}">Переглянути всі категорії</span>
+  </a>
+</section>
+
+<div style="background:var(--cream);padding:clamp(40px,5vw,64px) clamp(20px,3.4vw,48px);box-sizing:border-box;">
+  <section data-screen-label="Бренди групи" style="max-width:1344px;margin:0 auto;box-sizing:border-box;">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px 40px;flex-wrap:wrap;">
+      <h2 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(42px,5vw,64px);line-height:1.04;letter-spacing:-0.03em;color:#048144;">Солодкі радості поруч</h2>
+      <div style="height:52px;padding:0 4px;border-radius:16px;background:var(--cream);box-shadow:inset 0 0 0 1px rgba(33,26,23,0.16);display:flex;align-items:center;gap:2px;flex:0 0 auto;">
+        <button type="button" aria-label="Попередній бренд" onClick="{{ brandPrev }}" style="width:44px;height:44px;padding:0;border:none;background:transparent;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:background 200ms ease,color 200ms ease;" style-hover="background:var(--berry);color:var(--cream);" style-focus="outline:2px solid var(--berry);outline-offset:2px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M21 12H3M8.5 6.8 3 12l5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        <button type="button" aria-label="Наступний бренд" onClick="{{ brandNext }}" style="width:44px;height:44px;padding:0;border:none;background:transparent;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:background 200ms ease,color 200ms ease;" style-hover="background:var(--berry);color:var(--cream);" style-focus="outline:2px solid var(--berry);outline-offset:2px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M3 12h18M15.5 6.8 21 12l-5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+      </div>
+    </div>
+    <div ref="{{ brandTrackRef }}" style="margin-top:clamp(24px,3vw,40px);display:flex;align-items:stretch;gap:clamp(16px,1.8vw,24px);overflow-x:hidden;scrollbar-width:none;-ms-overflow-style:none;scroll-snap-type:x mandatory;">
+      <div onMouseEnter="{{ brandOn0 }}" onMouseLeave="{{ brandOff }}" style="flex:0 0 {{ brandCardW }};scroll-snap-align:start;height:clamp(180px,17vw,240px);display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;background:var(--sand);border-radius:24px;">
+        <img src="assets/brand-avrora.svg" alt="Аврора" style="max-width:228px;max-height:79px;width:auto;height:auto;object-fit:contain;display:block;transition:transform 400ms ease;transform:{{ brandScale0 }}" />
+      </div>
+      <div onMouseEnter="{{ brandOn1 }}" onMouseLeave="{{ brandOff }}" style="flex:0 0 {{ brandCardW }};scroll-snap-align:start;height:clamp(180px,17vw,240px);display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;background:var(--sand);border-radius:24px;">
+        <img src="assets/brand-monik.svg" alt="Monik" style="max-width:276px;max-height:89px;width:auto;height:auto;object-fit:contain;display:block;transition:transform 400ms ease;transform:{{ brandScale1 }}" />
+      </div>
+      <div onMouseEnter="{{ brandOn2 }}" onMouseLeave="{{ brandOff }}" style="flex:0 0 {{ brandCardW }};scroll-snap-align:start;height:clamp(180px,17vw,240px);display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;background:var(--sand);border-radius:24px;">
+        <img src="assets/brand-avrora.svg" alt="Аврора" style="max-width:228px;max-height:79px;width:auto;height:auto;object-fit:contain;display:block;transition:transform 400ms ease;transform:{{ brandScale2 }}" />
+      </div>
+    </div>
+  </section>
+</div>
+
+<section data-screen-label="Переваги" aria-label="Переваги Monik" style="background:var(--cream);padding:clamp(16px,2.8vw,36px) 0 clamp(0px,0.9vw,12px);box-sizing:border-box;display:flex;flex-direction:column;gap:clamp(10px,1.1vw,15px);overflow:hidden;">
+  <div style="overflow:hidden;">
+    <div data-marquee="1" style="display:flex;width:max-content;gap:clamp(10px,1.1vw,15px);animation:marqL 44s linear infinite;will-change:transform;">
+      <span style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--berry);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Натуральний склад</span>
+      <span style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--pill-rose);color:var(--ink);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Насичений смак</span>
+      <span style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--mandarin);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Швидке приготування</span>
+      <span style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--cocoa);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Універсальне застосування</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--berry);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Натуральний склад</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--pill-rose);color:var(--ink);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Насичений смак</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--mandarin);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Швидке приготування</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--cocoa);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Універсальне застосування</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--berry);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Натуральний склад</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--pill-rose);color:var(--ink);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Насичений смак</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--mandarin);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Швидке приготування</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--cocoa);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Універсальне застосування</span>
+    </div>
+  </div>
+  <div style="overflow:hidden;">
+    <div data-marquee="1" style="display:flex;width:max-content;gap:clamp(10px,1.1vw,15px);animation:marqR 52s linear infinite;will-change:transform;">
+      <span style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--card-cherry);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Вигідна ціна</span>
+      <span style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--pill-amber);color:var(--ink);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Українське виробництво</span>
+      <span style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--grape);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Зручний формат</span>
+      <span style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--sand);color:var(--ink);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Широкий асортимент</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--card-cherry);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Вигідна ціна</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--pill-amber);color:var(--ink);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Українське виробництво</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--grape);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Зручний формат</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--sand);color:var(--ink);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Широкий асортимент</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--card-cherry);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Вигідна ціна</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--pill-amber);color:var(--ink);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Українське виробництво</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--grape);color:var(--cream-hi);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Зручний формат</span>
+      <span aria-hidden="true" style="flex:0 0 auto;padding:clamp(10px,1.1vw,15px) clamp(18px,1.9vw,30px);border-radius:999px;background:var(--sand);color:var(--ink);font-family:'Fixel Text',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,19px);line-height:1.15;white-space:nowrap;">Широкий асортимент</span>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Bento" style="background:var(--cream);padding:clamp(56px,6vw,88px) clamp(20px,3.4vw,48px) 0;box-sizing:border-box;">
+  <div style="max-width:1344px;margin:0 auto clamp(28px,3vw,44px);">
+    <h2 style="margin:0;text-align:left;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(42px,5vw,64px);line-height:1.04;letter-spacing:-0.03em;color:#048144;">#СолодкіРадостіЖиття</h2>
+  </div>
+  <div style="max-width:1344px;margin:0 auto;display:grid;grid-template-columns:{{ bentoCols }};grid-template-rows:{{ bentoRows }};gap:clamp(16px,1.8vw,24px);">
+
+    <div style="grid-area:{{ bentoArea1 }};min-width:0;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;text-align:center;padding:clamp(26px,3vw,44px);border-radius:clamp(24px,3vw,36px);background:var(--cocoa);color:var(--cream);">
+      <h3 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(28px,3.1vw,42px);line-height:1.05;letter-spacing:-0.02em;text-wrap:pretty;">Більше смаку — менше клопоту</h3>
+      <p style="margin:0;max-width:34ch;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:clamp(15px,1.25vw,18px);line-height:1.5;color:rgba(246,244,239,0.86);text-wrap:pretty;">Кілька рухів — і звична кава, чай або десерт смакують зовсім по-новому.</p>
+    </div>
+
+    <div onMouseEnter="{{ bentoOn0 }}" onMouseLeave="{{ bentoOff }}" style="grid-area:{{ bentoArea2 }};min-width:0;height:{{ bentoPhotoH }};aspect-ratio:{{ bentoArV }};border-radius:clamp(24px,3vw,36px);overflow:hidden;background:var(--sand);">
+      <img src="assets/bento-curacao.jpg" alt="Сироп Monik «Blue Curaçao» у руці" style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 45%;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ bentoScale0 }}" />
+    </div>
+
+    <div style="grid-area:{{ bentoArea3 }};min-width:0;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px;text-align:center;padding:clamp(26px,3vw,44px);border-radius:clamp(24px,3vw,36px);background:var(--yellow);color:var(--ink);">
+      <h3 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(28px,3.1vw,42px);line-height:1.05;letter-spacing:-0.02em;text-wrap:pretty;">Від ранкової кави до святкового десерту</h3>
+      <p style="margin:0;max-width:34ch;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:clamp(15px,1.25vw,18px);line-height:1.5;color:rgba(33,26,23,0.82);text-wrap:pretty;">Додавай у напої, випічку, сніданки та красиві подачі — і міксуй так, як подобається.</p>
+    </div>
+
+    <div onMouseEnter="{{ bentoOn1 }}" onMouseLeave="{{ bentoOff }}" style="grid-area:{{ bentoArea4 }};min-width:0;height:{{ bentoPhotoH }};aspect-ratio:{{ bentoArV }};border-radius:clamp(24px,3vw,36px);overflow:hidden;background:var(--sand);">
+      <img src="assets/bento-toppings.jpg" alt="Топінги Monik у руках на фоні неба" style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 42%;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ bentoScale1 }}" />
+    </div>
+
+    <div style="grid-area:{{ bentoArea5 }};min-width:0;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;text-align:center;padding:clamp(22px,2.4vw,32px);border-radius:clamp(24px,3vw,36px);background:var(--berry);color:var(--cream);">
+      <h3 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(26px,2.5vw,34px);line-height:1.04;letter-spacing:-0.02em;text-wrap:pretty;">Зроблено в Україні. Створено для твоїх ідей</h3>
+      <p style="margin:0;max-width:34ch;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:clamp(14px,1.1vw,16px);line-height:1.45;color:rgba(246,244,239,0.86);text-wrap:pretty;">Зручні формати й продуманий вибір допомагають готувати цікавіше щодня.</p>
+    </div>
+
+    <div onMouseEnter="{{ bentoOn2 }}" onMouseLeave="{{ bentoOff }}" style="grid-area:{{ bentoArea6 }};min-width:0;height:{{ bentoPhotoH }};aspect-ratio:{{ bentoArH }};border-radius:clamp(24px,3vw,36px);overflow:hidden;background:var(--sand);">
+      <img src="assets/bento-teas.jpg" alt="Чаї Monik з ягодами" style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ bentoScale2 }}" />
+    </div>
+
+    <div onMouseEnter="{{ bentoOn3 }}" onMouseLeave="{{ bentoOff }}" style="grid-area:{{ bentoArea7 }};min-width:0;height:{{ bentoPhotoH }};aspect-ratio:{{ bentoArH }};border-radius:clamp(24px,3vw,36px);overflow:hidden;background:var(--sand);">
+      <img src="assets/bento-syrups.jpg" alt="Сиропи Monik у предметній композиції" style="width:100%;height:100%;display:block;object-fit:cover;object-position:50% 50%;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ bentoScale3 }}" />
+    </div>
+
+  </div>
+</section>
+
+<section data-screen-label="Рецепти" style="background:var(--cream);padding:clamp(56px,6vw,88px) clamp(20px,3.4vw,48px) clamp(80px,7vw,100px);box-sizing:border-box;overflow:hidden;">
+  <div style="max-width:1344px;margin:0 auto;">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px 40px;flex-wrap:wrap;">
+      <div style="min-width:0;flex:1 1 420px;">
+        <span style="display:block;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:clamp(18px,1.5vw,22px);line-height:1.2;color:#048144;">Рецепти</span>
+        <h2 style="margin:14px 0 0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(30px,4.2vw,56px);line-height:1.02;letter-spacing:-0.03em;text-transform:uppercase;color:#048144;max-width:960px;text-wrap:balance;">Смачні ідеї з продуктами Monik</h2>
+      </div>
+      <a href="#" style="flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 clamp(26px,2.4vw,38px);border-radius:999px;box-sizing:border-box;background:transparent;box-shadow:inset 0 0 0 2px #048144;font-family:'Fixel Text',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:#048144;transition:background-color 400ms ease,color 400ms ease;" style-hover="background:#048144;color:var(--cream);" style-focus="outline:2px solid #048144;outline-offset:4px;">Усі рецепти</a>
+    </div>
+
+    <div ref="{{ recTrackRef }}" onScroll="{{ recScroll }}" onPointerDown="{{ recDragStart }}" onPointerMove="{{ recDragMove }}" onPointerUp="{{ recDragEnd }}" onPointerLeave="{{ recDragEnd }}" style="margin-top:clamp(28px,3.4vw,44px);margin-right:{{ recBleed }};display:flex;align-items:stretch;gap:clamp(16px,1.8vw,24px);overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:4px;touch-action:pan-y;cursor:grab;">
+      <a href="#" onMouseEnter="{{ recipeOn0 }}" onMouseLeave="{{ recipeOff }}" style="flex:0 0 {{ recCardW }};display:flex;flex-direction:column;gap:18px;min-width:0;color:#048144;" style-focus="outline:3px solid var(--ink);outline-offset:4px;">
+        <div style="height:{{ recImgH0 }};width:100%;border-radius:20px;overflow:hidden;background:rgba(33,26,23,0.06);transition:height 400ms cubic-bezier(0.22,1,0.36,1);">
+          <img src="assets/v2-recipe-drink.jpg" alt="Кавово-молочний напій «Вишня в шоколаді»" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ recipeScale0 }}" />
+        </div>
+        <h3 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(17px,1.4vw,20px);line-height:1.16;letter-spacing:-0.01em;text-transform:uppercase;min-height:2.4em;">Кавово-молочний напій «Вишня в шоколаді»</h3>
+        <div style="margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:6px 24px;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:14px;line-height:1.3;color:#048144;">
+          <span>Порцій: 2</span>
+          <span>Час приготування: 10 хв</span>
+        </div>
+        <span aria-hidden="true" style="display:flex;align-items:center;overflow:hidden;height:{{ recMoreH0 }};opacity:{{ recMoreOp0 }};transition:height 400ms cubic-bezier(0.22,1,0.36,1),opacity 300ms ease;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;border-radius:999px;background:#048144;color:var(--cream);font-family:'Fixel Text',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;">Дивитися рецепт</span>
+        </span>
+      </a>
+      <a href="#" onMouseEnter="{{ recipeOn1 }}" onMouseLeave="{{ recipeOff }}" style="flex:0 0 {{ recCardW }};display:flex;flex-direction:column;gap:18px;min-width:0;color:#048144;" style-focus="outline:3px solid var(--ink);outline-offset:4px;">
+        <div style="height:{{ recImgH1 }};width:100%;border-radius:20px;overflow:hidden;background:rgba(33,26,23,0.06);transition:height 400ms cubic-bezier(0.22,1,0.36,1);">
+          <img src="assets/v2-recipe-muffin.jpg" alt="Мафіни з малиновим джемом" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ recipeScale1 }}" />
+        </div>
+        <h3 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(17px,1.4vw,20px);line-height:1.16;letter-spacing:-0.01em;text-transform:uppercase;min-height:2.4em;">Мафіни з малиновим джемом</h3>
+        <div style="margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:6px 24px;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:14px;line-height:1.3;color:#048144;">
+          <span>Порцій: 6</span>
+          <span>Час приготування: 35 хв</span>
+        </div>
+        <span aria-hidden="true" style="display:flex;align-items:center;overflow:hidden;height:{{ recMoreH1 }};opacity:{{ recMoreOp1 }};transition:height 400ms cubic-bezier(0.22,1,0.36,1),opacity 300ms ease;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;border-radius:999px;background:#048144;color:var(--cream);font-family:'Fixel Text',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;">Дивитися рецепт</span>
+        </span>
+      </a>
+      <a href="#" onMouseEnter="{{ recipeOn2 }}" onMouseLeave="{{ recipeOff }}" style="flex:0 0 {{ recCardW }};display:flex;flex-direction:column;gap:18px;min-width:0;color:#048144;" style-focus="outline:3px solid var(--ink);outline-offset:4px;">
+        <div style="height:{{ recImgH2 }};width:100%;border-radius:20px;overflow:hidden;background:rgba(33,26,23,0.06);transition:height 400ms cubic-bezier(0.22,1,0.36,1);">
+          <img src="assets/v2-recipe-balls.jpg" alt="Лляні кульки з медом і родзинками" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ recipeScale2 }}" />
+        </div>
+        <h3 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(17px,1.4vw,20px);line-height:1.16;letter-spacing:-0.01em;text-transform:uppercase;min-height:2.4em;">Лляні кульки з медом і родзинками</h3>
+        <div style="margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:6px 24px;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:14px;line-height:1.3;color:#048144;">
+          <span>Порцій: 4</span>
+          <span>Час приготування: 20 хв</span>
+        </div>
+        <span aria-hidden="true" style="display:flex;align-items:center;overflow:hidden;height:{{ recMoreH2 }};opacity:{{ recMoreOp2 }};transition:height 400ms cubic-bezier(0.22,1,0.36,1),opacity 300ms ease;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;border-radius:999px;background:#048144;color:var(--cream);font-family:'Fixel Text',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;">Дивитися рецепт</span>
+        </span>
+      </a>
+      <a href="#" onMouseEnter="{{ recipeOn3 }}" onMouseLeave="{{ recipeOff }}" style="flex:0 0 {{ recCardW }};display:flex;flex-direction:column;gap:18px;min-width:0;color:#048144;" style-focus="outline:3px solid var(--ink);outline-offset:4px;">
+        <div style="height:{{ recImgH3 }};width:100%;border-radius:20px;overflow:hidden;background:rgba(33,26,23,0.06);transition:height 400ms cubic-bezier(0.22,1,0.36,1);">
+          <img src="assets/v2-recipe-roll.jpg" alt="Маковий рулет" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ recipeScale3 }}" />
+        </div>
+        <h3 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(17px,1.4vw,20px);line-height:1.16;letter-spacing:-0.01em;text-transform:uppercase;min-height:2.4em;">Маковий рулет</h3>
+        <div style="margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:6px 24px;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:14px;line-height:1.3;color:#048144;">
+          <span>Порцій: 8</span>
+          <span>Час приготування: 90 хв</span>
+        </div>
+        <span aria-hidden="true" style="display:flex;align-items:center;overflow:hidden;height:{{ recMoreH3 }};opacity:{{ recMoreOp3 }};transition:height 400ms cubic-bezier(0.22,1,0.36,1),opacity 300ms ease;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;border-radius:999px;background:#048144;color:var(--cream);font-family:'Fixel Text',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;">Дивитися рецепт</span>
+        </span>
+      </a>
+      <a href="#" onMouseEnter="{{ recipeOn4 }}" onMouseLeave="{{ recipeOff }}" style="flex:0 0 {{ recCardW }};display:flex;flex-direction:column;gap:18px;min-width:0;color:#048144;" style-focus="outline:3px solid var(--ink);outline-offset:4px;">
+        <div style="height:{{ recImgH4 }};width:100%;border-radius:20px;overflow:hidden;background:rgba(33,26,23,0.06);transition:height 400ms cubic-bezier(0.22,1,0.36,1);">
+          <img src="assets/v2-recipe-cookies.jpg" alt="Пісочне печиво з полуничним джемом" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 400ms cubic-bezier(0.22,1,0.36,1);transform:{{ recipeScale4 }}" />
+        </div>
+        <h3 style="margin:0;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(17px,1.4vw,20px);line-height:1.16;letter-spacing:-0.01em;text-transform:uppercase;min-height:2.4em;">Пісочне печиво з полуничним джемом</h3>
+        <div style="margin-top:auto;padding-top:16px;display:flex;flex-wrap:wrap;gap:6px 24px;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:14px;line-height:1.3;color:#048144;">
+          <span>Порцій: 6</span>
+          <span>Час приготування: 40 хв</span>
+        </div>
+        <span aria-hidden="true" style="display:flex;align-items:center;overflow:hidden;height:{{ recMoreH4 }};opacity:{{ recMoreOp4 }};transition:height 400ms cubic-bezier(0.22,1,0.36,1),opacity 300ms ease;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 26px;border-radius:999px;background:#048144;color:var(--cream);font-family:'Fixel Text',sans-serif;font-weight:800;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;">Дивитися рецепт</span>
+        </span>
+      </a>
+    </div>
+
+    <div style="margin-top:clamp(26px,3vw,40px);display:flex;align-items:center;gap:14px;">
+      <button type="button" aria-label="Попередній рецепт" onClick="{{ recPrev }}" style="width:56px;height:56px;padding:0;border:none;border-radius:50%;cursor:pointer;background:transparent;box-shadow:inset 0 0 0 2px #048144;color:#048144;display:flex;align-items:center;justify-content:center;transition:background-color 400ms ease,color 400ms ease;opacity:{{ recAtStartOpacity }}" style-hover="background:#048144;color:#F6F4EF;" style-focus="outline:2px solid #048144;outline-offset:4px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M21 12H3M8.5 6.8 3 12l5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+      <button type="button" aria-label="Наступний рецепт" onClick="{{ recNext }}" style="width:56px;height:56px;padding:0;border:none;border-radius:50%;cursor:pointer;background:transparent;box-shadow:inset 0 0 0 2px #048144;color:#048144;display:flex;align-items:center;justify-content:center;transition:background-color 400ms ease,color 400ms ease;opacity:{{ recAtEndOpacity }}" style-hover="background:#048144;color:#F6F4EF;" style-focus="outline:2px solid #048144;outline-offset:4px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M3 12h18M15.5 6.8 21 12l-5.5 5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="Footer" style="position:relative;z-index:1;background:var(--ink);border-radius:40px 40px 0 0;box-shadow:0 0 0 100vmax var(--cream);clip-path:inset(0 -100vmax -100vmax -100vmax);padding:clamp(20px,6vw,64px);box-sizing:border-box;color:var(--cream);">
+  <div style="max-width:1344px;margin:0 auto;display:flex;flex-direction:column;gap:48px;">
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:32px;">
+        <img src="assets/monik-logo.svg" alt="Monik" style="width:150px;height:43.1px;display:block;filter:brightness(0) invert(1);opacity:0.94;" />
+      </div>
+      <div style="display:flex;align-items:center;gap:24px;">
+        <a href="#" aria-label="Facebook" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M14.6 8.4h2.3V5.2h-2.8c-2.6 0-4.3 1.7-4.3 4.3v1.8H7.1v3.2h2.7V21h3.4v-6.5h2.6l.4-3.2h-3V9.6c0-.8.2-1.2 1.4-1.2z"></path></svg>
+        </a>
+        <a href="#" aria-label="YouTube" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M21.4 8.1c-.2-1.5-.8-2.2-2.3-2.4C17.4 5.4 12 5.4 12 5.4s-5.4 0-7.1.3c-1.5.2-2.1.9-2.3 2.4C2.4 9.6 2.4 12 2.4 12s0 2.4.2 3.9c.2 1.5.8 2.2 2.3 2.4 1.7.3 7.1.3 7.1.3s5.4 0 7.1-.3c1.5-.2 2.1-.9 2.3-2.4.2-1.5.2-3.9.2-3.9s0-2.4-.2-3.9zM10.2 15.1V8.9l5.3 3.1-5.3 3.1z"></path></svg>
+        </a>
+        <a href="#" aria-label="Instagram" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" style="display:block;"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"></rect><circle cx="12" cy="12" r="4.1"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        <a href="#" aria-label="Telegram" style="display:block;line-height:0;color:var(--cream);transition:color 200ms ease;" style-hover="color:var(--berry);">
+          <svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M21.7 4.3 2.9 11.5c-.9.3-.9 1.5.1 1.8l4.6 1.4 1.8 5.4c.2.7 1.1.9 1.6.3l2.5-2.6 4.6 3.4c.6.4 1.4.1 1.6-.6l3-14.6c.2-.8-.6-1.5-1.4-1.2zM8.9 14.1l9-5.6-7.5 6.9-.3 3-1.2-4.3z"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav style="display:flex;flex-direction:column;">
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(246,244,239,0.16);font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(246,244,239,0.34);">Продукція</a>
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(246,244,239,0.16);font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(246,244,239,0.34);">Натхнення</a>
+      <a href="#" style="display:flex;align-items:center;min-height:clamp(60px,6.4vw,76px);border-top:1px solid rgba(246,244,239,0.16);border-bottom:1px solid rgba(246,244,239,0.16);font-family:'Fixel Display',sans-serif;font-weight:800;font-size:clamp(26px,4vw,44px);line-height:1.02;letter-spacing:-0.03em;color:var(--cream);transition:color 200ms ease,border-color 200ms ease;" style-hover="color:var(--berry);border-top-color:rgba(246,244,239,0.34);">Контакти</a>
+    </nav>
+
+    <div aria-hidden="true" style="display:block;font-family:'Fixel Display',sans-serif;font-weight:800;font-size:min(128px,7.5vw);line-height:0.92;letter-spacing:-0.02em;color:var(--cream);user-select:none;white-space:nowrap;">#СолодкіРадостіЖиття</div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;font-family:'Fixel Text',sans-serif;font-weight:500;font-size:14px;color:rgba(246,244,239,0.6);">
+      <span>© 2026 Monik</span>
+      <a href="#" style="color:rgba(246,244,239,0.6);transition:color 200ms ease;" style-hover="color:var(--cream);">Політика конфіденційності</a>
+      <a href="#" style="display:flex;align-items:center;gap:12px;color:rgba(246,244,239,0.6);transition:color 200ms ease;" style-hover="color:var(--cream);">
+        <span style="font-family:'Fixel Text',sans-serif;font-weight:500;font-size:14px;">Дизайн від</span>
+        <img src="assets/welldone-logo.svg" alt="WellDone" style="display:block;height:18px;width:auto;filter:brightness(0) invert(1);" />
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;indicator&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;numeric&quot;,&quot;dots&quot;],&quot;default&quot;:&quot;numeric&quot;,&quot;tsType&quot;:&quot;'numeric' | 'dots'&quot;,&quot;section&quot;:&quot;Слайдер&quot;},&quot;showArrows&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Слайдер&quot;},&quot;autoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Слайдер&quot;},&quot;autoplayInterval&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:7,&quot;min&quot;:4,&quot;max&quot;:12,&quot;step&quot;:1,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Слайдер&quot;}}">
+class Component extends DCLogic {
+  state = { i: 0, lang: 'UA', langHover: null, cta: null, brand: null, recipe: null, allCta: false, recStart: true, recEnd: false, mobile: false, menuOpen: false, tab: false, bento: null };
+
+  onMqTab = (e) => this.setState({ tab: e.matches });
+
+  bentoVals() {
+    const narrow = this.state.mobile || this.state.tab;
+    const areas = ['1 / 1 / 2 / 5', '1 / 9 / 3 / 13', '1 / 5 / 2 / 9', '2 / 1 / 4 / 5', '3 / 5 / 4 / 9', '2 / 5 / 3 / 9', '3 / 9 / 4 / 13'];
+    const out = {
+      bentoCols: this.state.mobile ? '1fr' : this.state.tab ? 'repeat(2,1fr)' : 'repeat(12,1fr)',
+      bentoRows: narrow ? 'auto' : 'minmax(clamp(200px,19vw,270px),auto) 290px 290px',
+      bentoPhotoH: narrow ? 'auto' : '100%',
+      bentoArV: narrow ? '3 / 4' : 'auto',
+      bentoArH: narrow ? '3 / 2' : 'auto',
+      bentoOff: () => this.setState({ bento: null })
+    };
+    areas.forEach((a, n) => { out['bentoArea' + (n + 1)] = narrow ? 'auto' : a; });
+    for (let n = 0; n < 4; n++) {
+      out['bentoScale' + n] = this.state.bento === n ? 'scale(1.03)' : 'scale(1)';
+      out['bentoOn' + n] = ((k) => () => this.setState({ bento: k }))(n);
+    }
+    return out;
+  }
+
+  onMq = (e) => this.setState({ mobile: e.matches, menuOpen: e.matches ? this.state.menuOpen : false });
+
+  ctaVals() {
+    const out = {};
+    const base = ['var(--berry)', 'var(--cocoa)', 'var(--grape-deep)', 'var(--yellow-deep)', 'var(--ink)', '#0F7CA4'];
+    for (let n = 0; n < 6; n++) {
+      const hot = this.state.cta === n;
+      out['ctaColor' + n] = n === 4 ? (hot ? 'var(--cream)' : base[n]) : (hot ? base[n] : 'var(--cream)');
+      out['ctaDot' + n] = hot ? 'scale(0)' : 'scale(1)';
+      out['ctaFill' + n] = hot ? (n === 4 ? 'scale(200)' : 'scale(56)') : 'scale(0)';
+      out['ctaOn' + n] = ((k) => () => this.setState({ cta: k }))(n);
+    }
+    out.ctaOff = () => this.setState({ cta: null });
+    const fields = ['var(--cream-hi)', 'var(--cream-hi)', 'var(--cream-hi)'];
+    const fieldsHot = ['var(--cream-hi)', 'var(--cream-hi)', 'var(--cream-hi)'];
+    for (let n = 0; n < 6; n++) {
+      const hot = this.state.recipe === n;
+      out['recipeColor' + n] = hot ? 'var(--berry)' : 'var(--ink)';
+      out['recipeScale' + n] = hot ? 'scale(1.03)' : 'scale(1)';
+      out['recipeOn' + n] = ((k) => () => this.setState({ recipe: k }))(n);
+      const cw = this.state.mobile ? 'calc(78vw - 20px)' : 'clamp(248px,22vw,320px)';
+      out['recImgH' + n] = hot ? 'calc(' + cw + ' - 76px)' : cw;
+      out['recMoreH' + n] = hot ? '48px' : '0px';
+      out['recMoreOp' + n] = hot ? 1 : 0;
+      if (n > 2) out['recipeField' + n] = hot ? fieldsHot[n - 3] : fields[n - 3];
+    }
+    out.recipeOff = () => this.setState({ recipe: null });
+    for (let n = 0; n < 3; n++) {
+      const hot = this.state.brand === n;
+      out['brandLine' + n] = hot ? 'var(--berry)' : 'rgba(33,26,23,0.14)';
+      out['brandScale' + n] = hot ? 'scale(1.04)' : 'scale(1)';
+      out['brandOn' + n] = ((k) => () => this.setState({ brand: k }))(n);
+    }
+    out.brandOff = () => this.setState({ brand: null });
+    return out;
+  }
+
+  blobRefs = [React.createRef(), React.createRef(), React.createRef(), React.createRef(), React.createRef()];
+
+  startBlobs() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const seeds = [[0.62, 0.18, 13, 9, ''], [0.08, 0.32, 11, -12, ' rotate(-12deg)'], [0.06, 0.44, 12, 10, ''], [0.30, 0.36, 9, -11, ''], [0.14, 0.28, 10, 12, '']];
+    this.blobs = this.blobRefs.map((r, i) => ({ ref: r, x: null, y: null, sx: seeds[i][0], sy: seeds[i][1], vx: seeds[i][2], vy: seeds[i][3], rot: seeds[i][4] }));
+    let last = 0;
+    const step = (t) => {
+      const dt = last ? Math.min(0.05, (t - last) / 1000) : 0;
+      last = t;
+      this.blobs.forEach((b) => {
+        const el = b.ref.current;
+        const p = el && el.parentElement;
+        if (!el || !p) return;
+        const maxX = Math.max(0, p.clientWidth - el.offsetWidth);
+        const maxY = Math.max(0, p.clientHeight - el.offsetHeight);
+        if (b.x === null) { b.x = maxX * b.sx; b.y = maxY * b.sy; }
+        b.x += b.vx * dt;
+        b.y += b.vy * dt;
+        if (b.x <= 0) { b.x = 0; b.vx = Math.abs(b.vx); } else if (b.x >= maxX) { b.x = maxX; b.vx = -Math.abs(b.vx); }
+        if (b.y <= 0) { b.y = 0; b.vy = Math.abs(b.vy); } else if (b.y >= maxY) { b.y = maxY; b.vy = -Math.abs(b.vy); }
+        el.style.transform = 'translate3d(' + b.x.toFixed(1) + 'px,' + b.y.toFixed(1) + 'px,0)' + b.rot;
+      });
+      this.raf = requestAnimationFrame(step);
+    };
+    this.raf = requestAnimationFrame(step);
+  }
+
+  brandTrackRef = React.createRef();
+
+  brandScrollBy = (dir) => {
+    const el = this.brandTrackRef.current;
+    if (!el || !el.firstElementChild) return;
+    const gap = parseFloat(getComputedStyle(el).columnGap) || 24;
+    el.scrollBy({ left: dir * (el.firstElementChild.getBoundingClientRect().width + gap), behavior: 'smooth' });
+  };
+
+  recTrackRef = React.createRef();
+
+  recStep() {
+    const el = this.recTrackRef.current;
+    if (!el || !el.firstElementChild) return 300;
+    return el.firstElementChild.getBoundingClientRect().width + 24;
+  }
+  recScrollBy = (dir) => {
+    const el = this.recTrackRef.current;
+    if (el) el.scrollBy({ left: dir * this.recStep(), behavior: 'smooth' });
+  };
+  recOnScroll = () => {
+    const el = this.recTrackRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    const atStart = el.scrollLeft <= 2;
+    const atEnd = el.scrollLeft >= max - 2;
+    if (atStart !== this.state.recStart || atEnd !== this.state.recEnd) this.setState({ recStart: atStart, recEnd: atEnd });
+  };
+  recDragStart = (e) => {
+    const el = this.recTrackRef.current;
+    if (!el) return;
+    this.drag = { x: e.clientX, left: el.scrollLeft, moved: false };
+    el.style.cursor = 'grabbing';
+  };
+  recDragMove = (e) => {
+    const el = this.recTrackRef.current;
+    if (!el || !this.drag) return;
+    const dx = e.clientX - this.drag.x;
+    if (Math.abs(dx) > 4) this.drag.moved = true;
+    el.scrollLeft = this.drag.left - dx;
+  };
+  recDragEnd = (e) => {
+    const el = this.recTrackRef.current;
+    if (el) el.style.cursor = 'grab';
+    if (this.drag && this.drag.moved && e && e.preventDefault) e.preventDefault();
+    this.drag = null;
+  };
+
+  langPill(active) {
+    return "width:36px;height:36px;padding:0;border:none;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-family:'Fixel Text',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.04em;transition:background 200ms ease,color 200ms ease;background:"
+      + (active ? '#F6F4EF' : 'transparent') + ';color:' + (active ? '#211A17' : 'rgba(246,244,239,0.55)');
+  }
+
+  langStyle(code) {
+    const active = this.state.lang === code;
+    const hot = this.state.langHover === code;
+    return {
+      bg: active ? 'transparent' : hot ? 'rgba(246,244,239,0.14)' : 'transparent',
+      color: active ? 'var(--berry)' : hot ? 'var(--cream-hi)' : 'rgba(246,244,239,0.72)'
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener('keydown', this.onKey);
+    this.mq = window.matchMedia('(max-width: 767px)');
+    this.mq.addEventListener('change', this.onMq);
+    if (this.mq.matches) this.setState({ mobile: true });
+    this.mqTab = window.matchMedia('(min-width: 768px) and (max-width: 1023px)');
+    this.mqTab.addEventListener('change', this.onMqTab);
+    if (this.mqTab.matches) this.setState({ tab: true });
+    this.startAuto();
+    this.startBlobs();
+  }
+  componentDidUpdate(prev) {
+    if (prev.autoplay !== this.props.autoplay || prev.autoplayInterval !== this.props.autoplayInterval) this.startAuto();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.onKey);
+    if (this.mq) this.mq.removeEventListener('change', this.onMq);
+    if (this.mqTab) this.mqTab.removeEventListener('change', this.onMqTab);
+    if (this.raf) cancelAnimationFrame(this.raf);
+    clearInterval(this.timer);
+  }
+
+  onKey = (e) => {
+    if (e.key === 'ArrowRight') this.go(1);
+    else if (e.key === 'ArrowLeft') this.go(-1);
+  };
+
+  startAuto() {
+    clearInterval(this.timer);
+    if (this.props.autoplay) {
+      const ms = (this.props.autoplayInterval ?? 7) * 1000;
+      this.timer = setInterval(() => this.setState((s) => ({ i: (s.i + 1) % 2 })), ms);
+    }
+  }
+
+  go = (d) => {
+    this.setState((s) => ({ i: (s.i + d + 2) % 2 }));
+    this.startAuto();
+  };
+
+  jump = (k) => {
+    this.setState({ i: k });
+    this.startAuto();
+  };
+
+  renderVals() {
+    const i = this.state.i;
+    const indicator = this.props.indicator ?? 'numeric';
+    return Object.assign(this.ctaVals(), this.bentoVals(), {
+      shift: 'translateX(' + (-i * 100) + '%)',
+      current: String(i + 1).padStart(2, '0'),
+      total: '02',
+      blob0: this.blobRefs[0],
+      blob1: this.blobRefs[1],
+      blob2: this.blobRefs[2],
+      blob3: this.blobRefs[3],
+      blob4: this.blobRefs[4],
+      scrollDown: () => window.scrollBy({ top: Math.round(window.innerHeight * 0.92), behavior: 'smooth' }),
+      allOn: () => this.setState({ allCta: true }),
+      allOff: () => this.setState({ allCta: false }),
+      ctaSecPad: this.state.mobile ? '148px 20px' : 'clamp(164px,10vw,200px) clamp(20px,3.4vw,48px)',
+      ctaOvalH: this.state.mobile ? '132px' : 'clamp(192px,19vw,256px)',
+      ctaFill: this.state.allCta ? 'scale(220)' : 'scale(0)',
+      ctaDotColor: this.state.allCta ? 'var(--ink)' : 'var(--cream)',
+      ctaDotSize: this.state.mobile ? '10px' : 'clamp(12px,1.1vw,16px)',
+      ctaDotGap: this.state.mobile ? '6px' : 'clamp(7px,0.7vw,10px)',
+      ctaOvalColor: this.state.allCta ? 'var(--ink)' : 'var(--cream)',
+      ctaOvalScale: this.state.allCta ? 'scale(1.01)' : 'scale(1)',
+      brandTrackRef: this.brandTrackRef,
+      brandPrev: () => this.brandScrollBy(-1),
+      brandNext: () => this.brandScrollBy(1),
+      brandCardW: this.state.mobile ? 'calc(100vw - 60px)' : 'calc((100% - 2 * clamp(16px,1.8vw,24px)) / 3)',
+      recTrackRef: this.recTrackRef,
+      recScroll: this.recOnScroll,
+      recPrev: () => this.recScrollBy(-1),
+      recNext: () => this.recScrollBy(1),
+      ctaGrid4: this.state.cta === 4 ? 'translate(2px,2px)' : 'translate(0,0)',
+      recBtnBg0: 'var(--cream)',
+      recBtnFg0: this.state.recipe === 0 ? 'var(--cream)' : 'var(--ink)',
+      recFill0: this.state.recipe === 0 ? 'scale(150)' : 'scale(0)',
+      recBtnBg1: 'var(--cream)',
+      recBtnFg1: this.state.recipe === 1 ? 'var(--cream)' : 'var(--ink)',
+      recFill1: this.state.recipe === 1 ? 'scale(150)' : 'scale(0)',
+      recBtnBg2: 'var(--cream)',
+      recBtnFg2: this.state.recipe === 2 ? 'var(--cream)' : 'var(--ink)',
+      recFill2: this.state.recipe === 2 ? 'scale(150)' : 'scale(0)',
+      recBtnBg3: 'var(--cream)',
+      recBtnFg3: this.state.recipe === 3 ? 'var(--cream)' : 'var(--ink)',
+      recFill3: this.state.recipe === 3 ? 'scale(150)' : 'scale(0)',
+      recBtnBg4: 'var(--cream)',
+      recBtnFg4: this.state.recipe === 4 ? 'var(--cream)' : 'var(--ink)',
+      recFill4: this.state.recipe === 4 ? 'scale(150)' : 'scale(0)',
+      recDragStart: this.recDragStart,
+      recDragMove: this.recDragMove,
+      recDragEnd: this.recDragEnd,
+      recAtStart: !!this.state.recStart,
+      recAtEnd: !!this.state.recEnd,
+      recAtStartOpacity: this.state.recStart ? 0.35 : 1,
+      recAtEndOpacity: this.state.recEnd ? 0.35 : 1,
+      recCardW: this.state.mobile ? 'calc(78vw - 20px)' : 'clamp(248px,22vw,320px)',
+      recBleed: this.state.mobile ? '-20px' : 'calc(-1 * max(clamp(20px,3.4vw,48px), (100vw - 1344px) / 2))',
+      recHeadW: this.state.mobile ? '100%' : 'auto',
+      recCtaW: this.state.mobile ? '100%' : 'auto',
+      recipeNudge0: this.state.recipe === 0 ? 'translateX(3px)' : 'translateX(0)',
+      recipeNudge1: this.state.recipe === 1 ? 'translateX(3px)' : 'translateX(0)',
+      recipeNudge2: this.state.recipe === 2 ? 'translateX(3px)' : 'translateX(0)',
+      recipeNudge3: this.state.recipe === 3 ? 'translateX(3px)' : 'translateX(0)',
+      recipeNudge4: this.state.recipe === 4 ? 'translateX(3px)' : 'translateX(0)',
+      heroPos5: this.state.mobile ? '68% 50%' : '50% 50%',
+      showArrows: this.props.showArrows ?? true,
+      isNumeric: indicator === 'numeric',
+      isDots: indicator === 'dots',
+      dots: [0, 1].map((k) => ({
+        w: k === i ? '30px' : '8px',
+        o: k === i ? 1 : 0.5,
+        go: () => this.jump(k)
+      })),
+      prev: () => this.go(-1),
+      next: () => this.go(1),
+      langX: this.state.lang === 'EN' ? '52px' : '0px',
+      badgePad: this.state.mobile ? '0 12px' : '0 14px',
+      logoOrder: this.state.mobile ? 2 : 1,
+      logoMargin: this.state.mobile ? '0 auto' : '0',
+      langOrder: 4,
+      heroPos1: this.state.mobile ? '58% 48%' : '50% 50%',
+      heroPos3: this.state.mobile ? '58% 50%' : '50% 50%',
+      arrowSize: this.state.mobile ? '44px' : '54px',
+      prevLeft: this.state.mobile ? 'auto' : 'clamp(16px,2.4vw,32px)',
+      prevRight: this.state.mobile ? '76px' : 'auto',
+      heroWrapMinH: this.state.mobile ? 'auto' : '100vh',
+      heroWrapPad: this.state.mobile ? '0 20px 18px' : '0 clamp(20px,3.4vw,48px) 2px',
+      catH660: this.state.mobile ? 'auto' : '660px',
+      catH700: this.state.mobile ? 'auto' : '700px',
+      catH720: this.state.mobile ? 'auto' : '720px',
+      catPadA: this.state.mobile ? '38px 20px 32px' : '0 max(clamp(20px,3.4vw,72px),calc((100% - 1344px)/2 + 72px)) 0',
+      catPadB: this.state.mobile ? '68px 20px 32px' : 'clamp(56px,7vw,80px) max(clamp(20px,3.4vw,72px),calc((100% - 1344px)/2 + 72px)) 0',
+      catPadC: this.state.mobile ? '68px 20px 92px' : 'clamp(56px,7vw,80px) max(clamp(20px,3.4vw,72px),calc((100% - 1344px)/2 + 72px)) 60px',
+      catWrapPad: '0px',
+      catRadius: '0px',
+      catImgH: this.state.mobile ? '384px' : '0px',
+      catImgJust: this.state.mobile ? 'flex-start' : 'flex-end',
+      syrupImgOrder: 2,
+      swapImgOrder: this.state.mobile ? 2 : -1,
+      jamImgMargin: this.state.mobile ? '0' : '0 0 0 -32px',
+      waveH: this.state.mobile ? '28px' : '80px',
+      edge: this.state.mobile ? '20px' : this.state.tab ? '24px' : '32px',
+      headerH: this.state.mobile ? '64px' : '84px',
+      pillR: this.state.mobile ? (this.state.menuOpen ? '28px' : '999px') : '999px',
+      uaStyle: this.langPill(this.state.lang === 'UA'),
+      enStyle: this.langPill(this.state.lang === 'EN'),
+      isMobile: this.state.mobile,
+      deskNav: !this.state.mobile,
+      menuOpen: this.state.mobile && this.state.menuOpen,
+      toggleMenu: () => this.setState((st) => ({ menuOpen: !st.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      footUaColor: this.state.lang === 'UA' ? 'var(--cream)' : 'rgba(246,244,239,0.45)',
+      footEnColor: this.state.lang === 'EN' ? 'var(--cream)' : 'rgba(246,244,239,0.45)',
+      uaBg: this.langStyle('UA').bg,
+      uaColor: this.langStyle('UA').color,
+      enBg: this.langStyle('EN').bg,
+      enColor: this.langStyle('EN').color,
+      pickUA: () => this.setState({ lang: 'UA' }),
+      pickEN: () => this.setState({ lang: 'EN' }),
+      hoverUA: () => this.setState({ langHover: 'UA' }),
+      hoverEN: () => this.setState({ langHover: 'EN' }),
+      hoverOff: () => this.setState({ langHover: null })
+    });
+  }
+}
+
+</script>
+</body>
+</html>

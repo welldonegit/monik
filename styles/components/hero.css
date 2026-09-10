@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Hero — headline + lead over a berry background, product ring/plate
+   ========================================================================== */
+.hero-wrap {
+  background: var(--berry);
+  min-height: 100vh;
+  padding: 0 var(--space-48) var(--space-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero {
+  width: 100%;
+  max-width: var(--layout-max);
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-56);
+  padding: var(--space-80) 0 var(--space-16);
+}
+
+.hero__text {
+  flex: 1 1 var(--layout-col-md);
+  min-width: min(100%, var(--layout-hero-text-min));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-24);
+  margin-top: var(--layout-hero-shift);
+}
+.hero__title {
+  color: var(--cream-hi);
+  text-wrap: pretty;
+}
+.hero__lead {
+  max-width: var(--layout-col-lg);
+  color: var(--cream-a88);
+  text-wrap: pretty;
+}
+
+.hero__media {
+  flex: 1 1 var(--layout-hero-media);
+  min-width: min(100%, var(--layout-hero-media-min));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero__stage {
+  position: relative;
+  width: 100%;
+  max-width: min(var(--layout-hero-ring), 100%);
+  aspect-ratio: 1 / 1;
+}
+.hero__ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.hero__plate {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 62%;
+  height: 62%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  filter: drop-shadow(0 18px 32px rgba(33, 26, 23, 0.28));
+  will-change: transform;
+}
+
+/* Scroll-down affordance */
+.hero__scroll {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-24);
+  position: relative;
+  z-index: 2;
+}
+.hero__scroll-btn {
+  width: var(--control-h-xl);
+  height: var(--control-h-xl);
+  padding: 0;
+  border: var(--border-2) solid var(--cream-a50);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--dur-med) ease, color var(--dur-med) ease, border-color var(--dur-med) ease;
+}
+.hero__scroll-btn:hover {
+  background: var(--cream);
+  color: var(--berry);
+  border-color: var(--cream);
+}
+
+/* Berry wave divider below hero */
+.hero-wave {
+  width: 100%;
+  background: var(--berry);
+  line-height: 0;
+  margin-bottom: -1px;
+}
+.hero-wave svg {
+  width: 100%;
+  height: var(--space-56);
+}
+
+@media (max-width: 1023px) {
+  .hero-wrap { padding-inline: var(--space-32); }
+}
+
+@media (max-width: 767px) {
+  .hero-wrap {
+    min-height: auto;
+    padding: 0 var(--layout-gutter-mobile) var(--space-16);
+  }
+  .hero {
+    gap: var(--space-24);
+    padding: var(--space-40) 0 var(--space-16);
+  }
+  .hero__text {
+    gap: var(--space-16);
+    margin-top: 0;
+  }
+  .hero-wave svg { height: var(--space-24); }
+}

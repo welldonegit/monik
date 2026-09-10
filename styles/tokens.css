@@ -78,6 +78,10 @@
   --layout-header-h: 84px;      /* header bar min-height (desktop) */
   --layout-logo-w: 132px;       /* header logo width (desktop) */
   --layout-logo-w-mobile: 108px;
+  --layout-hero-text-min: 280px; /* hero text column min-width */
+  --layout-hero-media: 420px;    /* hero media column flex-basis */
+  --layout-hero-media-min: 260px;
+  --layout-hero-ring: 620px;     /* hero ring/plate max-width */
 
   /* ---- Fonts ---------------------------------------------------------- */
   --font-display: 'Fixel Display', sans-serif;
@@ -110,6 +114,7 @@
   --cream-a72: rgba(246, 244, 239, 0.72);
   --cream-a60: rgba(246, 244, 239, 0.6);
   --cream-a55: rgba(246, 244, 239, 0.55);
+  --cream-a50: rgba(246, 244, 239, 0.5);
   --cream-a45: rgba(246, 244, 239, 0.45);
   --cream-a22: rgba(246, 244, 239, 0.22);
   --cream-a14: rgba(246, 244, 239, 0.14);

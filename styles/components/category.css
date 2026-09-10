@@ -1,34 +1,30 @@
 /* ==========================================================================
-   Category band — repeated 5x (tea / jam / syrup / lemonade / spices)
-   One structure, per-section modifiers set: bg, min-height, paddings, image
-   side, image height, blob, CTA hover color.
+   Category band — repeated 5x (tea / jam / syrup / lemonade / spices).
+   One structure; modifiers set only bg, CTA hover colour, blob and title
+   max-width. Layout is uniform: fixed text-column width, fixed image size,
+   equal top padding — the group is centred in the container, so left-side
+   texts share one left offset and right-side texts share theirs.
    ========================================================================== */
 .category {
   position: relative;
-  /* overflow left visible so product PNGs + their drop-shadow aren't clipped
-     at the band edge (blobs stay in-bounds via JS; waves sit inside) */
+  /* overflow visible so product PNGs aren't clipped (blobs stay in-bounds) */
   background: var(--cat-bg);
 }
 
 .category__inner {
   position: relative;
   z-index: 1;
-  min-height: var(--cat-h, auto);
   max-width: var(--layout-max);
   margin-inline: auto;
-  padding: var(--cat-pt, 0) var(--gutter) var(--cat-pb, 0);
+  padding: var(--space-32) var(--gutter);
   display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  gap: var(--space-40);
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
 .category__body {
-  flex: 0 1 var(--cat-body-w, var(--layout-col-lg));
-  min-width: min(100%, var(--layout-col-narrow));
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
   gap: var(--space-24);
 }
@@ -40,19 +36,14 @@
 }
 
 .category__media {
-  flex: 1 1 var(--layout-col-narrow);
-  min-width: 0;
   display: flex;
-  align-items: flex-end;
   justify-content: flex-start;
 }
 .category__img {
   max-width: 100%;
   width: auto;
   height: auto;
-  /* bounded against the known band height (percentage of min-height can't
-     resolve, which let images blow up to the column width) */
-  max-height: var(--cat-img-mh);
+  max-height: var(--layout-cat-img-h);
   object-fit: contain;
 }
 
@@ -68,7 +59,7 @@
   will-change: transform;
 }
 
-/* Colored wave that overlaps the top edge (transition from previous band) */
+/* Colored wave overlapping the top edge (transition from previous band) */
 .category__wave {
   position: absolute;
   left: 0;
@@ -114,25 +105,18 @@
 .cta-outline:hover .cta-outline__fill { transform: scale(56); }
 .cta-outline:hover .cta-outline__label { color: var(--cta-hover); }
 
-/* ---- Section modifiers ---------------------------------------------- */
+/* ---- Section modifiers (colour / blob / title only) ------------------ */
 .category--tea {
   --cat-bg: var(--berry);
-  --cat-h: var(--layout-cat-h-a);
   --cta-hover: var(--berry);
   margin-top: calc(-1 * var(--space-48));
 }
-.category--tea .category__img { --cat-img-mh: calc(0.76 * var(--layout-cat-h-a)); margin-bottom: var(--space-40); }
 .category--tea .category__blob { width: min(var(--layout-col-md), 72%); aspect-ratio: 23 / 21; }
 
 .category--jam {
   --cat-bg: var(--grape);
-  --cat-h: var(--layout-cat-h-c);
-  --cat-pt: var(--space-40);
-  --cat-body-w: var(--layout-col-xl);
   --cta-hover: var(--grape-deep);
 }
-.category--jam .category__img { --cat-img-mh: calc(0.73 * var(--layout-cat-h-c)); }
-.category--jam .category__media { justify-content: flex-end; }
 .category--jam .category__blob {
   width: min(var(--layout-col-md), 74%);
   aspect-ratio: 23 / 21;
@@ -141,83 +125,59 @@
 
 .category--syrup {
   --cat-bg: var(--cocoa);
-  --cat-h: var(--layout-cat-h-b);
   --cta-hover: var(--cocoa);
 }
 .category--syrup .category__title { max-width: 480px; }
-.category--syrup .category__img { --cat-img-mh: calc(0.76 * var(--layout-cat-h-b)); }
 .category--syrup .category__blob { width: min(540px, 80%); aspect-ratio: 27 / 18; background: var(--cream-a06); }
 
 .category--lemonade {
   --cat-bg: var(--sky);
-  --cat-h: var(--layout-cat-h-b);
-  --cat-pt: var(--space-40);
-  --cat-body-w: var(--layout-col-xl);
   --cta-hover: var(--sky-deep);
 }
 .category--lemonade .category__title { max-width: 540px; }
 .category--lemonade .category__lead { color: var(--cream-a90); }
-.category--lemonade .category__img { --cat-img-mh: calc(0.76 * var(--layout-cat-h-b)); }
-.category--lemonade .category__media { justify-content: flex-end; }
 .category--lemonade .category__blob { width: min(var(--layout-col-xl), 78%); aspect-ratio: 26 / 19; background: var(--cream-a08); }
 
 .category--spices {
   --cat-bg: var(--yellow);
-  --cat-h: var(--layout-cat-h-a);
-  --cat-pt: var(--space-40);
-  --cat-pb: var(--space-56);
-  --cat-body-w: var(--layout-col-xxl);
   --cta-hover: var(--yellow-deep);
 }
 .category--spices .category__title { max-width: 520px; }
-.category--spices .category__img { --cat-img-mh: calc(0.83 * var(--layout-cat-h-a)); }
 .category--spices .category__blob { width: min(620px, 84%); aspect-ratio: 31 / 17; background: var(--cream-a06); }
 
-/* Zig-zag: reversed bands put the image on the left (desktop). */
-.category--reverse .category__media { order: -1; }
-
-/* ---- Desktop / tablet: center the text+photo pair as a group ---------
-   (media no longer grows to fill, so the image sits next to the text with
-   just the gap between them, and both are vertically centered) */
+/* ---- Desktop / tablet: fixed 2-column grid, centred group ------------ */
 @media (min-width: 768px) {
   .category__inner {
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;   /* centre the text+photo pair in the band */
+    align-items: flex-start;   /* h2 and photo share the same top line */
     gap: var(--space-64);
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-96);
   }
-  .category__body { flex: 0 1 auto; }
+  .category__body {
+    flex: 0 0 var(--layout-col-lg);   /* uniform text-column width */
+    justify-content: flex-start;
+  }
   .category__media {
-    flex: 0 1 auto;
+    flex: 0 0 auto;                   /* size to the image, no stretching */
     justify-content: center;
   }
-  .category--tea .category__img { margin-bottom: 0; }
+  .category__img { max-height: var(--layout-cat-img); } /* all photos same size */
+  /* zig-zag: reversed bands put the photo on the left */
+  .category--reverse .category__media { order: -1; }
 }
 
-/* ---- Responsive ------------------------------------------------------ */
+/* ---- Mobile ---------------------------------------------------------- */
 @media (max-width: 767px) {
   .category__inner {
-    min-height: auto;
-    flex-direction: column;
     padding-top: var(--space-32);
     padding-bottom: var(--space-32);
     gap: var(--space-4);
   }
   .category--tea .category__inner { padding-top: var(--space-8); }
   .category--spices .category__inner { padding-bottom: var(--space-96); }
-  .category--reverse .category__media { order: 0; }
-  .category__media {
-    /* size to the image, not to the 300px flex-basis (which in a column
-       becomes a height and left a big empty gap above the bottom-aligned img) */
-    flex: 0 0 auto;
-    min-height: auto;
-    justify-content: flex-start;
-  }
-  /* Fixed image height on mobile so the text↔photo gap is uniform across bands
-     (percentage max-height can't resolve against an auto-height band). */
-  .category__img { max-height: var(--layout-cat-img-h); }
-  .category--jam .category__media,
-  .category--lemonade .category__media { justify-content: flex-start; }
-  .category--jam .category__img { margin-right: 0; }
-  .category--tea .category__img { margin-bottom: 0; }
+  .category__media { justify-content: flex-start; }
   .category__wave { height: var(--space-24); }
 }

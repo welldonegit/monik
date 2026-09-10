@@ -1,0 +1,104 @@
+/* Styleguide-only helpers (not part of the site component set). */
+.sg {
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+  padding: var(--space-48);
+}
+.sg__inner {
+  max-width: var(--layout-max);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-64);
+}
+.sg__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-40);
+  line-height: 44px;
+}
+.sg-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+.sg-section__h {
+  font-family: var(--font-text);
+  font-weight: 700;
+  font-size: var(--text-24);
+  line-height: 32px;
+  padding-bottom: var(--space-8);
+  border-bottom: var(--border-1) solid var(--ink-a16);
+}
+.sg-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-24);
+  flex-wrap: wrap;
+}
+.sg-row__spec {
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: var(--text-14);
+  line-height: 20px;
+  color: var(--ink-a82);
+  min-width: 220px;
+}
+.sg-scale {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+.sg-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  font-family: var(--font-text);
+  font-size: var(--text-14);
+}
+.sg-bar__fill {
+  height: var(--space-24);
+  background: var(--berry);
+  border-radius: var(--radius-4);
+}
+.sg-bar__label {
+  min-width: 96px;
+  color: var(--ink-a82);
+}
+.sg-tiles {
+  display: flex;
+  gap: var(--space-24);
+  flex-wrap: wrap;
+}
+.sg-tile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  align-items: center;
+  font-family: var(--font-text);
+  font-size: var(--text-12);
+  line-height: 16px;
+  color: var(--ink-a82);
+}
+.sg-radius {
+  width: var(--space-80);
+  height: var(--space-80);
+  background: var(--grape);
+}
+.sg-control {
+  display: inline-flex;
+  align-items: center;
+  padding-inline: var(--space-24);
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: var(--radius-8);
+  font-family: var(--font-text);
+  font-size: var(--text-14);
+}
+.sg-swatch {
+  width: var(--space-96);
+  height: var(--space-64);
+  border-radius: var(--radius-8);
+  border: var(--border-1) solid var(--ink-a16);
+}

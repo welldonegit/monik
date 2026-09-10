@@ -121,7 +121,7 @@
   --cta-hover: var(--berry);
   margin-top: calc(-1 * var(--space-48));
 }
-.category--tea .category__img { --cat-img-mh: calc(0.69 * var(--layout-cat-h-a)); margin-bottom: var(--space-40); }
+.category--tea .category__img { --cat-img-mh: calc(0.76 * var(--layout-cat-h-a)); margin-bottom: var(--space-40); }
 .category--tea .category__blob { width: min(var(--layout-col-md), 72%); aspect-ratio: 23 / 21; }
 
 .category--jam {
@@ -131,7 +131,7 @@
   --cat-body-w: var(--layout-col-xl);
   --cta-hover: var(--grape-deep);
 }
-.category--jam .category__img { --cat-img-mh: calc(0.66 * var(--layout-cat-h-c)); }
+.category--jam .category__img { --cat-img-mh: calc(0.73 * var(--layout-cat-h-c)); }
 .category--jam .category__media { justify-content: flex-end; }
 .category--jam .category__blob {
   width: min(var(--layout-col-md), 74%);
@@ -145,7 +145,7 @@
   --cta-hover: var(--cocoa);
 }
 .category--syrup .category__title { max-width: 480px; }
-.category--syrup .category__img { --cat-img-mh: calc(0.69 * var(--layout-cat-h-b)); }
+.category--syrup .category__img { --cat-img-mh: calc(0.76 * var(--layout-cat-h-b)); }
 .category--syrup .category__blob { width: min(540px, 80%); aspect-ratio: 27 / 18; background: var(--cream-a06); }
 
 .category--lemonade {
@@ -157,7 +157,7 @@
 }
 .category--lemonade .category__title { max-width: 540px; }
 .category--lemonade .category__lead { color: var(--cream-a90); }
-.category--lemonade .category__img { --cat-img-mh: calc(0.74 * var(--layout-cat-h-b)); }
+.category--lemonade .category__img { --cat-img-mh: calc(0.81 * var(--layout-cat-h-b)); }
 .category--lemonade .category__media { justify-content: flex-end; }
 .category--lemonade .category__blob { width: min(var(--layout-col-xl), 78%); aspect-ratio: 26 / 19; background: var(--cream-a08); }
 
@@ -170,11 +170,28 @@
   --cta-hover: var(--yellow-deep);
 }
 .category--spices .category__title { max-width: 520px; }
-.category--spices .category__img { --cat-img-mh: calc(0.75 * var(--layout-cat-h-a)); }
+.category--spices .category__img { --cat-img-mh: calc(0.83 * var(--layout-cat-h-a)); }
 .category--spices .category__blob { width: min(620px, 84%); aspect-ratio: 31 / 17; background: var(--cream-a06); }
 
 /* Zig-zag: reversed bands put the image on the left (desktop). */
 .category--reverse .category__media { order: -1; }
+
+/* ---- Desktop / tablet: center the text+photo pair as a group ---------
+   (media no longer grows to fill, so the image sits next to the text with
+   just the gap between them, and both are vertically centered) */
+@media (min-width: 768px) {
+  .category__inner {
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-40);
+  }
+  .category__body { flex: 0 1 auto; }
+  .category__media {
+    flex: 0 1 auto;
+    justify-content: center;
+  }
+  .category--tea .category__img { margin-bottom: 0; }
+}
 
 /* ---- Responsive ------------------------------------------------------ */
 @media (max-width: 767px) {

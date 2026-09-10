@@ -2,24 +2,17 @@
    Shared layout primitives
    ========================================================================== */
 
-/* Centered content column used across sections. */
+/* Centered content column used across sections.
+   Max 1440 with 32px side padding *inside* it (mobile gutter 20). */
 .container {
   width: 100%;
   max-width: var(--layout-max);
   margin-inline: auto;
-}
-
-/* Page horizontal padding — fixed per breakpoint (was a fluid clamp). */
-.page-x {
-  padding-inline: var(--space-48);
-}
-
-@media (max-width: 1023px) {
-  .page-x { padding-inline: var(--space-32); }
+  padding-inline: var(--space-32);
 }
 
 @media (max-width: 767px) {
-  .page-x { padding-inline: var(--layout-gutter-mobile); }
+  .container { padding-inline: var(--layout-gutter-mobile); }
 }
 
 /* Accessible visually-hidden helper. */

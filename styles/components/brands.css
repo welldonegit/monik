@@ -3,7 +3,7 @@
    ========================================================================== */
 .brands {
   background: var(--cream);
-  padding: var(--space-64) var(--space-48);
+  padding: var(--space-96) 0;
 }
 .brands__inner {
   box-sizing: border-box;
@@ -83,7 +83,7 @@
 .brand-card:hover .brand-card__logo { transform: scale(1.04); }
 
 @media (max-width: 767px) {
-  .brands { padding: var(--space-40) var(--layout-gutter-mobile); }
+  .brands { padding-block: var(--space-64); }
   .brand-card {
     flex: 0 0 calc(100vw - var(--layout-brand-peek));
     height: var(--layout-brand-card-h-mobile);

@@ -4,7 +4,7 @@
 .hero-wrap {
   background: var(--berry);
   min-height: 100vh;
-  padding: 0 var(--space-48) var(--space-2);
+  padding: 0 0 var(--space-2);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,7 +18,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-56);
-  padding: var(--space-80) 0 var(--space-16);
+  padding: var(--space-32) var(--space-32) var(--space-16);
 }
 
 .hero__text {
@@ -50,7 +50,8 @@
 .hero__stage {
   position: relative;
   width: 100%;
-  max-width: min(var(--layout-hero-ring), 100%);
+  /* 52vh cap keeps the square image + scroll arrow within the first screen */
+  max-width: min(var(--layout-hero-ring), 100%, 52vh);
   aspect-ratio: 1 / 1;
 }
 .hero__ring {
@@ -111,18 +112,14 @@
   height: var(--space-56);
 }
 
-@media (max-width: 1023px) {
-  .hero-wrap { padding-inline: var(--space-32); }
-}
-
 @media (max-width: 767px) {
   .hero-wrap {
     min-height: auto;
-    padding: 0 var(--layout-gutter-mobile) var(--space-16);
+    padding: 0 0 var(--space-16);
   }
   .hero {
     gap: var(--space-24);
-    padding: var(--space-40) 0 var(--space-16);
+    padding: var(--space-40) var(--layout-gutter-mobile) var(--space-16);
   }
   .hero__text {
     gap: var(--space-16);

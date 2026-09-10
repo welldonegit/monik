@@ -8,6 +8,11 @@ const root = dirname(fileURLToPath(import.meta.url))
 // Legacy concept files (c04-*.html) are intentionally left out of the build.
 export default defineConfig({
   root,
+  server: {
+    host: true,       // bind 0.0.0.0 so devcontainer/remote port forwarding works
+    port: 5173,
+    strictPort: false,
+  },
   build: {
     rollupOptions: {
       input: {

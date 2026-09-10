@@ -5,7 +5,8 @@
    ========================================================================== */
 .category {
   position: relative;
-  overflow: hidden;
+  /* overflow left visible so product PNGs + their drop-shadow aren't clipped
+     at the band edge (blobs stay in-bounds via JS; waves sit inside) */
   background: var(--cat-bg);
 }
 
@@ -13,7 +14,7 @@
   position: relative;
   z-index: 1;
   min-height: var(--cat-h, auto);
-  max-width: calc(var(--layout-max) + 2 * var(--layout-cat-gutter));
+  max-width: var(--layout-max);
   margin-inline: auto;
   padding: var(--cat-pt, 0) var(--layout-cat-gutter) var(--cat-pb, 0);
   display: flex;
@@ -129,7 +130,7 @@
   --cat-body-w: var(--layout-col-xl);
   --cta-hover: var(--grape-deep);
 }
-.category--jam .category__img { --cat-img-mh: 82%; margin-right: calc(-1 * var(--space-32)); }
+.category--jam .category__img { --cat-img-mh: 82%; }
 .category--jam .category__media { justify-content: flex-end; }
 .category--jam .category__blob {
   width: min(var(--layout-col-md), 74%);
@@ -188,9 +189,12 @@
   .category--spices .category__inner { padding-bottom: var(--space-96); }
   .category--reverse .category__media { order: 0; }
   .category__media {
-    min-height: var(--layout-cat-img-h);
+    min-height: auto;
     justify-content: flex-start;
   }
+  /* Fixed image height on mobile so the text↔photo gap is uniform across bands
+     (percentage max-height can't resolve against an auto-height band). */
+  .category__img { max-height: var(--layout-cat-img-h); }
   .category--jam .category__media,
   .category--lemonade .category__media { justify-content: flex-start; }
   .category--jam .category__img { margin-right: 0; }

@@ -10,6 +10,7 @@
   border-radius: var(--radius-24) var(--radius-24) 0 0;
   padding: var(--space-64);
   color: var(--cream);
+  overflow: hidden; /* clip the oversized decorative hashtag */
 }
 .site-footer__inner {
   max-width: var(--layout-max);

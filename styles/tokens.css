@@ -61,7 +61,7 @@
      Kept at exact original values on purpose: snapping them to the spacing
      scale would shift 3-4px with no visual benefit (they are min/basis
      constraints, not fixed rendered sizes). Not part of the spacing scale. */
-  --layout-max: 1344px;      /* main content container */
+  --layout-max: 1440px;      /* main content container */
   --layout-max-header: 1480px;
   --layout-max-cta: 1075px;  /* "all categories" oval */
   --layout-col-narrow: 300px;
@@ -69,7 +69,7 @@
   --layout-col-lg: 500px;
   --layout-col-xl: 520px;
   --layout-col-xxl: 560px;
-  --layout-cat-gutter: 72px;  /* category band inner side gutter */
+  --layout-cat-gutter: 32px;  /* category band inner side gutter */
   --layout-catalog-pad-y: 200px;        /* big catalog CTA vertical padding */
   --layout-catalog-pad-y-mobile: 148px;
   --layout-oval-h: 256px;               /* catalog oval min-height */

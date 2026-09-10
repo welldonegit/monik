@@ -3,8 +3,9 @@
    ========================================================================== */
 .bento {
   background: var(--cream);
-  padding: var(--space-80) var(--space-48) 0;
+  padding: var(--space-96) 0 0;
 }
+.bento__title { min-width: 0; }
 .bento__head {
   margin: 0 auto var(--space-40);
 }
@@ -76,6 +77,8 @@
 }
 
 @media (max-width: 767px) {
-  .bento { padding-inline: var(--layout-gutter-mobile); }
+  .bento { padding-top: var(--space-64); }
   .bento__grid { grid-template-columns: 1fr; }
+  /* the #hashtag is a single unbreakable token — shrink so it fits the width */
+  .bento__title { font-size: var(--text-24); line-height: 32px; }
 }

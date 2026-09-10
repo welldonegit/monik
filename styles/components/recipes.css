@@ -109,7 +109,7 @@
   justify-content: center;
   height: var(--control-h-lg);
   padding: 0 var(--space-24);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-16);
   background: var(--green);
   color: var(--cream);
   white-space: nowrap;

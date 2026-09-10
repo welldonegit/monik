@@ -3,7 +3,8 @@
    ========================================================================== */
 .site-header {
   background: var(--berry);
-  padding: var(--space-32) var(--space-32) 0;
+  /* top raised 10px vs the 32 side gutter — deliberate header-position nudge */
+  padding: 22px var(--space-32) 0;
 }
 
 .site-header__bar {

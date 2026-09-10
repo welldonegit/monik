@@ -54,7 +54,6 @@
      resolve, which let images blow up to the column width) */
   max-height: var(--cat-img-mh);
   object-fit: contain;
-  filter: drop-shadow(0 26px 44px rgba(33, 26, 23, 0.28));
 }
 
 /* Decorative floating blob (position animated by category.js) */
@@ -184,7 +183,7 @@
     flex-direction: column;
     padding-top: var(--space-64);
     padding-bottom: var(--space-32);
-    gap: var(--space-32);
+    gap: var(--space-16);
   }
   .category--tea .category__inner { padding-top: var(--space-16); }
   .category--spices .category__inner { padding-bottom: var(--space-96); }

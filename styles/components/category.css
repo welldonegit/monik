@@ -183,7 +183,7 @@
   .category__inner {
     justify-content: center;
     align-items: center;
-    gap: var(--space-40);
+    gap: var(--space-64);
   }
   .category__body { flex: 0 1 auto; }
   .category__media {

@@ -70,6 +70,18 @@
   --layout-col-xl: 520px;
   --layout-col-xxl: 560px;
   --layout-cat-gutter: 72px;  /* category band inner side gutter */
+  --layout-catalog-pad-y: 200px;        /* big catalog CTA vertical padding */
+  --layout-catalog-pad-y-mobile: 148px;
+  --layout-oval-h: 256px;               /* catalog oval min-height */
+  --layout-oval-h-mobile: 132px;
+  --layout-oval-dot-right: 120px;
+  --layout-brand-card-h: 240px;
+  --layout-brand-card-h-mobile: 180px;
+  --layout-brand-peek: 60px;            /* mobile card side peek */
+  --layout-brand-logo-w: 276px;
+  --layout-brand-logo-h: 89px;
+  --layout-brand-logo-w-sm: 228px;
+  --layout-brand-logo-h-sm: 79px;
   --layout-cat-h-a: 660px;   /* category section min-heights (desktop) */
   --layout-cat-h-b: 700px;
   --layout-cat-h-c: 720px;

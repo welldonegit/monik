@@ -1,0 +1,48 @@
+/* ==========================================================================
+   Marquee — two auto-scrolling rows of benefit pills
+   ========================================================================== */
+@keyframes marquee-left {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-33.3333%, 0, 0); }
+}
+@keyframes marquee-right {
+  from { transform: translate3d(-33.3333%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+.marquee {
+  background: var(--cream);
+  padding: var(--space-32) 0 var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  overflow: hidden;
+}
+.marquee__row {
+  overflow: hidden;
+}
+.marquee__track {
+  display: flex;
+  width: max-content;
+  gap: var(--space-16);
+  will-change: transform;
+}
+.marquee__track--left { animation: marquee-left 44s linear infinite; }
+.marquee__track--right { animation: marquee-right 52s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; }
+}
+
+.pill {
+  flex: 0 0 auto;
+  padding: var(--space-16) var(--space-32);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+.pill--berry { background: var(--berry); color: var(--cream-hi); }
+.pill--yellow { background: var(--yellow); color: var(--ink); }
+.pill--mandarin { background: var(--mandarin); color: var(--cream-hi); }
+.pill--cocoa { background: var(--cocoa); color: var(--cream-hi); }
+.pill--grape { background: var(--grape); color: var(--cream-hi); }
+.pill--sand { background: var(--sand); color: var(--ink); }

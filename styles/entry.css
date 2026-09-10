@@ -4,3 +4,6 @@
 @import './reset.css';
 @import './typography.css';
 @import './layout.css';
+
+/* components (added per section) */
+@import './components/header.css';

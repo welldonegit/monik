@@ -75,6 +75,9 @@
   --layout-bento-row: 290px;
   --layout-hero-shift: -96px;/* hero text optical shift up (desktop) */
   --layout-gutter-mobile: 20px; /* mobile page gutter (kept exact) */
+  --layout-header-h: 84px;      /* header bar min-height (desktop) */
+  --layout-logo-w: 132px;       /* header logo width (desktop) */
+  --layout-logo-w-mobile: 108px;
 
   /* ---- Fonts ---------------------------------------------------------- */
   --font-display: 'Fixel Display', sans-serif;
@@ -106,8 +109,10 @@
   --cream-a88: rgba(246, 244, 239, 0.88);
   --cream-a72: rgba(246, 244, 239, 0.72);
   --cream-a60: rgba(246, 244, 239, 0.6);
+  --cream-a55: rgba(246, 244, 239, 0.55);
   --cream-a45: rgba(246, 244, 239, 0.45);
   --cream-a22: rgba(246, 244, 239, 0.22);
+  --cream-a14: rgba(246, 244, 239, 0.14);
   --cream-a18: rgba(246, 244, 239, 0.18);
   --cream-a16: rgba(246, 244, 239, 0.16);
   --cream-a07: rgba(246, 244, 239, 0.07);

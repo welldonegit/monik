@@ -69,15 +69,15 @@
 .text-h3-sm {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: var(--text-32);
-  line-height: 40px;      /* 1.25 */
+  font-size: var(--text-40);
+  line-height: 44px;
   letter-spacing: -0.02em;
 }
 .text-footnav {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: var(--text-48);
-  line-height: 56px;
+  font-size: var(--text-40);
+  line-height: 44px;
   letter-spacing: -0.03em;
 }
 .text-recipe-title {
@@ -145,8 +145,8 @@
 .text-cta-lg {
   font-family: var(--font-text);
   font-weight: 700;
-  font-size: var(--text-48);
-  line-height: 52px;
+  font-size: var(--text-40);
+  line-height: 44px;
   letter-spacing: -0.03em;
 }
 .text-pill {

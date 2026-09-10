@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Design tokens — Monik
+   --------------------------------------------------------------------------
+   All sizing in component CSS must reference these variables — no magic
+   numbers. Scales below follow a 4 / 8 / 16 / 32 / 64 base.
+
+   Rounding rules applied when snapping the original design to these scales:
+     - < 16px  → nearest multiple of 4 (2px kept only for hairlines/micro gaps)
+     - >= 16px → nearest multiple of 8
+     - ties    → down
+   Typography, radius, border-width, icons and control heights use their own
+   dedicated scales (see below).
+   ========================================================================== */
+
+:root {
+  /* ---- Spacing scale (4/8/16/32/64 family) ---------------------------- */
+  --space-2: 2px;      /* hairline / micro offsets only */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-96: 96px;
+  --space-128: 128px;
+
+  /* ---- Radius scale --------------------------------------------------- */
+  --radius-2: 2px;
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-24: 24px;
+  --radius-full: 9999px;
+
+  /* ---- Border width --------------------------------------------------- */
+  --border-1: 1px;   /* hairline dividers */
+  --border-2: 2px;   /* button / control outlines */
+
+  /* ---- Icon sizes ----------------------------------------------------- */
+  --icon-16: 16px;
+  --icon-20: 20px;
+  --icon-24: 24px;
+  --icon-32: 32px;
+  --icon-40: 40px;
+
+  /* ---- Control heights (fixed — never content-driven) ----------------- */
+  --control-h-xs: 24px;
+  --control-h-sm: 32px;
+  --control-h-md: 40px;
+  --control-h-lg: 48px;
+  --control-h-xl: 56px;
+
+  /* ---- Layout constants ----------------------------------------------
+     Large structural dimensions (container widths, flex-basis, min-heights).
+     Kept at exact original values on purpose: snapping them to the spacing
+     scale would shift 3-4px with no visual benefit (they are min/basis
+     constraints, not fixed rendered sizes). Not part of the spacing scale. */
+  --layout-max: 1344px;      /* main content container */
+  --layout-max-header: 1480px;
+  --layout-max-cta: 1075px;  /* "all categories" oval */
+  --layout-col-narrow: 300px;
+  --layout-col-md: 460px;
+  --layout-col-lg: 500px;
+  --layout-col-xl: 520px;
+  --layout-cat-h-a: 660px;   /* category section min-heights (desktop) */
+  --layout-cat-h-b: 700px;
+  --layout-cat-h-c: 720px;
+  --layout-cat-img-h: 384px; /* category product image row (mobile) */
+  --layout-bento-row: 290px;
+  --layout-hero-shift: -96px;/* hero text optical shift up (desktop) */
+  --layout-gutter-mobile: 20px; /* mobile page gutter (kept exact) */
+
+  /* ---- Fonts ---------------------------------------------------------- */
+  --font-display: 'Fixel Display', sans-serif;
+  --font-text: 'Fixel Text', sans-serif;
+
+  /* ---- Colors --------------------------------------------------------- */
+  --cream: #F6F4EF;
+  --cream-hi: #FFFDFA;
+  --sand: #E8E5DC;
+  --ink: #211A17;
+  --berry: #E52868;
+  --berry-deep: #B31A4E;
+  --cocoa: #B4471F;
+  --cocoa-deep: #8A3212;
+  --grape: #653CCB;
+  --grape-deep: #4A2A9E;
+  --mandarin: #F14B2F;
+  --blue: #4358D5;
+  --sky: #20AFE0;         /* lemonade section bg */
+  --sky-deep: #0F7CA4;    /* lemonade CTA hover */
+  --yellow: #FFC42D;
+  --yellow-deep: #A66A00;
+  --green: #048144;       /* brand/recipe accent */
+  --card-cherry: #E52868;
+
+  /* alpha-based surface colors reused across components */
+  --ink-a06: rgba(33, 26, 23, 0.06);
+  --ink-a16: rgba(33, 26, 23, 0.16);
+  --cream-a88: rgba(246, 244, 239, 0.88);
+  --cream-a72: rgba(246, 244, 239, 0.72);
+  --cream-a60: rgba(246, 244, 239, 0.6);
+  --cream-a45: rgba(246, 244, 239, 0.45);
+  --cream-a22: rgba(246, 244, 239, 0.22);
+  --cream-a18: rgba(246, 244, 239, 0.18);
+  --cream-a16: rgba(246, 244, 239, 0.16);
+  --cream-a07: rgba(246, 244, 239, 0.07);
+
+  /* ---- Font-size scale (tokens; classes in typography.css bundle these
+     with matching line-heights) ---------------------------------------- */
+  --text-12: 12px;
+  --text-14: 14px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-24: 24px;
+  --text-28: 28px;
+  --text-32: 32px;
+  --text-40: 40px;
+  --text-48: 48px;
+  --text-56: 56px;
+  --text-64: 64px;
+  --text-80: 80px;
+  --text-96: 96px;    /* display */
+  --text-128: 128px;  /* display */
+
+  /* ---- Motion --------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 200ms;
+  --dur-med: 400ms;
+}

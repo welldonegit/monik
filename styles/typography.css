@@ -1,0 +1,182 @@
+/* ==========================================================================
+   Typography — Monik
+   --------------------------------------------------------------------------
+   Rules:
+   - font-size only from the scale: 12 14 16 18 20 24 28 32 40 48 56 64 80
+     + display steps 96 / 128. No fluid clamp() — different sizes per
+     breakpoint come from media queries, each value on the scale.
+   - line-height lands on the 4px grid, written unitless only when integer
+     (16/24 -> 1.5), otherwise in px. No fractional px results.
+   - font-weight as a number from {400,500,600,700}. The source design used
+     800/900 (ExtraBold/Black); those are outside the allowed set and are
+     mapped to 700.
+   - letter-spacing is the only place fractional em is allowed.
+
+   Typography classes are reusable: put them on markup, don't redefine sizes
+   inside component CSS.
+   ========================================================================== */
+
+/* Real font families / weights actually used by the layout. */
+@font-face { font-family: 'Fixel Display'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelDisplay-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Fixel Text'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelText-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Fixel Text'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelText-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Fixel Text'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelText-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Fixel Text'; src: url('https://cdn.jsdelivr.net/gh/MacPaw/Fixel@main/fonts/webfonts/FixelText-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+
+/* ---- Display / headings (Fixel Display, 700) ------------------------- */
+.text-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-128);
+  line-height: 128px;
+  letter-spacing: -0.02em;
+}
+.text-h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-96);
+  line-height: 100px;
+  letter-spacing: -0.03em;
+}
+.text-h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-80);
+  line-height: 80px;
+  letter-spacing: -0.03em;
+}
+.text-h2-alt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-64);
+  line-height: 68px;
+  letter-spacing: -0.03em;
+}
+.text-h2-recipe {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-56);
+  line-height: 56px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+.text-h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-40);
+  line-height: 44px;
+  letter-spacing: -0.02em;
+}
+.text-h3-sm {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-32);
+  line-height: 40px;      /* 1.25 */
+  letter-spacing: -0.02em;
+}
+.text-footnav {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-48);
+  line-height: 56px;
+  letter-spacing: -0.03em;
+}
+.text-recipe-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-20);
+  line-height: 24px;      /* 1.2 */
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* ---- Body / UI (Fixel Text) ------------------------------------------ */
+.text-lead {
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: var(--text-20);
+  line-height: 28px;      /* 1.4 */
+}
+.text-eyebrow {
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: var(--text-20);
+  line-height: 28px;
+}
+.text-body-lg {
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: var(--text-18);
+  line-height: 24px;
+}
+.text-body {
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: var(--text-16);
+  line-height: 1.5;       /* 24 */
+}
+.text-body-sm {
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: var(--text-14);
+  line-height: 20px;
+}
+.text-nav {
+  font-family: var(--font-text);
+  font-weight: 700;
+  font-size: var(--text-16);
+  line-height: 1.5;       /* 24 */
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.text-btn {
+  font-family: var(--font-text);
+  font-weight: 700;
+  font-size: var(--text-16);
+  line-height: 1.5;       /* 24 */
+}
+.text-btn-eyebrow {
+  font-family: var(--font-text);
+  font-weight: 700;
+  font-size: var(--text-14);
+  line-height: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.text-cta-lg {
+  font-family: var(--font-text);
+  font-weight: 700;
+  font-size: var(--text-56);
+  line-height: 56px;
+  letter-spacing: -0.03em;
+}
+.text-pill {
+  font-family: var(--font-text);
+  font-weight: 700;
+  font-size: var(--text-20);
+  line-height: 24px;
+}
+.text-lang {
+  font-family: var(--font-text);
+  font-weight: 700;
+  font-size: var(--text-12);
+  line-height: 16px;
+  letter-spacing: 0.04em;
+}
+
+/* ---- Mobile sizes (<= 767px) — each value still from the scale -------- */
+@media (max-width: 767px) {
+  .text-display { font-size: var(--text-48); line-height: 48px; }
+  .text-h1 { font-size: var(--text-48); line-height: 52px; }
+  .text-h2 { font-size: var(--text-40); line-height: 44px; }
+  .text-h2-alt { font-size: var(--text-40); line-height: 44px; }
+  .text-h2-recipe { font-size: var(--text-32); line-height: 40px; }
+  .text-h3 { font-size: var(--text-28); line-height: 36px; }
+  .text-h3-sm { font-size: var(--text-24); line-height: 32px; }
+  .text-footnav { font-size: var(--text-24); line-height: 32px; }
+  .text-cta-lg { font-size: var(--text-24); line-height: 32px; }
+  .text-lead { font-size: var(--text-18); line-height: 24px; }
+  .text-eyebrow { font-size: var(--text-18); line-height: 24px; }
+  .text-body-lg { font-size: var(--text-16); line-height: 24px; }
+  .text-pill { font-size: var(--text-16); line-height: 24px; }
+}

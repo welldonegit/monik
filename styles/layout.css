@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Shared layout primitives
+   ========================================================================== */
+
+/* Centered content column used across sections. */
+.container {
+  width: 100%;
+  max-width: var(--layout-max);
+  margin-inline: auto;
+}
+
+/* Page horizontal padding — fixed per breakpoint (was a fluid clamp). */
+.page-x {
+  padding-inline: var(--space-48);
+}
+
+@media (max-width: 1023px) {
+  .page-x { padding-inline: var(--space-32); }
+}
+
+@media (max-width: 767px) {
+  .page-x { padding-inline: var(--layout-gutter-mobile); }
+}
+
+/* Accessible visually-hidden helper. */
+.u-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

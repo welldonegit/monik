@@ -102,7 +102,7 @@
   --layout-hero-text-min: 280px; /* hero text column min-width */
   --layout-hero-media: 420px;    /* hero media column flex-basis */
   --layout-hero-media-min: 260px;
-  --layout-hero-ring: 900px;     /* hero ring/plate max-width */
+  --layout-hero-ring: 990px;     /* hero ring/plate max-width */
 
   /* ---- Fonts ---------------------------------------------------------- */
   --font-display: 'Fixel Display', sans-serif;

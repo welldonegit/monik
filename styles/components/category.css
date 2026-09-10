@@ -121,17 +121,17 @@
   --cta-hover: var(--berry);
   margin-top: calc(-1 * var(--space-48));
 }
-.category--tea .category__img { --cat-img-mh: calc(0.86 * var(--layout-cat-h-a)); margin-bottom: var(--space-40); }
+.category--tea .category__img { --cat-img-mh: calc(0.69 * var(--layout-cat-h-a)); margin-bottom: var(--space-40); }
 .category--tea .category__blob { width: min(var(--layout-col-md), 72%); aspect-ratio: 23 / 21; }
 
 .category--jam {
   --cat-bg: var(--grape);
   --cat-h: var(--layout-cat-h-c);
-  --cat-pt: var(--space-80);
+  --cat-pt: var(--space-40);
   --cat-body-w: var(--layout-col-xl);
   --cta-hover: var(--grape-deep);
 }
-.category--jam .category__img { --cat-img-mh: calc(0.82 * var(--layout-cat-h-c)); }
+.category--jam .category__img { --cat-img-mh: calc(0.66 * var(--layout-cat-h-c)); }
 .category--jam .category__media { justify-content: flex-end; }
 .category--jam .category__blob {
   width: min(var(--layout-col-md), 74%);
@@ -145,32 +145,32 @@
   --cta-hover: var(--cocoa);
 }
 .category--syrup .category__title { max-width: 480px; }
-.category--syrup .category__img { --cat-img-mh: calc(0.86 * var(--layout-cat-h-b)); }
+.category--syrup .category__img { --cat-img-mh: calc(0.69 * var(--layout-cat-h-b)); }
 .category--syrup .category__blob { width: min(540px, 80%); aspect-ratio: 27 / 18; background: var(--cream-a06); }
 
 .category--lemonade {
   --cat-bg: var(--sky);
   --cat-h: var(--layout-cat-h-b);
-  --cat-pt: var(--space-80);
+  --cat-pt: var(--space-40);
   --cat-body-w: var(--layout-col-xl);
   --cta-hover: var(--sky-deep);
 }
 .category--lemonade .category__title { max-width: 540px; }
 .category--lemonade .category__lead { color: var(--cream-a90); }
-.category--lemonade .category__img { --cat-img-mh: calc(0.92 * var(--layout-cat-h-b)); }
+.category--lemonade .category__img { --cat-img-mh: calc(0.74 * var(--layout-cat-h-b)); }
 .category--lemonade .category__media { justify-content: flex-end; }
 .category--lemonade .category__blob { width: min(var(--layout-col-xl), 78%); aspect-ratio: 26 / 19; background: var(--cream-a08); }
 
 .category--spices {
   --cat-bg: var(--yellow);
   --cat-h: var(--layout-cat-h-a);
-  --cat-pt: var(--space-80);
+  --cat-pt: var(--space-40);
   --cat-pb: var(--space-56);
   --cat-body-w: var(--layout-col-xxl);
   --cta-hover: var(--yellow-deep);
 }
 .category--spices .category__title { max-width: 520px; }
-.category--spices .category__img { --cat-img-mh: calc(0.94 * var(--layout-cat-h-a)); }
+.category--spices .category__img { --cat-img-mh: calc(0.75 * var(--layout-cat-h-a)); }
 .category--spices .category__blob { width: min(620px, 84%); aspect-ratio: 31 / 17; background: var(--cream-a06); }
 
 /* Zig-zag: reversed bands put the image on the left (desktop). */
@@ -181,11 +181,11 @@
   .category__inner {
     min-height: auto;
     flex-direction: column;
-    padding-top: var(--space-64);
+    padding-top: var(--space-32);
     padding-bottom: var(--space-32);
-    gap: var(--space-16);
+    gap: var(--space-8);
   }
-  .category--tea .category__inner { padding-top: var(--space-16); }
+  .category--tea .category__inner { padding-top: var(--space-8); }
   .category--spices .category__inner { padding-bottom: var(--space-96); }
   .category--reverse .category__media { order: 0; }
   .category__media {

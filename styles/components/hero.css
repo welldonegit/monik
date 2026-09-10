@@ -51,9 +51,8 @@
 .hero__stage {
   position: relative;
   width: 100%;
-  /* vh cap keeps the square image + scroll arrow within the first screen,
-     but grows with viewport height so the image stays large on desktop */
-  max-width: min(var(--layout-hero-ring), 100%, 72vh);
+  /* grows with viewport height so the image stays large on desktop */
+  max-width: min(var(--layout-hero-ring), 100%, 79vh);
   aspect-ratio: 1 / 1;
 }
 .hero__ring {
@@ -75,16 +74,12 @@
   will-change: transform;
 }
 
-/* Scroll-down affordance — pinned to the bottom of the first screen so it's
-   always visible regardless of the hero image height */
+/* Scroll-down affordance — sits under the lead text so it's at the level of
+   the last line and always inside the first screen (the 100vh hero is pushed
+   down by the header, so a bottom-pinned arrow would fall below the fold) */
 .hero__scroll {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: var(--space-24);
   display: flex;
-  justify-content: center;
-  z-index: 2;
+  margin-top: var(--space-8);
 }
 .hero__scroll-btn {
   width: var(--control-h-xl);
@@ -129,11 +124,6 @@
   .hero__text {
     gap: var(--space-16);
     margin-top: 0;
-  }
-  /* on mobile the hero isn't full-height, so the arrow flows after content */
-  .hero__scroll {
-    position: static;
-    margin-top: var(--space-24);
   }
   .hero-wave svg { height: var(--space-24); }
 }

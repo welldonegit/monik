@@ -1,0 +1,199 @@
+/* ==========================================================================
+   Category band — repeated 5x (tea / jam / syrup / lemonade / spices)
+   One structure, per-section modifiers set: bg, min-height, paddings, image
+   side, image height, blob, CTA hover color.
+   ========================================================================== */
+.category {
+  position: relative;
+  overflow: hidden;
+  background: var(--cat-bg);
+}
+
+.category__inner {
+  position: relative;
+  z-index: 1;
+  min-height: var(--cat-h, auto);
+  max-width: calc(var(--layout-max) + 2 * var(--layout-cat-gutter));
+  margin-inline: auto;
+  padding: var(--cat-pt, 0) var(--layout-cat-gutter) var(--cat-pb, 0);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--space-40);
+}
+
+.category__body {
+  flex: 0 1 var(--cat-body-w, var(--layout-col-lg));
+  min-width: min(100%, var(--layout-col-narrow));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--space-24);
+}
+.category__title { color: var(--cream); }
+.category__lead {
+  max-width: var(--layout-col-md);
+  color: var(--cream-a88);
+  text-wrap: pretty;
+}
+
+.category__media {
+  flex: 1 1 var(--layout-col-narrow);
+  min-width: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.category__img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-height: var(--cat-img-mh, 86%);
+  object-fit: contain;
+  filter: drop-shadow(0 26px 44px rgba(33, 26, 23, 0.28));
+}
+
+/* Decorative floating blob (position animated by category.js) */
+.category__blob {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  background: var(--cream-a07);
+  will-change: transform;
+}
+
+/* Colored wave that overlaps the top edge (transition from previous band) */
+.category__wave {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: 100%;
+  height: var(--space-80);
+  display: block;
+}
+
+/* ---- Outline CTA with expanding fill (pure CSS hover) ---------------- */
+.cta-outline {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-16);
+  min-height: var(--control-h-xl);
+  padding: var(--space-16) var(--space-24);
+  max-width: 100%;
+  border: var(--border-2) solid var(--cream);
+  border-radius: var(--radius-16);
+  background: transparent;
+  color: var(--cream);
+  transition: color var(--dur-med) ease;
+}
+.cta-outline__label {
+  position: relative;
+  z-index: 1;
+}
+.cta-outline__fill {
+  position: absolute;
+  right: var(--space-24);
+  top: 50%;
+  width: var(--space-8);
+  height: var(--space-8);
+  margin-top: calc(var(--space-8) / -2);
+  border-radius: var(--radius-full);
+  background: var(--cream);
+  transform: scale(0);
+  transition: transform var(--dur-med) var(--ease-out);
+}
+.cta-outline:hover .cta-outline__fill { transform: scale(56); }
+.cta-outline:hover .cta-outline__label { color: var(--cta-hover); }
+
+/* ---- Section modifiers ---------------------------------------------- */
+.category--tea {
+  --cat-bg: var(--berry);
+  --cat-h: var(--layout-cat-h-a);
+  --cta-hover: var(--berry);
+  margin-top: calc(-1 * var(--space-48));
+}
+.category--tea .category__img { --cat-img-mh: 86%; margin-bottom: var(--space-40); }
+.category--tea .category__blob { width: min(var(--layout-col-md), 72%); aspect-ratio: 23 / 21; }
+
+.category--jam {
+  --cat-bg: var(--grape);
+  --cat-h: var(--layout-cat-h-c);
+  --cat-pt: var(--space-80);
+  --cat-body-w: var(--layout-col-xl);
+  --cta-hover: var(--grape-deep);
+}
+.category--jam .category__img { --cat-img-mh: 82%; margin-right: calc(-1 * var(--space-32)); }
+.category--jam .category__media { justify-content: flex-end; }
+.category--jam .category__blob {
+  width: min(var(--layout-col-md), 74%);
+  aspect-ratio: 23 / 21;
+  border-radius: 62% 38% 46% 54% / 54% 48% 52% 46%;
+}
+
+.category--syrup {
+  --cat-bg: var(--cocoa);
+  --cat-h: var(--layout-cat-h-b);
+  --cta-hover: var(--cocoa);
+}
+.category--syrup .category__title { max-width: 480px; }
+.category--syrup .category__img { --cat-img-mh: 86%; }
+.category--syrup .category__blob { width: min(540px, 80%); aspect-ratio: 27 / 18; background: var(--cream-a06); }
+
+.category--lemonade {
+  --cat-bg: var(--sky);
+  --cat-h: var(--layout-cat-h-b);
+  --cat-pt: var(--space-80);
+  --cat-body-w: var(--layout-col-xl);
+  --cta-hover: var(--sky-deep);
+}
+.category--lemonade .category__title { max-width: 540px; }
+.category--lemonade .category__lead { color: rgba(246, 244, 239, 0.9); }
+.category--lemonade .category__img { --cat-img-mh: 92%; }
+.category--lemonade .category__media { justify-content: flex-end; }
+.category--lemonade .category__blob { width: min(var(--layout-col-xl), 78%); aspect-ratio: 26 / 19; background: var(--cream-a08); }
+
+.category--spices {
+  --cat-bg: var(--yellow);
+  --cat-h: var(--layout-cat-h-a);
+  --cat-pt: var(--space-80);
+  --cat-pb: var(--space-56);
+  --cat-body-w: var(--layout-col-xxl);
+  --cta-hover: var(--yellow-deep);
+}
+.category--spices .category__title { max-width: 520px; }
+.category--spices .category__img { --cat-img-mh: 94%; }
+.category--spices .category__blob { width: min(620px, 84%); aspect-ratio: 31 / 17; background: var(--cream-a06); }
+
+/* Zig-zag: reversed bands put the image on the left (desktop). */
+.category--reverse .category__media { order: -1; }
+
+/* ---- Responsive ------------------------------------------------------ */
+@media (max-width: 767px) {
+  .category__inner {
+    min-height: auto;
+    flex-direction: column;
+    padding-inline: var(--layout-gutter-mobile);
+    padding-top: var(--space-64);
+    padding-bottom: var(--space-32);
+    gap: var(--space-32);
+  }
+  .category--tea .category__inner { padding-top: var(--space-16); }
+  .category--spices .category__inner { padding-bottom: var(--space-96); }
+  .category--reverse .category__media { order: 0; }
+  .category__media {
+    min-height: var(--layout-cat-img-h);
+    justify-content: flex-start;
+  }
+  .category--jam .category__media,
+  .category--lemonade .category__media { justify-content: flex-start; }
+  .category--jam .category__img { margin-right: 0; }
+  .category--tea .category__img { margin-bottom: 0; }
+  .category__wave { height: var(--space-24); }
+}

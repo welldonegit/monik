@@ -68,6 +68,8 @@
   --layout-col-md: 460px;
   --layout-col-lg: 500px;
   --layout-col-xl: 520px;
+  --layout-col-xxl: 560px;
+  --layout-cat-gutter: 72px;  /* category band inner side gutter */
   --layout-cat-h-a: 660px;   /* category section min-heights (desktop) */
   --layout-cat-h-b: 700px;
   --layout-cat-h-c: 720px;
@@ -120,7 +122,9 @@
   --cream-a14: rgba(246, 244, 239, 0.14);
   --cream-a18: rgba(246, 244, 239, 0.18);
   --cream-a16: rgba(246, 244, 239, 0.16);
+  --cream-a08: rgba(246, 244, 239, 0.08);
   --cream-a07: rgba(246, 244, 239, 0.07);
+  --cream-a06: rgba(246, 244, 239, 0.06);
 
   /* ---- Font-size scale (tokens; classes in typography.css bundle these
      with matching line-heights) ---------------------------------------- */

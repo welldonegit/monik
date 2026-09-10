@@ -5,7 +5,9 @@
   position: relative;
   overflow: hidden;
   background: var(--blue);
-  padding: var(--layout-catalog-pad-y) var(--gutter);
+  /* bottom smaller than top: the wave (80) eats into the visual top space,
+     so equal-looking padding around the oval needs less at the bottom */
+  padding: var(--layout-catalog-pad-y) var(--gutter) var(--space-128);
 }
 .catalog-cta__wave {
   position: absolute;

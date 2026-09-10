@@ -157,7 +157,7 @@
 }
 .category--lemonade .category__title { max-width: 540px; }
 .category--lemonade .category__lead { color: var(--cream-a90); }
-.category--lemonade .category__img { --cat-img-mh: calc(0.81 * var(--layout-cat-h-b)); }
+.category--lemonade .category__img { --cat-img-mh: calc(0.76 * var(--layout-cat-h-b)); }
 .category--lemonade .category__media { justify-content: flex-end; }
 .category--lemonade .category__blob { width: min(var(--layout-col-xl), 78%); aspect-ratio: 26 / 19; background: var(--cream-a08); }
 
@@ -181,7 +181,7 @@
    just the gap between them, and both are vertically centered) */
 @media (min-width: 768px) {
   .category__inner {
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: var(--space-64);
   }

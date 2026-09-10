@@ -4,7 +4,9 @@
 .hero-wrap {
   position: relative;
   background: var(--berry);
-  min-height: 100vh;
+  /* subtract the header (padding-top 32 + bar 84) so the full hero, incl. the
+     bottom-centered scroll arrow, fits in the first screen */
+  min-height: calc(100vh - var(--space-32) - var(--layout-header-h));
   padding: 0 0 var(--space-2);
   display: flex;
   flex-direction: column;
@@ -74,12 +76,16 @@
   will-change: transform;
 }
 
-/* Scroll-down affordance — sits under the lead text so it's at the level of
-   the last line and always inside the first screen (the 100vh hero is pushed
-   down by the header, so a bottom-pinned arrow would fall below the fold) */
+/* Scroll-down affordance — horizontally centered, pinned near the bottom of
+   the first screen */
 .hero__scroll {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--space-24);
   display: flex;
-  margin-top: var(--space-8);
+  justify-content: center;
+  z-index: 2;
 }
 .hero__scroll-btn {
   width: var(--control-h-xl);
@@ -124,6 +130,11 @@
   .hero__text {
     gap: var(--space-16);
     margin-top: 0;
+  }
+  /* on mobile the hero is content-height, so the arrow flows after content */
+  .hero__scroll {
+    position: static;
+    margin-top: var(--space-24);
   }
   .hero-wave svg { height: var(--space-24); }
 }

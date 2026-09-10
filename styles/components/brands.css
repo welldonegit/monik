@@ -21,28 +21,23 @@
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  height: var(--control-h-lg);
-  padding: 0 var(--space-4);
-  border: var(--border-1) solid var(--ink-a16);
-  border-radius: var(--radius-16);
-  background: var(--cream);
+  gap: var(--space-16);
 }
 .brands__btn {
-  width: var(--control-h-md);
-  height: var(--control-h-md);
+  width: var(--control-h-xl);
+  height: var(--control-h-xl);
   padding: 0;
-  border: none;
-  border-radius: var(--radius-12);
+  border: var(--border-2) solid var(--green);
+  border-radius: var(--radius-full);
   background: transparent;
-  color: var(--ink);
+  color: var(--green);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background var(--dur-fast) ease, color var(--dur-fast) ease;
+  transition: background-color var(--dur-med) ease, color var(--dur-med) ease;
 }
 .brands__btn:hover {
-  background: var(--berry);
+  background: var(--green);
   color: var(--cream);
 }
 

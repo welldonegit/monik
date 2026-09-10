@@ -50,8 +50,9 @@
 .hero__stage {
   position: relative;
   width: 100%;
-  /* 52vh cap keeps the square image + scroll arrow within the first screen */
-  max-width: min(var(--layout-hero-ring), 100%, 52vh);
+  /* vh cap keeps the square image + scroll arrow within the first screen,
+     but grows with viewport height so the image stays large on desktop */
+  max-width: min(var(--layout-hero-ring), 100%, 72vh);
   aspect-ratio: 1 / 1;
 }
 .hero__ring {

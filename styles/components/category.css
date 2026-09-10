@@ -189,6 +189,9 @@
   .category--spices .category__inner { padding-bottom: var(--space-96); }
   .category--reverse .category__media { order: 0; }
   .category__media {
+    /* size to the image, not to the 300px flex-basis (which in a column
+       becomes a height and left a big empty gap above the bottom-aligned img) */
+    flex: 0 0 auto;
     min-height: auto;
     justify-content: flex-start;
   }

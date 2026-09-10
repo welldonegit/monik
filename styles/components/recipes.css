@@ -40,7 +40,7 @@
   min-height: var(--control-h-xl);
   padding: 0 var(--space-40);
   border: var(--border-2) solid var(--green);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-16);
   color: var(--green);
   transition: background-color var(--dur-med) ease, color var(--dur-med) ease;
 }

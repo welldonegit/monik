@@ -8,11 +8,7 @@
   width: 100%;
   max-width: var(--layout-max);
   margin-inline: auto;
-  padding-inline: var(--space-32);
-}
-
-@media (max-width: 767px) {
-  .container { padding-inline: var(--layout-gutter-mobile); }
+  padding-inline: var(--gutter);
 }
 
 /* Accessible visually-hidden helper. */

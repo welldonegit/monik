@@ -9,7 +9,7 @@
 .recipes__inner {
   max-width: var(--layout-max);
   margin-inline: auto;
-  padding-inline: var(--space-32);
+  padding-inline: var(--gutter);
 }
 
 .recipes__head {
@@ -53,7 +53,7 @@
   margin-top: var(--space-40);
   /* bleed the carousel to the viewport's right edge: cancel the inner's right
      padding + whatever centering margin the container has */
-  margin-right: calc(-1 * (var(--space-32) + max(0px, (100vw - var(--layout-max)) / 2)));
+  margin-right: calc(-1 * (var(--gutter) + max(0px, (100vw - var(--layout-max)) / 2)));
   display: flex;
   gap: var(--space-24);
   overflow-x: auto;
@@ -150,11 +150,9 @@
 
 @media (max-width: 767px) {
   .recipes { padding-block: var(--space-64); }
-  .recipes__inner { padding-inline: var(--layout-gutter-mobile); }
   .recipe-card { flex-basis: calc(78vw - var(--layout-gutter-mobile)); }
   .recipe-card__media { height: calc(78vw - var(--layout-gutter-mobile)); }
   .recipe-card:hover .recipe-card__media {
     height: calc(78vw - var(--layout-gutter-mobile) - var(--layout-rec-shrink));
   }
-  .recipes__track { margin-right: calc(-1 * var(--layout-gutter-mobile)); }
 }

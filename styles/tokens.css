@@ -164,10 +164,21 @@
   --text-64: 64px;
   --text-80: 80px;
   --text-96: 96px;    /* display */
+  --text-112: 112px;  /* display */
   --text-128: 128px;  /* display */
+
+  /* ---- Page gutter (side padding inside the 1440 container) ---------- */
+  --gutter: var(--space-48);   /* desktop */
 
   /* ---- Motion --------------------------------------------------------- */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-fast: 200ms;
   --dur-med: 400ms;
+}
+
+@media (max-width: 1023px) {
+  :root { --gutter: var(--space-32); } /* tablet */
+}
+@media (max-width: 767px) {
+  :root { --gutter: var(--layout-gutter-mobile); } /* mobile */
 }

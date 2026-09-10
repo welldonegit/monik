@@ -2,6 +2,7 @@
    Hero — headline + lead over a berry background, product ring/plate
    ========================================================================== */
 .hero-wrap {
+  position: relative;
   background: var(--berry);
   min-height: 100vh;
   padding: 0 0 var(--space-2);
@@ -18,7 +19,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-56);
-  padding: var(--space-32) var(--space-32) var(--space-16);
+  padding: var(--space-32) var(--gutter) var(--space-16);
 }
 
 .hero__text {
@@ -74,12 +75,15 @@
   will-change: transform;
 }
 
-/* Scroll-down affordance */
+/* Scroll-down affordance — pinned to the bottom of the first screen so it's
+   always visible regardless of the hero image height */
 .hero__scroll {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--space-24);
   display: flex;
   justify-content: center;
-  padding-top: var(--space-24);
-  position: relative;
   z-index: 2;
 }
 .hero__scroll-btn {
@@ -120,11 +124,16 @@
   }
   .hero {
     gap: var(--space-24);
-    padding: var(--space-40) var(--layout-gutter-mobile) var(--space-16);
+    padding-top: var(--space-40);
   }
   .hero__text {
     gap: var(--space-16);
     margin-top: 0;
+  }
+  /* on mobile the hero isn't full-height, so the arrow flows after content */
+  .hero__scroll {
+    position: static;
+    margin-top: var(--space-24);
   }
   .hero-wave svg { height: var(--space-24); }
 }

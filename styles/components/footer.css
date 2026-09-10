@@ -8,7 +8,7 @@
 .site-footer {
   background: var(--ink);
   border-radius: var(--radius-24) var(--radius-24) 0 0;
-  padding: var(--space-64);
+  padding: var(--space-64) var(--gutter);
   color: var(--cream);
   overflow: hidden; /* clip the oversized decorative hashtag */
 }
@@ -92,6 +92,6 @@
 }
 
 @media (max-width: 767px) {
-  .site-footer { padding: var(--layout-gutter-mobile); }
+  .site-footer { padding-block: var(--space-40); }
   .site-footer__nav-link { min-height: var(--layout-footnav-h-mobile); }
 }

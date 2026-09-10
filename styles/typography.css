@@ -27,8 +27,8 @@
 .text-display {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: var(--text-96);
-  line-height: 100px;
+  font-size: var(--text-112);
+  line-height: 116px;
   letter-spacing: -0.02em;
 }
 .text-h1 {

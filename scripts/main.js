@@ -3,6 +3,7 @@ import { initHeader } from './header.js'
 import { initHero } from './hero.js'
 import { initCategoryBlobs } from './category.js'
 import { initBrands } from './brands.js'
+import { initRecipes } from './recipes.js'
 
 // Each init is a no-op if its target markup is absent on the page.
 function boot() {
@@ -10,6 +11,7 @@ function boot() {
   initHero()
   initCategoryBlobs()
   initBrands()
+  initRecipes()
 }
 
 if (document.readyState === 'loading') {

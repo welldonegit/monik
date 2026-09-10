@@ -154,7 +154,7 @@
   --cta-hover: var(--sky-deep);
 }
 .category--lemonade .category__title { max-width: 540px; }
-.category--lemonade .category__lead { color: rgba(246, 244, 239, 0.9); }
+.category--lemonade .category__lead { color: var(--cream-a90); }
 .category--lemonade .category__img { --cat-img-mh: 92%; }
 .category--lemonade .category__media { justify-content: flex-end; }
 .category--lemonade .category__blob { width: min(var(--layout-col-xl), 78%); aspect-ratio: 26 / 19; background: var(--cream-a08); }

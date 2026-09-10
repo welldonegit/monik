@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Footer — dark rounded card on a cream backdrop
+   (replaces the original clip-path / box-shadow:0 0 0 100vmax full-bleed hack)
+   ========================================================================== */
+.footer-backdrop {
+  background: var(--cream);
+}
+.site-footer {
+  background: var(--ink);
+  border-radius: var(--radius-24) var(--radius-24) 0 0;
+  padding: var(--space-64);
+  color: var(--cream);
+}
+.site-footer__inner {
+  max-width: var(--layout-max);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+}
+
+.site-footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-40);
+  flex-wrap: wrap;
+}
+.site-footer__logo {
+  width: var(--layout-footer-logo-w);
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.94;
+}
+.site-footer__social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+}
+.site-footer__social a {
+  color: var(--cream);
+  line-height: 0;
+  transition: color var(--dur-fast) ease;
+}
+.site-footer__social a:hover { color: var(--berry); }
+
+.site-footer__nav {
+  display: flex;
+  flex-direction: column;
+}
+.site-footer__nav-link {
+  display: flex;
+  align-items: center;
+  min-height: var(--layout-footnav-h);
+  border-top: var(--border-1) solid var(--cream-a16);
+  color: var(--cream);
+  transition: color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.site-footer__nav-link:last-child { border-bottom: var(--border-1) solid var(--cream-a16); }
+.site-footer__nav-link:hover { color: var(--berry); }
+
+.site-footer__decor {
+  color: var(--cream);
+  user-select: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.site-footer__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-32);
+  flex-wrap: wrap;
+  color: var(--cream-a60);
+}
+.site-footer__meta a {
+  color: var(--cream-a60);
+  transition: color var(--dur-fast) ease;
+}
+.site-footer__meta a:hover { color: var(--cream); }
+.site-footer__credit {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+.site-footer__credit img {
+  height: var(--space-16);
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 767px) {
+  .site-footer { padding: var(--layout-gutter-mobile); }
+  .site-footer__nav-link { min-height: var(--layout-footnav-h-mobile); }
+}

@@ -82,6 +82,13 @@
   --layout-brand-logo-h: 89px;
   --layout-brand-logo-w-sm: 228px;
   --layout-brand-logo-h-sm: 79px;
+  --layout-bento-row-1: 270px;   /* bento first row min height */
+  --layout-rec-card-w: 320px;    /* recipe card width (desktop) */
+  --layout-rec-shrink: 76px;     /* how much the recipe image shrinks on hover */
+  --layout-footnav-h: 76px;      /* footer big nav row min-height */
+  --layout-footnav-h-mobile: 60px;
+  --layout-footer-logo-w: 150px;
+  --layout-rec-title-max: 960px;   /* recipes heading max-width */
   --layout-cat-h-a: 660px;   /* category section min-heights (desktop) */
   --layout-cat-h-b: 700px;
   --layout-cat-h-c: 720px;
@@ -124,6 +131,9 @@
   /* alpha-based surface colors reused across components */
   --ink-a06: rgba(33, 26, 23, 0.06);
   --ink-a16: rgba(33, 26, 23, 0.16);
+  --ink-a82: rgba(33, 26, 23, 0.82);
+  --cream-a90: rgba(246, 244, 239, 0.9);
+  --cream-a86: rgba(246, 244, 239, 0.86);
   --cream-a88: rgba(246, 244, 239, 0.88);
   --cream-a72: rgba(246, 244, 239, 0.72);
   --cream-a60: rgba(246, 244, 239, 0.6);

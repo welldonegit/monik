@@ -151,7 +151,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;   /* centre the text+photo pair in the band */
-    align-items: flex-start;   /* h2 and photo share the same top line */
+    align-items: center;       /* photo and the text group centred vertically */
     gap: var(--space-64);
     padding-top: var(--space-96);
     padding-bottom: var(--space-96);

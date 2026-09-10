@@ -76,7 +76,7 @@
 .recipe-card__media {
   height: var(--layout-rec-card-w);
   width: 100%;
-  border-radius: var(--radius-16);
+  border-radius: var(--radius-24);
   overflow: hidden;
   background: var(--ink-a06);
   transition: height var(--dur-med) var(--ease-out);

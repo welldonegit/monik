@@ -79,6 +79,6 @@
 @media (max-width: 767px) {
   .bento { padding-top: var(--space-64); }
   .bento__grid { grid-template-columns: 1fr; }
-  /* the #hashtag is a single unbreakable token — shrink so it fits the width */
-  .bento__title { font-size: var(--text-24); line-height: 32px; }
+  /* the #hashtag is a single unbreakable token — 32 fits the mobile width */
+  .bento__title { font-size: var(--text-32); line-height: 40px; }
 }

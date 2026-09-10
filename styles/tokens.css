@@ -95,7 +95,7 @@
   --layout-cat-img-h: 384px; /* category product image (mobile) */
   --layout-cat-img: 540px;   /* category product image (desktop, uniform) */
   --layout-bento-row: 290px;
-  --layout-hero-shift: -80px;/* hero text optical shift up (desktop) */
+  --layout-hero-shift: -48px;/* hero text optical shift up (desktop) */
   --layout-gutter-mobile: 20px; /* mobile page gutter (kept exact) */
   --layout-header-h: 84px;      /* header bar min-height (desktop) */
   --layout-logo-w: 132px;       /* header logo width (desktop) */

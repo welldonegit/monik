@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Category slider — full-screen carousel. Per-slide colours are applied by JS
+   as custom properties on .cat-slider: --band (bg), --fg (foreground),
+   --accent (title). The background changes with a circular clip-path reveal.
+   ========================================================================== */
+.cat-slider {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  height: 100svh;
+  min-height: var(--layout-slider-h);
+}
+.cat-slider__base {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--band, var(--berry));
+  transition: background-color 190ms linear;
+}
+.cat-slider__reveal {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--reveal, var(--berry));
+  clip-path: circle(0% at 50% 50%);
+}
+.cat-slider__reveal.is-animating { transition: clip-path 560ms cubic-bezier(0.76, 0, 0.24, 1); }
+.cat-slider__reveal.is-open { clip-path: circle(150% at 50% 50%); }
+
+.cat-slider__inner {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: var(--space-16);
+  padding: var(--space-48);
+}
+
+.cat-slider__head {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-24);
+}
+.cat-slider__title {
+  margin: 0;
+  max-width: 94%;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--accent, var(--yellow));
+  text-wrap: balance;
+}
+
+/* content fade/slide between slides */
+.cat-slider__head,
+.cat-slider__product { transition: opacity 380ms var(--ease-out), transform 380ms var(--ease-out); }
+.cat-slider.is-leaving .cat-slider__head,
+.cat-slider.is-leaving .cat-slider__product { opacity: 0; transform: translateY(-12px); }
+
+.cat-slider__stage {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 0;
+}
+.cat-slider__product {
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: 100%;
+  height: var(--layout-slider-product);
+  max-height: 100%;
+  object-fit: contain;
+  object-position: 50% 100%;
+  filter: drop-shadow(0 34px 46px rgba(33, 26, 23, 0.34));
+}
+
+/* side previews of the neighbouring categories */
+.cat-slider__peek {
+  position: absolute;
+  bottom: var(--space-56);
+  z-index: 2;
+  width: 26%;
+  height: min(50%, 300px);
+  max-height: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  transition: transform var(--dur-med) var(--ease-out);
+}
+.cat-slider__peek--prev { left: var(--space-40); transform: translateX(-42%); }
+.cat-slider__peek--next { right: var(--space-40); transform: translateX(42%); }
+.cat-slider__peek--prev:hover,
+.cat-slider__peek--prev:focus-visible { transform: translateX(-32%); }
+.cat-slider__peek--next:hover,
+.cat-slider__peek--next:focus-visible { transform: translateX(32%); }
+
+.cat-slider__peek-img {
+  display: block;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  object-fit: contain;
+  object-position: 50% 100%;
+  opacity: 0.85;
+  filter: drop-shadow(0 20px 30px rgba(33, 26, 23, 0.3)) brightness(0.82) saturate(0.8);
+  transition: opacity var(--dur-fast) ease, filter var(--dur-fast) ease;
+}
+.cat-slider__peek:hover .cat-slider__peek-img,
+.cat-slider__peek:focus-visible .cat-slider__peek-img {
+  opacity: 1;
+  filter: drop-shadow(0 20px 30px rgba(33, 26, 23, 0.3));
+}
+
+.cat-slider__peek-hint {
+  flex: 0 0 auto;
+  margin-top: var(--space-8);
+  max-width: 190px;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  height: var(--space-32);
+  padding: 0 var(--space-12);
+  border: var(--border-2) solid var(--fg, var(--cream));
+  border-radius: var(--radius-full);
+  color: var(--fg, var(--cream));
+  white-space: nowrap;
+  overflow: hidden;
+  pointer-events: none;
+  transition: background-color var(--dur-med) ease, color var(--dur-med) ease;
+}
+.cat-slider__peek-hint span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.cat-slider__peek:hover .cat-slider__peek-hint,
+.cat-slider__peek:focus-visible .cat-slider__peek-hint {
+  background: var(--fg, var(--cream));
+  color: var(--band, var(--berry));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cat-slider__reveal.is-animating { transition: none; }
+}
+
+@media (max-width: 1023px) {
+  .cat-slider__inner { padding: var(--space-32); }
+  .cat-slider__product { height: 480px; }
+}
+
+@media (max-width: 767px) {
+  .cat-slider { min-height: var(--layout-slider-h-mobile); }
+  .cat-slider__inner { padding: var(--space-24) var(--layout-gutter-mobile); }
+  .cat-slider__product { height: 360px; object-position: 50% 50%; align-self: center; }
+  .cat-slider__peek { width: 38%; bottom: var(--space-32); }
+  .cat-slider__peek--prev { left: var(--space-16); transform: translateX(-48%); }
+  .cat-slider__peek--next { right: var(--space-16); transform: translateX(48%); }
+}

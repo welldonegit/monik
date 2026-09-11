@@ -89,6 +89,10 @@
   --layout-footnav-h-mobile: 60px;
   --layout-footer-logo-w: 150px;
   --layout-rec-title-max: 960px;   /* recipes heading max-width */
+  --layout-cat-logo-w: 146px;      /* catalog header logo width */
+  --layout-slider-h: 650px;        /* category slider min-height (desktop) */
+  --layout-slider-h-mobile: 620px;
+  --layout-slider-product: 620px;  /* product image max-height (desktop) */
   --layout-cat-h-a: 660px;   /* category section min-heights (desktop) */
   --layout-cat-h-b: 700px;
   --layout-cat-h-c: 720px;
@@ -131,8 +135,13 @@
 
   /* alpha-based surface colors reused across components */
   --ink-a06: rgba(33, 26, 23, 0.06);
+  --ink-a08: rgba(33, 26, 23, 0.08);
+  --ink-a14: rgba(33, 26, 23, 0.14);
   --ink-a16: rgba(33, 26, 23, 0.16);
+  --ink-a42: rgba(33, 26, 23, 0.42);
+  --ink-a50: rgba(33, 26, 23, 0.5);
   --ink-a82: rgba(33, 26, 23, 0.82);
+  --pine: #176142;        /* catalog dark green */
   --cream-a90: rgba(246, 244, 239, 0.9);
   --cream-a86: rgba(246, 244, 239, 0.86);
   --cream-a88: rgba(246, 244, 239, 0.88);

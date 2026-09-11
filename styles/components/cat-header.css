@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Catalog header — light pill on a colored band (band colour set by JS to the
+   current slider category)
+   ========================================================================== */
+.cat-page {
+  min-height: 100vh;
+  background: var(--cream);
+  color: var(--ink);
+  overflow-x: clip;
+}
+.cat-page .footer-backdrop { margin-top: var(--space-96); }
+
+.cat-header-band {
+  padding-inline: var(--gutter);
+}
+
+.cat-header-band {
+  background: var(--band, var(--berry));
+  transition: background-color 190ms linear;
+  padding-block: var(--space-16);
+}
+
+.cat-header {
+  max-width: var(--layout-max);
+  margin-inline: auto;
+  min-height: var(--space-80);
+  padding: var(--space-8) var(--space-24);
+  background: var(--cream);
+  border-radius: var(--radius-full);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8) var(--space-16);
+}
+
+.cat-header__nav {
+  order: 1;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-24);
+}
+.cat-header__link {
+  display: inline-flex;
+  align-items: center;
+  height: var(--control-h-md);
+  color: var(--ink);
+  white-space: nowrap;
+  transition: color var(--dur-fast) ease;
+}
+.cat-header__link:hover { color: var(--berry); }
+
+.cat-header__logo {
+  order: 2;
+  flex: 0 0 auto;
+  line-height: 0;
+}
+.cat-header__logo-img {
+  width: var(--layout-cat-logo-w);
+  height: auto;
+  filter: brightness(0);
+}
+
+.cat-header__actions {
+  order: 3;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-16);
+}
+.cat-header__phone {
+  display: inline-flex;
+  align-items: center;
+  height: var(--control-h-md);
+  color: var(--ink);
+  white-space: nowrap;
+  transition: color var(--dur-fast) ease;
+}
+.cat-header__phone:hover { color: var(--berry); }
+
+/* Language toggle with a sliding pill */
+.cat-lang {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+.cat-lang__pill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--control-h-md);
+  height: var(--control-h-md);
+  border-radius: var(--radius-full);
+  background: var(--ink);
+  transition: transform var(--dur-fast) ease;
+}
+.cat-lang.is-en .cat-lang__pill { transform: translateX(calc(var(--control-h-md) + var(--space-8))); }
+.cat-lang__btn {
+  position: relative;
+  z-index: 1;
+  width: var(--control-h-md);
+  height: var(--control-h-md);
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--ink-a50);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--dur-fast) ease;
+}
+.cat-lang__btn:hover { color: var(--ink); }
+.cat-lang__btn.is-active { color: var(--cream); }
+
+/* Burger + mobile menu (dark ink on the light pill) */
+.cat-header__burger {
+  order: 1;
+  flex: 1 1 0;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-4);
+  height: var(--control-h-md);
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+.cat-header__burger span {
+  display: block;
+  width: var(--icon-24);
+  height: var(--border-2);
+  border-radius: var(--radius-2);
+  background: var(--ink);
+}
+.cat-menu {
+  order: 4;
+  flex: 1 1 100%;
+  display: none;
+  padding-block: var(--space-4) var(--space-8);
+}
+.cat-menu__list { display: flex; flex-direction: column; }
+.cat-menu__link {
+  display: flex;
+  align-items: center;
+  min-height: var(--control-h-lg);
+  border-top: var(--border-1) solid var(--ink-a16);
+  color: var(--ink);
+  transition: color var(--dur-fast) ease;
+}
+.cat-menu__link:hover { color: var(--berry); }
+
+@media (max-width: 767px) {
+  .cat-header {
+    min-height: var(--space-64);
+    border-radius: var(--radius-24);
+  }
+  .cat-header__nav { display: none; }
+  .cat-header__phone { display: none; }
+  .cat-header__logo { margin-inline: auto; }
+  .cat-header__actions { flex: 0 0 auto; }
+  .cat-header__burger { display: flex; }
+  .cat-header.is-menu-open .cat-menu { display: block; }
+}

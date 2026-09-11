@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Quick pick — full list of product categories (rows fill with the category
+   colour on hover; colour is applied by JS via --row-color / --row-fg)
+   ========================================================================== */
+.quick-pick {
+  max-width: var(--layout-max);
+  margin-inline: auto;
+  padding: var(--space-80) var(--gutter) 0;
+}
+.quick-pick__head { margin-bottom: var(--space-24); }
+.quick-pick__title { color: var(--ink); }
+
+.quick-pick__list {
+  display: flex;
+  flex-direction: column;
+}
+.quick-pick__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-32);
+  min-height: var(--space-80);
+  padding: var(--space-8) var(--space-24);
+  border-top: var(--border-1) solid var(--ink-a14);
+  border-radius: var(--radius-16);
+  color: var(--ink);
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.quick-pick__row:last-child { border-bottom: var(--border-1) solid var(--ink-a14); }
+.quick-pick__row:hover {
+  background: var(--row-color, var(--berry));
+  color: var(--row-fg, var(--cream));
+  border-color: transparent;
+}
+.quick-pick__name { flex: 1 1 auto; min-width: 0; }
+.quick-pick__arrow {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--control-h-lg);
+  height: var(--control-h-lg);
+  border: var(--border-2) solid currentColor;
+  border-radius: var(--radius-full);
+  opacity: 0.42;
+  transition: opacity var(--dur-fast) ease;
+}
+.quick-pick__arrow svg { transition: transform var(--dur-fast) ease; }
+.quick-pick__row:hover .quick-pick__arrow { opacity: 1; }
+.quick-pick__row:hover .quick-pick__arrow svg { transform: translateX(3px); }
+
+@media (max-width: 767px) {
+  .quick-pick { padding-top: var(--space-40); }
+  .quick-pick__row {
+    gap: var(--space-16);
+    min-height: var(--space-56);
+    padding: var(--space-8) var(--space-16);
+  }
+  .quick-pick__arrow {
+    width: var(--control-h-md);
+    height: var(--control-h-md);
+  }
+}

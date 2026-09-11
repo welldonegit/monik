@@ -1,4 +1,4 @@
-/* Entry stylesheet for a single recipe page. */
+/* Entry stylesheet for a single recipe page (built on the product layout). */
 @import './tokens.css';
 @import './reset.css';
 @import './typography.css';
@@ -6,5 +6,7 @@
 
 @import './components/cat-header.css';
 @import './components/crumbs.css';
+@import './components/product.css';
+@import './components/category.css';
 @import './components/recipe-page.css';
 @import './components/footer.css';

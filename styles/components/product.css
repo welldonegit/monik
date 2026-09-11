@@ -13,7 +13,7 @@
 /* ---- Hero: visual column + info column ------------------------------- */
 .product {
   display: grid;
-  grid-template-columns: minmax(0, 52fr) minmax(0, 48fr);
+  grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
   align-items: start;
 }
 

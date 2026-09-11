@@ -1,99 +1,54 @@
 /* ==========================================================================
-   Single recipe page — green hero (text left / image right), then cream
-   content (ingredients + numbered steps). Visual language borrowed from the
-   product page (white plaques, section headings, body text); accent = green.
+   Single recipe page.
+   Block 1 — hero: text left, square image right (like the recipes listing).
+   Block 2 — split: recipe text (ingredients + steps) on the left, the product
+   used in the recipe on an orange panel on the right.
+   Text styles/sizes are reused from the product page (product.css).
    ========================================================================== */
-.recipe-page {
-  min-height: 100vh;
-  background: var(--cream);
-  color: var(--ink);
-  overflow-x: clip;
-  --header-band: var(--green);
-}
+.recipe-detail { --header-band: var(--mandarin); }
 
-/* ---- Hero ------------------------------------------------------------ */
-.recipe-hero { background: var(--green); }
-.recipe-hero__inner {
-  max-width: var(--layout-max);
-  margin-inline: auto;
-  padding: var(--space-16) var(--gutter) var(--space-96);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-32);
+/* ---- Block 1: hero (orange, continues the header band) --------------- */
+.recipe-hero {
+  padding: var(--space-16) var(--gutter) var(--space-80);
+  background: var(--mandarin);
+  color: var(--white);
 }
-.recipe-hero__row {
+.recipe-hero__crumbs { margin-bottom: var(--space-32); }
+.recipe-hero__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: var(--space-64);
+  column-gap: var(--space-64);
+  row-gap: var(--space-32);
   align-items: center;
 }
-.recipe-hero__text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-24);
-  color: var(--cream);
-}
-.recipe-hero__tag { color: var(--cream-a72); }
-.recipe-hero__title { color: var(--cream); text-wrap: balance; }
-.recipe-hero__lead { max-width: 520px; color: var(--cream-a88); text-wrap: pretty; }
-
-/* meta plaques (like the product spec card) */
-.recipe-meta { display: flex; flex-wrap: wrap; gap: var(--space-16); }
-.recipe-meta-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-16);
-  padding: var(--space-16) var(--space-24);
-  background: var(--white);
-  border-radius: var(--radius-16);
-  color: var(--ink);
-}
-.recipe-meta-item__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: var(--control-h-lg);
-  height: var(--control-h-lg);
-  flex: none;
-  border-radius: var(--radius-12);
-  background: rgba(4, 129, 68, 0.1);
-  color: var(--green);
-}
-.recipe-meta-item__text { display: flex; flex-direction: column; gap: var(--space-4); }
-.recipe-meta-item__value { color: var(--ink); }
-.recipe-meta-item__label { color: var(--ink-a55); }
-
+.recipe-hero__head { min-width: 0; grid-column: 1; grid-row: 1; }
+.recipe-hero__detail { min-width: 0; grid-column: 1; grid-row: 2; }
+.recipe-hero__detail .product__spec { margin-top: 0; }
+.recipe-hero__media { grid-column: 2; grid-row: 1 / 3; }
+.recipe-hero .product__title { color: var(--white); }
+.recipe-hero .product__lead { color: var(--cream-a86); }
+.recipe-detail__tag { display: block; color: var(--white); margin-bottom: var(--space-16); }
 .recipe-hero__media {
+  min-width: 0;
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius-24);
   overflow: hidden;
-  aspect-ratio: 4 / 5;
-  background: var(--ink-a06);
+  background: var(--splash-grey);
 }
-.recipe-hero__media img { width: 100%; height: 100%; object-fit: cover; }
+.recipe-hero__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-/* ---- Content: ingredients + steps ------------------------------------ */
-.recipe-content {
-  padding-block: var(--space-96);
-}
-.recipe-content__inner {
-  max-width: var(--layout-max);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
+/* ---- Block 2: split body --------------------------------------------- */
+.recipe-body {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: var(--space-64);
+  grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
   align-items: start;
 }
-.recipe-block__title { margin-bottom: var(--space-24); color: var(--green); }
-
-/* ingredients — card with divider rows */
-.recipe-ingredients {
-  background: var(--white);
-  border: var(--border-1) solid var(--ink-a08);
-  border-radius: var(--radius-24);
-  padding: var(--space-40);
+.recipe-body__content {
+  min-width: 0;
+  padding: var(--space-80) var(--space-64) var(--space-128) var(--gutter);
 }
+
+/* Ingredients — plain divider rows (no card) */
 .recipe-ingredients__list { display: flex; flex-direction: column; }
 .recipe-ingredient {
   display: flex;
@@ -107,9 +62,9 @@
 .recipe-ingredient__name { color: var(--ink-a82); }
 .recipe-ingredient__amount { flex: none; color: var(--ink); white-space: nowrap; }
 
-/* steps — numbered list */
-.recipe-steps__list { display: flex; flex-direction: column; gap: var(--space-24); counter-reset: step; }
-.recipe-step { display: flex; align-items: flex-start; gap: var(--space-24); }
+/* Numbered steps */
+.recipe-steps__list { display: flex; flex-direction: column; gap: var(--space-24); list-style: none; margin: 0; padding: 0; }
+.recipe-step { display: flex; align-items: flex-start; gap: var(--space-16); }
 .recipe-step__num {
   flex: none;
   width: var(--control-h-lg);
@@ -118,19 +73,106 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-full);
-  background: var(--green);
+  background: var(--mandarin);
   color: var(--cream);
 }
 .recipe-step__text { color: var(--ink-a82); padding-top: var(--space-8); text-wrap: pretty; }
 
-@media (max-width: 1023px) {
-  .recipe-hero__row { grid-template-columns: minmax(0, 1fr); gap: var(--space-40); }
-  .recipe-hero__media { max-width: 480px; }
-  .recipe-content__inner { grid-template-columns: minmax(0, 1fr); gap: var(--space-48); }
+/* ---- Block 2 right: orange product panel ----------------------------- */
+.recipe-product {
+  position: sticky;
+  top: 0;
+  min-width: 0;
+  height: 100svh;
+  min-height: var(--layout-product-h);
+  padding: var(--space-48);
+  background: var(--mandarin);
+  color: var(--white);
+  --cta-hover: var(--mandarin);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  overflow: hidden;
 }
+.recipe-product__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-24);
+}
+.recipe-product__eyebrow { display: block; color: var(--white); }
+.recipe-product__name { color: var(--white); }
+
+/* slider */
+.recipe-product__viewport { flex: 1 1 auto; min-height: 0; overflow: hidden; }
+.recipe-product__track { display: flex; height: 100%; transition: transform var(--dur-med) var(--ease-out); }
+.recipe-product__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+.recipe-product__slide .cta-outline { align-self: flex-start; }
+
+/* slider arrows — design-system round arrow button (cream on the orange panel) */
+.recipe-product__nav { display: flex; gap: var(--space-16); flex: none; }
+.recipe-product__nav-btn {
+  width: var(--control-h-xl);
+  height: var(--control-h-xl);
+  padding: 0;
+  border: var(--border-2) solid var(--cream);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--dur-med) ease, color var(--dur-med) ease;
+}
+.recipe-product__nav-btn:hover { background: var(--cream); color: var(--mandarin); }
+
+.recipe-product__stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recipe-product__img {
+  display: block;
+  width: auto;
+  max-width: 97%;
+  max-height: 97%;
+  object-fit: contain;
+}
+
+/* ---- Responsive ------------------------------------------------------ */
+@media (max-width: 1023px) {
+  .recipe-hero__grid { gap: var(--space-40); }
+  .recipe-body__content { padding: var(--space-56) var(--space-40) var(--space-64); }
+  .recipe-product { padding: var(--space-40); }
+}
+
 @media (max-width: 767px) {
-  .recipe-hero__inner { padding: var(--space-16) var(--layout-gutter-mobile) var(--space-64); }
-  .recipe-content { padding-block: var(--space-64); }
-  .recipe-content__inner { padding-inline: var(--layout-gutter-mobile); }
-  .recipe-ingredients { padding: var(--space-24); }
+  .recipe-hero { padding: var(--space-16) var(--gutter) var(--space-56); }
+  .recipe-hero__grid { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-32); }
+  .recipe-hero__head,
+  .recipe-hero__detail,
+  .recipe-hero__media { grid-column: 1; grid-row: auto; }
+  .recipe-body { grid-template-columns: minmax(0, 1fr); }
+  .recipe-body__content {
+    order: 2;
+    padding: var(--space-48) var(--layout-gutter-mobile) var(--space-56);
+  }
+  .recipe-product {
+    order: 1;
+    position: relative;
+    height: auto;
+    min-height: 0;
+    padding: var(--space-40) var(--layout-gutter-mobile);
+  }
+  .recipe-product__stage { min-height: 320px; padding-block: var(--space-24); }
 }

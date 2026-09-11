@@ -7,7 +7,6 @@
 }
 .site-footer {
   background: var(--ink);
-  border-radius: var(--radius-24) var(--radius-24) 0 0;
   padding: var(--space-64) var(--gutter);
   color: var(--cream);
   overflow: hidden; /* clip the oversized decorative hashtag */

@@ -134,14 +134,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: var(--border-1) solid var(--ink-a16);
-  border-radius: var(--radius-12);
+  border: var(--border-2) solid var(--green);
+  border-radius: var(--radius-full);
   background: transparent;
   color: var(--green);
-  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+  transition: background-color var(--dur-med) ease, color var(--dur-med) ease;
 }
-.recipe-page-btn:hover { border-color: var(--green); }
-.recipe-page-btn.is-active { background: var(--green); color: var(--cream); border-color: var(--green); }
+.recipe-page-btn:hover,
+.recipe-page-btn.is-active { background: var(--green); color: var(--cream); }
 
 /* ---- Responsive ------------------------------------------------------ */
 @media (max-width: 1023px) {

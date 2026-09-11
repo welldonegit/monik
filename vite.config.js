@@ -22,6 +22,7 @@ export default defineConfig({
         contacts: resolve(root, 'contacts.html'),
         recipes: resolve(root, 'recipes.html'),
         lemonades: resolve(root, 'lemonades.html'),
+        recipe: resolve(root, 'recipe.html'),
         styleguide: resolve(root, 'styleguide.html'),
       },
     },

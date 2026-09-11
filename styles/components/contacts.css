@@ -1,0 +1,127 @@
+/* ==========================================================================
+   Contacts page — coloured background, contact blocks, social, feedback form
+   ========================================================================== */
+.contact-page {
+  min-height: 100vh;
+  background: var(--grape);
+  color: var(--cream);
+  overflow-x: clip;
+  --header-band: var(--grape);
+}
+
+.contacts {
+  max-width: var(--layout-max);
+  margin-inline: auto;
+  padding: var(--space-96) var(--gutter);
+}
+.contacts__title { color: var(--cream); }
+.contacts__lead {
+  margin-top: var(--space-24);
+  max-width: 640px;
+  color: var(--cream-a88);
+  text-wrap: pretty;
+}
+
+.contacts__layout {
+  margin-top: var(--space-64);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-64);
+  align-items: start;
+}
+
+.contacts__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+}
+.contact-block { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-8); }
+.contact-block__label { color: var(--cream-a72); }
+.contact-block__value {
+  color: var(--cream);
+  transition: color var(--dur-fast) ease;
+}
+a.contact-block__value:hover { color: var(--yellow); }
+.contact-block__desc { color: var(--cream-a72); }
+
+.contacts__social { display: flex; flex-direction: column; gap: var(--space-16); }
+.contacts__social-label { color: var(--cream-a72); }
+.contacts__social-list { display: flex; align-items: center; gap: var(--space-16); }
+.contacts__social-list a {
+  width: var(--control-h-lg);
+  height: var(--control-h-lg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-2) solid var(--cream);
+  border-radius: var(--radius-full);
+  color: var(--cream);
+  transition: background-color var(--dur-med) ease, color var(--dur-med) ease;
+}
+.contacts__social-list a:hover { background: var(--cream); color: var(--grape); }
+
+/* ---- Feedback form (cream card) -------------------------------------- */
+.contacts__form-wrap {
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: var(--radius-24);
+  padding: var(--space-48);
+}
+.contacts__form-title { color: var(--ink); }
+
+.contact-form {
+  margin-top: var(--space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+.contact-field { display: flex; flex-direction: column; gap: var(--space-8); }
+.contact-field label { color: var(--ink-a68); }
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 0 var(--space-16);
+  height: var(--control-h-lg);
+  border: var(--border-1) solid var(--ink-a16);
+  border-radius: var(--radius-12);
+  background: var(--white);
+  color: var(--ink);
+  transition: border-color var(--dur-fast) ease;
+}
+.contact-textarea {
+  height: auto;
+  min-height: 144px;
+  padding: var(--space-12) var(--space-16);
+  resize: vertical;
+}
+.contact-input::placeholder,
+.contact-textarea::placeholder { color: var(--ink-a42); }
+.contact-input:focus,
+.contact-textarea:focus { outline: none; border-color: var(--grape); }
+
+.contact-submit {
+  align-self: flex-start;
+  margin-top: var(--space-8);
+  min-height: var(--control-h-xl);
+  padding: 0 var(--space-40);
+  border: none;
+  border-radius: var(--radius-16);
+  background: var(--ink);
+  color: var(--cream);
+  transition: background-color var(--dur-fast) ease;
+}
+.contact-submit:hover { background: var(--grape); }
+
+.contact-form__success {
+  display: none;
+  color: var(--green);
+}
+.contact-form.is-sent .contact-form__success { display: block; }
+
+@media (max-width: 1023px) {
+  .contacts__layout { grid-template-columns: minmax(0, 1fr); gap: var(--space-48); }
+}
+@media (max-width: 767px) {
+  .contacts { padding-block: var(--space-64); }
+  .contacts__form-wrap { padding: var(--space-32) var(--space-24); }
+}

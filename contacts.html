@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monik — Контакти</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <script type="module" src="/scripts/contacts.js"></script>
+</head>
+<body>
+  <div class="contact-page">
+    <div class="cat-header-band">
+      <header class="cat-header">
+        <nav class="cat-header__nav" aria-label="Головна навігація">
+          <a class="cat-header__link text-nav" href="/">Головна</a>
+          <a class="cat-header__link text-nav" href="/categories.html">Продукція</a>
+          <a class="cat-header__link text-nav" href="#">Натхнення</a>
+          <a class="cat-header__link text-nav" href="/contacts.html" aria-current="page">Контакти</a>
+        </nav>
+        <button class="cat-header__burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="contact-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="cat-header__logo" href="/" aria-label="Monik">
+          <img class="cat-header__logo-img" src="/assets/monik-logo.svg" alt="Monik" width="146" height="42">
+        </a>
+        <div class="cat-header__actions">
+          <a class="cat-header__phone text-nav" href="tel:0800215345">0-800-215-345</a>
+          <div class="cat-lang" role="group" aria-label="Мова">
+            <span class="cat-lang__pill" aria-hidden="true"></span>
+            <button class="cat-lang__btn text-lang is-active" type="button" aria-pressed="true">UA</button>
+            <button class="cat-lang__btn text-lang" type="button" aria-pressed="false">EN</button>
+          </div>
+        </div>
+        <nav class="cat-menu" id="contact-menu" aria-label="Мобільна навігація">
+          <ul class="cat-menu__list">
+            <li><a class="cat-menu__link text-nav" href="/">Головна</a></li>
+            <li><a class="cat-menu__link text-nav" href="/categories.html">Продукція</a></li>
+            <li><a class="cat-menu__link text-nav" href="#">Натхнення</a></li>
+            <li><a class="cat-menu__link text-nav" href="/contacts.html">Контакти</a></li>
+            <li><a class="cat-menu__link text-nav" href="tel:0800215345">0-800-215-345</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <main>
+      <section class="contacts" aria-label="Контакти">
+        <h1 class="contacts__title text-h1">Контакти</h1>
+        <p class="contacts__lead text-lead">Раді чути вас. Пишіть, телефонуйте або залиште запит — і ми зв’яжемося з вами якнайшвидше.</p>
+
+        <div class="contacts__layout">
+          <div class="contacts__info">
+            <div class="contact-block">
+              <span class="contact-block__label text-btn-eyebrow">Співпраця</span>
+              <a class="contact-block__value text-h3" href="mailto:partnership@monik.ua">partnership@monik.ua</a>
+              <p class="contact-block__desc text-body">Пропозиції щодо співпраці та партнерства.</p>
+            </div>
+            <div class="contact-block">
+              <span class="contact-block__label text-btn-eyebrow">Підтримка замовлень</span>
+              <a class="contact-block__value text-h3" href="tel:0800215345">0-800-215-345</a>
+              <p class="contact-block__desc text-body">Допомога з інтернет-замовленнями, щодня 9:00–20:00.</p>
+            </div>
+            <div class="contact-block">
+              <span class="contact-block__label text-btn-eyebrow">Кар’єра</span>
+              <a class="contact-block__value text-h3" href="#">Переглянути вакансії</a>
+              <p class="contact-block__desc text-body">Хочеш до команди Monik? Обери свою роль.</p>
+            </div>
+
+            <div class="contacts__social">
+              <span class="contacts__social-label text-btn-eyebrow">Месенджери і соцмережі</span>
+              <ul class="contacts__social-list">
+                <li><a href="#" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.6 8.4h2.3V5.2h-2.8c-2.6 0-4.3 1.7-4.3 4.3v1.8H7.1v3.2h2.7V21h3.4v-6.5h2.6l.4-3.2h-3V9.6c0-.8.2-1.2 1.4-1.2z"/></svg></a></li>
+                <li><a href="#" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a></li>
+                <li><a href="#" aria-label="YouTube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.4 8.1c-.2-1.5-.8-2.2-2.3-2.4C17.4 5.4 12 5.4 12 5.4s-5.4 0-7.1.3c-1.5.2-2.1.9-2.3 2.4C2.4 9.6 2.4 12 2.4 12s0 2.4.2 3.9c.2 1.5.8 2.2 2.3 2.4 1.7.3 7.1.3 7.1.3s5.4 0 7.1-.3c1.5-.2 2.1-.9 2.3-2.4.2-1.5.2-3.9.2-3.9s0-2.4-.2-3.9zM10.2 15.1V8.9l5.3 3.1-5.3 3.1z"/></svg></a></li>
+                <li><a href="#" aria-label="Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.7 4.3 2.9 11.5c-.9.3-.9 1.5.1 1.8l4.6 1.4 1.8 5.4c.2.7 1.1.9 1.6.3l2.5-2.6 4.6 3.4c.6.4 1.4.1 1.6-.6l3-14.6c.2-.8-.6-1.5-1.4-1.2zM8.9 14.1l9-5.6-7.5 6.9-.3 3-1.2-4.3z"/></svg></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="contacts__form-wrap">
+            <h2 class="contacts__form-title text-h3">Зворотній зв’язок</h2>
+            <form class="contact-form" novalidate>
+              <div class="contact-field">
+                <label class="text-body-sm" for="cf-name">Ім’я</label>
+                <input class="contact-input text-body" id="cf-name" name="name" type="text" placeholder="Ваше ім’я" required autocomplete="name">
+              </div>
+              <div class="contact-field">
+                <label class="text-body-sm" for="cf-phone">Телефон</label>
+                <input class="contact-input text-body" id="cf-phone" name="phone" type="tel" placeholder="+380 __ ___ __ __" required autocomplete="tel">
+              </div>
+              <div class="contact-field">
+                <label class="text-body-sm" for="cf-message">Повідомлення</label>
+                <textarea class="contact-textarea text-body" id="cf-message" name="message" placeholder="Ваше запитання або побажання" required></textarea>
+              </div>
+              <button class="contact-submit text-btn" type="submit">Надіслати запит</button>
+              <p class="contact-form__success text-body" role="status">Дякуємо! Ваш запит надіслано — ми зв’яжемося з вами найближчим часом.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer-backdrop">
+      <footer class="site-footer" aria-label="Підвал">
+        <div class="site-footer__inner">
+          <div class="site-footer__top">
+            <img class="site-footer__logo" src="/assets/monik-logo.svg" alt="Monik" width="150" height="43">
+            <div class="site-footer__social">
+              <a href="#" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.6 8.4h2.3V5.2h-2.8c-2.6 0-4.3 1.7-4.3 4.3v1.8H7.1v3.2h2.7V21h3.4v-6.5h2.6l.4-3.2h-3V9.6c0-.8.2-1.2 1.4-1.2z"/></svg></a>
+              <a href="#" aria-label="YouTube"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.4 8.1c-.2-1.5-.8-2.2-2.3-2.4C17.4 5.4 12 5.4 12 5.4s-5.4 0-7.1.3c-1.5.2-2.1.9-2.3 2.4C2.4 9.6 2.4 12 2.4 12s0 2.4.2 3.9c.2 1.5.8 2.2 2.3 2.4 1.7.3 7.1.3 7.1.3s5.4 0 7.1-.3c1.5-.2 2.1-.9 2.3-2.4.2-1.5.2-3.9.2-3.9s0-2.4-.2-3.9zM10.2 15.1V8.9l5.3 3.1-5.3 3.1z"/></svg></a>
+              <a href="#" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+              <a href="#" aria-label="Telegram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.7 4.3 2.9 11.5c-.9.3-.9 1.5.1 1.8l4.6 1.4 1.8 5.4c.2.7 1.1.9 1.6.3l2.5-2.6 4.6 3.4c.6.4 1.4.1 1.6-.6l3-14.6c.2-.8-.6-1.5-1.4-1.2zM8.9 14.1l9-5.6-7.5 6.9-.3 3-1.2-4.3z"/></svg></a>
+            </div>
+          </div>
+          <nav class="site-footer__nav" aria-label="Підвал навігація">
+            <a class="site-footer__nav-link text-footnav" href="#">Продукція</a>
+            <a class="site-footer__nav-link text-footnav" href="#">Натхнення</a>
+            <a class="site-footer__nav-link text-footnav" href="#">Контакти</a>
+          </nav>
+          <div class="site-footer__decor text-display" aria-hidden="true">#СолодкіРадостіЖиття</div>
+          <div class="site-footer__meta text-body-sm">
+            <span>© 2026 Monik</span>
+            <a href="#">Політика конфіденційності</a>
+            <a class="site-footer__credit" href="https://well-done.com.ua/" target="_blank" rel="noopener">
+              <span>Дизайн від</span>
+              <img src="/assets/welldone-logo.svg" alt="WellDone">
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

@@ -19,6 +19,7 @@ export default defineConfig({
         index: resolve(root, 'index.html'),
         categories: resolve(root, 'categories.html'),
         orange: resolve(root, 'orange.html'),
+        contacts: resolve(root, 'contacts.html'),
         styleguide: resolve(root, 'styleguide.html'),
       },
     },

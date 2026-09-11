@@ -36,13 +36,12 @@
   display: grid;
   grid-template-rows: auto auto minmax(0, 1fr);
   gap: var(--space-16);
-  padding: var(--space-32) var(--space-48) var(--space-48);
+  padding: var(--space-16) var(--space-48) var(--space-48);
 }
 
 .cat-slider__head {
   display: flex;
   justify-content: center;
-  padding-top: var(--space-24);
 }
 .cat-slider__title {
   margin: 0;

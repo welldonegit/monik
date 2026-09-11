@@ -108,15 +108,15 @@
 .recipe-featured__cta:hover { background: var(--ink); }
 
 /* ---- Grid ------------------------------------------------------------ */
+/* Cards are used exactly as on the home page (flex 0 0 320, square media,
+   shrink-on-hover) — here they simply wrap instead of scrolling. */
 .recipes-grid {
   margin-top: var(--space-64);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-48) var(--space-24);
 }
-.recipes-grid .recipe-card { flex: initial; width: auto; }
-.recipes-grid .recipe-card__media { height: auto; aspect-ratio: 1 / 1; }
-.recipes-grid .recipe-card:hover .recipe-card__media { height: auto; }
 .recipe-card.is-hidden { display: none; }
 
 /* ---- Pagination ------------------------------------------------------ */
@@ -152,11 +152,9 @@
   }
   .recipes-hero__text { transform: none; }
   .recipe-featured { max-width: 520px; margin-inline: 0; }
-  .recipes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 767px) {
   .recipes-hero { padding: var(--space-40) var(--layout-gutter-mobile) var(--space-48); }
   .recipes-panel { padding-block: var(--space-48) var(--space-64); }
   .recipes-panel__inner { padding-inline: var(--layout-gutter-mobile); }
-  .recipes-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-40); }
 }

@@ -1,0 +1,10 @@
+/* Entry stylesheet for the recipes listing page. */
+@import './tokens.css';
+@import './reset.css';
+@import './typography.css';
+@import './layout.css';
+
+@import './components/cat-header.css';
+@import './components/recipes.css';
+@import './components/recipes-list.css';
+@import './components/footer.css';

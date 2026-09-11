@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Recipes listing page — green hero + cream content panel with filter chips,
+   a featured recipe, a grid of recipe cards (reused from home) and pagination
+   ========================================================================== */
+.recipes-page {
+  min-height: 100vh;
+  background: var(--green);
+  color: var(--cream);
+  overflow-x: clip;
+  --header-band: var(--green);
+}
+
+/* ---- Hero ------------------------------------------------------------ */
+.recipes-hero {
+  max-width: var(--layout-max);
+  margin-inline: auto;
+  padding: var(--space-48) var(--gutter) var(--space-64);
+}
+.recipes-hero__eyebrow { display: block; color: var(--cream-a72); }
+.recipes-hero__title { margin-top: var(--space-16); color: var(--cream); text-wrap: balance; }
+
+/* ---- Cream content panel --------------------------------------------- */
+.recipes-panel {
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: var(--radius-24) var(--radius-24) 0 0;
+  padding-block: var(--space-64) var(--space-96);
+}
+.recipes-panel__inner {
+  max-width: var(--layout-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---- Filter chips ---------------------------------------------------- */
+.recipe-filters { display: flex; flex-wrap: wrap; gap: var(--space-12); }
+.recipe-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--control-h-md);
+  padding: 0 var(--space-24);
+  border: var(--border-2) solid var(--green);
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--green);
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease;
+}
+.recipe-chip:hover { background: var(--green); color: var(--cream); }
+.recipe-chip.is-active { background: var(--green); color: var(--cream); }
+
+/* ---- Featured recipe ------------------------------------------------- */
+.recipe-featured {
+  margin-top: var(--space-48);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: var(--space-48);
+  align-items: center;
+}
+.recipe-featured__media {
+  border-radius: var(--radius-24);
+  overflow: hidden;
+  aspect-ratio: 16 / 11;
+  background: var(--ink-a06);
+}
+.recipe-featured__media img { width: 100%; height: 100%; object-fit: cover; }
+.recipe-featured__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  color: var(--green);
+}
+.recipe-featured__tag { color: var(--green); }
+.recipe-featured__title { color: var(--green); text-wrap: balance; }
+.recipe-featured__meta { display: flex; flex-wrap: wrap; gap: var(--space-8) var(--space-24); color: var(--green); }
+.recipe-featured__cta {
+  margin-top: var(--space-8);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--control-h-xl);
+  padding: 0 var(--space-32);
+  border-radius: var(--radius-16);
+  background: var(--green);
+  color: var(--cream);
+  transition: background-color var(--dur-fast) ease;
+}
+.recipe-featured__cta:hover { background: var(--ink); }
+
+/* ---- Grid ------------------------------------------------------------ */
+.recipes-grid {
+  margin-top: var(--space-64);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-48) var(--space-24);
+}
+.recipes-grid .recipe-card { flex: initial; width: auto; }
+.recipes-grid .recipe-card__media { height: auto; aspect-ratio: 1 / 1; }
+.recipes-grid .recipe-card:hover .recipe-card__media { height: auto; }
+.recipe-card.is-hidden { display: none; }
+
+/* ---- Pagination ------------------------------------------------------ */
+.recipe-pagination {
+  margin-top: var(--space-64);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+}
+.recipe-page-btn {
+  min-width: var(--control-h-md);
+  height: var(--control-h-md);
+  padding: 0 var(--space-8);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-1) solid var(--ink-a16);
+  border-radius: var(--radius-12);
+  background: transparent;
+  color: var(--green);
+  transition: background-color var(--dur-fast) ease, color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+.recipe-page-btn:hover { border-color: var(--green); }
+.recipe-page-btn.is-active { background: var(--green); color: var(--cream); border-color: var(--green); }
+
+/* ---- Responsive ------------------------------------------------------ */
+@media (max-width: 1023px) {
+  .recipes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .recipe-featured { grid-template-columns: minmax(0, 1fr); gap: var(--space-24); }
+}
+@media (max-width: 767px) {
+  .recipes-hero { padding: var(--space-40) var(--layout-gutter-mobile) var(--space-48); }
+  .recipes-panel { padding-block: var(--space-48) var(--space-64); }
+  .recipes-panel__inner { padding-inline: var(--layout-gutter-mobile); }
+  .recipes-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-40); }
+}

@@ -20,6 +20,7 @@ export default defineConfig({
         categories: resolve(root, 'categories.html'),
         orange: resolve(root, 'orange.html'),
         contacts: resolve(root, 'contacts.html'),
+        recipes: resolve(root, 'recipes.html'),
         styleguide: resolve(root, 'styleguide.html'),
       },
     },

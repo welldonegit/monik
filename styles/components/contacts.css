@@ -8,6 +8,8 @@
   overflow-x: clip;
   --header-band: var(--grape);
 }
+/* footer's rounded top corners reveal the backdrop — match the page colour */
+.contact-page .footer-backdrop { background: var(--grape); }
 
 .contacts {
   max-width: var(--layout-max);

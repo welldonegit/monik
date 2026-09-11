@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Breadcrumbs — light text on a coloured background (product + catalog)
+   ========================================================================== */
+.crumbs {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+  color: var(--cream-a72);
+}
+.crumbs a {
+  color: var(--cream-a72);
+  transition: color var(--dur-fast) ease;
+}
+.crumbs a:hover { color: var(--cream); }
+.crumbs [aria-current] { color: var(--cream); }
+.crumbs__sep { color: var(--cream-a45); }

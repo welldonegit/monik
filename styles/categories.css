@@ -5,6 +5,7 @@
 @import './layout.css';
 
 @import './components/cat-header.css';
+@import './components/crumbs.css';
 @import './components/cat-slider.css';
 @import './components/quick-pick.css';
 @import './components/footer.css';

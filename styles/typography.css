@@ -27,9 +27,12 @@
 .text-display {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: var(--text-96);
-  line-height: 100px;
+  font-size: var(--text-128);   /* ~fills the 1440 container */
+  line-height: 128px;
   letter-spacing: -0.02em;
+}
+@media (max-width: 1023px) {
+  .text-display { font-size: var(--text-80); line-height: 84px; }
 }
 .text-h1 {
   font-family: var(--font-display);

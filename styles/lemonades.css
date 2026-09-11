@@ -1,4 +1,4 @@
-/* Entry stylesheet for the recipes listing page. */
+/* Entry stylesheet for a single-category page (lemonade concentrates). */
 @import './tokens.css';
 @import './reset.css';
 @import './typography.css';
@@ -6,6 +6,6 @@
 
 @import './components/cat-header.css';
 @import './components/crumbs.css';
-@import './components/recipes.css';
-@import './components/recipes-list.css';
+@import './components/product.css';        /* .alt-grid / .alt-card */
+@import './components/category-page.css';
 @import './components/footer.css';

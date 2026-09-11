@@ -244,6 +244,8 @@
 .alt-card--melon { --alt-color: var(--melon); --alt-tint: var(--melon-tint); --alt-cta-bg: var(--white); --alt-cta-ink: var(--melon); --splash-rot: 9deg; }
 .alt-card--mojito { --alt-color: var(--pine); --alt-tint: var(--mojito-tint); --alt-cta-bg: var(--white); --alt-cta-ink: var(--pine); --splash-rot: -9deg; }
 .alt-card--cherry { --alt-color: var(--berry); --alt-tint: var(--melon-tint); --alt-cta-bg: var(--white); --alt-cta-ink: var(--berry); --splash-rot: 7deg; }
+.alt-card--orange { --alt-color: var(--mandarin); --alt-tint: var(--mandarin-tint); --alt-cta-bg: var(--white); --alt-cta-ink: var(--mandarin); --splash-rot: 8deg; }
+.alt-card--lemon { --alt-color: var(--yellow-deep); --alt-tint: var(--yellow); --alt-cta-bg: var(--white); --alt-cta-ink: var(--yellow-deep); --splash-rot: -8deg; }
 
 /* ---- Responsive ------------------------------------------------------ */
 @media (max-width: 1023px) {

@@ -21,6 +21,7 @@ export default defineConfig({
         orange: resolve(root, 'orange.html'),
         contacts: resolve(root, 'contacts.html'),
         recipes: resolve(root, 'recipes.html'),
+        lemonades: resolve(root, 'lemonades.html'),
         styleguide: resolve(root, 'styleguide.html'),
       },
     },

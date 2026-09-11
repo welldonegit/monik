@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Single category page — coloured hero (crumbs + title + lead) over a cream
+   panel with a grid of product cards (reuses .alt-grid / .alt-card)
+   ========================================================================== */
+.category-page {
+  min-height: 100vh;
+  background: var(--sky);
+  color: var(--cream);
+  overflow-x: clip;
+  --header-band: var(--sky);
+}
+
+.category-intro {
+  max-width: var(--layout-max);
+  margin-inline: auto;
+  padding: var(--space-32) var(--gutter) var(--space-80);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+.category-intro__title { color: var(--cream); text-wrap: balance; }
+.category-intro__lead { max-width: 640px; color: var(--cream-a88); text-wrap: pretty; }
+
+.category-panel {
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: var(--radius-24) var(--radius-24) 0 0;
+  padding-block: var(--space-96);
+}
+.category-panel__inner {
+  max-width: var(--layout-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@media (max-width: 767px) {
+  .category-intro { padding: var(--space-40) var(--layout-gutter-mobile) var(--space-64); }
+  .category-panel { padding-block: var(--space-64); }
+  .category-panel__inner { padding-inline: var(--layout-gutter-mobile); }
+}

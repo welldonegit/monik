@@ -38,6 +38,7 @@
   user-select: none;
   white-space: nowrap;
 }
+.recipes-hero__crumbs { grid-column: 1 / -1; align-self: start; position: relative; z-index: 1; }
 .recipes-hero__text {
   position: relative;
   z-index: 1;

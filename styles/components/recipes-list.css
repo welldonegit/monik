@@ -114,7 +114,7 @@
   margin-top: var(--space-64);
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--space-48) var(--space-16);
 }
 .recipe-card.is-hidden { display: none; }

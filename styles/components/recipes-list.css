@@ -20,7 +20,7 @@
   gap: var(--space-64);
   align-items: center;
 }
-.recipes-hero__text { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-16); }
+.recipes-hero__text { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-16); transform: translateY(calc(-1 * var(--space-48))); }
 .recipes-hero__eyebrow { display: block; color: var(--cream-a72); }
 .recipes-hero__title { color: var(--cream); text-wrap: balance; }
 .recipes-hero__tagline { color: var(--cream-a88); }
@@ -54,34 +54,45 @@
 .recipe-chip:hover { background: var(--green); color: var(--cream); }
 .recipe-chip.is-active { background: var(--green); color: var(--cream); }
 
-/* ---- Featured recipe (big card on the right of the hero) ------------- */
+/* ---- Featured recipe (big card on the right of the hero) — text over a
+   darkened photo, same 1/1 ratio as the grid cards --------------------- */
 .recipe-featured {
+  position: relative;
   width: 100%;
   max-width: 560px;
   margin-inline: auto;
-  background: var(--cream);
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius-24);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-.recipe-featured__media {
-  width: 100%;
-  aspect-ratio: 1 / 1;      /* same as the grid cards */
   background: var(--ink-a06);
 }
+.recipe-featured__media { position: absolute; inset: 0; }
 .recipe-featured__media img { width: 100%; height: 100%; object-fit: cover; }
+.recipe-featured__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(33, 26, 23, 0.8) 0%, rgba(33, 26, 23, 0.36) 42%, rgba(33, 26, 23, 0) 70%);
+}
 .recipe-featured__body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
   padding: var(--space-40);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-16);
-  color: var(--green);
+  color: var(--cream);
 }
-.recipe-featured__tag { color: var(--green); }
-.recipe-featured__title { color: var(--green); text-wrap: balance; }
-.recipe-featured__meta { display: flex; flex-wrap: wrap; gap: var(--space-8) var(--space-24); color: var(--green); }
+.recipe-featured__tag { color: var(--cream-a72); }
+.recipe-featured__title { color: var(--cream); text-wrap: balance; }
+.recipe-featured__meta { display: flex; flex-wrap: wrap; gap: var(--space-8) var(--space-24); color: var(--cream-a88); }
+.recipe-featured__cta { background: var(--cream); color: var(--green); }
+.recipe-featured__cta:hover { background: var(--green); color: var(--cream); }
 .recipe-featured__cta {
   margin-top: var(--space-8);
   display: inline-flex;
@@ -139,6 +150,7 @@
     gap: var(--space-40);
     padding-bottom: var(--space-64);
   }
+  .recipes-hero__text { transform: none; }
   .recipe-featured { max-width: 520px; margin-inline: 0; }
   .recipes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

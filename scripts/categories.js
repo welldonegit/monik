@@ -142,6 +142,8 @@ function initSlider() {
 
   prevBtn?.addEventListener('click', () => go(disp - 1))
   nextBtn?.addEventListener('click', () => go(disp + 1))
+  slider.querySelector('.cat-slider__nav-btn--prev')?.addEventListener('click', () => go(disp - 1))
+  slider.querySelector('.cat-slider__nav-btn--next')?.addEventListener('click', () => go(disp + 1))
 
   slider.addEventListener('pointerenter', stopAuto)
   slider.addEventListener('pointerleave', startAuto)

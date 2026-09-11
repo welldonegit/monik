@@ -14,8 +14,9 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  /* instant — the animated colour transition is done by the reveal layer;
+     a transition here caused a second flicker after the reveal finished */
   background: var(--band, var(--berry));
-  transition: background-color 190ms linear;
 }
 .cat-slider__reveal {
   position: absolute;
@@ -75,6 +76,31 @@
   object-fit: contain;
   object-position: 50% 100%;
   filter: drop-shadow(0 34px 46px rgba(33, 26, 23, 0.34));
+}
+
+/* round prev/next controls (design-system carousel control) */
+.cat-slider__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-16);
+}
+.cat-slider__nav-btn {
+  width: var(--control-h-xl);
+  height: var(--control-h-xl);
+  padding: 0;
+  border: var(--border-2) solid var(--fg, var(--cream));
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--fg, var(--cream));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--dur-med) ease, color var(--dur-med) ease;
+}
+.cat-slider__nav-btn:hover {
+  background: var(--fg, var(--cream));
+  color: var(--band, var(--berry));
 }
 
 /* side previews of the neighbouring categories */
@@ -158,6 +184,7 @@
 
 @media (max-width: 767px) {
   .cat-slider { min-height: var(--layout-slider-h-mobile); }
+  .cat-slider__nav-btn { width: var(--control-h-lg); height: var(--control-h-lg); }
   .cat-slider__inner { padding: var(--space-24) var(--layout-gutter-mobile); }
   .cat-slider__product { height: 360px; object-position: 50% 50%; align-self: center; }
   .cat-slider__peek { width: 38%; bottom: var(--space-32); }

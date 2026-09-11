@@ -27,8 +27,8 @@
 .text-display {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: var(--text-128);   /* ~fills the 1440 container */
-  line-height: 128px;
+  font-size: var(--text-120);   /* ~fills the 1440 container */
+  line-height: 120px;
   letter-spacing: -0.02em;
 }
 @media (max-width: 1023px) {

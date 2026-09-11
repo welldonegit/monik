@@ -12,6 +12,8 @@
 
 /* ---- Hero ------------------------------------------------------------ */
 .recipes-hero {
+  position: relative;
+  overflow: hidden;
   max-width: var(--layout-max);
   margin-inline: auto;
   padding: var(--space-32) var(--gutter) var(--space-80);
@@ -20,7 +22,32 @@
   gap: var(--space-64);
   align-items: center;
 }
-.recipes-hero__text { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-16); transform: translateY(calc(-1 * var(--space-48))); }
+/* big light company wordmark behind the hero content */
+.recipes-hero__brand {
+  position: absolute;
+  left: var(--gutter);
+  bottom: 0;
+  z-index: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 220px;
+  line-height: 0.78;
+  letter-spacing: -0.04em;
+  color: var(--cream-a18);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+.recipes-hero__text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  transform: translateY(calc(-1 * var(--space-48)));
+}
+.recipe-featured { position: relative; z-index: 1; }
 .recipes-hero__eyebrow { display: block; color: var(--cream-a72); }
 .recipes-hero__title { color: var(--cream); text-wrap: balance; }
 .recipes-hero__tagline { color: var(--cream-a88); }
@@ -151,10 +178,12 @@
     padding-bottom: var(--space-64);
   }
   .recipes-hero__text { transform: none; }
+  .recipes-hero__brand { font-size: var(--text-128); }
   .recipe-featured { max-width: 520px; margin-inline: 0; }
 }
 @media (max-width: 767px) {
   .recipes-hero { padding: var(--space-40) var(--layout-gutter-mobile) var(--space-48); }
   .recipes-panel { padding-block: var(--space-48) var(--space-64); }
   .recipes-panel__inner { padding-inline: var(--layout-gutter-mobile); }
+  .recipes-hero__brand { left: var(--layout-gutter-mobile); font-size: var(--text-80); }
 }

@@ -153,8 +153,10 @@
     justify-content: center;   /* centre the text+photo pair in the band */
     align-items: center;       /* photo and the text group centred vertically */
     gap: var(--space-64);
+    /* bottom < top: the wave (~80) eats the visual top space, so the product
+       looks vertically centred only when the bottom padding is smaller */
     padding-top: var(--space-96);
-    padding-bottom: var(--space-96);
+    padding-bottom: var(--space-48);
   }
   .category__body {
     flex: 0 0 var(--layout-col-lg);   /* uniform text-column width */

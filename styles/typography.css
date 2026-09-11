@@ -83,6 +83,13 @@
   line-height: 44px;
   letter-spacing: -0.03em;
 }
+.text-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-24);
+  line-height: 28px;
+  letter-spacing: -0.02em;
+}
 .text-recipe-title {
   font-family: var(--font-display);
   font-weight: 700;

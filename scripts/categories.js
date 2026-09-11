@@ -1,4 +1,5 @@
 import '../styles/categories.css'
+import { initCatHeader } from './cat-header.js'
 
 // Category data (colours are per-category content config, not design tokens).
 // Some source images don't exist in /assets, so they reuse the closest one.
@@ -16,35 +17,6 @@ const CATS = [
   { title: 'Сухі суміші для приготування морозива', img: '/assets/cat-lemonade-mohito.png', color: '#4358D5', fg: '#F6F4EF', accent: '#FFC42D' },
   { title: 'Горіхи та сухофрукти', img: '/assets/spices.png', color: '#B4471F', fg: '#F6F4EF', accent: '#FFC42D' },
 ]
-
-function initHeader() {
-  const header = document.querySelector('.cat-header')
-  if (!header) return
-  const menu = header.querySelector('.cat-menu')
-  const burger = header.querySelector('.cat-header__burger')
-  const closeMenu = () => {
-    header.classList.remove('is-menu-open')
-    burger?.setAttribute('aria-expanded', 'false')
-  }
-  burger?.addEventListener('click', () => {
-    const open = header.classList.toggle('is-menu-open')
-    burger.setAttribute('aria-expanded', String(open))
-  })
-  menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu))
-
-  const lang = header.querySelector('.cat-lang')
-  lang?.querySelectorAll('.cat-lang__btn').forEach((btn) =>
-    btn.addEventListener('click', () => {
-      const en = btn.textContent.trim() === 'EN'
-      lang.classList.toggle('is-en', en)
-      lang.querySelectorAll('.cat-lang__btn').forEach((b) => {
-        const active = b === btn
-        b.classList.toggle('is-active', active)
-        b.setAttribute('aria-pressed', String(active))
-      })
-    })
-  )
-}
 
 function initQuickPick() {
   document.querySelectorAll('.quick-pick__row').forEach((row) => {
@@ -183,7 +155,7 @@ function initSlider() {
 }
 
 function boot() {
-  initHeader()
+  initCatHeader()
   initQuickPick()
   initSlider()
 }

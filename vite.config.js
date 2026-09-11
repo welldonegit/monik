@@ -18,6 +18,7 @@ export default defineConfig({
       input: {
         index: resolve(root, 'index.html'),
         categories: resolve(root, 'categories.html'),
+        orange: resolve(root, 'orange.html'),
         styleguide: resolve(root, 'styleguide.html'),
       },
     },

@@ -93,6 +93,9 @@
   --layout-slider-h: 650px;        /* category slider min-height (desktop) */
   --layout-slider-h-mobile: 620px;
   --layout-slider-product: 620px;  /* product image max-height (desktop) */
+  --layout-product-h: 640px;       /* product visual column min-height */
+  --layout-product-info: 620px;    /* product info column max-width */
+  --layout-alt-card: 560px;        /* alt product card max-width */
   --layout-cat-h-a: 660px;   /* category section min-heights (desktop) */
   --layout-cat-h-b: 700px;
   --layout-cat-h-c: 720px;
@@ -139,9 +142,17 @@
   --ink-a14: rgba(33, 26, 23, 0.14);
   --ink-a16: rgba(33, 26, 23, 0.16);
   --ink-a42: rgba(33, 26, 23, 0.42);
+  --ink-a55: rgba(33, 26, 23, 0.55);
+  --ink-a68: rgba(33, 26, 23, 0.68);
   --ink-a50: rgba(33, 26, 23, 0.5);
   --ink-a82: rgba(33, 26, 23, 0.82);
   --pine: #176142;        /* catalog dark green */
+  --melon: #A6124D;       /* product page: watermelon */
+  --melon-tint: #F45C8D;
+  --mojito-tint: #35A478; /* product page: mojito splash */
+  --splash-grey: #E4E7E5;
+  --mandarin-a10: rgba(241, 75, 47, 0.1);
+  --white: #FFFFFF;
   --cream-a90: rgba(246, 244, 239, 0.9);
   --cream-a86: rgba(246, 244, 239, 0.86);
   --cream-a88: rgba(246, 244, 239, 0.88);

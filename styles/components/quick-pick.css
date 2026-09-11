@@ -5,7 +5,7 @@
 .quick-pick {
   max-width: var(--layout-max);
   margin-inline: auto;
-  padding: var(--space-80) var(--gutter) 0;
+  padding: var(--space-96) var(--gutter) 0;
 }
 .quick-pick__head { margin-bottom: var(--space-24); }
 .quick-pick__title { color: var(--ink); }
@@ -49,7 +49,7 @@
 .quick-pick__row:hover .quick-pick__arrow svg { transform: translateX(3px); }
 
 @media (max-width: 767px) {
-  .quick-pick { padding-top: var(--space-40); }
+  .quick-pick { padding-top: var(--space-64); }
   .quick-pick__row {
     gap: var(--space-16);
     min-height: var(--space-56);

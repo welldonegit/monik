@@ -11,13 +11,12 @@
 .cat-page .footer-backdrop { margin-top: var(--space-96); }
 
 .cat-header-band {
-  padding-inline: var(--gutter);
-}
-
-.cat-header-band {
-  background: var(--band, var(--berry));
-  transition: background-color 190ms linear;
-  padding-block: var(--space-16);
+  padding: var(--space-16) var(--gutter);
+  /* own colour prop that changes at the START of a slide transition and fades
+     over the same 560ms as the slider's reveal, so header and slide change in
+     sync */
+  background: var(--header-band, var(--berry));
+  transition: background-color 560ms cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .cat-header {

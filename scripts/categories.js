@@ -102,6 +102,10 @@ function initSlider() {
     stopAuto()
     const cur = CATS[n]
 
+    // header band starts changing now (fades over the reveal's 560ms) so it
+    // stays in sync with the slide
+    setColor('--header-band', cur.color)
+
     if (reduce) {
       applyContent(n)
       setColor('--band', cur.color)
@@ -174,6 +178,7 @@ function initSlider() {
   // initial paint
   applyContent(0)
   setColor('--band', CATS[0].color)
+  setColor('--header-band', CATS[0].color)
   startAuto()
 }
 

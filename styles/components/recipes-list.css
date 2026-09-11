@@ -14,10 +14,16 @@
 .recipes-hero {
   max-width: var(--layout-max);
   margin-inline: auto;
-  padding: var(--space-48) var(--gutter) var(--space-64);
+  padding: var(--space-64) var(--gutter) var(--space-80);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: var(--space-64);
+  align-items: center;
 }
+.recipes-hero__text { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-16); }
 .recipes-hero__eyebrow { display: block; color: var(--cream-a72); }
-.recipes-hero__title { margin-top: var(--space-16); color: var(--cream); text-wrap: balance; }
+.recipes-hero__title { color: var(--cream); text-wrap: balance; }
+.recipes-hero__tagline { color: var(--cream-a88); }
 
 /* ---- Cream content panel --------------------------------------------- */
 .recipes-panel {
@@ -48,22 +54,25 @@
 .recipe-chip:hover { background: var(--green); color: var(--cream); }
 .recipe-chip.is-active { background: var(--green); color: var(--cream); }
 
-/* ---- Featured recipe ------------------------------------------------- */
+/* ---- Featured recipe (big card on the right of the hero) ------------- */
 .recipe-featured {
-  margin-top: var(--space-48);
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-  gap: var(--space-48);
-  align-items: center;
-}
-.recipe-featured__media {
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+  background: var(--cream);
   border-radius: var(--radius-24);
   overflow: hidden;
-  aspect-ratio: 16 / 11;
+  display: flex;
+  flex-direction: column;
+}
+.recipe-featured__media {
+  width: 100%;
+  aspect-ratio: 1 / 1;      /* same as the grid cards */
   background: var(--ink-a06);
 }
 .recipe-featured__media img { width: 100%; height: 100%; object-fit: cover; }
 .recipe-featured__body {
+  padding: var(--space-40);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -125,8 +134,13 @@
 
 /* ---- Responsive ------------------------------------------------------ */
 @media (max-width: 1023px) {
+  .recipes-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-40);
+    padding-bottom: var(--space-64);
+  }
+  .recipe-featured { max-width: 520px; margin-inline: 0; }
   .recipes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .recipe-featured { grid-template-columns: minmax(0, 1fr); gap: var(--space-24); }
 }
 @media (max-width: 767px) {
   .recipes-hero { padding: var(--space-40) var(--layout-gutter-mobile) var(--space-48); }

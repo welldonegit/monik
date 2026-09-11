@@ -12,7 +12,7 @@
 .contacts {
   max-width: var(--layout-max);
   margin-inline: auto;
-  padding: var(--space-96) var(--gutter);
+  padding: var(--space-48) var(--gutter) var(--space-96);
 }
 .contacts__title { color: var(--cream); }
 .contacts__lead {
@@ -122,6 +122,6 @@ a.contact-block__value:hover { color: var(--yellow); }
   .contacts__layout { grid-template-columns: minmax(0, 1fr); gap: var(--space-48); }
 }
 @media (max-width: 767px) {
-  .contacts { padding-block: var(--space-64); }
+  .contacts { padding: var(--space-40) var(--layout-gutter-mobile) var(--space-64); }
   .contacts__form-wrap { padding: var(--space-32) var(--space-24); }
 }

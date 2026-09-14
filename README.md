@@ -1,6 +1,6 @@
 # Monik — чистий HTML + CSS (Vite)
 
-Головна сторінка Monik, переписана з експорту Claude Design у звичайний
+Багатосторінковий сайт Monik, переписаний з експорту Claude Design у звичайний
 HTML + CSS + vanilla JS під збірку Vite. Розмітка і стилі розділені, розміри
 приведені до дизайн-шкали. Ціль макета — коректний імпорт у Figma плагіном
 **html.to.design**: чиста семантична розмітка → чисте дерево шарів.
@@ -14,7 +14,7 @@ npm run build     # прод-збірка у dist/
 npm run preview   # перегляд зібраного
 ```
 
-Точки входу (multi-page): `index.html` (головна) і `styleguide.html` (токени).
+Точки входу (multi-page): по одному входу на сторінку (`index.html`, `categories.html`, `lemonades.html`, `orange.html`, `recipes.html`, `recipe.html`, `contacts.html`).
 
 > Шрифти (Fixel) підключаються з jsDelivr — потрібен інтернет.
 
@@ -54,11 +54,11 @@ npm run preview   # перегляд зібраного
   `.text-body`, …): ставимо в розмітці, а не перевизначаємо розмір у компонентах.
 - `styles/reset.css`, `styles/layout.css` — база.
 - `styles/components/<name>.css` — по одному файлу на компонент.
-- `styles/entry.css` — єдина точка входу, що імпортує все.
+- `styles/<page>.css` — по одному CSS-бандлу на сторінку (`entry.css` — головна,
+  плюс `categories.css`, `lemonades.css`, `product.css`, `recipe.css`,
+  `recipes-page.css`, `contacts.css`); кожен імпортує потрібні компоненти.
 - `scripts/*.js` — інтерактив (хедер-меню, скрол-ефекти героя, дрейф блобів,
   слайдери брендів і рецептів). Кожен модуль — no-op, якщо його розмітки немає.
-
-Дивись `styleguide.html` — живі зразки всіх токенів і класів.
 
 ## Імпорт у Figma (html.to.design)
 
@@ -78,12 +78,8 @@ npm run preview   # перегляд зібраного
 
 ```
 index.html            головна (точка входу)
-styleguide.html       токени (точка входу)
 scripts/              vanilla JS: main.js + модулі по секціях
 styles/               tokens / reset / typography / layout / components
 public/assets/        зображення та логотипи
 vite.config.js        multi-page конфіг
 ```
-
-Легасі-концепти (`c04-*.html`, `support.js`) лишаються в корені, але **не**
-входять до збірки Vite (вона будує лише `index.html` та `styleguide.html`).

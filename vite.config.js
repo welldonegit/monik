@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url'
 
 const root = dirname(fileURLToPath(import.meta.url))
 
-// Multi-page build: index (home) + styleguide are the only entry points.
+// Multi-page build: one entry point per page.
 // Legacy concept files (c04-*.html) are intentionally left out of the build.
 export default defineConfig({
   root,
@@ -23,7 +23,6 @@ export default defineConfig({
         recipes: resolve(root, 'recipes.html'),
         lemonades: resolve(root, 'lemonades.html'),
         recipe: resolve(root, 'recipe.html'),
-        styleguide: resolve(root, 'styleguide.html'),
       },
     },
   },

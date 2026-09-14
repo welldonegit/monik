@@ -7,8 +7,12 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  height: 100svh;
-  min-height: var(--layout-slider-h);
+  /* the coloured header band sits above the slider in normal flow, so a full
+     100svh pushed the slider's lower half — product base + peeks — below the
+     fold. Subtract the band so the slider fills exactly the rest of the screen */
+  --cat-header-band-h: 112px;
+  height: calc(100svh - var(--cat-header-band-h));
+  min-height: 480px;
 }
 .cat-slider__base {
   position: absolute;
@@ -36,7 +40,10 @@
   display: grid;
   grid-template-rows: auto auto minmax(0, 1fr);
   gap: var(--space-16);
-  padding: var(--space-16) var(--space-48) var(--space-48);
+  /* bottom counterweight pulls the product region up so the image reads roughly
+     centred (the header block above is heavier); keep it modest so the image
+     stays large rather than shrinking for perfect symmetry */
+  padding: var(--space-16) var(--space-48) var(--space-80);
 }
 
 .cat-slider__head {
@@ -59,11 +66,14 @@
 .cat-slider.is-leaving .cat-slider__product { opacity: 0; transform: translateY(-12px); }
 
 .cat-slider__stage {
-  position: relative;
+  /* the below-header region; the product is centred here and capped to it, so it
+     can never reach the h1. padding-top guarantees a fixed gap under the title
+     even on short screens where the image fills the whole region */
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   min-height: 0;
+  padding-top: var(--space-24);
 }
 .cat-slider__product {
   position: relative;
@@ -71,6 +81,8 @@
   display: block;
   max-width: 100%;
   height: var(--layout-slider-product);
+  /* capped to the region below the header (never overlaps the h1); full 620 where
+     the region is tall enough, otherwise fills the region */
   max-height: 100%;
   object-fit: contain;
   object-position: 50% 100%;
@@ -80,11 +92,14 @@
 /* side previews of the neighbouring categories */
 .cat-slider__peek {
   position: absolute;
-  bottom: var(--space-56);
+  bottom: var(--space-40);
   z-index: 2;
   width: 26%;
-  height: min(50%, 300px);
-  max-height: 100%;
+  /* 40% smaller than the original 300px cap (applies on mobile too, which
+     inherits this height) */
+  height: min(30%, 180px);
+  /* stay fully visible above the 40px bottom gap on any viewport height */
+  max-height: calc(100% - var(--space-40));
   padding: 0;
   border: none;
   background: transparent;
@@ -94,8 +109,10 @@
   justify-content: flex-end;
   transition: transform var(--dur-med) var(--ease-out);
 }
-.cat-slider__peek--prev { left: var(--space-40); transform: translateX(-42%); }
-.cat-slider__peek--next { right: var(--space-40); transform: translateX(42%); }
+/* peeks anchor to __inner (full slider) and sit a fixed 40px from the bottom edge;
+   left/right add the gutter to keep the original horizontal inset */
+.cat-slider__peek--prev { left: calc(var(--space-48) + var(--space-40)); transform: translateX(-42%); }
+.cat-slider__peek--next { right: calc(var(--space-48) + var(--space-40)); transform: translateX(42%); }
 .cat-slider__peek--prev:hover,
 .cat-slider__peek--prev:focus-visible { transform: translateX(-32%); }
 .cat-slider__peek--next:hover,
@@ -152,15 +169,20 @@
 }
 
 @media (max-width: 1023px) {
-  .cat-slider__inner { padding: var(--space-32); }
+  .cat-slider__inner { padding: var(--space-32) var(--space-32) var(--space-80); }
   .cat-slider__product { height: 480px; }
 }
 
 @media (max-width: 767px) {
-  .cat-slider { min-height: var(--layout-slider-h-mobile); }
+  /* mobile header pill is shorter (min-height 64 + band padding) */
+  .cat-slider { min-height: var(--layout-slider-h-mobile); --cat-header-band-h: 96px; }
   .cat-slider__inner { padding: var(--space-24) var(--layout-gutter-mobile); }
-  .cat-slider__product { height: 360px; object-position: 50% 50%; align-self: center; }
-  .cat-slider__peek { width: 38%; bottom: var(--space-32); }
-  .cat-slider__peek--prev { left: var(--space-16); transform: translateX(-48%); }
-  .cat-slider__peek--next { right: var(--space-16); transform: translateX(48%); }
+  .cat-slider__product { height: 360px; object-position: 50% 50%; }
+  /* both peeks must fit fully inside the container — no sideways "peek" spill on
+     mobile: sit them flush to the gutters with no negative transform */
+  .cat-slider__peek { width: 34%; bottom: var(--space-32); }
+  .cat-slider__peek--prev { left: var(--layout-gutter-mobile); transform: none; }
+  .cat-slider__peek--next { right: var(--layout-gutter-mobile); transform: none; }
+  .cat-slider__peek--prev:hover, .cat-slider__peek--prev:focus-visible,
+  .cat-slider__peek--next:hover, .cat-slider__peek--next:focus-visible { transform: none; }
 }

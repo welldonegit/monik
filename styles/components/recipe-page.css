@@ -27,7 +27,6 @@
 .recipe-hero__media { grid-column: 2; grid-row: 1 / 3; }
 .recipe-hero .product__title { color: var(--white); }
 .recipe-hero .product__lead { color: var(--cream-a86); }
-.recipe-detail__tag { display: block; color: var(--white); margin-bottom: var(--space-16); }
 .recipe-hero__media {
   min-width: 0;
   aspect-ratio: 1 / 1;
@@ -60,6 +59,13 @@
 }
 .recipe-ingredient:first-child { border-top: none; }
 .recipe-ingredient__name { color: var(--ink-a82); }
+.recipe-ingredient__name--link {
+  color: var(--berry);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  transition: color 0.15s ease;
+}
+.recipe-ingredient__name--link:hover { text-decoration: none; }
 .recipe-ingredient__amount { flex: none; color: var(--ink); white-space: nowrap; }
 
 /* Numbered steps */

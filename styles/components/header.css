@@ -3,19 +3,19 @@
    ========================================================================== */
 .site-header {
   background: var(--berry);
-  padding: var(--space-24) var(--space-32) 0;
+  padding: var(--space-16) var(--gutter) 0;
 }
 
 .site-header__bar {
-  max-width: var(--layout-max-header);
+  max-width: var(--layout-max);
   margin-inline: auto;
-  min-height: var(--layout-header-h);
-  padding-inline: var(--space-40);
+  min-height: var(--space-80);
+  padding-inline: var(--space-24);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-8) var(--space-16);
-  background: var(--ink);
+  background: var(--cream);
   border-radius: var(--radius-full);
 }
 
@@ -36,12 +36,12 @@
   display: inline-flex;
   align-items: center;
   height: var(--control-h-md);
-  color: var(--cream);
+  color: var(--ink);
   white-space: nowrap;
   transition: color var(--dur-fast) ease;
 }
 .site-nav__link:hover {
-  color: var(--yellow);
+  color: var(--berry);
 }
 
 /* ---- Logo ------------------------------------------------------------ */
@@ -53,7 +53,7 @@
 .site-header__logo-img {
   width: var(--layout-logo-w);
   height: auto;
-  filter: brightness(0) invert(1);
+  filter: brightness(0);
 }
 
 /* ---- Actions: phone / language / burger ------------------------------ */
@@ -70,12 +70,12 @@
   display: inline-flex;
   align-items: center;
   height: var(--control-h-md);
-  color: var(--cream);
+  color: var(--ink);
   white-space: nowrap;
   transition: color var(--dur-fast) ease;
 }
 .site-header__phone:hover {
-  color: var(--yellow);
+  color: var(--berry);
 }
 
 .lang-switch {
@@ -92,16 +92,16 @@
   border: none;
   border-radius: var(--radius-full);
   background: transparent;
-  color: var(--cream-a55);
+  color: var(--ink-a50);
   transition: background var(--dur-fast) ease, color var(--dur-fast) ease;
 }
 .lang-switch__btn:hover {
-  background: var(--cream-a14);
-  color: var(--cream-hi);
+  background: var(--ink-a16);
+  color: var(--ink);
 }
 .lang-switch__btn.is-active {
-  background: var(--cream);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--cream);
 }
 
 .site-header__burger {
@@ -120,7 +120,7 @@
   display: block;
   width: var(--icon-24);
   height: var(--border-2);
-  background: var(--cream);
+  background: var(--ink);
 }
 
 /* ---- Mobile menu ----------------------------------------------------- */
@@ -138,21 +138,17 @@
   display: flex;
   align-items: center;
   min-height: var(--control-h-lg);
-  border-top: var(--border-1) solid var(--cream-a18);
-  color: var(--cream);
+  border-top: var(--border-1) solid var(--ink-a16);
+  color: var(--ink);
 }
 
 /* ---- Responsive ------------------------------------------------------ */
 @media (max-width: 1023px) {
-  .site-header { padding: var(--space-24) var(--space-24) 0; }
-  .site-header__bar { padding-inline: var(--space-32); }
   .site-nav__list { gap: var(--space-24); }
 }
 
 @media (max-width: 767px) {
-  .site-header { padding: var(--layout-gutter-mobile) var(--layout-gutter-mobile) 0; }
   .site-header__bar {
-    padding-inline: var(--layout-gutter-mobile);
     min-height: var(--space-64);
   }
   .site-header.is-menu-open .site-header__bar { border-radius: var(--radius-24); }

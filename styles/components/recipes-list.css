@@ -52,7 +52,6 @@
 .recipe-featured { position: relative; z-index: 1; transform: translateY(calc(-1 * var(--space-32))); }
 .recipes-hero__eyebrow { display: block; color: var(--cream-a72); }
 .recipes-hero__title { color: var(--cream); text-wrap: balance; }
-.recipes-hero__tagline { color: var(--cream-a88); }
 
 /* ---- Cream content panel --------------------------------------------- */
 .recipes-panel {
@@ -120,21 +119,39 @@
 .recipe-featured__tag { color: var(--cream-a72); }
 .recipe-featured__title { color: var(--cream); text-wrap: balance; }
 .recipe-featured__meta { display: flex; flex-wrap: wrap; gap: var(--space-8) var(--space-24); color: var(--cream-a88); }
-.recipe-featured__cta { background: var(--cream); color: var(--green); }
-.recipe-featured__cta:hover { background: var(--green); color: var(--cream); }
 .recipe-featured__cta {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
   margin-top: var(--space-8);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: var(--control-h-xl);
   padding: 0 var(--space-32);
+  border: var(--border-2) solid var(--cream);
   border-radius: var(--radius-16);
-  background: var(--green);
+  background: transparent;
   color: var(--cream);
-  transition: background-color var(--dur-fast) ease;
+  transition: color var(--dur-med) ease;
 }
-.recipe-featured__cta:hover { background: var(--ink); }
+/* expanding-dot fill on hover — same effect as the homepage category CTA */
+.recipe-featured__cta::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: var(--space-32);
+  top: 50%;
+  width: var(--space-8);
+  height: var(--space-8);
+  margin-top: calc(var(--space-8) / -2);
+  border-radius: var(--radius-full);
+  background: var(--cream);
+  transform: scale(0);
+  transition: transform var(--dur-med) var(--ease-out);
+}
+.recipe-featured__cta:hover::before { transform: scale(60); }
+.recipe-featured__cta:hover { color: var(--green); }
 
 /* ---- Grid ------------------------------------------------------------ */
 /* Cards are used exactly as on the home page (flex 0 0 320, square media,

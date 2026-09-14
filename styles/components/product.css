@@ -230,7 +230,7 @@
 .alt-card:hover .alt-card__img { transform: translate(-50%, -50%) translateY(-8px) scale(1.15); }
 
 .alt-card__title { color: var(--alt-color); }
-.alt-card__desc { max-width: 30ch; color: var(--alt-color); }
+.alt-card__desc { max-width: 30ch; min-height: var(--space-48); color: var(--alt-color); }
 .alt-card__cta {
   display: inline-flex;
   align-items: center;
@@ -238,8 +238,15 @@
   min-height: var(--control-h-lg);
   padding: 0 var(--space-24);
   border-radius: var(--radius-16);
-  background: var(--alt-cta-bg);
+  background: transparent;
   color: var(--alt-cta-ink);
+  border: var(--border-1) solid currentColor;
+  transition: background var(--dur-med) var(--ease-out), color var(--dur-med) var(--ease-out);
+}
+.alt-card:hover .alt-card__cta,
+.alt-card:focus-visible .alt-card__cta {
+  background: var(--alt-cta-ink);
+  color: var(--alt-cta-bg);
 }
 .alt-card--melon { --alt-color: var(--melon); --alt-tint: var(--melon-tint); --alt-cta-bg: var(--white); --alt-cta-ink: var(--melon); --splash-rot: 9deg; }
 .alt-card--mojito { --alt-color: var(--pine); --alt-tint: var(--mojito-tint); --alt-cta-bg: var(--white); --alt-cta-ink: var(--pine); --splash-rot: -9deg; }

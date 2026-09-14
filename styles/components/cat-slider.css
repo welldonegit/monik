@@ -55,7 +55,7 @@
   max-width: 94%;
   text-align: center;
   text-transform: uppercase;
-  color: var(--accent, var(--yellow));
+  color: var(--cream);
   text-wrap: balance;
 }
 

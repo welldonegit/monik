@@ -124,7 +124,7 @@
 }
 
 .category--syrup {
-  --cat-bg: var(--cocoa);
+  --cat-bg: #D8433A;
   --cta-hover: var(--cocoa);
 }
 .category--syrup .category__title { max-width: 480px; }

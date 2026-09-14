@@ -102,17 +102,36 @@ a.contact-block__value:hover { color: var(--yellow); }
 .contact-textarea:focus { outline: none; border-color: var(--grape); }
 
 .contact-submit {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
   align-self: flex-start;
   margin-top: var(--space-8);
   min-height: var(--control-h-xl);
   padding: 0 var(--space-40);
-  border: none;
+  border: var(--border-2) solid var(--grape);
   border-radius: var(--radius-16);
-  background: var(--ink);
-  color: var(--cream);
-  transition: background-color var(--dur-fast) ease;
+  background: transparent;
+  color: var(--grape);
+  transition: color var(--dur-med) ease;
 }
-.contact-submit:hover { background: var(--grape); }
+/* expanding-dot fill on hover — same effect as the homepage category CTA */
+.contact-submit::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: var(--space-40);
+  top: 50%;
+  width: var(--space-8);
+  height: var(--space-8);
+  margin-top: calc(var(--space-8) / -2);
+  border-radius: var(--radius-full);
+  background: var(--grape);
+  transform: scale(0);
+  transition: transform var(--dur-med) var(--ease-out);
+}
+.contact-submit:hover::before { transform: scale(60); }
+.contact-submit:hover { color: var(--cream); }
 
 .contact-form__success {
   display: none;

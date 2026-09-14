@@ -4,18 +4,18 @@ import { initCatHeader } from './cat-header.js'
 // Category data (colours are per-category content config, not design tokens).
 // Some source images don't exist in /assets, so they reuse the closest one.
 const CATS = [
-  { title: 'Ягідні чаї', img: '/assets/tea.png', color: '#E52868', fg: '#F6F4EF', accent: '#FFC42D' },
-  { title: 'Сиропи до кави', img: '/assets/cat-syrup-cherry.png', color: '#B4471F', fg: '#F6F4EF', accent: '#FFC42D' },
-  { title: 'Джеми', img: '/assets/jam.png', color: '#653CCB', fg: '#F6F4EF', accent: '#FFC42D' },
-  { title: 'Кулінарні добавки', img: '/assets/spices.png', color: '#FFC42D', fg: '#211A17', accent: '#211A17' },
-  { title: 'Топінги', img: '/assets/jam.png', color: '#F14B2F', fg: '#F6F4EF', accent: '#FFC42D' },
-  { title: 'Сиропи для приготування коктейлів', img: '/assets/cat-syrup-cherry.png', color: '#4358D5', fg: '#F6F4EF', accent: '#FFC42D' },
-  { title: 'Концентрати для приготування лимонаду', img: '/assets/cat-lemonade-mohito.png', color: '#FFC42D', fg: '#211A17', accent: '#B4471F' },
-  { title: 'Напої сухі розчинні Lito', img: '/assets/tea.png', color: '#176142', fg: '#F6F4EF', accent: '#FFC42D' },
-  { title: 'Сухі суміші для приготування желе', img: '/assets/cat-lemonade-mohito.png', color: '#E52868', fg: '#F6F4EF', accent: '#FFC42D' },
-  { title: 'Сухі суміші для приготування киселю', img: '/assets/jam.png', color: '#653CCB', fg: '#F6F4EF', accent: '#FFC42D' },
-  { title: 'Сухі суміші для приготування морозива', img: '/assets/cat-lemonade-mohito.png', color: '#4358D5', fg: '#F6F4EF', accent: '#FFC42D' },
-  { title: 'Горіхи та сухофрукти', img: '/assets/spices.png', color: '#B4471F', fg: '#F6F4EF', accent: '#FFC42D' },
+  { title: 'Ягідні чаї', img: '/assets/tea.png', color: '#E52868', fg: '#F6F4EF' },
+  { title: 'Сиропи до кави', img: '/assets/cat-syrup-cherry.png', color: '#D8433A', fg: '#F6F4EF' },
+  { title: 'Джеми', img: '/assets/jam.png', color: '#653CCB', fg: '#F6F4EF' },
+  { title: 'Кулінарні добавки', img: '/assets/spices.png', color: '#FFC42D', fg: '#211A17' },
+  { title: 'Топінги', img: '/assets/cat-topping.png', color: '#D81E3F', fg: '#F6F4EF' },
+  { title: 'Сиропи для приготування коктейлів', img: '/assets/cat-syrup-curacao.png', color: '#4358D5', fg: '#F6F4EF' },
+  { title: 'Концентрати для приготування лимонаду', img: '/assets/cat-lemonade-mohito.png', color: '#20AFE0', fg: '#F6F4EF' },
+  { title: 'Напої сухі розчинні Lito', img: '/assets/cat-lito-orange.png', color: '#176142', fg: '#F6F4EF' },
+  { title: 'Сухі суміші для приготування желе', img: '/assets/cat-jelly.png', color: '#048144', fg: '#F6F4EF' },
+  { title: 'Сухі суміші для приготування киселю', img: '/assets/cat-kissel.png', color: '#A6124D', fg: '#F6F4EF' },
+  { title: 'Сухі суміші для приготування морозива', img: '/assets/cat-icecream.png', color: '#4A2A9E', fg: '#F6F4EF' },
+  { title: 'Горіхи та сухофрукти', img: '/assets/cat-coconut.png', color: '#B4471F', fg: '#F6F4EF' },
 ]
 
 function initQuickPick() {
@@ -64,7 +64,6 @@ function initSlider() {
     if (prevTitle) prevTitle.textContent = prev.title
     if (nextTitle) nextTitle.textContent = next.title
     setColor('--fg', cur.fg)
-    setColor('--accent', cur.accent)
   }
 
   const go = (n) => {

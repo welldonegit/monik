@@ -1,5 +1,5 @@
 import '../styles/entry.css'
-import { initHeader } from './header.js'
+import { initCatHeader } from './cat-header.js'
 import { initHero } from './hero.js'
 import { initCategoryBlobs } from './category.js'
 import { initBrands } from './brands.js'
@@ -7,7 +7,7 @@ import { initRecipes } from './recipes.js'
 
 // Each init is a no-op if its target markup is absent on the page.
 function boot() {
-  initHeader()
+  initCatHeader()
   initHero()
   initCategoryBlobs()
   initBrands()

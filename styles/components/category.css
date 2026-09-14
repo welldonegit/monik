@@ -174,11 +174,13 @@
 /* ---- Mobile ---------------------------------------------------------- */
 @media (max-width: 767px) {
   .category__inner {
-    padding-top: var(--space-32);
+    /* wave overlaps the top ~24px, so pad = wave + a --space-32 gap to the h1 */
+    padding-top: var(--space-56);
     padding-bottom: var(--space-32);
     gap: var(--space-4);
   }
-  .category--tea .category__inner { padding-top: var(--space-8); }
+  /* tea has no top wave — use the plain --space-32 gap */
+  .category--tea .category__inner { padding-top: var(--space-32); }
   .category--spices .category__inner { padding-bottom: var(--space-96); }
   .category__media { justify-content: flex-start; }
   .category__wave { height: var(--space-24); }

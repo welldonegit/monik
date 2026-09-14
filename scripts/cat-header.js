@@ -1,19 +1,15 @@
-// Light header (catalog + product pages): mobile menu + language toggle.
+// Light header (catalog + product pages): mobile drawer + language toggle.
+import { initNavDrawer } from './nav-drawer.js'
+
 export function initCatHeader() {
   const header = document.querySelector('.cat-header')
   if (!header) return
 
-  const menu = header.querySelector('.cat-menu')
-  const burger = header.querySelector('.cat-header__burger')
-  const closeMenu = () => {
-    header.classList.remove('is-menu-open')
-    burger?.setAttribute('aria-expanded', 'false')
-  }
-  burger?.addEventListener('click', () => {
-    const open = header.classList.toggle('is-menu-open')
-    burger.setAttribute('aria-expanded', String(open))
+  initNavDrawer({
+    header,
+    burger: header.querySelector('.cat-header__burger'),
+    panel: header.querySelector('.cat-menu'),
   })
-  menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu))
 
   const lang = header.querySelector('.cat-lang')
   lang?.querySelectorAll('.cat-lang__btn').forEach((btn) =>

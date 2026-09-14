@@ -6,7 +6,7 @@
 @import './layout.css';
 
 /* components (added per section) */
-@import './components/header.css';
+@import './components/cat-header.css';
 @import './components/hero.css';
 @import './components/category.css';
 @import './components/cta.css';
@@ -15,3 +15,4 @@
 @import './components/bento.css';
 @import './components/recipes.css';
 @import './components/footer.css';
+@import './components/nav-drawer.css';

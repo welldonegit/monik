@@ -94,8 +94,7 @@
   --layout-hero-shift: -48px;/* hero text optical shift up (desktop) */
   --layout-gutter-mobile: 20px; /* mobile page gutter (kept exact) */
   --layout-header-h: 84px;      /* header bar min-height (desktop) */
-  --layout-logo-w: 132px;       /* header logo width (desktop) */
-  --layout-logo-w-mobile: 108px;
+  --layout-logo-w-mobile: 108px; /* header logo width (mobile) */
   --layout-hero-text-min: 280px; /* hero text column min-width */
   --layout-hero-media: 420px;    /* hero media column flex-basis */
   --layout-hero-media-min: 260px;

@@ -163,8 +163,9 @@
   }
   .cat-header__nav { display: none; }
   .cat-header__phone { display: none; }
-  .cat-header__logo { margin-inline: auto; }
-  .cat-header__actions { flex: 0 0 auto; }
+  /* equal-width side groups keep the logo truly centred */
+  .cat-header__logo { margin-inline: 0; }
+  .cat-header__logo-img { width: var(--layout-logo-w-mobile); }
+  .cat-header__actions { flex: 1 1 0; }
   .cat-header__burger { display: flex; }
-  .cat-header.is-menu-open .cat-menu { display: block; }
 }

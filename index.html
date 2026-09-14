@@ -8,43 +8,39 @@
   <script type="module" src="/scripts/main.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-header__bar">
-      <nav class="site-nav" aria-label="Головна навігація">
-        <ul class="site-nav__list">
-          <li><a class="site-nav__link text-nav" href="/" aria-current="page">Головна</a></li>
-          <li><a class="site-nav__link text-nav" href="/categories.html">Продукція</a></li>
-          <li><a class="site-nav__link text-nav" href="/recipes.html">Натхнення</a></li>
-          <li><a class="site-nav__link text-nav" href="/contacts.html">Контакти</a></li>
-        </ul>
+  <div class="cat-header-band">
+    <header class="cat-header">
+      <nav class="cat-header__nav" aria-label="Головна навігація">
+        <a class="cat-header__link text-nav" href="/" aria-current="page">Головна</a>
+        <a class="cat-header__link text-nav" href="/categories.html">Продукція</a>
+        <a class="cat-header__link text-nav" href="/recipes.html">Натхнення</a>
+        <a class="cat-header__link text-nav" href="/contacts.html">Контакти</a>
       </nav>
-
-      <a class="site-header__logo" href="/" aria-label="Monik">
-        <img class="site-header__logo-img" src="/assets/monik-logo.svg" alt="Monik" width="132" height="38">
+      <button class="cat-header__burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="home-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="cat-header__logo" href="/" aria-label="Monik">
+        <img class="cat-header__logo-img" src="/assets/monik-logo.svg" alt="Monik" width="146" height="42">
       </a>
-
-      <div class="site-header__actions">
-        <a class="site-header__phone text-nav" href="tel:0800215345">0-800-215-345</a>
-        <div class="lang-switch" role="group" aria-label="Мова">
-          <button class="lang-switch__btn text-lang is-active" type="button" aria-pressed="true">UA</button>
-          <button class="lang-switch__btn text-lang" type="button" aria-pressed="false">EN</button>
+      <div class="cat-header__actions">
+        <a class="cat-header__phone text-nav" href="tel:0800215345">0-800-215-345</a>
+        <div class="cat-lang" role="group" aria-label="Мова">
+          <span class="cat-lang__pill" aria-hidden="true"></span>
+          <button class="cat-lang__btn text-lang is-active" type="button" aria-pressed="true">UA</button>
+          <button class="cat-lang__btn text-lang" type="button" aria-pressed="false">EN</button>
         </div>
-        <button class="site-header__burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobile-menu">
-          <span></span><span></span><span></span>
-        </button>
       </div>
-
-      <nav class="mobile-menu" id="mobile-menu" aria-label="Мобільна навігація" hidden>
-        <ul class="mobile-menu__list">
-          <li><a class="mobile-menu__link text-nav" href="/">Головна</a></li>
-          <li><a class="mobile-menu__link text-nav" href="/categories.html">Продукція</a></li>
-          <li><a class="mobile-menu__link text-nav" href="/recipes.html">Натхнення</a></li>
-          <li><a class="mobile-menu__link text-nav" href="/contacts.html">Контакти</a></li>
-          <li><a class="mobile-menu__link text-nav" href="tel:0800215345">0-800-215-345</a></li>
+      <nav class="cat-menu" id="home-menu" aria-label="Мобільна навігація">
+        <ul class="cat-menu__list">
+          <li><a class="cat-menu__link text-nav" href="/">Головна</a></li>
+          <li><a class="cat-menu__link text-nav" href="/categories.html">Продукція</a></li>
+          <li><a class="cat-menu__link text-nav" href="/recipes.html">Натхнення</a></li>
+          <li><a class="cat-menu__link text-nav" href="/contacts.html">Контакти</a></li>
+          <li><a class="cat-menu__link text-nav" href="tel:0800215345">0-800-215-345</a></li>
         </ul>
       </nav>
-    </div>
-  </header>
+    </header>
+  </div>
 
   <main>
     <div class="hero-wrap">

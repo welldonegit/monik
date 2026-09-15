@@ -24,6 +24,7 @@ export default defineConfig({
         lemonades: resolve(root, 'lemonades.html'),
         recipe: resolve(root, 'recipe.html'),
         policy: resolve(root, 'policy.html'),
+        'icon-studio': resolve(root, 'icon-studio.html'),
       },
     },
   },

@@ -196,4 +196,14 @@
   .cat-slider__peek--next { right: var(--layout-gutter-mobile); transform: none; }
   .cat-slider__peek--prev:hover, .cat-slider__peek--prev:focus-visible,
   .cat-slider__peek--next:hover, .cat-slider__peek--next:focus-visible { transform: none; }
+  /* the name pill must never be wider than its peek (which is already flush to the
+     gutter), so it can't spill past the container edge even on iPhone SE. Trim the
+     padding/gap for more text room; the arrow stays fixed and the title truncates
+     to an ellipsis when it doesn't fit */
+  .cat-slider__peek-hint {
+    max-width: 100%;
+    padding: 0 var(--space-8);
+    gap: var(--space-4);
+  }
+  .cat-slider__peek-hint svg { flex: 0 0 auto; }
 }

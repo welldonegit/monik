@@ -1,0 +1,20 @@
+{
+  "id": "tea-cup",
+  "name": "Чай / напій",
+  "group": "categories",
+  "groupLabel": "Категорії продуктів",
+  "usage": "Ягідні чаї, напої Lito.",
+  "inUseOnSite": false,
+  "viewBox": "0 0 26 26",
+  "stroke": {
+    "color": "currentColor",
+    "width": 1.6
+  },
+  "animated": true,
+  "animationClasses": [
+    "spec-bubble",
+    "spec-fill"
+  ],
+  "svg": "<svg width=\"26\" height=\"26\" viewBox=\"0 0 26 26\" fill=\"none\" aria-hidden=\"true\"><path class=\"spec-bubble\" d=\"M11 3c-.7.9-.7 1.8 0 2.7M14.5 3c-.7.9-.7 1.8 0 2.7\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"/><path d=\"M5.5 8.5h11v5.5A5.5 5.5 0 0 1 11 19.5 5.5 5.5 0 0 1 5.5 14V8.5Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M16.5 10h1.8a2 2 0 0 1 0 4H17\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path class=\"spec-fill\" d=\"M6.6 11.5h8.8v2.4a4.4 4.4 0 0 1-8.8 0v-2.4Z\" fill=\"currentColor\" opacity=\"0.85\"/></svg>",
+  "symbol": "<symbol id=\"spec-tea-cup\" viewBox=\"0 0 26 26\"><path class=\"spec-bubble\" d=\"M11 3c-.7.9-.7 1.8 0 2.7M14.5 3c-.7.9-.7 1.8 0 2.7\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"/><path d=\"M5.5 8.5h11v5.5A5.5 5.5 0 0 1 11 19.5 5.5 5.5 0 0 1 5.5 14V8.5Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M16.5 10h1.8a2 2 0 0 1 0 4H17\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path class=\"spec-fill\" d=\"M6.6 11.5h8.8v2.4a4.4 4.4 0 0 1-8.8 0v-2.4Z\" fill=\"currentColor\" opacity=\"0.85\"/></symbol>"
+}

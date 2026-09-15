@@ -1,0 +1,17 @@
+{
+  "id": "whisk",
+  "name": "Збити міксером",
+  "group": "base-method",
+  "groupLabel": "Основа та спосіб приготування",
+  "usage": "Спосіб: збивання. Для морозива, десертів, збитих сумішей.",
+  "inUseOnSite": false,
+  "viewBox": "0 0 26 26",
+  "stroke": {
+    "color": "currentColor",
+    "width": 1.6
+  },
+  "animated": false,
+  "animationClasses": [],
+  "svg": "<svg width=\"26\" height=\"26\" viewBox=\"0 0 26 26\" fill=\"none\" aria-hidden=\"true\"><path d=\"M13 3.5v3.2\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path d=\"M8.8 9c-1 3.6 0 7.7 4.2 11.4 4.2-3.7 5.2-7.8 4.2-11.4a4.6 4.6 0 0 0-8.4 0Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M13 6.7v13.4M9.8 9.5c.4 3 1.3 6.6 3.2 9M16.2 9.5c-.4 3-1.3 6.6-3.2 9\" stroke=\"currentColor\" stroke-width=\"1.1\" stroke-linecap=\"round\"/></svg>",
+  "symbol": "<symbol id=\"spec-whisk\" viewBox=\"0 0 26 26\"><path d=\"M13 3.5v3.2\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path d=\"M8.8 9c-1 3.6 0 7.7 4.2 11.4 4.2-3.7 5.2-7.8 4.2-11.4a4.6 4.6 0 0 0-8.4 0Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M13 6.7v13.4M9.8 9.5c.4 3 1.3 6.6 3.2 9M16.2 9.5c-.4 3-1.3 6.6-3.2 9\" stroke=\"currentColor\" stroke-width=\"1.1\" stroke-linecap=\"round\"/></symbol>"
+}

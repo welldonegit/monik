@@ -70,41 +70,6 @@
   display: block;
 }
 
-/* ---- Outline CTA with expanding fill (pure CSS hover) ---------------- */
-.cta-outline {
-  position: relative;
-  overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-16);
-  min-height: var(--control-h-xl);
-  padding: var(--space-16) var(--space-24);
-  max-width: 100%;
-  border: var(--border-2) solid var(--cream);
-  border-radius: var(--radius-16);
-  background: transparent;
-  color: var(--cream);
-  transition: color var(--dur-med) ease;
-}
-.cta-outline__label {
-  position: relative;
-  z-index: 1;
-}
-.cta-outline__fill {
-  position: absolute;
-  right: var(--space-24);
-  top: 50%;
-  width: var(--space-8);
-  height: var(--space-8);
-  margin-top: calc(var(--space-8) / -2);
-  border-radius: var(--radius-full);
-  background: var(--cream);
-  transform: scale(0);
-  transition: transform var(--dur-med) var(--ease-out);
-}
-.cta-outline:hover .cta-outline__fill { transform: scale(56); }
-.cta-outline:hover .cta-outline__label { color: var(--cta-hover); }
-
 /* ---- Section modifiers (colour / blob / title only) ------------------ */
 .category--tea {
   --cat-bg: var(--berry);

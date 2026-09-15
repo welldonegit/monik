@@ -1,0 +1,19 @@
+{
+  "id": "icecream",
+  "name": "Морозиво",
+  "group": "categories",
+  "groupLabel": "Категорії продуктів",
+  "usage": "Сухі суміші для морозива.",
+  "inUseOnSite": false,
+  "viewBox": "0 0 26 26",
+  "stroke": {
+    "color": "currentColor",
+    "width": 1.6
+  },
+  "animated": true,
+  "animationClasses": [
+    "spec-fill"
+  ],
+  "svg": "<svg width=\"26\" height=\"26\" viewBox=\"0 0 26 26\" fill=\"none\" aria-hidden=\"true\"><path d=\"M7.5 11.5h11l-1.2 7A3 3 0 0 1 14.3 21h-2.6a3 3 0 0 1-3-2.5l-1.2-7Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M8.3 11.5a4.7 4.7 0 0 1 9.4 0\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path class=\"spec-fill\" d=\"M9.6 11.5a3.4 3.4 0 0 1 6.8 0Z\" fill=\"currentColor\" opacity=\"0.9\"/><circle cx=\"10.8\" cy=\"8.4\" r=\"1.9\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"15.2\" cy=\"8.4\" r=\"1.9\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg>",
+  "symbol": "<symbol id=\"spec-icecream\" viewBox=\"0 0 26 26\"><path d=\"M7.5 11.5h11l-1.2 7A3 3 0 0 1 14.3 21h-2.6a3 3 0 0 1-3-2.5l-1.2-7Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M8.3 11.5a4.7 4.7 0 0 1 9.4 0\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path class=\"spec-fill\" d=\"M9.6 11.5a3.4 3.4 0 0 1 6.8 0Z\" fill=\"currentColor\" opacity=\"0.9\"/><circle cx=\"10.8\" cy=\"8.4\" r=\"1.9\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"15.2\" cy=\"8.4\" r=\"1.9\" stroke=\"currentColor\" stroke-width=\"1.6\"/></symbol>"
+}

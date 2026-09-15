@@ -1,0 +1,19 @@
+{
+  "id": "milk",
+  "name": "Молоко",
+  "group": "base-method",
+  "groupLabel": "Основа та спосіб приготування",
+  "usage": "Основа на молоці: «200 мл молока». Для морозива, коктейлів, десертів.",
+  "inUseOnSite": false,
+  "viewBox": "0 0 26 26",
+  "stroke": {
+    "color": "currentColor",
+    "width": 1.6
+  },
+  "animated": true,
+  "animationClasses": [
+    "spec-fill"
+  ],
+  "svg": "<svg width=\"26\" height=\"26\" viewBox=\"0 0 26 26\" fill=\"none\" aria-hidden=\"true\"><path d=\"M8.6 8.4 13 4.8l4.4 3.6V19a2 2 0 0 1-2 2h-4.8a2 2 0 0 1-2-2V8.4Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M8.6 8.4h8.8\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path class=\"spec-fill\" d=\"M9.5 13.2h7v5.6a1.5 1.5 0 0 1-1.5 1.5h-4a1.5 1.5 0 0 1-1.5-1.5v-5.6Z\" fill=\"currentColor\" opacity=\"0.9\"/></svg>",
+  "symbol": "<symbol id=\"spec-milk\" viewBox=\"0 0 26 26\"><path d=\"M8.6 8.4 13 4.8l4.4 3.6V19a2 2 0 0 1-2 2h-4.8a2 2 0 0 1-2-2V8.4Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M8.6 8.4h8.8\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path class=\"spec-fill\" d=\"M9.5 13.2h7v5.6a1.5 1.5 0 0 1-1.5 1.5h-4a1.5 1.5 0 0 1-1.5-1.5v-5.6Z\" fill=\"currentColor\" opacity=\"0.9\"/></symbol>"
+}

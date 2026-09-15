@@ -1,0 +1,19 @@
+{
+  "id": "water",
+  "name": "Вода",
+  "group": "base-method",
+  "groupLabel": "Основа та спосіб приготування",
+  "usage": "Основа на воді: «1 л води». Для желе, киселю, напоїв Lito.",
+  "inUseOnSite": false,
+  "viewBox": "0 0 26 26",
+  "stroke": {
+    "color": "currentColor",
+    "width": 1.6
+  },
+  "animated": true,
+  "animationClasses": [
+    "spec-fill"
+  ],
+  "svg": "<svg width=\"26\" height=\"26\" viewBox=\"0 0 26 26\" fill=\"none\" aria-hidden=\"true\"><path d=\"M13 4.5c3 3.6 5.2 6.6 5.2 9.4A5.2 5.2 0 0 1 13 19.1a5.2 5.2 0 0 1-5.2-5.2c0-2.8 2.2-5.8 5.2-9.4Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path class=\"spec-fill\" d=\"M13 10.6c1.7 2 2.7 3.5 2.7 5A2.7 2.7 0 0 1 13 18.3a2.7 2.7 0 0 1-2.7-2.7c0-1.5 1-3 2.7-5Z\" fill=\"currentColor\" opacity=\"0.85\"/></svg>",
+  "symbol": "<symbol id=\"spec-water\" viewBox=\"0 0 26 26\"><path d=\"M13 4.5c3 3.6 5.2 6.6 5.2 9.4A5.2 5.2 0 0 1 13 19.1a5.2 5.2 0 0 1-5.2-5.2c0-2.8 2.2-5.8 5.2-9.4Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path class=\"spec-fill\" d=\"M13 10.6c1.7 2 2.7 3.5 2.7 5A2.7 2.7 0 0 1 13 18.3a2.7 2.7 0 0 1-2.7-2.7c0-1.5 1-3 2.7-5Z\" fill=\"currentColor\" opacity=\"0.85\"/></symbol>"
+}

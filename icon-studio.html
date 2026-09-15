@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monik — Іконки: вибір кольору та завантаження</title>
+<style>
+  :root {
+    --mandarin: #F14B2F;
+    --bg: #F6F4EF; --surface: #FFF; --text: #211A17;
+    --muted: rgba(33,26,23,.55); --faint: rgba(33,26,23,.42);
+    --hair: rgba(33,26,23,.08); --hair-strong: rgba(33,26,23,.16);
+    --accent: var(--mandarin);
+    --pick: #F14B2F;            /* current icon colour */
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font-family: 'Fixel Text', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: clamp(24px,4vw,56px) clamp(16px,4vw,40px) 88px; }
+
+  .eyebrow { display: inline-block; font-size: .72rem; font-weight: 600; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--mandarin); background: rgba(241,75,47,.1);
+    padding: 6px 12px; border-radius: 999px; }
+  h1 { margin: 12px 0 6px; font-family: 'Fixel Display', inherit; font-size: clamp(1.7rem,4vw,2.6rem);
+    font-weight: 700; letter-spacing: -.02em; line-height: 1.05; }
+  .sub { margin: 0; max-width: 60ch; color: var(--muted); }
+
+  /* controls */
+  .toolbar { position: sticky; top: 0; z-index: 5; margin: 22px 0 26px; padding: 16px;
+    background: var(--surface); border: 1px solid var(--hair); border-radius: 16px;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 18px 26px; box-shadow: 0 6px 20px rgba(33,26,23,.05); }
+  .ctl { display: flex; align-items: center; gap: 10px; }
+  .ctl > label { font-size: .82rem; font-weight: 600; color: var(--muted); }
+  input[type="color"] { inline-size: 42px; block-size: 34px; padding: 0; border: 1px solid var(--hair-strong);
+    border-radius: 8px; background: none; cursor: pointer; }
+  .hex { inline-size: 96px; font: inherit; font-size: .9rem; padding: 7px 10px; text-transform: uppercase;
+    border: 1px solid var(--hair-strong); border-radius: 8px; background: var(--bg); color: var(--text); }
+  .swatches { display: flex; gap: 8px; }
+  .swatch { inline-size: 26px; block-size: 26px; border-radius: 999px; border: 2px solid var(--hair-strong);
+    cursor: pointer; padding: 0; }
+  .swatch[aria-pressed="true"] { outline: 2px solid var(--text); outline-offset: 2px; }
+  .bulk { margin-left: auto; display: flex; gap: 10px; }
+  .btn { font: inherit; font-size: .82rem; font-weight: 600; cursor: pointer; border-radius: 999px;
+    padding: 8px 15px; border: 1px solid var(--hair-strong); background: transparent; color: var(--text); }
+  .btn--solid { background: var(--mandarin); border-color: var(--mandarin); color: #fff; }
+  .btn:hover { border-color: var(--text); }
+  .btn--solid:hover { filter: brightness(.95); }
+
+  .group-title { margin: 30px 0 12px; font-size: .78rem; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--faint); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(178px, 1fr)); gap: 14px; }
+  .tile { background: var(--surface); border: 1px solid var(--hair); border-radius: 16px;
+    padding: 14px; display: flex; flex-direction: column; gap: 12px; }
+  .stage { display: flex; align-items: center; justify-content: center; block-size: 92px; border-radius: 12px;
+    background: var(--bg); color: var(--pick); }
+  .stage svg { inline-size: 46px; block-size: 46px; }
+  .meta { display: flex; flex-direction: column; gap: 2px; }
+  .id { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: .86rem; font-weight: 700;
+    color: var(--text); user-select: all; word-break: break-word; }
+  .nm { font-size: .74rem; color: var(--muted); }
+  .dl { display: flex; gap: 8px; margin-top: auto; }
+  .dl button { flex: 1 1 0; font: inherit; font-size: .76rem; font-weight: 600; cursor: pointer;
+    border: 1px solid var(--hair-strong); border-radius: 8px; padding: 6px 4px; background: transparent; color: var(--text); }
+  .dl button:hover { border-color: var(--mandarin); color: var(--mandarin); }
+
+  .howto { margin-top: 34px; background: var(--surface); border: 1px solid var(--hair); border-radius: 16px; padding: 22px; }
+  .howto h2 { margin: 0 0 10px; font-family: 'Fixel Display', inherit; font-size: 1.1rem; }
+  .howto ol { margin: 0; padding-left: 20px; color: var(--muted); display: flex; flex-direction: column; gap: 6px; }
+  .howto b { color: var(--text); }
+  @keyframes spec-fill{0%,100%{transform:scaleY(.72);opacity:.75}50%{transform:scaleY(1);opacity:1}}@keyframes spec-rise{0%,100%{transform:scaleY(.66);opacity:.8}50%{transform:scaleY(1);opacity:1}}@keyframes spec-bubble{0%{transform:translateY(4px);opacity:0}35%{opacity:.95}100%{transform:translateY(-7px);opacity:0}}.spec-fill{animation:spec-fill 3.6s cubic-bezier(.45,0,.55,1) infinite;transform-origin:50% 100%}.spec-rise{animation:spec-rise 3.6s cubic-bezier(.45,0,.55,1) infinite;transform-origin:50% 100%}.spec-bubble{animation:spec-bubble 2.4s ease-in-out infinite}@media (prefers-reduced-motion:reduce){.spec-fill,.spec-rise,.spec-bubble{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="eyebrow">Дизайн-система Monik</span>
+  <h1>Іконки — вибір кольору та завантаження</h1>
+  <p class="sub">Обери будь-який колір (або пресет бренду), переглянь усі іконки в цьому кольорі й завантаж потрібну у форматі <b>SVG</b> — готову до завантаження в адмінку. Усе працює у браузері, нічого встановлювати не треба.</p>
+
+  <div class="toolbar">
+    <div class="ctl">
+      <label for="picker">Колір</label>
+      <input id="picker" type="color" value="#F14B2F">
+      <input id="hex" class="hex" value="#F14B2F" maxlength="7" spellcheck="false">
+    </div>
+    <div class="ctl">
+      <span class="swatches" id="swatches"></span>
+    </div>
+    <div class="bulk">
+      <button class="btn btn--solid" id="allsvg">Завантажити всі</button>
+    </div>
+  </div>
+
+  <div id="groups"></div>
+
+  <div class="howto">
+    <h2>Як користуватися</h2>
+    <ol>
+      <li>Обери <b>колір</b> (піпетка, HEX або пресет бренду).</li>
+      <li>Під іконкою натисни <b>«Завантажити SVG»</b>.</li>
+      <li>Завантаж файл у медіатеку адмінки. Для SVG у WordPress потрібен плагін <b>Safe SVG</b>.</li>
+      <li>Кнопка <b>«Завантажити всі»</b> зберігає весь набір у вибраному кольорі за раз.</li>
+    </ol>
+  </div>
+</div>
+
+<script>
+  const ICONS = [{"id":"bottle","name":"Об'єм","group":"metrics","inner":"<path d=\"M10.4 2.2h5.2M11.1 2.2v3.1c0 .9-.3 1.4-.9 2L8.6 9c-.7.7-1.1 1.6-1.1 2.6v9.6a2.6 2.6 0 0 0 2.6 2.6h5.8a2.6 2.6 0 0 0 2.6-2.6v-9.6c0-1-.4-1.9-1.1-2.6l-1.6-1.7c-.6-.6-.9-1.1-.9-2V2.2\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path class=\"spec-fill\" d=\"M7.5 16.4c1.4 0 1.7-1.1 3.1-1.1s1.7 1.1 3.1 1.1 1.7-1.1 3.1-1.1 1.7 1.1 2.7 1.1v5a2.6 2.6 0 0 1-2.6 2.6h-5.8a2.6 2.6 0 0 1-2.6-2.6v-5Z\" fill=\"currentColor\" opacity=\"0.9\"/>"},{"id":"glass","name":"Вихід напою","group":"metrics","inner":"<path d=\"M6.2 4h13.6l-1.5 16.3a2.6 2.6 0 0 1-2.6 2.4h-5.4a2.6 2.6 0 0 1-2.6-2.4L6.2 4Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path class=\"spec-rise\" d=\"M7.2 13h11.6l-.7 7.3a2.6 2.6 0 0 1-2.6 2.4h-5.4a2.6 2.6 0 0 1-2.6-2.4L7.2 13Z\" fill=\"currentColor\" opacity=\"0.9\"/><g class=\"spec-bubble\"><circle cx=\"11\" cy=\"10\" r=\"1.15\" fill=\"currentColor\"/><circle cx=\"15.2\" cy=\"7.6\" r=\"0.8\" fill=\"currentColor\" opacity=\"0.7\"/></g>"},{"id":"portions","name":"Порції","group":"metrics","inner":"<path d=\"M4.5 11h7l-.7 6.5A2.4 2.4 0 0 1 8.4 20.6H7.8a2.4 2.4 0 0 1-2.4-2.1L4.5 11Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M14.5 11h7l-.9 6.5A2.4 2.4 0 0 1 18.2 20.6h-.6a2.4 2.4 0 0 1-2.4-2.1L14.5 11Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><circle class=\"spec-fill\" cx=\"8\" cy=\"8.6\" r=\"2.4\" fill=\"currentColor\" opacity=\"0.9\"/><circle class=\"spec-fill\" cx=\"18\" cy=\"8.6\" r=\"2.4\" fill=\"currentColor\" opacity=\"0.9\"/>"},{"id":"weight-pouch","name":"Вага пакетика","group":"metrics","inner":"<path d=\"M7.9 7 8.92 5.6 9.94 7 10.96 5.6 11.98 7 13 5.6 14.02 7 15.04 5.6 16.06 7 17.08 5.6 18.1 7\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M7.8 7h10.4a1 1 0 0 1 1 1v11a2.6 2.6 0 0 1-2.6 2.6H9.4A2.6 2.6 0 0 1 6.8 19V8a1 1 0 0 1 1-1Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><g fill=\"currentColor\" opacity=\"0.9\"><circle cx=\"10.45\" cy=\"19.2\" r=\".85\"/><circle cx=\"12.15\" cy=\"19.2\" r=\".85\"/><circle cx=\"13.85\" cy=\"19.2\" r=\".85\"/><circle cx=\"15.55\" cy=\"19.2\" r=\".85\"/><circle cx=\"11.3\" cy=\"17.5\" r=\".85\"/><circle cx=\"13\" cy=\"17.5\" r=\".85\"/><circle cx=\"14.7\" cy=\"17.5\" r=\".85\"/><circle cx=\"12.15\" cy=\"15.8\" r=\".85\"/><circle cx=\"13.85\" cy=\"15.8\" r=\".85\"/></g>"},{"id":"freeze","name":"Заморозити","group":"base-method","inner":"<path d=\"M13 3.5v19\"/><path d=\"M4.8 8.25 21.2 17.75\"/><path d=\"M21.2 8.25 4.8 17.75\"/><path d=\"M13 6.6 10.8 4.8M13 6.6 15.2 4.8\"/><path d=\"M13 19.4 10.8 21.2M13 19.4 15.2 21.2\"/><path d=\"M6.9 9.9 6.4 7.4M6.9 9.9 4.4 10.4\"/><path d=\"M19.1 16.1 19.6 18.6M19.1 16.1 21.6 15.6\"/><path d=\"M6.9 16.1 4.4 15.6M6.9 16.1 6.4 18.6\"/><path d=\"M19.1 9.9 21.6 10.4M19.1 9.9 19.6 7.4\"/>"},{"id":"hot-water","name":"Гаряча вода","group":"base-method","inner":"<path class=\"spec-bubble\" d=\"M10 3.3c-.7.9-.7 1.8 0 2.7M13 3c-.7.9-.7 1.8 0 2.7M16 3.3c-.7.9-.7 1.8 0 2.7\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"/><path d=\"M5 9.5h16\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path d=\"M6.3 9.5h13.4l-1 8.2A3 3 0 0 1 15.7 20H10.3a3 3 0 0 1-3-2.3L6.3 9.5Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M4 11.2 6 12.4M22 11.2 20 12.4\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/>"},{"id":"milk","name":"Молоко","group":"base-method","inner":"<path d=\"M8.6 8.4 13 4.8l4.4 3.6V19a2 2 0 0 1-2 2h-4.8a2 2 0 0 1-2-2V8.4Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M8.6 8.4h8.8\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path class=\"spec-fill\" d=\"M9.5 13.2h7v5.6a1.5 1.5 0 0 1-1.5 1.5h-4a1.5 1.5 0 0 1-1.5-1.5v-5.6Z\" fill=\"currentColor\" opacity=\"0.9\"/>"},{"id":"stir","name":"Перемішати","group":"base-method","inner":"<path d=\"M5.5 11.5h15l-1.2 6.2A3 3 0 0 1 16.3 20H9.7a3 3 0 0 1-3-2.4L5.5 11.5Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M15.5 4.5 11 12\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path class=\"spec-fill\" d=\"M7.2 12.6h11.6l-.8 4.4A2.4 2.4 0 0 1 15.7 19h-5.4a2.4 2.4 0 0 1-2.3-2L7.2 12.6Z\" fill=\"currentColor\" opacity=\"0.85\"/>"},{"id":"time","name":"Час","group":"base-method","inner":"<circle cx=\"13\" cy=\"13.5\" r=\"8\" stroke=\"currentColor\" stroke-width=\"1.6\"/><path d=\"M13 9v4.5l3 2\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M10.5 3.5h5\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/>"},{"id":"water","name":"Вода","group":"base-method","inner":"<path d=\"M13 4.5c3 3.6 5.2 6.6 5.2 9.4A5.2 5.2 0 0 1 13 19.1a5.2 5.2 0 0 1-5.2-5.2c0-2.8 2.2-5.8 5.2-9.4Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path class=\"spec-fill\" d=\"M13 10.6c1.7 2 2.7 3.5 2.7 5A2.7 2.7 0 0 1 13 18.3a2.7 2.7 0 0 1-2.7-2.7c0-1.5 1-3 2.7-5Z\" fill=\"currentColor\" opacity=\"0.85\"/>"},{"id":"whisk","name":"Збити міксером","group":"base-method","inner":"<path d=\"M13 3.5v3.2\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path d=\"M8.8 9c-1 3.6 0 7.7 4.2 11.4 4.2-3.7 5.2-7.8 4.2-11.4a4.6 4.6 0 0 0-8.4 0Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M13 6.7v13.4M9.8 9.5c.4 3 1.3 6.6 3.2 9M16.2 9.5c-.4 3-1.3 6.6-3.2 9\" stroke=\"currentColor\" stroke-width=\"1.1\" stroke-linecap=\"round\"/>"},{"id":"cocktail","name":"Коктейль","group":"categories","inner":"<path d=\"M5 6.5h16L13 14 5 6.5Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M13 14v6\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path d=\"M9 20.5h8\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path class=\"spec-fill\" d=\"M7.8 7.7h10.4L13 12 7.8 7.7Z\" fill=\"currentColor\" opacity=\"0.85\"/>"},{"id":"icecream","name":"Морозиво","group":"categories","inner":"<path d=\"M7.5 11.5h11l-1.2 7A3 3 0 0 1 14.3 21h-2.6a3 3 0 0 1-3-2.5l-1.2-7Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M8.3 11.5a4.7 4.7 0 0 1 9.4 0\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path class=\"spec-fill\" d=\"M9.6 11.5a3.4 3.4 0 0 1 6.8 0Z\" fill=\"currentColor\" opacity=\"0.9\"/><circle cx=\"10.8\" cy=\"8.4\" r=\"1.9\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"15.2\" cy=\"8.4\" r=\"1.9\" stroke=\"currentColor\" stroke-width=\"1.6\"/>"},{"id":"jam-jar","name":"Джем","group":"categories","inner":"<path d=\"M8 6.5h10v1.3a2 2 0 0 1-.6 1.4l-.4.4v9.4a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-9.4l-.4-.4A2 2 0 0 1 8 7.8V6.5Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M9 4.5h8v2H9z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path class=\"spec-fill\" d=\"M8.6 12.5h8.8V19a1.8 1.8 0 0 1-1.8 1.8h-5.2A1.8 1.8 0 0 1 8.6 19v-6.5Z\" fill=\"currentColor\" opacity=\"0.9\"/>"},{"id":"jelly","name":"Желе","group":"categories","inner":"<path d=\"M6 11c0-1.1 1-1.7 2.4-1.7 1.3 0 1.3.8 2.6.8s1.3-.8 2.6-.8 1.3.8 2.4.8c1.4 0 2.4.6 2.4 1.7 0 4.2-1.9 8.9-7.2 8.9S6 15.2 6 11Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M8 7.6h10\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path class=\"spec-fill\" d=\"M8.2 13c0 3 1.4 6 4.8 6s4.8-3 4.8-6c-1.2.6-2 .9-4.8.9S9.4 13.6 8.2 13Z\" fill=\"currentColor\" opacity=\"0.85\"/>"},{"id":"nuts","name":"Горіхи / сухофрукти","group":"categories","inner":"<path d=\"M13 4.5c3.9 0 6.4 3.6 6.4 8.2s-2.9 8.8-6.4 8.8-6.4-4.2-6.4-8.8S9.1 4.5 13 4.5Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M13 6.4v14.6\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\"/><path d=\"M9.7 9.2c2 1.4 4.6 1.4 6.6 0M9.3 13c2.4 1.7 5.7 1.7 8.1 0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\"/>"},{"id":"tea-cup","name":"Чай / напій","group":"categories","inner":"<path class=\"spec-bubble\" d=\"M11 3c-.7.9-.7 1.8 0 2.7M14.5 3c-.7.9-.7 1.8 0 2.7\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"/><path d=\"M5.5 8.5h11v5.5A5.5 5.5 0 0 1 11 19.5 5.5 5.5 0 0 1 5.5 14V8.5Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M16.5 10h1.8a2 2 0 0 1 0 4H17\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path class=\"spec-fill\" d=\"M6.6 11.5h8.8v2.4a4.4 4.4 0 0 1-8.8 0v-2.4Z\" fill=\"currentColor\" opacity=\"0.85\"/>"}];
+  const GROUPS = {"metrics":"Метрики","base-method":"Спосіб приготування","categories":"Категорії"};
+  const ANIM = "@keyframes spec-fill{0%,100%{transform:scaleY(.72);opacity:.75}50%{transform:scaleY(1);opacity:1}}@keyframes spec-rise{0%,100%{transform:scaleY(.66);opacity:.8}50%{transform:scaleY(1);opacity:1}}@keyframes spec-bubble{0%{transform:translateY(4px);opacity:0}35%{opacity:.95}100%{transform:translateY(-7px);opacity:0}}.spec-fill{animation:spec-fill 3.6s cubic-bezier(.45,0,.55,1) infinite;transform-origin:50% 100%}.spec-rise{animation:spec-rise 3.6s cubic-bezier(.45,0,.55,1) infinite;transform-origin:50% 100%}.spec-bubble{animation:spec-bubble 2.4s ease-in-out infinite}@media (prefers-reduced-motion:reduce){.spec-fill,.spec-rise,.spec-bubble{animation:none}}";
+  const PRESETS = [
+    ['#F14B2F','Мандарин'], ['#E52868','Ягідний'], ['#048144','Зелений'],
+    ['#211A17','Чорнило'], ['#FFFFFF','Білий']
+  ];
+  const root = document.documentElement;
+  const picker = document.getElementById('picker');
+  const hex = document.getElementById('hex');
+
+  function setColor(c) {
+    c = c.toUpperCase();
+    if (!/^#[0-9A-F]{6}$/.test(c)) return;
+    root.style.setProperty('--pick', c);
+    picker.value = c; hex.value = c;
+    document.querySelectorAll('.swatch').forEach(s =>
+      s.setAttribute('aria-pressed', String(s.dataset.c.toUpperCase() === c)));
+  }
+  picker.addEventListener('input', e => setColor(e.target.value));
+  hex.addEventListener('input', e => { let v = e.target.value; if (v[0] !== '#') v = '#' + v; setColor(v); });
+
+  // swatches
+  const sw = document.getElementById('swatches');
+  PRESETS.forEach(([c, name]) => {
+    const b = document.createElement('button');
+    b.className = 'swatch'; b.dataset.c = c; b.style.background = c; b.title = name + ' ' + c;
+    b.setAttribute('aria-pressed', String(c === '#F14B2F'));
+    b.addEventListener('click', () => setColor(c));
+    sw.appendChild(b);
+  });
+
+  // render tiles grouped
+  const groupsEl = document.getElementById('groups');
+  const byGroup = {};
+  ICONS.forEach(i => (byGroup[i.group] = byGroup[i.group] || []).push(i));
+  Object.keys(byGroup).forEach(g => {
+    const h = document.createElement('div'); h.className = 'group-title'; h.textContent = GROUPS[g] || g;
+    const grid = document.createElement('div'); grid.className = 'grid';
+    byGroup[g].forEach(i => grid.appendChild(tile(i)));
+    groupsEl.appendChild(h); groupsEl.appendChild(grid);
+  });
+
+  function tile(icon) {
+    const t = document.createElement('article'); t.className = 'tile';
+    t.innerHTML =
+      '<div class="stage"><svg viewBox="0 0 26 26" fill="none" role="img" aria-label="' + icon.name + '">' + icon.inner + '</svg></div>' +
+      '<div class="meta"><span class="id">' + icon.id + '</span><span class="nm">' + icon.name + '</span></div>' +
+      '<div class="dl"><button data-t="svg">Завантажити SVG</button></div>';
+    t.querySelector('[data-t=svg]').addEventListener('click', () => dlSVG(icon));
+    return t;
+  }
+
+  function color() { return getComputedStyle(root).getPropertyValue('--pick').trim() || '#F14B2F'; }
+  function svgString(icon, c) {
+    const style = /spec-(?:fill|rise|bubble)/.test(icon.inner) ? '<style>' + ANIM + '</style>' : '';
+    return '<svg xmlns="http://www.w3.org/2000/svg" role="img" width="26" height="26" viewBox="0 0 26 26" fill="none">' +
+      '<title>' + icon.name + '</title>' + style + icon.inner.replaceAll('currentColor', c) + '</svg>';
+  }
+  function saveBlob(blob, filename) {
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  }
+  function dlSVG(icon, c = color()) {
+    saveBlob(new Blob([svgString(icon, c)], { type: 'image/svg+xml' }), icon.id + '_' + c.replace('#', '') + '.svg');
+  }
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  document.getElementById('allsvg').addEventListener('click', async () => {
+    const c = color(); for (const i of ICONS) { dlSVG(i, c); await sleep(150); }
+  });
+
+  setColor('#F14B2F');
+</script>
+</body>
+</html>

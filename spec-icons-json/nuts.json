@@ -1,0 +1,17 @@
+{
+  "id": "nuts",
+  "name": "Горіхи / сухофрукти",
+  "group": "categories",
+  "groupLabel": "Категорії продуктів",
+  "usage": "Горіхи та сухофрукти.",
+  "inUseOnSite": false,
+  "viewBox": "0 0 26 26",
+  "stroke": {
+    "color": "currentColor",
+    "width": 1.6
+  },
+  "animated": false,
+  "animationClasses": [],
+  "svg": "<svg width=\"26\" height=\"26\" viewBox=\"0 0 26 26\" fill=\"none\" aria-hidden=\"true\"><path d=\"M13 4.5c3.9 0 6.4 3.6 6.4 8.2s-2.9 8.8-6.4 8.8-6.4-4.2-6.4-8.8S9.1 4.5 13 4.5Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M13 6.4v14.6\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\"/><path d=\"M9.7 9.2c2 1.4 4.6 1.4 6.6 0M9.3 13c2.4 1.7 5.7 1.7 8.1 0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\"/></svg>",
+  "symbol": "<symbol id=\"spec-nuts\" viewBox=\"0 0 26 26\"><path d=\"M13 4.5c3.9 0 6.4 3.6 6.4 8.2s-2.9 8.8-6.4 8.8-6.4-4.2-6.4-8.8S9.1 4.5 13 4.5Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M13 6.4v14.6\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\"/><path d=\"M9.7 9.2c2 1.4 4.6 1.4 6.6 0M9.3 13c2.4 1.7 5.7 1.7 8.1 0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\"/></symbol>"
+}

@@ -1,0 +1,132 @@
+{
+  "pack": "Monik — spec icons",
+  "count": 17,
+  "viewBox": "0 0 26 26",
+  "note": "Кожна іконка в окремому файлі <id>.json. Поле svg — готова розмітка; поле symbol — для SVG-спрайта (<use href=\"#spec-<id>\">).",
+  "groups": {
+    "metrics": "Метрики",
+    "base-method": "Основа та спосіб приготування",
+    "categories": "Категорії продуктів"
+  },
+  "icons": [
+    {
+      "id": "weight-pouch",
+      "name": "Вага пакетика",
+      "group": "metrics",
+      "usage": "Нетто сухої суміші: «60 г», «90 г». Заміна об'єму для порошкових продуктів.",
+      "file": "weight-pouch.json"
+    },
+    {
+      "id": "bottle",
+      "name": "Об'єм",
+      "group": "metrics",
+      "usage": "Рідкі концентрати та сиропи: «200 мл», «500 мл». Вже використовується.",
+      "file": "bottle.json"
+    },
+    {
+      "id": "glass",
+      "name": "Вихід напою",
+      "group": "metrics",
+      "usage": "Скільки готового напою: «До 3 л». Вже використовується.",
+      "file": "glass.json"
+    },
+    {
+      "id": "portions",
+      "name": "Порції",
+      "group": "metrics",
+      "usage": "Вихід десерту в порціях: «6 порцій», «4 креманки».",
+      "file": "portions.json"
+    },
+    {
+      "id": "milk",
+      "name": "Молоко",
+      "group": "base-method",
+      "usage": "Основа на молоці: «200 мл молока». Для морозива, коктейлів, десертів.",
+      "file": "milk.json"
+    },
+    {
+      "id": "water",
+      "name": "Вода",
+      "group": "base-method",
+      "usage": "Основа на воді: «1 л води». Для желе, киселю, напоїв Lito.",
+      "file": "water.json"
+    },
+    {
+      "id": "hot-water",
+      "name": "Гаряча вода",
+      "group": "base-method",
+      "usage": "Залити окропом / зварити: «1 л гарячої води». Кисіль, желе.",
+      "file": "hot-water.json"
+    },
+    {
+      "id": "whisk",
+      "name": "Збити міксером",
+      "group": "base-method",
+      "usage": "Спосіб: збивання. Для морозива, десертів, збитих сумішей.",
+      "file": "whisk.json"
+    },
+    {
+      "id": "stir",
+      "name": "Перемішати",
+      "group": "base-method",
+      "usage": "Спосіб: розмішати до розчинення. Універсальний для порошків.",
+      "file": "stir.json"
+    },
+    {
+      "id": "freeze",
+      "name": "Заморозити",
+      "group": "base-method",
+      "usage": "Спосіб/умова: у морозильну камеру. Для морозива.",
+      "file": "freeze.json"
+    },
+    {
+      "id": "time",
+      "name": "Час",
+      "group": "base-method",
+      "usage": "Тривалість: «2–4 год заморожування», «збивати 4 хв».",
+      "file": "time.json"
+    },
+    {
+      "id": "icecream",
+      "name": "Морозиво",
+      "group": "categories",
+      "usage": "Сухі суміші для морозива.",
+      "file": "icecream.json"
+    },
+    {
+      "id": "jelly",
+      "name": "Желе",
+      "group": "categories",
+      "usage": "Сухі суміші для желе.",
+      "file": "jelly.json"
+    },
+    {
+      "id": "cocktail",
+      "name": "Коктейль",
+      "group": "categories",
+      "usage": "Сиропи для коктейлів.",
+      "file": "cocktail.json"
+    },
+    {
+      "id": "jam-jar",
+      "name": "Джем",
+      "group": "categories",
+      "usage": "Джеми, топінги в банці.",
+      "file": "jam-jar.json"
+    },
+    {
+      "id": "tea-cup",
+      "name": "Чай / напій",
+      "group": "categories",
+      "usage": "Ягідні чаї, напої Lito.",
+      "file": "tea-cup.json"
+    },
+    {
+      "id": "nuts",
+      "name": "Горіхи / сухофрукти",
+      "group": "categories",
+      "usage": "Горіхи та сухофрукти.",
+      "file": "nuts.json"
+    }
+  ]
+}

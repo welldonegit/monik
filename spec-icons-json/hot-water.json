@@ -1,0 +1,19 @@
+{
+  "id": "hot-water",
+  "name": "Гаряча вода",
+  "group": "base-method",
+  "groupLabel": "Основа та спосіб приготування",
+  "usage": "Залити окропом / зварити: «1 л гарячої води». Кисіль, желе.",
+  "inUseOnSite": false,
+  "viewBox": "0 0 26 26",
+  "stroke": {
+    "color": "currentColor",
+    "width": 1.6
+  },
+  "animated": true,
+  "animationClasses": [
+    "spec-bubble"
+  ],
+  "svg": "<svg width=\"26\" height=\"26\" viewBox=\"0 0 26 26\" fill=\"none\" aria-hidden=\"true\"><path class=\"spec-bubble\" d=\"M10 3.3c-.7.9-.7 1.8 0 2.7M13 3c-.7.9-.7 1.8 0 2.7M16 3.3c-.7.9-.7 1.8 0 2.7\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"/><path d=\"M5 9.5h16\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path d=\"M6.3 9.5h13.4l-1 8.2A3 3 0 0 1 15.7 20H10.3a3 3 0 0 1-3-2.3L6.3 9.5Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M4 11.2 6 12.4M22 11.2 20 12.4\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/></svg>",
+  "symbol": "<symbol id=\"spec-hot-water\" viewBox=\"0 0 26 26\"><path class=\"spec-bubble\" d=\"M10 3.3c-.7.9-.7 1.8 0 2.7M13 3c-.7.9-.7 1.8 0 2.7M16 3.3c-.7.9-.7 1.8 0 2.7\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"/><path d=\"M5 9.5h16\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path d=\"M6.3 9.5h13.4l-1 8.2A3 3 0 0 1 15.7 20H10.3a3 3 0 0 1-3-2.3L6.3 9.5Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M4 11.2 6 12.4M22 11.2 20 12.4\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"/></symbol>"
+}

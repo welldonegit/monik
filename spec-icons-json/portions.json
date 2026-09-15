@@ -1,0 +1,19 @@
+{
+  "id": "portions",
+  "name": "Порції",
+  "group": "metrics",
+  "groupLabel": "Метрики",
+  "usage": "Вихід десерту в порціях: «6 порцій», «4 креманки».",
+  "inUseOnSite": false,
+  "viewBox": "0 0 26 26",
+  "stroke": {
+    "color": "currentColor",
+    "width": 1.6
+  },
+  "animated": true,
+  "animationClasses": [
+    "spec-fill"
+  ],
+  "svg": "<svg width=\"26\" height=\"26\" viewBox=\"0 0 26 26\" fill=\"none\" aria-hidden=\"true\"><path d=\"M4.5 11h7l-.7 6.5A2.4 2.4 0 0 1 8.4 20.6H7.8a2.4 2.4 0 0 1-2.4-2.1L4.5 11Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M14.5 11h7l-.9 6.5A2.4 2.4 0 0 1 18.2 20.6h-.6a2.4 2.4 0 0 1-2.4-2.1L14.5 11Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><circle class=\"spec-fill\" cx=\"8\" cy=\"8.6\" r=\"2.4\" fill=\"currentColor\" opacity=\"0.9\"/><circle class=\"spec-fill\" cx=\"18\" cy=\"8.6\" r=\"2.4\" fill=\"currentColor\" opacity=\"0.9\"/></svg>",
+  "symbol": "<symbol id=\"spec-portions\" viewBox=\"0 0 26 26\"><path d=\"M4.5 11h7l-.7 6.5A2.4 2.4 0 0 1 8.4 20.6H7.8a2.4 2.4 0 0 1-2.4-2.1L4.5 11Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><path d=\"M14.5 11h7l-.9 6.5A2.4 2.4 0 0 1 18.2 20.6h-.6a2.4 2.4 0 0 1-2.4-2.1L14.5 11Z\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"round\"/><circle class=\"spec-fill\" cx=\"8\" cy=\"8.6\" r=\"2.4\" fill=\"currentColor\" opacity=\"0.9\"/><circle class=\"spec-fill\" cx=\"18\" cy=\"8.6\" r=\"2.4\" fill=\"currentColor\" opacity=\"0.9\"/></symbol>"
+}

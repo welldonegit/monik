@@ -1,0 +1,10 @@
+/* Entry stylesheet for the privacy policy page. */
+@import './tokens.css';
+@import './reset.css';
+@import './typography.css';
+@import './layout.css';
+
+@import './components/cat-header.css';
+@import './components/policy.css';
+@import './components/footer.css';
+@import './components/nav-drawer.css';

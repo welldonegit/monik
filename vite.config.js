@@ -23,6 +23,7 @@ export default defineConfig({
         recipes: resolve(root, 'recipes.html'),
         lemonades: resolve(root, 'lemonades.html'),
         recipe: resolve(root, 'recipe.html'),
+        policy: resolve(root, 'policy.html'),
       },
     },
   },
